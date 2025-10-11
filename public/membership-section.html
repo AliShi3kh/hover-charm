@@ -336,8 +336,9 @@
             animation: modalSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .modal-container.active {
-            display: block;
+.modal-container.active {
+            display: flex;
+            flex-direction: column;
         }
 
         @keyframes modalSlideIn {
@@ -351,12 +352,13 @@
             }
         }
 
-        /* Modal Header */
+/* Modal Header */
         .modal-header {
             position: relative;
             background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
             padding: 35px 40px;
             color: white;
+            flex-shrink: 0;
         }
 
         .modal-close {
@@ -399,10 +401,11 @@
             font-weight: 500;
         }
 
-        /* Modal Body */
+/* Modal Body */
         .modal-body {
             padding: 40px;
-            max-height: calc(85vh - 150px);
+            flex: 1;
+            min-height: 0;
             overflow-y: auto;
         }
 
@@ -484,11 +487,12 @@
             fill: none;
         }
 
-        /* Modal Footer */
+/* Modal Footer */
         .modal-footer {
             padding: 25px 40px;
             border-top: 2px solid #f1f5f9;
             background: #fafbfc;
+            flex-shrink: 0;
         }
 
         .modal-subscribe-btn {
