@@ -27,7 +27,7 @@
         .statistics-section {
             background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 50%, #2563EB 100%);
             border-radius: 32px;
-            padding: 80px 60px;
+            padding: 50px 60px;
             box-shadow: 0 25px 80px -20px rgba(93, 208, 240, 0.5);
             position: relative;
             overflow: hidden;
@@ -84,7 +84,7 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
+            gap: 30px;
             position: relative;
             z-index: 2;
         }
@@ -102,9 +102,9 @@
 
         /* Icon Container */
         .stat-icon {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 30px;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
             position: relative;
             transition: all 0.4s ease;
         }
@@ -143,8 +143,8 @@
 
         /* Inner Icon Circle */
         .icon-inner {
-            width: 80px;
-            height: 80px;
+            width: 68px;
+            height: 68px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(10px);
@@ -169,10 +169,10 @@
 
         /* Stat Number */
         .stat-number {
-            font-size: 56px;
+            font-size: 48px;
             font-weight: 800;
             color: white;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             letter-spacing: -1px;
             transition: all 0.3s ease;
@@ -233,21 +233,21 @@
         /* Section Title (Optional) */
         .stats-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             position: relative;
             z-index: 2;
         }
 
         .stats-title h2 {
-            font-size: 48px;
+            font-size: 42px;
             font-weight: bold;
             color: white;
             text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .stats-title p {
-            font-size: 20px;
+            font-size: 18px;
             color: rgba(255, 255, 255, 0.9);
         }
 
@@ -261,17 +261,17 @@
 
         @media (max-width: 768px) {
             .statistics-section {
-                padding: 50px 30px;
+                padding: 40px 30px;
                 border-radius: 24px;
             }
 
             .stats-grid {
                 grid-template-columns: 1fr;
-                gap: 50px;
+                gap: 35px;
             }
 
             .stat-number {
-                font-size: 48px;
+                font-size: 42px;
             }
 
             .stat-label {
@@ -279,32 +279,32 @@
             }
 
             .stats-title h2 {
-                font-size: 36px;
+                font-size: 32px;
             }
         }
 
         @media (max-width: 480px) {
             .statistics-section {
-                padding: 40px 20px;
+                padding: 35px 20px;
             }
 
             .stat-icon {
-                width: 100px;
-                height: 100px;
+                width: 85px;
+                height: 85px;
             }
 
             .icon-inner {
-                width: 70px;
-                height: 70px;
+                width: 60px;
+                height: 60px;
             }
 
             .icon-inner svg {
-                width: 35px;
-                height: 35px;
+                width: 32px;
+                height: 32px;
             }
 
             .stat-number {
-                font-size: 40px;
+                font-size: 36px;
             }
 
             .stat-label {
