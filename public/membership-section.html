@@ -484,6 +484,41 @@
             fill: none;
         }
 
+        /* Modal Footer */
+        .modal-footer {
+            padding: 25px 40px;
+            border-top: 2px solid #f1f5f9;
+            background: #fafbfc;
+        }
+
+        .modal-subscribe-btn {
+            width: 100%;
+            padding: 18px 28px;
+            background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(93, 208, 240, 0.3);
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .modal-subscribe-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(93, 208, 240, 0.4);
+        }
+
+        .modal-subscribe-btn:active {
+            transform: translateY(0);
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .pricing-grid {
@@ -538,6 +573,10 @@
             .modal-body {
                 padding: 30px;
             }
+
+            .modal-footer {
+                padding: 20px 30px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -576,6 +615,15 @@
 
             .modal-body {
                 padding: 25px;
+            }
+
+            .modal-footer {
+                padding: 20px 25px;
+            }
+
+            .modal-subscribe-btn {
+                padding: 16px 24px;
+                font-size: 16px;
             }
 
             .modal-plan-name {
@@ -707,6 +755,13 @@
                 <!-- Features will be dynamically inserted here -->
             </ul>
         </div>
+
+        <div class="modal-footer">
+            <button class="modal-subscribe-btn" onclick="subscribe()">
+                <span>✓</span>
+                اشترك الآن
+            </button>
+        </div>
     </div>
 
     <script>
@@ -802,6 +857,13 @@
             modal.classList.remove('active');
             overlay.classList.remove('active');
             document.body.style.overflow = 'auto';
+        }
+
+        // Subscribe function
+        function subscribe() {
+            // You can add your subscription logic here
+            alert('شكراً لاهتمامك! سيتم تحويلك إلى صفحة الاشتراك...');
+            closeModal();
         }
 
         // Close modal on ESC key
