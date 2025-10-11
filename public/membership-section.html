@@ -109,7 +109,7 @@
             position: relative;
             background: #ffffff;
             border-radius: 24px;
-            padding: 45px 40px;
+            padding: 50px 40px;
             display: flex;
             flex-direction: column;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -117,6 +117,7 @@
                 0 4px 20px rgba(0, 0, 0, 0.05),
                 0 1px 3px rgba(0, 0, 0, 0.03);
             border: 2px solid rgba(226, 232, 240, 0.8);
+            min-height: 480px;
         }
 
         .pricing-card:hover {
@@ -184,7 +185,11 @@
         /* Price Section */
         .price-section {
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .price {
@@ -217,43 +222,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-
-        /* Features List */
-        .features-list {
-            list-style: none;
-            margin-bottom: 35px;
-            flex-grow: 1;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 12px 0;
-            font-size: 15px;
-            color: #475569;
-            line-height: 1.6;
-        }
-
-        .feature-icon {
-            flex-shrink: 0;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(93, 208, 240, 0.15), rgba(59, 130, 246, 0.15));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 2px;
-        }
-
-        .feature-icon svg {
-            width: 14px;
-            height: 14px;
-            stroke: #3B82F6;
-            stroke-width: 3;
-            fill: none;
         }
 
         /* Buttons Container */
@@ -323,6 +291,199 @@
             vertical-align: middle;
         }
 
+        /* Modal Overlay */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 9998;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Modal Container */
+        .modal-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 600px;
+            width: 90%;
+            max-height: 85vh;
+            background: white;
+            border-radius: 28px;
+            z-index: 9999;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .modal-container.active {
+            display: block;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -48%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        /* Modal Header */
+        .modal-header {
+            position: relative;
+            background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+            padding: 35px 40px;
+            color: white;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .modal-close svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+            stroke-width: 2.5;
+        }
+
+        .modal-plan-name {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .modal-plan-price {
+            font-size: 18px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        /* Modal Body */
+        .modal-body {
+            padding: 40px;
+            max-height: calc(85vh - 150px);
+            overflow-y: auto;
+        }
+
+        /* Custom Scrollbar */
+        .modal-body::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .modal-body::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #5DD0F0, #3B82F6);
+            border-radius: 10px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #3B82F6, #2563EB);
+        }
+
+        /* Features Title */
+        .features-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(135deg, #5DD0F0, #3B82F6);
+            border-radius: 10px;
+        }
+
+        /* Features List */
+        .modal-features-list {
+            list-style: none;
+        }
+
+        .modal-feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 0;
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.7;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .modal-feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .modal-feature-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(93, 208, 240, 0.15), rgba(59, 130, 246, 0.15));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .modal-feature-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: #3B82F6;
+            stroke-width: 3;
+            fill: none;
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .pricing-grid {
@@ -355,6 +516,7 @@
 
             .pricing-card {
                 padding: 40px 32px;
+                min-height: 440px;
             }
 
             .price {
@@ -363,6 +525,18 @@
 
             .plan-name {
                 font-size: 24px;
+            }
+
+            .modal-container {
+                width: 95%;
+            }
+
+            .modal-header {
+                padding: 30px 35px;
+            }
+
+            .modal-body {
+                padding: 30px;
             }
         }
 
@@ -394,6 +568,18 @@
             .btn-primary, .btn-secondary {
                 padding: 14px 20px;
                 font-size: 15px;
+            }
+
+            .modal-header {
+                padding: 25px 30px;
+            }
+
+            .modal-body {
+                padding: 25px;
+            }
+
+            .modal-plan-name {
+                font-size: 24px;
             }
         }
     </style>
@@ -429,47 +615,12 @@
                     <p class="price-period">مجاناً للجميع</p>
                 </div>
 
-                <ul class="features-list">
-                    <li class="feature-item">
-                        <span class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </span>
-                        <span>الوصول للموارد الأساسية</span>
-                    </li>
-                    <li class="feature-item">
-                        <span class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </span>
-                        <span>المشاركة في الفعاليات العامة</span>
-                    </li>
-                    <li class="feature-item">
-                        <span class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </span>
-                        <span>النشرة الإخبارية الشهرية</span>
-                    </li>
-                    <li class="feature-item">
-                        <span class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </span>
-                        <span>الدعم عبر البريد الإلكتروني</span>
-                    </li>
-                </ul>
-
                 <div class="buttons-container">
                     <button class="btn-primary">
                         <span class="btn-icon">✓</span>
                         اشترك الآن
                     </button>
-                    <button class="btn-secondary">
+                    <button class="btn-secondary" onclick="openModal('free')">
                         <span class="btn-icon">📋</span>
                         عرض المميزات الكاملة
                     </button>
@@ -493,55 +644,12 @@
                     <p class="price-period">/ سنوياً</p>
                 </div>
 
-                <ul class="features-list">
-                    <li class="feature-item">
-                        <span class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </span>
-                        <span>جميع مميزات العضوية المنتسبة</span>
-                    </li>
-                    <li class="feature-item">
-                        <span class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </span>
-                        <span>الوصول للفعاليات الحصرية</span>
-                    </li>
-                    <li class="feature-item">
-                        <span class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </span>
-                        <span>دعم فني ذو أولوية</span>
-                    </li>
-                    <li class="feature-item">
-                        <span class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </span>
-                        <span>شهادة عضوية معتمدة</span>
-                    </li>
-                    <li class="feature-item">
-                        <span class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </span>
-                        <span>خصومات على ورش العمل</span>
-                    </li>
-                </ul>
-
                 <div class="buttons-container">
                     <button class="btn-primary">
                         <span class="btn-icon">✓</span>
                         اشترك الآن
                     </button>
-                    <button class="btn-secondary">
+                    <button class="btn-secondary" onclick="openModal('premium')">
                         <span class="btn-icon">📋</span>
                         عرض المميزات الكاملة
                     </button>
@@ -563,63 +671,12 @@
                     <p class="price-period">/ سنوياً</p>
                 </div>
 
-                <ul class="features-list">
-                    <li class="feature-item">
-                        <span class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </span>
-                        <span>جميع مميزات الفئة (ب)</span>
-                    </li>
-                    <li class="feature-item">
-                        <span class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </span>
-                        <span>استشارات شخصية مجانية</span>
-                    </li>
-                    <li class="feature-item">
-                        <span class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </span>
-                        <span>حضور VIP للمؤتمرات</span>
-                    </li>
-                    <li class="feature-item">
-                        <span class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </span>
-                        <span>دعم مخصص على مدار الساعة</span>
-                    </li>
-                    <li class="feature-item">
-                        <span class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </span>
-                        <span>تقارير وتحليلات متقدمة</span>
-                    </li>
-                    <li class="feature-item">
-                        <span class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </span>
-                        <span>إبراز الشعار في المنصة</span>
-                    </li>
-                </ul>
-
                 <div class="buttons-container">
                     <button class="btn-primary">
                         <span class="btn-icon">✓</span>
                         اشترك الآن
                     </button>
-                    <button class="btn-secondary">
+                    <button class="btn-secondary" onclick="openModal('enterprise')">
                         <span class="btn-icon">📋</span>
                         عرض المميزات الكاملة
                     </button>
@@ -627,5 +684,132 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+
+    <!-- Modal Container -->
+    <div class="modal-container" id="modalContainer">
+        <div class="modal-header">
+            <button class="modal-close" onclick="closeModal()">
+                <svg viewBox="0 0 24 24">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h3 class="modal-plan-name" id="modalPlanName">عضوية منتسبة</h3>
+            <p class="modal-plan-price" id="modalPlanPrice">مجاناً للجميع</p>
+        </div>
+
+        <div class="modal-body">
+            <h4 class="features-title">المميزات الكاملة</h4>
+            <ul class="modal-features-list" id="modalFeaturesList">
+                <!-- Features will be dynamically inserted here -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Features data for each plan
+        const plansData = {
+            free: {
+                name: 'عضوية منتسبة',
+                price: 'مجاناً للجميع',
+                features: [
+                    'الوصول للموارد الأساسية',
+                    'المشاركة في الفعاليات العامة',
+                    'النشرة الإخبارية الشهرية',
+                    'الدعم عبر البريد الإلكتروني',
+                    'الوصول إلى المكتبة الرقمية',
+                    'حضور الندوات العامة',
+                    'التواصل مع الأعضاء الآخرين'
+                ]
+            },
+            premium: {
+                name: 'عضوية كاملة فئة (ب)',
+                price: '5,000 ريال / سنوياً',
+                features: [
+                    'جميع مميزات العضوية المنتسبة',
+                    'الوصول للفعاليات الحصرية',
+                    'دعم فني ذو أولوية',
+                    'شهادة عضوية معتمدة',
+                    'خصومات 25% على ورش العمل',
+                    'الوصول الكامل للمكتبة الرقمية المتقدمة',
+                    'المشاركة في اللجان التخصصية',
+                    'استشارات مجانية محدودة',
+                    'حضور المؤتمرات السنوية',
+                    'إمكانية الترشح للمجالس الفرعية'
+                ]
+            },
+            enterprise: {
+                name: 'عضوية كاملة فئة (أ)',
+                price: '10,000 ريال / سنوياً',
+                features: [
+                    'جميع مميزات الفئة (ب)',
+                    'استشارات شخصية مجانية غير محدودة',
+                    'حضور VIP للمؤتمرات والفعاليات',
+                    'دعم مخصص على مدار الساعة',
+                    'تقارير وتحليلات متقدمة',
+                    'إبراز الشعار في المنصة والفعاليات',
+                    'أولوية في التسجيل بالبرامج',
+                    'الوصول المبكر للخدمات الجديدة',
+                    'ممثل حساب مخصص',
+                    'جلسات تدريبية خاصة',
+                    'شراكات استراتيجية مميزة',
+                    'حقوق التصويت الكاملة في الجمعية العمومية'
+                ]
+            }
+        };
+
+        function openModal(planType) {
+            const plan = plansData[planType];
+            const modal = document.getElementById('modalContainer');
+            const overlay = document.getElementById('modalOverlay');
+            const planName = document.getElementById('modalPlanName');
+            const planPrice = document.getElementById('modalPlanPrice');
+            const featuresList = document.getElementById('modalFeaturesList');
+
+            // Set plan details
+            planName.textContent = plan.name;
+            planPrice.textContent = plan.price;
+
+            // Clear and populate features
+            featuresList.innerHTML = '';
+            plan.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.className = 'modal-feature-item';
+                li.innerHTML = `
+                    <span class="modal-feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </span>
+                    <span>${feature}</span>
+                `;
+                featuresList.appendChild(li);
+            });
+
+            // Show modal
+            modal.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modalContainer');
+            const overlay = document.getElementById('modalOverlay');
+            
+            modal.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
