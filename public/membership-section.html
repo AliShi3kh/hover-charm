@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العضويات</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #f8fafc 0%, #f1f5f9 100%);
+            min-height: 100vh;
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 75px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-subtitle {
+            color: #64748b;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 52px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 35px;
+            letter-spacing: -1px;
+        }
+
+        .title-decoration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .decoration-line {
+            height: 2px;
+            width: 100px;
+            background: linear-gradient(to left, transparent, #e2e8f0);
+        }
+
+        .decoration-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 10px 30px rgba(93, 208, 240, 0.25),
+                0 0 0 8px rgba(93, 208, 240, 0.1);
+        }
+
+        .decoration-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        /* Pricing Cards Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 35px;
+            align-items: stretch;
+        }
+
+        /* Pricing Card */
+        .pricing-card {
+            position: relative;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 45px 40px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 4px 20px rgba(0, 0, 0, 0.05),
+                0 1px 3px rgba(0, 0, 0, 0.03);
+            border: 2px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 20px 60px rgba(93, 208, 240, 0.15),
+                0 8px 20px rgba(0, 0, 0, 0.08);
+            border-color: rgba(93, 208, 240, 0.4);
+        }
+
+        /* Featured Card */
+        .pricing-card.featured {
+            border: 2px solid #5DD0F0;
+            box-shadow: 
+                0 8px 30px rgba(93, 208, 240, 0.2),
+                0 2px 8px rgba(0, 0, 0, 0.05);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 
+                0 25px 70px rgba(93, 208, 240, 0.25),
+                0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Best Value Badge */
+        .best-value-badge {
+            position: absolute;
+            top: -16px;
+            right: 50%;
+            transform: translateX(50%);
+            background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+            color: white;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(93, 208, 240, 0.4);
+            letter-spacing: 0.5px;
+        }
+
+        /* Card Header */
+        .card-header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f1f5f9;
+            margin-bottom: 30px;
+        }
+
+        .plan-name {
+            font-size: 26px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .plan-description {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Price Section */
+        .price-section {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .price {
+            font-size: 56px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 8px;
+            letter-spacing: -2px;
+        }
+
+        .price-currency {
+            font-size: 24px;
+            margin-left: 5px;
+        }
+
+        .price-period {
+            font-size: 16px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .free-badge {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Features List */
+        .features-list {
+            list-style: none;
+            margin-bottom: 35px;
+            flex-grow: 1;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(93, 208, 240, 0.15), rgba(59, 130, 246, 0.15));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .feature-icon svg {
+            width: 14px;
+            height: 14px;
+            stroke: #3B82F6;
+            stroke-width: 3;
+            fill: none;
+        }
+
+        /* Buttons Container */
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: auto;
+        }
+
+        /* Primary Button (Subscribe) */
+        .btn-primary {
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(93, 208, 240, 0.3);
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(93, 208, 240, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        /* Secondary Button (View Features) */
+        .btn-secondary {
+            width: 100%;
+            padding: 16px 24px;
+            background: white;
+            color: #3B82F6;
+            border: 2px solid #e2e8f0;
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-secondary:hover {
+            background: #f8fafc;
+            border-color: #5DD0F0;
+            color: #2563EB;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(93, 208, 240, 0.1);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(0);
+        }
+
+        /* Icon in buttons */
+        .btn-icon {
+            display: inline-block;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-10px) scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 40px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .pricing-card {
+                padding: 40px 32px;
+            }
+
+            .price {
+                font-size: 48px;
+            }
+
+            .plan-name {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 50px 16px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .pricing-card {
+                padding: 35px 28px;
+            }
+
+            .price {
+                font-size: 42px;
+            }
+
+            .price-currency {
+                font-size: 20px;
+            }
+
+            .plan-name {
+                font-size: 22px;
+            }
+
+            .btn-primary, .btn-secondary {
+                padding: 14px 20px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <p class="section-subtitle">العضويات</p>
+            <h2 class="section-title">العضويات</h2>
+            <div class="title-decoration">
+                <div class="decoration-line"></div>
+                <div class="decoration-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </div>
+                <div class="decoration-line"></div>
+            </div>
+        </div>
+
+        <!-- Pricing Cards Grid -->
+        <div class="pricing-grid">
+            <!-- Card 1: عضوية منتسبة (Free) -->
+            <div class="pricing-card">
+                <div class="card-header">
+                    <h3 class="plan-name">عضوية منتسبة</h3>
+                    <p class="plan-description">مثالية للأفراد والبدايات</p>
+                </div>
+
+                <div class="price-section">
+                    <div class="price free-badge">Free</div>
+                    <p class="price-period">مجاناً للجميع</p>
+                </div>
+
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>الوصول للموارد الأساسية</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>المشاركة في الفعاليات العامة</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>النشرة الإخبارية الشهرية</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>الدعم عبر البريد الإلكتروني</span>
+                    </li>
+                </ul>
+
+                <div class="buttons-container">
+                    <button class="btn-primary">
+                        <span class="btn-icon">✓</span>
+                        اشترك الآن
+                    </button>
+                    <button class="btn-secondary">
+                        <span class="btn-icon">📋</span>
+                        عرض المميزات الكاملة
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: عضوية كاملة فئة (ب) - Featured -->
+            <div class="pricing-card featured">
+                <div class="best-value-badge">أفضل قيمة</div>
+                
+                <div class="card-header">
+                    <h3 class="plan-name">عضوية كاملة فئة (ب)</h3>
+                    <p class="plan-description">للشركات الكبيرة والمتطلبات المتقدمة</p>
+                </div>
+
+                <div class="price-section">
+                    <div class="price">
+                        <span class="price-currency">ر.س</span>
+                        5,000
+                    </div>
+                    <p class="price-period">/ سنوياً</p>
+                </div>
+
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>جميع مميزات العضوية المنتسبة</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>الوصول للفعاليات الحصرية</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>دعم فني ذو أولوية</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>شهادة عضوية معتمدة</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>خصومات على ورش العمل</span>
+                    </li>
+                </ul>
+
+                <div class="buttons-container">
+                    <button class="btn-primary">
+                        <span class="btn-icon">✓</span>
+                        اشترك الآن
+                    </button>
+                    <button class="btn-secondary">
+                        <span class="btn-icon">📋</span>
+                        عرض المميزات الكاملة
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3: عضوية كاملة فئة (أ) -->
+            <div class="pricing-card">
+                <div class="card-header">
+                    <h3 class="plan-name">عضوية كاملة فئة (أ)</h3>
+                    <p class="plan-description">مثالية للفرق الصغيرة والمتوسطة</p>
+                </div>
+
+                <div class="price-section">
+                    <div class="price">
+                        <span class="price-currency">ر.س</span>
+                        10,000
+                    </div>
+                    <p class="price-period">/ سنوياً</p>
+                </div>
+
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>جميع مميزات الفئة (ب)</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>استشارات شخصية مجانية</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>حضور VIP للمؤتمرات</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>دعم مخصص على مدار الساعة</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>تقارير وتحليلات متقدمة</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>إبراز الشعار في المنصة</span>
+                    </li>
+                </ul>
+
+                <div class="buttons-container">
+                    <button class="btn-primary">
+                        <span class="btn-icon">✓</span>
+                        اشترك الآن
+                    </button>
+                    <button class="btn-secondary">
+                        <span class="btn-icon">📋</span>
+                        عرض المميزات الكاملة
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
