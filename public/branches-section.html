@@ -126,215 +126,175 @@
             box-shadow: 0 4px 15px rgba(93, 208, 240, 0.3);
         }
 
-        /* Branch Card - Horizontal Layout */
+        /* Branch Card - Modern Horizontal Layout */
         .branch-card {
             background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: none;
-            box-shadow: 0 10px 40px rgba(93, 208, 240, 0.15);
+            border-radius: 16px;
+            overflow: visible;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e8f4f8;
+            box-shadow: 0 2px 12px rgba(93, 208, 240, 0.08);
             position: relative;
             height: 100%;
             display: flex;
-            flex-direction: row-reverse;
-        }
-
-        .branch-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #5DD0F0 0%, #3B82F6 100%);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.4s ease;
-        }
-
-        .branch-card:hover::before {
-            transform: scaleX(1);
+            flex-direction: column;
         }
 
         .branch-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 60px rgba(93, 208, 240, 0.25);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 32px rgba(93, 208, 240, 0.2);
+            border-color: #5DD0F0;
         }
 
-        /* Card Header with Logo - Horizontal */
+        /* Card Header with Logo - Clean Design */
         .card-header-custom {
-            background: linear-gradient(135deg, rgba(93, 208, 240, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
-            padding: 30px;
+            padding: 35px 25px 25px;
             text-align: center;
             border: none;
             position: relative;
-            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 180px;
-            flex-shrink: 0;
-        }
-
-        .card-header-custom::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(93, 208, 240, 0.1) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.1);
-                opacity: 0.8;
-            }
+            background: transparent;
         }
 
         .branch-logo {
-            width: 120px;
-            height: 120px;
+            width: 90px;
+            height: 90px;
             margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 15px;
-            box-shadow: 0 8px 30px rgba(93, 208, 240, 0.2);
+            background: linear-gradient(135deg, rgba(93, 208, 240, 0.08) 0%, rgba(59, 130, 246, 0.08) 100%);
+            border-radius: 16px;
+            padding: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
             position: relative;
-            z-index: 1;
+            border: 2px solid rgba(93, 208, 240, 0.1);
         }
 
         .branch-card:hover .branch-logo {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 12px 40px rgba(93, 208, 240, 0.3);
+            transform: scale(1.05);
+            background: linear-gradient(135deg, rgba(93, 208, 240, 0.12) 0%, rgba(59, 130, 246, 0.12) 100%);
+            border-color: rgba(93, 208, 240, 0.3);
         }
 
         .branch-logo img {
-            width: 100%;
-            height: 100%;
+            width: 70%;
+            height: 70%;
             object-fit: contain;
         }
 
         .branch-logo i {
-            font-size: 60px;
+            font-size: 48px;
             background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        /* Card Body - Horizontal */
+        /* Card Body - Clean Layout */
         .card-body-custom {
-            padding: 30px;
+            padding: 0 25px 25px;
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
         }
 
         .branch-name {
-            font-size: 20px;
-            font-weight: 800;
+            font-size: 18px;
+            font-weight: 700;
             color: #1e293b;
-            margin-bottom: 15px;
-            text-align: right;
+            margin-bottom: 12px;
+            text-align: center;
+            line-height: 1.4;
         }
 
         .branch-location {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            gap: 10px;
+            justify-content: center;
+            gap: 8px;
             color: #64748b;
-            font-size: 15px;
+            font-size: 14px;
             margin-bottom: 20px;
-            padding: 10px 15px;
-            background: rgba(93, 208, 240, 0.05);
-            border-radius: 12px;
+            padding: 0;
+            background: transparent;
         }
 
         .branch-location i {
             color: #5DD0F0;
-            font-size: 18px;
+            font-size: 14px;
         }
 
         .location-text {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             gap: 2px;
         }
 
         .region {
             font-weight: 600;
             color: #1e293b;
+            font-size: 14px;
         }
 
         .city {
-            font-size: 13px;
+            font-size: 12px;
             color: #94a3b8;
         }
 
-        /* Action Buttons */
+        /* Action Buttons - Modern Style */
         .action-buttons {
             display: flex;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 8px;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid #f1f5f9;
         }
 
         .btn-custom {
             flex: 1;
-            padding: 12px 18px;
-            border-radius: 12px;
+            padding: 10px 16px;
+            border-radius: 10px;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             border: none;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
             text-decoration: none;
         }
 
         .btn-map {
             background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
             color: white;
-            box-shadow: 0 4px 15px rgba(93, 208, 240, 0.3);
+            box-shadow: 0 2px 8px rgba(93, 208, 240, 0.25);
         }
 
         .btn-map:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(93, 208, 240, 0.4);
+            box-shadow: 0 4px 12px rgba(93, 208, 240, 0.35);
             color: white;
         }
 
         .btn-details {
-            background: white;
-            color: #3B82F6;
-            border: 2px solid #e2e8f0;
+            background: #f8fafc;
+            color: #475569;
+            border: 1px solid #e2e8f0;
         }
 
         .btn-details:hover {
-            background: rgba(93, 208, 240, 0.1);
+            background: rgba(93, 208, 240, 0.08);
             border-color: #5DD0F0;
-            transform: translateY(-2px);
             color: #3B82F6;
         }
 
         .btn-custom i {
-            font-size: 16px;
+            font-size: 14px;
         }
 
         /* Hidden class for filtering */
@@ -343,40 +303,22 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 992px) {
-            .branch-card {
-                flex-direction: column;
-            }
-
-            .card-header-custom {
-                min-width: auto;
-                padding: 30px 20px;
-            }
-
-            .branch-name {
-                text-align: center;
-            }
-
-            .branch-location {
-                justify-content: center;
-            }
-
-            .location-text {
-                align-items: center;
-            }
-        }
-
         @media (max-width: 768px) {
             .section-title {
                 font-size: 36px;
             }
 
             .branch-name {
-                font-size: 18px;
+                font-size: 16px;
             }
 
-            .action-buttons {
-                flex-direction: column;
+            .branch-logo {
+                width: 75px;
+                height: 75px;
+            }
+
+            .card-body-custom {
+                padding: 0 20px 20px;
             }
 
             .filter-buttons {
@@ -386,6 +328,11 @@
             .filter-btn {
                 padding: 10px 20px;
                 font-size: 14px;
+            }
+
+            .btn-custom {
+                font-size: 12px;
+                padding: 9px 12px;
             }
         }
 
