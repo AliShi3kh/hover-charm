@@ -161,14 +161,14 @@
         }
 
         .branch-logo {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             background: white;
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 25px;
+            padding: 8px;
             transition: all 0.3s ease;
             border: 3px solid rgba(93, 208, 240, 0.2);
             box-shadow: 0 8px 25px rgba(93, 208, 240, 0.15);
@@ -242,6 +242,82 @@
             color: #64748b;
         }
 
+        /* Contact Information */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #64748b;
+            font-size: 14px;
+            padding: 10px;
+            background: #f8fafc;
+            border-radius: 10px;
+            direction: ltr;
+            text-align: right;
+        }
+
+        .contact-item i {
+            color: #5DD0F0;
+            font-size: 16px;
+            margin-left: auto;
+        }
+
+        .contact-item span {
+            direction: rtl;
+        }
+
+        /* Filter Dropdowns */
+        .filter-dropdowns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 200px;
+        }
+
+        .filter-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #475569;
+            text-align: right;
+        }
+
+        .filter-select {
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            border: 2px solid #e2e8f0;
+            background: white;
+            color: #64748b;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: #5DD0F0;
+            box-shadow: 0 0 0 3px rgba(93, 208, 240, 0.1);
+        }
+
+        .filter-select:hover {
+            border-color: #5DD0F0;
+        }
+
         /* Action Buttons - Professional Style */
         .action-buttons {
             display: flex;
@@ -300,8 +376,8 @@
         /* Responsive Design */
         @media (max-width: 992px) {
             .branch-logo {
-                width: 100px;
-                height: 100px;
+                width: 110px;
+                height: 110px;
             }
 
             .card-header-custom {
@@ -315,6 +391,15 @@
             .branch-name {
                 font-size: 20px;
             }
+
+            .filter-dropdowns {
+                flex-direction: column;
+            }
+
+            .filter-group {
+                width: 100%;
+                min-width: auto;
+            }
         }
 
         @media (max-width: 768px) {
@@ -323,25 +408,16 @@
             }
 
             .branch-card {
-                padding: 20px;
+                padding: 0;
             }
 
             .branch-name {
-                font-size: 20px;
+                font-size: 18px;
             }
 
             .branch-logo {
-                width: 90px;
-                height: 90px;
-            }
-
-            .filter-buttons {
-                gap: 8px;
-            }
-
-            .filter-btn {
-                padding: 10px 20px;
-                font-size: 14px;
+                width: 100px;
+                height: 100px;
             }
 
             .btn-custom {
@@ -352,6 +428,10 @@
             .action-buttons {
                 flex-direction: column;
                 gap: 10px;
+            }
+
+            .contact-item {
+                font-size: 13px;
             }
         }
 
@@ -414,29 +494,33 @@
 
         <!-- Filter Section -->
         <div class="filter-section">
-            <div class="filter-buttons">
-                <button class="filter-btn active" onclick="filterBranches('all')">
-                    <i class="fas fa-globe"></i> جميع الفروع
-                </button>
-                <button class="filter-btn" onclick="filterBranches('riyadh')">
-                    <i class="fas fa-map-marker-alt"></i> منطقة الرياض
-                </button>
-                <button class="filter-btn" onclick="filterBranches('makkah')">
-                    <i class="fas fa-kaaba"></i> منطقة مكة المكرمة
-                </button>
-                <button class="filter-btn" onclick="filterBranches('jazan')">
-                    <i class="fas fa-mountain"></i> منطقة جازان
-                </button>
-                <button class="filter-btn" onclick="filterBranches('hail')">
-                    <i class="fas fa-city"></i> منطقة حائل
-                </button>
+            <div class="filter-dropdowns">
+                <div class="filter-group">
+                    <label class="filter-label">فلترة حسب المنطقة</label>
+                    <select class="filter-select" id="regionFilter" onchange="filterBranches()">
+                        <option value="all">جميع المناطق</option>
+                        <option value="riyadh">منطقة الرياض</option>
+                        <option value="makkah">منطقة مكة المكرمة</option>
+                        <option value="jazan">منطقة جازان</option>
+                        <option value="hail">منطقة حائل</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label class="filter-label">فلترة حسب نوع الفرع</label>
+                    <select class="filter-select" id="typeFilter" onchange="filterBranches()">
+                        <option value="all">جميع الأنواع</option>
+                        <option value="regional">فروع مناطقية</option>
+                        <option value="specialized">فروع تخصصية</option>
+                    </select>
+                </div>
             </div>
         </div>
 
         <!-- Branches Grid -->
         <div class="row g-4" id="branchesContainer">
             <!-- Branch 1: مجلس الجمعيات الأهلية بمكة -->
-            <div class="col-lg-4 col-md-6 col-12" data-region="makkah">
+            <div class="col-lg-4 col-md-6 col-12" data-region="makkah" data-type="regional">
                 <div class="card branch-card">
                     <div class="card-header-custom">
                         <div class="branch-logo">
@@ -451,6 +535,17 @@
                             <div class="location-text">
                                 <span class="region">منطقة مكة المكرمة</span>
                                 <span class="city">مدينة مكة</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>makkah@council.sa</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+966 12 123 4567</span>
                             </div>
                         </div>
 
@@ -469,7 +564,7 @@
             </div>
 
             <!-- Branch 2: المركز الرئيسي -->
-            <div class="col-lg-4 col-md-6 col-12" data-region="riyadh">
+            <div class="col-lg-4 col-md-6 col-12" data-region="riyadh" data-type="specialized">
                 <div class="card branch-card">
                     <div class="card-header-custom">
                         <div class="branch-logo">
@@ -484,6 +579,17 @@
                             <div class="location-text">
                                 <span class="region">منطقة الرياض</span>
                                 <span class="city">مدينة الرياض</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@council.sa</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+966 11 456 7890</span>
                             </div>
                         </div>
 
@@ -502,7 +608,7 @@
             </div>
 
             <!-- Branch 3: مجلس الجمعيات الأهلية - بجازان -->
-            <div class="col-lg-4 col-md-6 col-12" data-region="jazan">
+            <div class="col-lg-4 col-md-6 col-12" data-region="jazan" data-type="regional">
                 <div class="card branch-card">
                     <div class="card-header-custom">
                         <div class="branch-logo">
@@ -517,6 +623,17 @@
                             <div class="location-text">
                                 <span class="region">منطقة جازان</span>
                                 <span class="city">مدينة جازان</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>jazan@council.sa</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+966 17 234 5678</span>
                             </div>
                         </div>
 
@@ -535,7 +652,7 @@
             </div>
 
             <!-- Branch 4: مجلس الجمعيات في حائل -->
-            <div class="col-lg-4 col-md-6 col-12" data-region="hail">
+            <div class="col-lg-4 col-md-6 col-12" data-region="hail" data-type="specialized">
                 <div class="card branch-card">
                     <div class="card-header-custom">
                         <div class="branch-logo">
@@ -550,6 +667,17 @@
                             <div class="location-text">
                                 <span class="region">منطقة حائل</span>
                                 <span class="city">مدينة حائل</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>hail@council.sa</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+966 16 345 6789</span>
                             </div>
                         </div>
 
@@ -568,7 +696,7 @@
             </div>
 
             <!-- Branch 5: فرع إضافي بالرياض -->
-            <div class="col-lg-4 col-md-6 col-12" data-region="riyadh">
+            <div class="col-lg-4 col-md-6 col-12" data-region="riyadh" data-type="regional">
                 <div class="card branch-card">
                     <div class="card-header-custom">
                         <div class="branch-logo">
@@ -583,6 +711,17 @@
                             <div class="location-text">
                                 <span class="region">منطقة الرياض</span>
                                 <span class="city">مدينة الرياض</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>north@council.sa</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+966 11 567 8901</span>
                             </div>
                         </div>
 
@@ -601,7 +740,7 @@
             </div>
 
             <!-- Branch 6: فرع إضافي بمكة -->
-            <div class="col-lg-4 col-md-6 col-12" data-region="makkah">
+            <div class="col-lg-4 col-md-6 col-12" data-region="makkah" data-type="specialized">
                 <div class="card branch-card">
                     <div class="card-header-custom">
                         <div class="branch-logo">
@@ -616,6 +755,17 @@
                             <div class="location-text">
                                 <span class="region">منطقة مكة المكرمة</span>
                                 <span class="city">مدينة مكة</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>east@council.sa</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+966 12 678 9012</span>
                             </div>
                         </div>
 
@@ -640,20 +790,23 @@
     
     <!-- Filter Script -->
     <script>
-        function filterBranches(region) {
+        function filterBranches() {
+            // Get filter values
+            const regionFilter = document.getElementById('regionFilter').value;
+            const typeFilter = document.getElementById('typeFilter').value;
+            
             // Get all branch cards
             const branches = document.querySelectorAll('[data-region]');
-            const filterButtons = document.querySelectorAll('.filter-btn');
             
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            // Filter branches
+            // Filter branches based on both criteria
             branches.forEach(branch => {
                 const branchRegion = branch.getAttribute('data-region');
+                const branchType = branch.getAttribute('data-type');
                 
-                if (region === 'all' || branchRegion === region) {
+                const matchesRegion = regionFilter === 'all' || branchRegion === regionFilter;
+                const matchesType = typeFilter === 'all' || branchType === typeFilter;
+                
+                if (matchesRegion && matchesType) {
                     branch.classList.remove('hidden');
                 } else {
                     branch.classList.add('hidden');
