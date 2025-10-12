@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الفرع - مجلس الجمعيات الأهلية</title>
+    
+    <!-- Bootstrap 5 RTL -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Leaflet CSS for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #f8f9fa;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+            min-height: 400px;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0 60px;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(93, 208, 240, 0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,122.7C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: bottom;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-logo {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border: 4px solid rgba(93, 208, 240, 0.3);
+        }
+
+        .hero-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .hero-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: white;
+            text-align: center;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            z-index: 10;
+        }
+
+        .btn-back {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .btn-back:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(5px);
+            color: white;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: white;
+            margin-top: -40px;
+            position: relative;
+            z-index: 3;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(93, 208, 240, 0.15);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 25px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #f8fbfd 0%, #f0f9fb 100%);
+            border: 2px solid #e8f4f8;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(93, 208, 240, 0.2);
+            border-color: #5DD0F0;
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            box-shadow: 0 8px 20px rgba(93, 208, 240, 0.3);
+        }
+
+        .stat-icon i {
+            font-size: 28px;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        /* Section Styles */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 38px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        /* News Card */
+        .news-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #e8f4f8;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(93, 208, 240, 0.2);
+            border-color: #5DD0F0;
+        }
+
+        .news-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 25px;
+        }
+
+        .news-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #5DD0F0;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .news-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .news-excerpt {
+            font-size: 15px;
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .news-link {
+            color: #5DD0F0;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .news-link:hover {
+            gap: 12px;
+            color: #3B82F6;
+        }
+
+        /* Event Card */
+        .event-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            border: 2px solid #e8f4f8;
+            transition: all 0.3s ease;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(93, 208, 240, 0.2);
+            border-color: #5DD0F0;
+        }
+
+        .event-date-box {
+            min-width: 100px;
+            text-align: center;
+            background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+            border-radius: 15px;
+            padding: 20px 15px;
+            color: white;
+        }
+
+        .event-day {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .event-month {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .event-info {
+            flex: 1;
+        }
+
+        .event-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .event-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .event-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .event-meta-item i {
+            color: #5DD0F0;
+        }
+
+        /* Team Member Card */
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid #e8f4f8;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(93, 208, 240, 0.2);
+            border-color: #5DD0F0;
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 8px 25px rgba(93, 208, 240, 0.3);
+        }
+
+        .team-avatar i {
+            font-size: 50px;
+            color: white;
+        }
+
+        .team-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .team-position {
+            font-size: 15px;
+            color: #5DD0F0;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .team-bio {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        /* Project Card */
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #e8f4f8;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(93, 208, 240, 0.2);
+            border-color: #5DD0F0;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 240px;
+            background: linear-gradient(135deg, #f8fbfd 0%, #f0f9fb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-image i {
+            font-size: 80px;
+            color: #5DD0F0;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-badge {
+            display: inline-block;
+            padding: 6px 15px;
+            background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+            color: white;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .project-description {
+            font-size: 15px;
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .project-stats {
+            display: flex;
+            gap: 20px;
+        }
+
+        .project-stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .project-stat i {
+            color: #5DD0F0;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #f8fbfd 0%, #f0f9fb 100%);
+            padding: 80px 0;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px solid #e8f4f8;
+            box-shadow: 0 10px 40px rgba(93, 208, 240, 0.15);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8fbfd 0%, #f0f9fb 100%);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 2px solid #e8f4f8;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: #5DD0F0;
+            transform: translateX(-5px);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(93, 208, 240, 0.3);
+        }
+
+        .contact-icon i {
+            font-size: 24px;
+            color: white;
+        }
+
+        .contact-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+
+        .contact-info p {
+            font-size: 15px;
+            color: #64748b;
+            margin: 0;
+            direction: ltr;
+            text-align: right;
+        }
+
+        /* Map */
+        #map {
+            width: 100%;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(93, 208, 240, 0.2);
+            border: 2px solid #e8f4f8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .back-button {
+                top: 20px;
+                right: 20px;
+            }
+
+            .stats-section {
+                padding: 30px 20px;
+            }
+
+            .content-section {
+                padding: 50px 0;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .event-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .event-meta {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="back-button">
+            <a href="branches-section.html" class="btn-back">
+                <i class="fas fa-arrow-right"></i>
+                <span>العودة للفروع</span>
+            </a>
+        </div>
+        
+        <div class="container hero-content">
+            <div class="hero-logo">
+                <img src="images/branch-logo-1.svg" alt="شعار الفرع">
+            </div>
+            <h1 class="hero-title">مجلس الجمعيات الأهلية بمكة المكرمة</h1>
+            <p class="hero-subtitle">نعمل معاً لتطوير العمل الخيري والمجتمعي في المنطقة</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="container">
+        <div class="stats-section">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-number">150</div>
+                        <div class="stat-label">عدد الأعضاء</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div class="stat-number">45</div>
+                        <div class="stat-label">عدد المشاريع</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-number">28</div>
+                        <div class="stat-label">الفعاليات السنوية</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">الجوائز المحققة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- News Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">أخبار الفرع</h2>
+                <p class="section-subtitle">آخر الأخبار والمستجدات</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="خبر 1" class="news-image">
+                        <div class="news-content">
+                            <div class="news-date">
+                                <i class="far fa-calendar"></i>
+                                <span>15 أكتوبر 2025</span>
+                            </div>
+                            <h3 class="news-title">إطلاق مبادرة جديدة لدعم المشاريع الصغيرة</h3>
+                            <p class="news-excerpt">أعلن الفرع عن إطلاق مبادرة جديدة تهدف إلى دعم رواد الأعمال وأصحاب المشاريع الصغيرة في المنطقة...</p>
+                            <a href="#" class="news-link">
+                                <span>اقرأ المزيد</span>
+                                <i class="fas fa-arrow-left"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80" alt="خبر 2" class="news-image">
+                        <div class="news-content">
+                            <div class="news-date">
+                                <i class="far fa-calendar"></i>
+                                <span>10 أكتوبر 2025</span>
+                            </div>
+                            <h3 class="news-title">توقيع اتفاقية تعاون مع جامعة أم القرى</h3>
+                            <p class="news-excerpt">تم توقيع اتفاقية تعاون استراتيجية مع جامعة أم القرى لتطوير البرامج التدريبية والتأهيلية...</p>
+                            <a href="#" class="news-link">
+                                <span>اقرأ المزيد</span>
+                                <i class="fas fa-arrow-left"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&q=80" alt="خبر 3" class="news-image">
+                        <div class="news-content">
+                            <div class="news-date">
+                                <i class="far fa-calendar"></i>
+                                <span>5 أكتوبر 2025</span>
+                            </div>
+                            <h3 class="news-title">نجاح الملتقى السنوي للجمعيات الأهلية</h3>
+                            <p class="news-excerpt">اختتم الفرع فعاليات الملتقى السنوي للجمعيات الأهلية بمشاركة أكثر من 200 مشارك من مختلف القطاعات...</p>
+                            <a href="#" class="news-link">
+                                <span>اقرأ المزيد</span>
+                                <i class="fas fa-arrow-left"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="content-section" style="background: linear-gradient(135deg, #f8fbfd 0%, #f0f9fb 100%);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">الأنشطة والفعاليات</h2>
+                <p class="section-subtitle">الفعاليات القادمة والأنشطة المستمرة</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="event-card">
+                        <div class="event-date-box">
+                            <div class="event-day">25</div>
+                            <div class="event-month">نوفمبر</div>
+                        </div>
+                        <div class="event-info">
+                            <h3 class="event-title">ورشة عمل: إدارة المشاريع الخيرية</h3>
+                            <div class="event-meta">
+                                <div class="event-meta-item">
+                                    <i class="far fa-clock"></i>
+                                    <span>4:00 - 7:00 مساءً</span>
+                                </div>
+                                <div class="event-meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>مقر الفرع الرئيسي</span>
+                                </div>
+                                <div class="event-meta-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>50 مقعد متاح</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12">
+                    <div class="event-card">
+                        <div class="event-date-box">
+                            <div class="event-day">30</div>
+                            <div class="event-month">نوفمبر</div>
+                        </div>
+                        <div class="event-info">
+                            <h3 class="event-title">اللقاء التعريفي لأعضاء الجمعيات الجدد</h3>
+                            <div class="event-meta">
+                                <div class="event-meta-item">
+                                    <i class="far fa-clock"></i>
+                                    <span>6:00 - 8:00 مساءً</span>
+                                </div>
+                                <div class="event-meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>قاعة الملتقيات</span>
+                                </div>
+                                <div class="event-meta-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>100 مقعد متاح</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12">
+                    <div class="event-card">
+                        <div class="event-date-box">
+                            <div class="event-day">10</div>
+                            <div class="event-month">ديسمبر</div>
+                        </div>
+                        <div class="event-info">
+                            <h3 class="event-title">مؤتمر التطوع والعمل الخيري 2025</h3>
+                            <div class="event-meta">
+                                <div class="event-meta-item">
+                                    <i class="far fa-clock"></i>
+                                    <span>9:00 صباحاً - 5:00 مساءً</span>
+                                </div>
+                                <div class="event-meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>مركز المؤتمرات</span>
+                                </div>
+                                <div class="event-meta-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>500 مقعد متاح</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">الموظفين وأعضاء مجلس الإدارة</h2>
+                <p class="section-subtitle">الكوادر البشرية والإدارية للفرع</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="team-name">د. محمد العمري</h3>
+                        <p class="team-position">مدير الفرع</p>
+                        <p class="team-bio">خبرة تزيد عن 15 عاماً في إدارة المنظمات غير الربحية</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="team-name">أ. فاطمة الزهراني</h3>
+                        <p class="team-position">رئيسة مجلس الإدارة</p>
+                        <p class="team-bio">متخصصة في التنمية المجتمعية والعمل التطوعي</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="team-name">م. عبدالله الحربي</h3>
+                        <p class="team-position">مدير المشاريع</p>
+                        <p class="team-bio">مهندس متخصص في إدارة وتنفيذ المشاريع الخيرية</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="team-name">أ. سارة القحطاني</h3>
+                        <p class="team-position">مديرة العلاقات العامة</p>
+                        <p class="team-bio">خبيرة في التواصل المؤسسي وبناء الشراكات</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="content-section" style="background: linear-gradient(135deg, #f8fbfd 0%, #f0f9fb 100%);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">أبرز المشاريع</h2>
+                <p class="section-subtitle">المشاريع الرائدة التي نفذها الفرع</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-badge">جاري التنفيذ</span>
+                            <h3 class="project-title">برنامج التأهيل والتدريب المهني</h3>
+                            <p class="project-description">برنامج شامل لتدريب وتأهيل الشباب على المهارات الحديثة والمطلوبة في سوق العمل</p>
+                            <div class="project-stats">
+                                <div class="project-stat">
+                                    <i class="fas fa-users"></i>
+                                    <span>250 مستفيد</span>
+                                </div>
+                                <div class="project-stat">
+                                    <i class="far fa-calendar"></i>
+                                    <span>6 أشهر</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-badge">مكتمل</span>
+                            <h3 class="project-title">مبادرة الرعاية الصحية المجتمعية</h3>
+                            <p class="project-description">توفير خدمات طبية وعلاجية للأسر المحتاجة في المنطقة بالتعاون مع المستشفيات المحلية</p>
+                            <div class="project-stats">
+                                <div class="project-stat">
+                                    <i class="fas fa-users"></i>
+                                    <span>500 مستفيد</span>
+                                </div>
+                                <div class="project-stat">
+                                    <i class="far fa-calendar"></i>
+                                    <span>12 شهر</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-badge">قريباً</span>
+                            <h3 class="project-title">مشروع إعمار المساكن</h3>
+                            <p class="project-description">ترميم وصيانة منازل الأسر الأشد حاجة وتوفير بيئة سكنية آمنة ومريحة</p>
+                            <div class="project-stats">
+                                <div class="project-stat">
+                                    <i class="fas fa-users"></i>
+                                    <span>100 أسرة</span>
+                                </div>
+                                <div class="project-stat">
+                                    <i class="far fa-calendar"></i>
+                                    <span>8 أشهر</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">بيانات التواصل والموقع</h2>
+                <p class="section-subtitle">تواصل معنا أو قم بزيارتنا</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="contact-card">
+                        <h3 class="mb-4" style="font-size: 24px; font-weight: 700; color: #1e293b;">معلومات الاتصال</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h4>رقم الهاتف</h4>
+                                <p>+966 12 123 4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h4>البريد الإلكتروني</h4>
+                                <p>makkah@council.sa</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h4>العنوان</h4>
+                                <p>شارع الملك عبدالعزيز، حي العزيزية، مكة المكرمة</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item" style="border: none; margin-bottom: 0;">
+                            <div class="contact-icon">
+                                <i class="far fa-clock"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h4>أوقات العمل</h4>
+                                <p>الأحد - الخميس: 8:00 صباحاً - 4:00 مساءً</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Leaflet JS for Map -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Map Initialization -->
+    <script>
+        // Initialize map
+        const map = L.map('map').setView([21.4225, 39.8262], 13); // Makkah coordinates
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 19,
+        }).addTo(map);
+
+        // Custom marker icon
+        const customIcon = L.divIcon({
+            html: '<div style="background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%); width: 40px; height: 40px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(93, 208, 240, 0.5);"><i class="fas fa-building" style="color: white; font-size: 18px; transform: rotate(45deg);"></i></div>',
+            className: 'custom-marker',
+            iconSize: [40, 40],
+            iconAnchor: [20, 40],
+        });
+
+        // Add marker for branch location
+        const marker = L.marker([21.4225, 39.8262], { icon: customIcon }).addTo(map);
+        
+        // Add popup to marker
+        marker.bindPopup('<div style="text-align: center; font-family: Cairo, sans-serif;"><strong style="font-size: 16px; color: #1e293b;">مجلس الجمعيات الأهلية بمكة</strong><br><span style="font-size: 14px; color: #64748b;">حي العزيزية، مكة المكرمة</span></div>');
+    </script>
+</body>
+</html>
