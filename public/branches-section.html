@@ -126,7 +126,7 @@
             box-shadow: 0 4px 15px rgba(93, 208, 240, 0.3);
         }
 
-        /* Branch Card - Modern Horizontal Layout */
+        /* Branch Card - Horizontal Layout */
         .branch-card {
             background: white;
             border-radius: 16px;
@@ -137,7 +137,8 @@
             position: relative;
             height: 100%;
             display: flex;
-            flex-direction: column;
+            flex-direction: row-reverse;
+            min-height: 180px;
         }
 
         .branch-card:hover {
@@ -146,9 +147,9 @@
             border-color: #5DD0F0;
         }
 
-        /* Card Header with Logo - Clean Design */
+        /* Card Header with Logo - Horizontal */
         .card-header-custom {
-            padding: 35px 25px 25px;
+            padding: 25px;
             text-align: center;
             border: none;
             position: relative;
@@ -156,6 +157,8 @@
             align-items: center;
             justify-content: center;
             background: transparent;
+            min-width: 140px;
+            flex-shrink: 0;
         }
 
         .branch-logo {
@@ -193,12 +196,13 @@
             background-clip: text;
         }
 
-        /* Card Body - Clean Layout */
+        /* Card Body - Horizontal Layout */
         .card-body-custom {
-            padding: 0 25px 25px;
+            padding: 25px;
             flex: 1;
             display: flex;
             flex-direction: column;
+            justify-content: center;
         }
 
         .branch-name {
@@ -206,18 +210,18 @@
             font-weight: 700;
             color: #1e293b;
             margin-bottom: 12px;
-            text-align: center;
+            text-align: right;
             line-height: 1.4;
         }
 
         .branch-location {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 8px;
             color: #64748b;
             font-size: 14px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             padding: 0;
             background: transparent;
         }
@@ -230,7 +234,7 @@
         .location-text {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             gap: 2px;
         }
 
@@ -303,6 +307,34 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 992px) {
+            .branch-card {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .card-header-custom {
+                min-width: auto;
+                padding: 30px 25px 20px;
+            }
+
+            .card-body-custom {
+                padding: 0 25px 25px;
+            }
+
+            .branch-name {
+                text-align: center;
+            }
+
+            .branch-location {
+                justify-content: center;
+            }
+
+            .location-text {
+                align-items: center;
+            }
+        }
+
         @media (max-width: 768px) {
             .section-title {
                 font-size: 36px;
@@ -315,10 +347,6 @@
             .branch-logo {
                 width: 75px;
                 height: 75px;
-            }
-
-            .card-body-custom {
-                padding: 0 20px 20px;
             }
 
             .filter-buttons {
