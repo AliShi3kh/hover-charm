@@ -126,7 +126,7 @@
             box-shadow: 0 4px 15px rgba(93, 208, 240, 0.3);
         }
 
-        /* Branch Card - Professional Horizontal Layout */
+        /* Branch Card - Professional Vertical Layout */
         .branch-card {
             background: white;
             border-radius: 20px;
@@ -136,10 +136,9 @@
             position: relative;
             height: 100%;
             display: flex;
-            flex-direction: row-reverse;
-            min-height: 200px;
-            padding: 30px;
-            gap: 30px;
+            flex-direction: column;
+            min-height: auto;
+            padding: 0;
             box-shadow: 0 4px 20px rgba(93, 208, 240, 0.1);
         }
 
@@ -149,23 +148,22 @@
             border-color: #5DD0F0;
         }
 
-        /* Card Header with Logo - Right Side */
+        /* Card Header with Logo - Top */
         .card-header-custom {
-            padding: 0;
+            padding: 40px 30px 25px;
             text-align: center;
             border: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: transparent;
-            min-width: 140px;
-            flex-shrink: 0;
+            background: linear-gradient(135deg, #f8fbfd 0%, #f0f9fb 100%);
+            border-bottom: 2px solid #e8f4f8;
         }
 
         .branch-logo {
-            width: 130px;
-            height: 130px;
-            background: linear-gradient(135deg, #E8F8FC 0%, #F0FBFE 100%);
+            width: 120px;
+            height: 120px;
+            background: white;
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -173,7 +171,7 @@
             padding: 25px;
             transition: all 0.3s ease;
             border: 3px solid rgba(93, 208, 240, 0.2);
-            box-shadow: 0 6px 20px rgba(93, 208, 240, 0.15);
+            box-shadow: 0 8px 25px rgba(93, 208, 240, 0.15);
         }
 
         .branch-card:hover .branch-logo {
@@ -188,9 +186,9 @@
             object-fit: contain;
         }
 
-        /* Card Body - Left Side Content */
+        /* Card Body - Vertical Content */
         .card-body-custom {
-            padding: 0;
+            padding: 30px;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -198,26 +196,26 @@
         }
 
         .branch-name {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
             color: #1e293b;
             margin-bottom: 18px;
-            text-align: right;
+            text-align: center;
             line-height: 1.5;
         }
 
         .branch-location {
             display: flex;
             align-items: flex-start;
-            justify-content: flex-start;
+            justify-content: center;
             gap: 12px;
             color: #64748b;
-            font-size: 16px;
+            font-size: 15px;
             margin-bottom: 24px;
             padding: 15px;
             background: #f8fafc;
             border-radius: 12px;
-            border-right: 4px solid #5DD0F0;
+            border-top: 3px solid #5DD0F0;
         }
 
         .branch-location i {
@@ -229,18 +227,18 @@
         .location-text {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             gap: 6px;
         }
 
         .region {
             font-weight: 700;
             color: #1e293b;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .city {
-            font-size: 15px;
+            font-size: 14px;
             color: #64748b;
         }
 
@@ -301,35 +299,21 @@
 
         /* Responsive Design */
         @media (max-width: 992px) {
-            .branch-card {
-                flex-direction: column;
-                min-height: auto;
-                padding: 25px;
-                gap: 20px;
+            .branch-logo {
+                width: 100px;
+                height: 100px;
             }
 
             .card-header-custom {
-                min-width: auto;
+                padding: 35px 25px 20px;
             }
 
-            .branch-logo {
-                width: 110px;
-                height: 110px;
+            .card-body-custom {
+                padding: 25px;
             }
 
             .branch-name {
-                text-align: center;
-                font-size: 22px;
-            }
-
-            .branch-location {
-                justify-content: center;
-                border-right: none;
-                border-top: 4px solid #5DD0F0;
-            }
-
-            .location-text {
-                align-items: center;
+                font-size: 20px;
             }
         }
 
@@ -452,7 +436,7 @@
         <!-- Branches Grid -->
         <div class="row g-4" id="branchesContainer">
             <!-- Branch 1: مجلس الجمعيات الأهلية بمكة -->
-            <div class="col-lg-6 col-md-12" data-region="makkah">
+            <div class="col-lg-4 col-md-6 col-12" data-region="makkah">
                 <div class="card branch-card">
                     <div class="card-header-custom">
                         <div class="branch-logo">
@@ -485,7 +469,7 @@
             </div>
 
             <!-- Branch 2: المركز الرئيسي -->
-            <div class="col-lg-6 col-md-12" data-region="riyadh">
+            <div class="col-lg-4 col-md-6 col-12" data-region="riyadh">
                 <div class="card branch-card">
                     <div class="card-header-custom">
                         <div class="branch-logo">
@@ -518,7 +502,7 @@
             </div>
 
             <!-- Branch 3: مجلس الجمعيات الأهلية - بجازان -->
-            <div class="col-lg-6 col-md-12" data-region="jazan">
+            <div class="col-lg-4 col-md-6 col-12" data-region="jazan">
                 <div class="card branch-card">
                     <div class="card-header-custom">
                         <div class="branch-logo">
@@ -551,7 +535,7 @@
             </div>
 
             <!-- Branch 4: مجلس الجمعيات في حائل -->
-            <div class="col-lg-6 col-md-12" data-region="hail">
+            <div class="col-lg-4 col-md-6 col-12" data-region="hail">
                 <div class="card branch-card">
                     <div class="card-header-custom">
                         <div class="branch-logo">
@@ -584,7 +568,7 @@
             </div>
 
             <!-- Branch 5: فرع إضافي بالرياض -->
-            <div class="col-lg-6 col-md-12" data-region="riyadh">
+            <div class="col-lg-4 col-md-6 col-12" data-region="riyadh">
                 <div class="card branch-card">
                     <div class="card-header-custom">
                         <div class="branch-logo">
@@ -617,7 +601,7 @@
             </div>
 
             <!-- Branch 6: فرع إضافي بمكة -->
-            <div class="col-lg-6 col-md-12" data-region="makkah">
+            <div class="col-lg-4 col-md-6 col-12" data-region="makkah">
                 <div class="card branch-card">
                     <div class="card-header-custom">
                         <div class="branch-logo">
