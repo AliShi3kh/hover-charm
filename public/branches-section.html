@@ -86,16 +86,58 @@
             font-size: 18px;
         }
 
-        /* Branch Card */
+        /* Filter Section */
+        .filter-section {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .filter-btn {
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            border: 2px solid #e2e8f0;
+            background: white;
+            color: #64748b;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .filter-btn:hover {
+            border-color: #5DD0F0;
+            color: #5DD0F0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(93, 208, 240, 0.2);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(93, 208, 240, 0.3);
+        }
+
+        /* Branch Card - Horizontal Layout */
         .branch-card {
             background: white;
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: none;
             box-shadow: 0 10px 40px rgba(93, 208, 240, 0.15);
             position: relative;
             height: 100%;
+            display: flex;
+            flex-direction: row-reverse;
         }
 
         .branch-card::before {
@@ -120,14 +162,19 @@
             box-shadow: 0 20px 60px rgba(93, 208, 240, 0.25);
         }
 
-        /* Card Header with Logo */
+        /* Card Header with Logo - Horizontal */
         .card-header-custom {
             background: linear-gradient(135deg, rgba(93, 208, 240, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
-            padding: 40px 30px;
+            padding: 30px;
             text-align: center;
             border: none;
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 180px;
+            flex-shrink: 0;
         }
 
         .card-header-custom::before {
@@ -155,10 +202,10 @@
         .branch-logo {
             width: 120px;
             height: 120px;
-            margin: 0 auto 20px;
+            margin: 0 auto;
             background: white;
             border-radius: 20px;
-            padding: 20px;
+            padding: 15px;
             box-shadow: 0 8px 30px rgba(93, 208, 240, 0.2);
             display: flex;
             align-items: center;
@@ -187,28 +234,32 @@
             background-clip: text;
         }
 
-        /* Card Body */
+        /* Card Body - Horizontal */
         .card-body-custom {
             padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .branch-name {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 800;
             color: #1e293b;
             margin-bottom: 15px;
-            text-align: center;
+            text-align: right;
         }
 
         .branch-location {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 10px;
             color: #64748b;
-            font-size: 16px;
-            margin-bottom: 25px;
-            padding: 12px 20px;
+            font-size: 15px;
+            margin-bottom: 20px;
+            padding: 10px 15px;
             background: rgba(93, 208, 240, 0.05);
             border-radius: 12px;
         }
@@ -221,7 +272,7 @@
         .location-text {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             gap: 2px;
         }
 
@@ -231,30 +282,23 @@
         }
 
         .city {
-            font-size: 14px;
+            font-size: 13px;
             color: #94a3b8;
-        }
-
-        /* Separator Line */
-        .card-separator {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
-            margin: 20px 0;
         }
 
         /* Action Buttons */
         .action-buttons {
             display: flex;
-            gap: 12px;
-            margin-top: 25px;
+            gap: 10px;
+            margin-top: 20px;
         }
 
         .btn-custom {
             flex: 1;
-            padding: 14px 20px;
+            padding: 12px 18px;
             border-radius: 12px;
             font-weight: 600;
-            font-size: 15px;
+            font-size: 14px;
             border: none;
             transition: all 0.3s ease;
             display: flex;
@@ -293,22 +337,55 @@
             font-size: 16px;
         }
 
+        /* Hidden class for filtering */
+        .branch-card.hidden {
+            display: none;
+        }
+
         /* Responsive Design */
+        @media (max-width: 992px) {
+            .branch-card {
+                flex-direction: column;
+            }
+
+            .card-header-custom {
+                min-width: auto;
+                padding: 30px 20px;
+            }
+
+            .branch-name {
+                text-align: center;
+            }
+
+            .branch-location {
+                justify-content: center;
+            }
+
+            .location-text {
+                align-items: center;
+            }
+        }
+
         @media (max-width: 768px) {
             .section-title {
                 font-size: 36px;
             }
 
             .branch-name {
-                font-size: 20px;
+                font-size: 18px;
             }
 
             .action-buttons {
                 flex-direction: column;
             }
 
-            .branch-card {
-                margin-bottom: 30px;
+            .filter-buttons {
+                gap: 8px;
+            }
+
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 14px;
             }
         }
 
@@ -350,6 +427,8 @@
         .branch-card:nth-child(2) { animation-delay: 0.2s; }
         .branch-card:nth-child(3) { animation-delay: 0.3s; }
         .branch-card:nth-child(4) { animation-delay: 0.4s; }
+        .branch-card:nth-child(5) { animation-delay: 0.5s; }
+        .branch-card:nth-child(6) { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
@@ -367,14 +446,35 @@
             </div>
         </div>
 
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterBranches('all')">
+                    <i class="fas fa-globe"></i> جميع الفروع
+                </button>
+                <button class="filter-btn" onclick="filterBranches('riyadh')">
+                    <i class="fas fa-map-marker-alt"></i> منطقة الرياض
+                </button>
+                <button class="filter-btn" onclick="filterBranches('makkah')">
+                    <i class="fas fa-kaaba"></i> منطقة مكة المكرمة
+                </button>
+                <button class="filter-btn" onclick="filterBranches('jazan')">
+                    <i class="fas fa-mountain"></i> منطقة جازان
+                </button>
+                <button class="filter-btn" onclick="filterBranches('hail')">
+                    <i class="fas fa-city"></i> منطقة حائل
+                </button>
+            </div>
+        </div>
+
         <!-- Branches Grid -->
-        <div class="row g-4">
+        <div class="row g-4" id="branchesContainer">
             <!-- Branch 1: مجلس الجمعيات الأهلية بمكة -->
-            <div class="col-lg-6 col-md-6 col-12">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-12" data-region="makkah">
                 <div class="card branch-card">
                     <div class="card-header-custom">
                         <div class="branch-logo">
-                            <i class="fas fa-building"></i>
+                            <img src="images/branch-logo-1.svg" alt="شعار مجلس الجمعيات الأهلية بمكة">
                         </div>
                     </div>
                     <div class="card-body-custom">
@@ -383,12 +483,10 @@
                         <div class="branch-location">
                             <i class="fas fa-map-marker-alt"></i>
                             <div class="location-text">
-                                <span class="region">منطقة الرياض</span>
-                                <span class="city">مدينة الرياض</span>
+                                <span class="region">منطقة مكة المكرمة</span>
+                                <span class="city">مدينة مكة</span>
                             </div>
                         </div>
-
-                        <div class="card-separator"></div>
 
                         <div class="action-buttons">
                             <a href="https://maps.google.com" target="_blank" class="btn btn-custom btn-map">
@@ -397,7 +495,7 @@
                             </a>
                             <a href="#" class="btn btn-custom btn-details">
                                 <i class="fas fa-info-circle"></i>
-                                <span>تفاصيل الفرع</span>
+                                <span>التفاصيل</span>
                             </a>
                         </div>
                     </div>
@@ -405,11 +503,11 @@
             </div>
 
             <!-- Branch 2: المركز الرئيسي -->
-            <div class="col-lg-6 col-md-6 col-12">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-12" data-region="riyadh">
                 <div class="card branch-card">
                     <div class="card-header-custom">
                         <div class="branch-logo">
-                            <i class="fas fa-landmark"></i>
+                            <img src="images/branch-logo-2.svg" alt="شعار المركز الرئيسي">
                         </div>
                     </div>
                     <div class="card-body-custom">
@@ -423,8 +521,6 @@
                             </div>
                         </div>
 
-                        <div class="card-separator"></div>
-
                         <div class="action-buttons">
                             <a href="https://maps.google.com" target="_blank" class="btn btn-custom btn-map">
                                 <i class="fas fa-map-marked-alt"></i>
@@ -432,7 +528,7 @@
                             </a>
                             <a href="#" class="btn btn-custom btn-details">
                                 <i class="fas fa-info-circle"></i>
-                                <span>تفاصيل الفرع</span>
+                                <span>التفاصيل</span>
                             </a>
                         </div>
                     </div>
@@ -440,11 +536,11 @@
             </div>
 
             <!-- Branch 3: مجلس الجمعيات الأهلية - بجازان -->
-            <div class="col-lg-6 col-md-6 col-12">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-12" data-region="jazan">
                 <div class="card branch-card">
                     <div class="card-header-custom">
                         <div class="branch-logo">
-                            <i class="fas fa-city"></i>
+                            <img src="images/branch-logo-1.svg" alt="شعار مجلس الجمعيات الأهلية بجازان">
                         </div>
                     </div>
                     <div class="card-body-custom">
@@ -453,12 +549,10 @@
                         <div class="branch-location">
                             <i class="fas fa-map-marker-alt"></i>
                             <div class="location-text">
-                                <span class="region">منطقة الرياض</span>
-                                <span class="city">مدينة الرياض</span>
+                                <span class="region">منطقة جازان</span>
+                                <span class="city">مدينة جازان</span>
                             </div>
                         </div>
-
-                        <div class="card-separator"></div>
 
                         <div class="action-buttons">
                             <a href="https://maps.google.com" target="_blank" class="btn btn-custom btn-map">
@@ -467,7 +561,7 @@
                             </a>
                             <a href="#" class="btn btn-custom btn-details">
                                 <i class="fas fa-info-circle"></i>
-                                <span>تفاصيل الفرع</span>
+                                <span>التفاصيل</span>
                             </a>
                         </div>
                     </div>
@@ -475,15 +569,48 @@
             </div>
 
             <!-- Branch 4: مجلس الجمعيات في حائل -->
-            <div class="col-lg-6 col-md-6 col-12">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-12" data-region="hail">
                 <div class="card branch-card">
                     <div class="card-header-custom">
                         <div class="branch-logo">
-                            <i class="fas fa-mosque"></i>
+                            <img src="images/branch-logo-2.svg" alt="شعار مجلس الجمعيات في حائل">
                         </div>
                     </div>
                     <div class="card-body-custom">
                         <h3 class="branch-name">مجلس الجمعيات في حائل</h3>
+                        
+                        <div class="branch-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="location-text">
+                                <span class="region">منطقة حائل</span>
+                                <span class="city">مدينة حائل</span>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <a href="https://maps.google.com" target="_blank" class="btn btn-custom btn-map">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <span>موقع الفرع</span>
+                            </a>
+                            <a href="#" class="btn btn-custom btn-details">
+                                <i class="fas fa-info-circle"></i>
+                                <span>التفاصيل</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Branch 5: فرع إضافي بالرياض -->
+            <div class="col-xl-3 col-lg-4 col-md-6 col-12" data-region="riyadh">
+                <div class="card branch-card">
+                    <div class="card-header-custom">
+                        <div class="branch-logo">
+                            <img src="images/branch-logo-1.svg" alt="شعار فرع الرياض الثاني">
+                        </div>
+                    </div>
+                    <div class="card-body-custom">
+                        <h3 class="branch-name">فرع الرياض - الشمالي</h3>
                         
                         <div class="branch-location">
                             <i class="fas fa-map-marker-alt"></i>
@@ -493,7 +620,38 @@
                             </div>
                         </div>
 
-                        <div class="card-separator"></div>
+                        <div class="action-buttons">
+                            <a href="https://maps.google.com" target="_blank" class="btn btn-custom btn-map">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <span>موقع الفرع</span>
+                            </a>
+                            <a href="#" class="btn btn-custom btn-details">
+                                <i class="fas fa-info-circle"></i>
+                                <span>التفاصيل</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Branch 6: فرع إضافي بمكة -->
+            <div class="col-xl-3 col-lg-4 col-md-6 col-12" data-region="makkah">
+                <div class="card branch-card">
+                    <div class="card-header-custom">
+                        <div class="branch-logo">
+                            <img src="images/branch-logo-2.svg" alt="شعار فرع مكة الثاني">
+                        </div>
+                    </div>
+                    <div class="card-body-custom">
+                        <h3 class="branch-name">فرع مكة - الشرقي</h3>
+                        
+                        <div class="branch-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="location-text">
+                                <span class="region">منطقة مكة المكرمة</span>
+                                <span class="city">مدينة مكة</span>
+                            </div>
+                        </div>
 
                         <div class="action-buttons">
                             <a href="https://maps.google.com" target="_blank" class="btn btn-custom btn-map">
@@ -502,7 +660,7 @@
                             </a>
                             <a href="#" class="btn btn-custom btn-details">
                                 <i class="fas fa-info-circle"></i>
-                                <span>تفاصيل الفرع</span>
+                                <span>التفاصيل</span>
                             </a>
                         </div>
                     </div>
@@ -513,5 +671,29 @@
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Filter Script -->
+    <script>
+        function filterBranches(region) {
+            // Get all branch cards
+            const branches = document.querySelectorAll('[data-region]');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter branches
+            branches.forEach(branch => {
+                const branchRegion = branch.getAttribute('data-region');
+                
+                if (region === 'all' || branchRegion === region) {
+                    branch.classList.remove('hidden');
+                } else {
+                    branch.classList.add('hidden');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
