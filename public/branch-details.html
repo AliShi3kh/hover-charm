@@ -908,6 +908,283 @@
             cursor: not-allowed;
         }
 
+        /* Social Icons */
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .social-linkedin {
+            background: #0077B5;
+            color: white;
+        }
+
+        .social-linkedin:hover {
+            background: #005885;
+            transform: scale(1.1);
+            color: white;
+        }
+
+        .social-x {
+            background: #000000;
+            color: white;
+        }
+
+        .social-x:hover {
+            background: #333333;
+            transform: scale(1.1);
+            color: white;
+        }
+
+        .social-cv {
+            background: linear-gradient(135deg, #5DD0F0, #3B82F6);
+            color: white;
+        }
+
+        .social-cv:hover {
+            background: linear-gradient(135deg, #3B82F6, #5DD0F0);
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(93,208,240,0.4);
+        }
+
+        /* CV Modal */
+        .cv-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .cv-modal.active {
+            display: flex;
+        }
+
+        .cv-modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .cv-modal-close {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s;
+            z-index: 1;
+        }
+
+        .cv-modal-close:hover {
+            background: #d32f2f;
+            transform: rotate(90deg);
+        }
+
+        .cv-header {
+            text-align: center;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #5DD0F0;
+            margin-bottom: 25px;
+        }
+
+        .cv-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #5DD0F0, #3B82F6);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 15px;
+            box-shadow: 0 4px 15px rgba(93,208,240,0.3);
+        }
+
+        .cv-name {
+            font-size: 24px;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .cv-position {
+            font-size: 16px;
+            color: #5DD0F0;
+            font-weight: 600;
+        }
+
+        .cv-section {
+            margin-bottom: 25px;
+        }
+
+        .cv-section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e8f4f8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cv-section-title i {
+            color: #5DD0F0;
+            font-size: 20px;
+        }
+
+        .cv-info-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .cv-info-item i {
+            color: #5DD0F0;
+            font-size: 16px;
+            width: 20px;
+        }
+
+        .cv-info-item a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .cv-info-item a:hover {
+            color: #5DD0F0;
+        }
+
+        .cv-text {
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .cv-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cv-list li {
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            position: relative;
+            padding-right: 35px;
+        }
+
+        .cv-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            color: #5DD0F0;
+        }
+
+        .cv-experience-item {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border-right: 4px solid #5DD0F0;
+        }
+
+        .cv-exp-title {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .cv-exp-company {
+            color: #5DD0F0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .cv-exp-period {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 8px;
+        }
+
+        .cv-exp-desc {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .cv-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .cv-skill-tag {
+            background: linear-gradient(135deg, #5DD0F0, #3B82F6);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
         /* View All Button */
         .btn-view-all {
             background: white;
@@ -1249,6 +1526,17 @@
                                     <h3 class="team-name">د. محمد العتيبي</h3>
                                     <p class="team-position">مدير المجلس</p>
                                     <p class="team-bio">خبرة 15 عاماً في إدارة المنظمات غير الربحية</p>
+                                    <div class="team-social">
+                                        <a href="https://linkedin.com" target="_blank" class="social-icon social-linkedin" title="LinkedIn">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                        <a href="https://twitter.com" target="_blank" class="social-icon social-x" title="X">
+                                            <i class="fab fa-x-twitter"></i>
+                                        </a>
+                                        <button class="social-icon social-cv" onclick="openCVModal('د. محمد العتيبي', 'مدير المجلس', 'management')" title="عرض السيرة الذاتية">
+                                            <i class="fas fa-file-alt"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="staff-slide" data-category="management">
@@ -1257,6 +1545,17 @@
                                     <h3 class="team-name">م. عبدالله الحربي</h3>
                                     <p class="team-position">مدير المشاريع</p>
                                     <p class="team-bio">متخصص في إدارة وتنفيذ المشاريع الخيرية</p>
+                                    <div class="team-social">
+                                        <a href="https://linkedin.com" target="_blank" class="social-icon social-linkedin" title="LinkedIn">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                        <a href="https://twitter.com" target="_blank" class="social-icon social-x" title="X">
+                                            <i class="fab fa-x-twitter"></i>
+                                        </a>
+                                        <button class="social-icon social-cv" onclick="openCVModal('م. عبدالله الحربي', 'مدير المشاريع', 'management')" title="عرض السيرة الذاتية">
+                                            <i class="fas fa-file-alt"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -1267,6 +1566,17 @@
                                     <h3 class="team-name">أ. فاطمة الزهراني</h3>
                                     <p class="team-position">رئيسة مجلس الإدارة</p>
                                     <p class="team-bio">متخصصة في التنمية المجتمعية والعمل التطوعي</p>
+                                    <div class="team-social">
+                                        <a href="https://linkedin.com" target="_blank" class="social-icon social-linkedin" title="LinkedIn">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                        <a href="https://twitter.com" target="_blank" class="social-icon social-x" title="X">
+                                            <i class="fab fa-x-twitter"></i>
+                                        </a>
+                                        <button class="social-icon social-cv" onclick="openCVModal('أ. فاطمة الزهراني', 'رئيسة مجلس الإدارة', 'board')" title="عرض السيرة الذاتية">
+                                            <i class="fas fa-file-alt"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="staff-slide" data-category="board">
@@ -1275,6 +1585,17 @@
                                     <h3 class="team-name">د. خالد المطيري</h3>
                                     <p class="team-position">نائب رئيس مجلس الإدارة</p>
                                     <p class="team-bio">خبير في الحوكمة والشفافية المؤسسية</p>
+                                    <div class="team-social">
+                                        <a href="https://linkedin.com" target="_blank" class="social-icon social-linkedin" title="LinkedIn">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                        <a href="https://twitter.com" target="_blank" class="social-icon social-x" title="X">
+                                            <i class="fab fa-x-twitter"></i>
+                                        </a>
+                                        <button class="social-icon social-cv" onclick="openCVModal('د. خالد المطيري', 'نائب رئيس مجلس الإدارة', 'board')" title="عرض السيرة الذاتية">
+                                            <i class="fas fa-file-alt"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -1285,6 +1606,17 @@
                                     <h3 class="team-name">أ. سارة القحطاني</h3>
                                     <p class="team-position">مديرة العلاقات العامة</p>
                                     <p class="team-bio">خبيرة في التواصل المؤسسي والعلاقات العامة</p>
+                                    <div class="team-social">
+                                        <a href="https://linkedin.com" target="_blank" class="social-icon social-linkedin" title="LinkedIn">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                        <a href="https://twitter.com" target="_blank" class="social-icon social-x" title="X">
+                                            <i class="fab fa-x-twitter"></i>
+                                        </a>
+                                        <button class="social-icon social-cv" onclick="openCVModal('أ. سارة القحطاني', 'مديرة العلاقات العامة', 'employees')" title="عرض السيرة الذاتية">
+                                            <i class="fas fa-file-alt"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="staff-slide" data-category="employees">
@@ -1293,6 +1625,17 @@
                                     <h3 class="team-name">م. أحمد الشهري</h3>
                                     <p class="team-position">مسؤول تقنية المعلومات</p>
                                     <p class="team-bio">متخصص في الحلول التقنية والتحول الرقمي</p>
+                                    <div class="team-social">
+                                        <a href="https://linkedin.com" target="_blank" class="social-icon social-linkedin" title="LinkedIn">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                        <a href="https://twitter.com" target="_blank" class="social-icon social-x" title="X">
+                                            <i class="fab fa-x-twitter"></i>
+                                        </a>
+                                        <button class="social-icon social-cv" onclick="openCVModal('م. أحمد الشهري', 'مسؤول تقنية المعلومات', 'employees')" title="عرض السيرة الذاتية">
+                                            <i class="fas fa-file-alt"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1441,6 +1784,113 @@
         <div class="lightbox-content" onclick="event.stopPropagation()">
             <button class="lightbox-close" onclick="closeLightbox()">×</button>
             <img id="lightbox-img" src="" alt="صورة مكبرة">
+        </div>
+    </div>
+
+    <!-- CV Modal -->
+    <div id="cvModal" class="cv-modal" onclick="closeCVModal()">
+        <div class="cv-modal-content" onclick="event.stopPropagation()">
+            <button class="cv-modal-close" onclick="closeCVModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="cv-header">
+                <div class="cv-avatar" id="cvAvatar">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h2 class="cv-name" id="cvName">-</h2>
+                <p class="cv-position" id="cvPosition">-</p>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="cv-section">
+                <h3 class="cv-section-title">
+                    <i class="fas fa-address-card"></i>
+                    بيانات التواصل
+                </h3>
+                <div class="cv-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:email@council.org.sa" id="cvEmail">email@council.org.sa</a>
+                </div>
+                <div class="cv-info-item">
+                    <i class="fas fa-phone"></i>
+                    <span id="cvPhone">+966 50 123 4567</span>
+                </div>
+                <div class="cv-info-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://linkedin.com" target="_blank">linkedin.com/in/profile</a>
+                </div>
+            </div>
+
+            <!-- About -->
+            <div class="cv-section">
+                <h3 class="cv-section-title">
+                    <i class="fas fa-user"></i>
+                    نبذة مختصرة
+                </h3>
+                <p class="cv-text" id="cvBio">
+                    محترف متمرس بخبرة واسعة في مجال العمل الخيري والمجتمعي. يتمتع بقدرة عالية على القيادة والتخطيط الاستراتيجي. شارك في تطوير العديد من المبادرات والبرامج الناجحة التي أحدثت تأثيراً إيجابياً في المجتمع. يمتلك مهارات تواصل متميزة وقدرة على بناء الشراكات الفعالة.
+                </p>
+            </div>
+
+            <!-- Education -->
+            <div class="cv-section">
+                <h3 class="cv-section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    المؤهلات التعليمية
+                </h3>
+                <ul class="cv-list" id="cvEducation">
+                    <li>دكتوراه في الإدارة - جامعة الملك عبدالعزيز، 2015</li>
+                    <li>ماجستير في إدارة الأعمال - جامعة أم القرى، 2010</li>
+                    <li>بكالوريوس في العلوم الإدارية - جامعة الملك سعود، 2007</li>
+                </ul>
+            </div>
+
+            <!-- Experience -->
+            <div class="cv-section">
+                <h3 class="cv-section-title">
+                    <i class="fas fa-briefcase"></i>
+                    الخبرات السابقة
+                </h3>
+                <div id="cvExperience">
+                    <div class="cv-experience-item">
+                        <div class="cv-exp-title">مدير تنفيذي</div>
+                        <div class="cv-exp-company">جمعية البر الخيرية</div>
+                        <div class="cv-exp-period">2018 - 2022</div>
+                        <div class="cv-exp-desc">قيادة فريق من 50 موظف وإدارة ميزانية بقيمة 10 مليون ريال. تطوير استراتيجية تشغيلية شاملة نتج عنها زيادة في عدد المستفيدين بنسبة 40%.</div>
+                    </div>
+                    <div class="cv-experience-item">
+                        <div class="cv-exp-title">مدير مشاريع</div>
+                        <div class="cv-exp-company">مؤسسة المجتمع للتنمية</div>
+                        <div class="cv-exp-period">2015 - 2018</div>
+                        <div class="cv-exp-desc">إدارة وتنفيذ 25 مشروعاً مجتمعياً. التنسيق مع الجهات الحكومية والخاصة لضمان نجاح المشاريع.</div>
+                    </div>
+                    <div class="cv-experience-item">
+                        <div class="cv-exp-title">منسق برامج</div>
+                        <div class="cv-exp-company">مجلس الجمعيات الأهلية</div>
+                        <div class="cv-exp-period">2012 - 2015</div>
+                        <div class="cv-exp-desc">تخطيط وتنفيذ البرامج التدريبية والتطويرية. بناء علاقات مع الشركاء والمانحين.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="cv-section">
+                <h3 class="cv-section-title">
+                    <i class="fas fa-star"></i>
+                    المهارات
+                </h3>
+                <div class="cv-skills" id="cvSkills">
+                    <span class="cv-skill-tag">القيادة الاستراتيجية</span>
+                    <span class="cv-skill-tag">إدارة المشاريع</span>
+                    <span class="cv-skill-tag">التخطيط والتنظيم</span>
+                    <span class="cv-skill-tag">التواصل الفعال</span>
+                    <span class="cv-skill-tag">إدارة الفريق</span>
+                    <span class="cv-skill-tag">حل المشكلات</span>
+                    <span class="cv-skill-tag">إدارة الميزانية</span>
+                    <span class="cv-skill-tag">التفكير الإبداعي</span>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1653,6 +2103,222 @@
 
         // Update on window resize
         window.addEventListener('resize', updateStaffSlider);
+
+        // CV Modal Functions
+        const cvData = {
+            'د. محمد العتيبي': {
+                position: 'مدير المجلس',
+                email: 'mohammed.alotibi@council.org.sa',
+                phone: '+966 50 123 4567',
+                bio: 'قائد استراتيجي بخبرة 15 عاماً في إدارة المنظمات غير الربحية. متخصص في تطوير البرامج المجتمعية وبناء الشراكات الاستراتيجية مع القطاعين العام والخاص. نجح في قيادة العديد من المبادرات التي أحدثت تأثيراً إيجابياً ملموساً في المجتمع.',
+                education: [
+                    'دكتوراه في الإدارة العامة - جامعة الملك عبدالعزيز، 2010',
+                    'ماجستير في إدارة المنظمات غير الربحية - جامعة أم القرى، 2006',
+                    'بكالوريوس في الإدارة العامة - جامعة الملك سعود، 2003'
+                ],
+                experience: [
+                    {
+                        title: 'مدير المجلس',
+                        company: 'مجلس الجمعيات الأهلية بمكة المكرمة',
+                        period: '2020 - حتى الآن',
+                        desc: 'قيادة المجلس وإدارة جميع العمليات الإدارية والتشغيلية. تطوير الخطط الاستراتيجية وضمان تحقيق الأهداف المؤسسية.'
+                    },
+                    {
+                        title: 'مدير إدارة التطوير',
+                        company: 'الهيئة العامة للأوقاف',
+                        period: '2015 - 2020',
+                        desc: 'إدارة برامج التطوير المؤسسي وتحسين الأداء التشغيلي. تطوير أنظمة الحوكمة والشفافية.'
+                    }
+                ],
+                skills: ['القيادة الاستراتيجية', 'إدارة التغيير', 'بناء الشراكات', 'التخطيط الاستراتيجي', 'إدارة المخاطر', 'الحوكمة المؤسسية', 'التواصل المؤسسي', 'إدارة الأزمات']
+            },
+            'م. عبدالله الحربي': {
+                position: 'مدير المشاريع',
+                email: 'abdullah.alharbi@council.org.sa',
+                phone: '+966 50 234 5678',
+                bio: 'مهندس متخصص في إدارة وتنفيذ المشاريع الخيرية والمجتمعية. يمتلك خبرة واسعة في التخطيط والتنفيذ ومتابعة المشاريع بكفاءة عالية. نجح في إدارة أكثر من 50 مشروعاً بميزانيات تتجاوز 30 مليون ريال.',
+                education: [
+                    'ماجستير في إدارة المشاريع - جامعة الملك فهد للبترول والمعادن، 2012',
+                    'بكالوريوس في الهندسة الصناعية - جامعة الملك عبدالعزيز، 2008',
+                    'شهادة محترف إدارة المشاريع (PMP) - معهد إدارة المشاريع، 2014'
+                ],
+                experience: [
+                    {
+                        title: 'مدير المشاريع',
+                        company: 'مجلس الجمعيات الأهلية',
+                        period: '2018 - حتى الآن',
+                        desc: 'إدارة محفظة المشاريع التطويرية والمجتمعية. ضمان تنفيذ المشاريع ضمن الميزانية والجدول الزمني المحدد.'
+                    },
+                    {
+                        title: 'مهندس مشاريع',
+                        company: 'مؤسسة التنمية المجتمعية',
+                        period: '2013 - 2018',
+                        desc: 'تخطيط وتنفيذ المشاريع التنموية. إعداد دراسات الجدوى والتقارير الفنية.'
+                    }
+                ],
+                skills: ['إدارة المشاريع', 'التخطيط والجدولة', 'إدارة الميزانيات', 'تحليل المخاطر', 'Microsoft Project', 'Primavera', 'إعداد التقارير', 'قيادة الفرق']
+            },
+            'أ. فاطمة الزهراني': {
+                position: 'رئيسة مجلس الإدارة',
+                email: 'fatimah.alzahrani@council.org.sa',
+                phone: '+966 50 345 6789',
+                bio: 'رائدة في مجال التنمية المجتمعية والعمل التطوعي. تمتلك رؤية استراتيجية واضحة لتطوير العمل الخيري والارتقاء بمستوى الخدمات المقدمة للمجتمع. حاصلة على جوائز تقديرية عديدة في مجال العمل المجتمعي.',
+                education: [
+                    'دكتوراه في التنمية المجتمعية - جامعة أم القرى، 2013',
+                    'ماجستير في علم الاجتماع - جامعة الملك سعود، 2009',
+                    'بكالوريوس في الخدمة الاجتماعية - جامعة الملك عبدالعزيز، 2005'
+                ],
+                experience: [
+                    {
+                        title: 'رئيسة مجلس الإدارة',
+                        company: 'مجلس الجمعيات الأهلية',
+                        period: '2021 - حتى الآن',
+                        desc: 'رئاسة مجلس الإدارة والإشراف على السياسات العامة والاستراتيجية المؤسسية.'
+                    },
+                    {
+                        title: 'مديرة البرامج المجتمعية',
+                        company: 'جمعية النهضة النسائية',
+                        period: '2016 - 2021',
+                        desc: 'تطوير وإدارة البرامج المجتمعية الموجهة لتمكين المرأة والشباب.'
+                    }
+                ],
+                skills: ['القيادة', 'التخطيط الاستراتيجي', 'العمل التطوعي', 'التنمية المجتمعية', 'إدارة البرامج', 'التمكين المجتمعي', 'العلاقات العامة', 'التفكير الإبداعي']
+            },
+            'د. خالد المطيري': {
+                position: 'نائب رئيس مجلس الإدارة',
+                email: 'khalid.almutairi@council.org.sa',
+                phone: '+966 50 456 7890',
+                bio: 'خبير في مجال الحوكمة والشفافية المؤسسية. يمتلك خبرة طويلة في تطوير أنظمة الرقابة والمتابعة وضمان الالتزام بأعلى معايير الحوكمة. ساهم في تطوير أطر الحوكمة للعديد من المؤسسات غير الربحية.',
+                education: [
+                    'دكتوراه في القانون الإداري - جامعة الملك سعود، 2011',
+                    'ماجستير في الحوكمة المؤسسية - جامعة الملك فهد، 2007',
+                    'بكالوريوس في القانون - جامعة الإمام محمد بن سعود، 2003'
+                ],
+                experience: [
+                    {
+                        title: 'نائب رئيس مجلس الإدارة',
+                        company: 'مجلس الجمعيات الأهلية',
+                        period: '2021 - حتى الآن',
+                        desc: 'مساعدة رئيس المجلس والإشراف على لجان الحوكمة والمراجعة الداخلية.'
+                    },
+                    {
+                        title: 'مستشار الحوكمة',
+                        company: 'الهيئة العامة للأوقاف',
+                        period: '2015 - 2021',
+                        desc: 'تطوير وتطبيق أنظمة الحوكمة والرقابة. إجراء تقييمات دورية للامتثال.'
+                    }
+                ],
+                skills: ['الحوكمة المؤسسية', 'إدارة المخاطر', 'الامتثال والرقابة', 'القانون الإداري', 'المراجعة الداخلية', 'إعداد السياسات', 'التدقيق', 'إدارة الأزمات']
+            },
+            'أ. سارة القحطاني': {
+                position: 'مديرة العلاقات العامة',
+                email: 'sarah.alqahtani@council.org.sa',
+                phone: '+966 50 567 8901',
+                bio: 'متخصصة في التواصل المؤسسي والعلاقات العامة بخبرة تزيد عن 10 سنوات. تمتلك مهارات عالية في بناء وإدارة العلاقات مع وسائل الإعلام والجهات الحكومية والخاصة. نجحت في تطوير استراتيجيات اتصال فعالة عززت من صورة المؤسسات التي عملت معها.',
+                education: [
+                    'ماجستير في الإعلام والاتصال - جامعة الملك عبدالعزيز، 2014',
+                    'بكالوريوس في العلاقات العامة - جامعة الملك سعود، 2010',
+                    'دبلوم في التسويق الرقمي - معهد التسويق البريطاني، 2016'
+                ],
+                experience: [
+                    {
+                        title: 'مديرة العلاقات العامة',
+                        company: 'مجلس الجمعيات الأهلية',
+                        period: '2019 - حتى الآن',
+                        desc: 'إدارة العلاقات مع وسائل الإعلام والشركاء. تطوير استراتيجيات الاتصال المؤسسي.'
+                    },
+                    {
+                        title: 'أخصائية علاقات عامة',
+                        company: 'جمعية البر الخيرية',
+                        period: '2014 - 2019',
+                        desc: 'التنسيق الإعلامي وإدارة الفعاليات. إعداد المواد الإعلامية والتقارير.'
+                    }
+                ],
+                skills: ['العلاقات العامة', 'التواصل المؤسسي', 'إدارة الفعاليات', 'الإعلام الرقمي', 'كتابة المحتوى', 'إدارة الأزمات الإعلامية', 'التسويق', 'بناء العلاقات']
+            },
+            'م. أحمد الشهري': {
+                position: 'مسؤول تقنية المعلومات',
+                email: 'ahmed.alshehri@council.org.sa',
+                phone: '+966 50 678 9012',
+                bio: 'متخصص في الحلول التقنية والتحول الرقمي. يمتلك خبرة واسعة في تطوير وإدارة الأنظمة التقنية وتحسين البنية التحتية الرقمية. نجح في قيادة مشاريع التحول الرقمي لعدة مؤسسات مما حسّن من كفاءتها التشغيلية بشكل كبير.',
+                education: [
+                    'ماجستير في علوم الحاسب - جامعة الملك فهد للبترول والمعادن، 2013',
+                    'بكالوريوس في هندسة الحاسب - جامعة الملك عبدالعزيز، 2009',
+                    'شهادات مهنية: CCNA، AWS Certified Solutions Architect'
+                ],
+                experience: [
+                    {
+                        title: 'مسؤول تقنية المعلومات',
+                        company: 'مجلس الجمعيات الأهلية',
+                        period: '2017 - حتى الآن',
+                        desc: 'إدارة البنية التحتية التقنية. قيادة مشاريع التحول الرقمي وتطوير الأنظمة الإلكترونية.'
+                    },
+                    {
+                        title: 'مهندس أنظمة',
+                        company: 'شركة الحلول التقنية',
+                        period: '2012 - 2017',
+                        desc: 'تصميم وتطبيق حلول تقنية متكاملة. دعم فني وصيانة للأنظمة.'
+                    }
+                ],
+                skills: ['إدارة الأنظمة', 'التحول الرقمي', 'الأمن السيبراني', 'تطوير البرمجيات', 'إدارة قواعد البيانات', 'Cloud Computing', 'الشبكات', 'إدارة المشاريع التقنية']
+            }
+        };
+
+        function openCVModal(name, position, category) {
+            const modal = document.getElementById('cvModal');
+            const data = cvData[name];
+            
+            if (data) {
+                // Update header
+                document.getElementById('cvName').textContent = name;
+                document.getElementById('cvPosition').textContent = position;
+                
+                // Update contact info
+                document.getElementById('cvEmail').textContent = data.email;
+                document.getElementById('cvEmail').href = `mailto:${data.email}`;
+                document.getElementById('cvPhone').textContent = data.phone;
+                
+                // Update bio
+                document.getElementById('cvBio').textContent = data.bio;
+                
+                // Update education
+                const educationList = document.getElementById('cvEducation');
+                educationList.innerHTML = data.education.map(edu => `<li>${edu}</li>`).join('');
+                
+                // Update experience
+                const experienceDiv = document.getElementById('cvExperience');
+                experienceDiv.innerHTML = data.experience.map(exp => `
+                    <div class="cv-experience-item">
+                        <div class="cv-exp-title">${exp.title}</div>
+                        <div class="cv-exp-company">${exp.company}</div>
+                        <div class="cv-exp-period">${exp.period}</div>
+                        <div class="cv-exp-desc">${exp.desc}</div>
+                    </div>
+                `).join('');
+                
+                // Update skills
+                const skillsDiv = document.getElementById('cvSkills');
+                skillsDiv.innerHTML = data.skills.map(skill => 
+                    `<span class="cv-skill-tag">${skill}</span>`
+                ).join('');
+            }
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCVModal() {
+            const modal = document.getElementById('cvModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close CV modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeCVModal();
+            }
+        });
     </script>
 </body>
 </html>
