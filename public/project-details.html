@@ -151,22 +151,9 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(234, 92, 72, 0.1) 0%, rgba(0, 149, 63, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(200, 168, 130, 0.15) 0%, rgba(180, 149, 106, 0.15) 100%);
             transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 0;
-        }
-
-        .nav-item::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%) scaleX(0);
-            width: 80%;
-            height: 3px;
-            background: linear-gradient(90deg, #ea5c48 0%, #00953f 100%);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 10px;
         }
 
         .nav-item > * {
@@ -175,24 +162,20 @@
         }
 
         .nav-item:hover {
-            border-bottom-color: #ea5c48;
+            border-bottom-color: #c8a882;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(234, 92, 72, 0.25);
+            box-shadow: 0 8px 25px rgba(200, 168, 130, 0.25);
         }
 
         .nav-item:hover::before {
             left: 0;
         }
 
-        .nav-item:hover::after {
-            transform: translateX(-50%) scaleX(1);
-        }
-
         .nav-item.active {
-            background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
+            background: linear-gradient(135deg, #c8a882 0%, #b8956a 100%);
             color: white;
-            border-bottom-color: #00953f;
-            box-shadow: 0 10px 30px rgba(234, 92, 72, 0.4);
+            border-bottom-color: #06232f;
+            box-shadow: 0 10px 30px rgba(200, 168, 130, 0.4);
             animation: activePulse 2s ease infinite;
         }
 
@@ -200,18 +183,12 @@
             display: none;
         }
 
-        .nav-item.active::after {
-            background: white;
-            transform: translateX(-50%) scaleX(1);
-            height: 2px;
-        }
-
         @keyframes activePulse {
             0%, 100% {
-                box-shadow: 0 10px 30px rgba(234, 92, 72, 0.4);
+                box-shadow: 0 10px 30px rgba(200, 168, 130, 0.4);
             }
             50% {
-                box-shadow: 0 10px 40px rgba(234, 92, 72, 0.6);
+                box-shadow: 0 10px 40px rgba(200, 168, 130, 0.6);
             }
         }
 
