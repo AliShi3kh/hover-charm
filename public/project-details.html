@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المشروع - التعاونية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #06232f;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        .project-header {
+            background: linear-gradient(135deg, #06232f 0%, #0a3d52 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-logo-header {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(234, 92, 72, 0.3);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .project-logo-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .project-title-main {
+            color: white;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 1.1em;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .meta-item i {
+            color: #ea5c48;
+            font-size: 1.3em;
+        }
+
+        /* Navigation Menu */
+        .project-nav {
+            background: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 20px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            padding: 12px 25px;
+            background: #f5f7fa;
+            border: 2px solid transparent;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #06232f;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .nav-item:hover {
+            background: #ea5c48;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(234, 92, 72, 0.3);
+        }
+
+        .nav-item.active {
+            background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(234, 92, 72, 0.4);
+        }
+
+        /* Content Container */
+        .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #06232f;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ea5c48;
+            display: inline-block;
+        }
+
+        /* Slider Section */
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            height: 400px;
+            margin-bottom: 30px;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(6, 35, 47, 0.9), transparent);
+            color: white;
+            padding: 30px;
+            font-size: 1.2em;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(234, 92, 72, 0.9);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5em;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .slider-btn:hover {
+            background: #ea5c48;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-btn.prev {
+            right: 20px;
+        }
+
+        .slider-btn.next {
+            left: 20px;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .about-card {
+            background: linear-gradient(135deg, #06232f 0%, #0a3d52 100%);
+            padding: 30px;
+            border-radius: 15px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(234, 92, 72, 0.1) 0%, transparent 70%);
+            animation: pulse 3s ease infinite;
+        }
+
+        .about-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #ea5c48;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-card p {
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Goals Section */
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .goal-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .goal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ea5c48, #00953f);
+        }
+
+        .goal-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(234, 92, 72, 0.2);
+            border-color: #ea5c48;
+        }
+
+        .goal-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2em;
+            box-shadow: 0 5px 15px rgba(234, 92, 72, 0.3);
+        }
+
+        .goal-card h3 {
+            color: #06232f;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .goal-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Fields Section */
+        .fields-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .field-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #e8ecf1;
+            transition: all 0.3s ease;
+            display: flex;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .field-card:hover {
+            border-color: #ea5c48;
+            box-shadow: 0 10px 25px rgba(234, 92, 72, 0.15);
+            transform: translateX(-5px);
+        }
+
+        .field-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00953f 0%, #007832 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8em;
+            flex-shrink: 0;
+        }
+
+        .field-content h3 {
+            color: #06232f;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .field-content p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        /* Outputs Section */
+        .outputs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .output-item {
+            background: linear-gradient(135deg, #06232f 0%, #0a3d52 100%);
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .output-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(234, 92, 72, 0.1) 0%, transparent 100%);
+        }
+
+        .output-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ea5c48;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .output-label {
+            font-size: 1.1em;
+            position: relative;
+        }
+
+        /* Sponsors Section */
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .sponsor-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #e8ecf1;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .sponsor-card:hover {
+            border-color: #ea5c48;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(234, 92, 72, 0.15);
+        }
+
+        .sponsor-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sponsor-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .sponsor-name {
+            color: #06232f;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* Actions Section */
+        .actions-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .action-card {
+            background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        }
+
+        .action-card.secondary {
+            background: linear-gradient(135deg, #00953f 0%, #007832 100%);
+        }
+
+        .action-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .action-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .action-description {
+            margin-bottom: 25px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .action-btn {
+            background: white;
+            color: #ea5c48;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .action-card.secondary .action-btn {
+            color: #00953f;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Statistics Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #e8ecf1;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: #ea5c48;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(234, 92, 72, 0.15);
+        }
+
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2em;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #06232f;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            height: 250px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(6, 35, 47, 0.9), transparent);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: rotate(0deg) scale(1);
+            }
+            50% {
+                transform: rotate(180deg) scale(1.2);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .project-title-main {
+                font-size: 1.8em;
+            }
+
+            .project-meta {
+                gap: 15px;
+            }
+
+            .meta-item {
+                font-size: 0.9em;
+                padding: 8px 15px;
+            }
+
+            .nav-container {
+                gap: 8px;
+            }
+
+            .nav-item {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+
+            .slider-container {
+                height: 250px;
+            }
+
+            .actions-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="project-header">
+        <div class="header-content">
+            <div class="project-logo-header">
+                <img src="images/ccj-logo.svg" alt="شعار المشروع">
+            </div>
+            <h1 class="project-title-main">مشروع الريادة والتميز</h1>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>تنمية المهارات</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>المنطقة الجنوبية</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>2024 - 2026</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="project-nav">
+        <div class="nav-container">
+            <a href="#about" class="nav-item active" onclick="scrollToSection(event, 'about')">نبذة عن المشروع</a>
+            <a href="#goals" class="nav-item" onclick="scrollToSection(event, 'goals')">أهداف المشروع</a>
+            <a href="#fields" class="nav-item" onclick="scrollToSection(event, 'fields')">مجالات المشروع</a>
+            <a href="#tracks" class="nav-item" onclick="scrollToSection(event, 'tracks')">مسارات المشروع</a>
+            <a href="#outputs" class="nav-item" onclick="scrollToSection(event, 'outputs')">مخرجات المشروع</a>
+            <a href="#statistics" class="nav-item" onclick="scrollToSection(event, 'statistics')">أرقام وإنجازات</a>
+            <a href="#gallery" class="nav-item" onclick="scrollToSection(event, 'gallery')">صور المشروع</a>
+        </div>
+    </nav>
+
+    <!-- Content Container -->
+    <div class="content-container">
+        <!-- Image Slider -->
+        <div class="slider-container">
+            <div class="slider-track" id="sliderTrack">
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200" alt="صورة المشروع 1">
+                    <div class="slide-caption">تدريب وتأهيل الكوادر الوطنية</div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200" alt="صورة المشروع 2">
+                    <div class="slide-caption">ورش عمل متخصصة</div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200" alt="صورة المشروع 3">
+                    <div class="slide-caption">بناء القدرات والمهارات</div>
+                </div>
+            </div>
+            <button class="slider-btn prev" onclick="moveSlide(-1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <button class="slider-btn next" onclick="moveSlide(1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title">نبذة عن المشروع</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3><i class="fas fa-info-circle"></i> نبذة تعريفية</h3>
+                    <p>
+                        مشروع الريادة والتميز هو مبادرة رائدة تهدف إلى تطوير قدرات الشباب السعودي وتمكينهم من اكتساب المهارات اللازمة لسوق العمل. يركز المشروع على بناء جيل من القادة والمبدعين القادرين على المساهمة الفعالة في تحقيق أهداف رؤية المملكة 2030.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-eye"></i> الرؤية</h3>
+                    <p>
+                        أن نكون المنصة الرائدة في تطوير وتمكين الكوادر الوطنية، وبناء جيل من القادة المتميزين القادرين على الابتكار والمساهمة في التنمية المستدامة للمملكة العربية السعودية.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-bullseye"></i> الرسالة</h3>
+                    <p>
+                        تقديم برامج تدريبية وتأهيلية متميزة تساهم في بناء قدرات الشباب وتطوير مهاراتهم القيادية والمهنية، من خلال بيئة تعليمية محفزة وشراكات استراتيجية مع مؤسسات القطاعين العام والخاص.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Goals Section -->
+        <section id="goals" class="section">
+            <h2 class="section-title">أهداف المشروع</h2>
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>التطوير المهني</h3>
+                    <p>تطوير المهارات المهنية والتقنية للشباب بما يتوافق مع متطلبات سوق العمل الحديث</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>بناء القدرات</h3>
+                    <p>بناء قدرات قيادية شابة قادرة على قيادة التغيير والابتكار في مختلف المجالات</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>تعزيز الابتكار</h3>
+                    <p>تعزيز ثقافة الابتكار والإبداع لدى الشباب وتحفيزهم على تطوير حلول مبتكرة</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>الشراكات الاستراتيجية</h3>
+                    <p>بناء شراكات استراتيجية مع المؤسسات الرائدة لتوفير فرص تدريبية وتوظيفية</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>التنمية المستدامة</h3>
+                    <p>المساهمة في تحقيق التنمية المستدامة من خلال تمكين الكوادر الوطنية المؤهلة</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>التميز والجودة</h3>
+                    <p>تحقيق التميز والجودة في جميع البرامج والمبادرات المقدمة للمستفيدين</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fields Section -->
+        <section id="fields" class="section">
+            <h2 class="section-title">مجالات المشروع</h2>
+            <div class="fields-grid">
+                <div class="field-card">
+                    <div class="field-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="field-content">
+                        <h3>التقنية والبرمجة</h3>
+                        <p>برامج تدريبية متخصصة في لغات البرمجة وتطوير التطبيقات والذكاء الاصطناعي</p>
+                    </div>
+                </div>
+                <div class="field-card">
+                    <div class="field-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="field-content">
+                        <h3>إدارة الأعمال</h3>
+                        <p>دورات في إدارة المشاريع والتخطيط الاستراتيجي وتطوير الأعمال</p>
+                    </div>
+                </div>
+                <div class="field-card">
+                    <div class="field-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="field-content">
+                        <h3>التصميم والإبداع</h3>
+                        <p>ورش عمل في التصميم الجرافيكي وتصميم تجربة المستخدم والمحتوى الإبداعي</p>
+                    </div>
+                </div>
+                <div class="field-card">
+                    <div class="field-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="field-content">
+                        <h3>التسويق الرقمي</h3>
+                        <p>برامج متخصصة في التسويق الإلكتروني ووسائل التواصل الاجتماعي</p>
+                    </div>
+                </div>
+                <div class="field-card">
+                    <div class="field-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <div class="field-content">
+                        <h3>القيادة والإدارة</h3>
+                        <p>دورات في القيادة الإدارية وإدارة الفرق وتطوير المهارات القيادية</p>
+                    </div>
+                </div>
+                <div class="field-card">
+                    <div class="field-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="field-content">
+                        <h3>ريادة الأعمال</h3>
+                        <p>برامج لدعم رواد الأعمال وتطوير المشاريع الناشئة والابتكار</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tracks Section -->
+        <section id="tracks" class="section">
+            <h2 class="section-title">مسارات المشروع</h2>
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>مسار التدريب المهني</h3>
+                    <p>برامج تدريبية مكثفة تهدف إلى تطوير المهارات العملية والتطبيقية في مختلف التخصصات</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>مسار القيادة</h3>
+                    <p>برنامج متخصص لتطوير المهارات القيادية وإعداد القادة المستقبليين</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>مسار الابتكار</h3>
+                    <p>برامج لتعزيز الفكر الإبداعي وتطوير مشاريع ريادية مبتكرة</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>مسار الشهادات المهنية</h3>
+                    <p>برامج معتمدة للحصول على شهادات مهنية دولية ومعترف بها</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outputs Section -->
+        <section id="outputs" class="section">
+            <h2 class="section-title">مخرجات المشروع</h2>
+            <div class="outputs-grid">
+                <div class="output-item">
+                    <div class="output-number">500+</div>
+                    <div class="output-label">متدرب مؤهل</div>
+                </div>
+                <div class="output-item">
+                    <div class="output-number">50+</div>
+                    <div class="output-label">دورة تدريبية</div>
+                </div>
+                <div class="output-item">
+                    <div class="output-number">30+</div>
+                    <div class="output-label">شراكة استراتيجية</div>
+                </div>
+                <div class="output-item">
+                    <div class="output-number">85%</div>
+                    <div class="output-label">نسبة التوظيف</div>
+                </div>
+                <div class="output-item">
+                    <div class="output-number">20+</div>
+                    <div class="output-label">مشروع ريادي</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section id="statistics" class="section">
+            <h2 class="section-title">أرقام وإنجازات المشروع</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">1,250</div>
+                    <div class="stat-label">إجمالي المستفيدين</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-number">15,000</div>
+                    <div class="stat-label">ساعة تدريبية</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">نسبة الرضا</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="stat-number">450</div>
+                    <div class="stat-label">فرصة توظيف</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sponsors Section -->
+        <section class="section">
+            <h2 class="section-title">الرعاة والشركاء</h2>
+            <div class="sponsors-grid">
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="images/deem-logo.jpg" alt="ديم">
+                    </div>
+                    <div class="sponsor-name">شركة ديم</div>
+                </div>
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="images/jadarah-logo.jpg" alt="جدارة">
+                    </div>
+                    <div class="sponsor-name">مركز جدارة</div>
+                </div>
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="images/council-network-logo.jpg" alt="شبكة المجالس">
+                    </div>
+                    <div class="sponsor-name">شبكة المجالس التعاونية</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section">
+            <h2 class="section-title">صور من المشروع</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=400" alt="معرض 1">
+                    <div class="gallery-overlay">ورشة عمل تطوير المهارات</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400" alt="معرض 2">
+                    <div class="gallery-overlay">دورة القيادة الإدارية</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400" alt="معرض 3">
+                    <div class="gallery-overlay">برنامج ريادة الأعمال</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400" alt="معرض 4">
+                    <div class="gallery-overlay">حفل تخريج الدفعة الأولى</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400" alt="معرض 5">
+                    <div class="gallery-overlay">ورشة الابتكار والإبداع</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400" alt="معرض 6">
+                    <div class="gallery-overlay">جلسة تطوير المشاريع</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Actions Section -->
+        <section class="section">
+            <div class="actions-section">
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="action-title">الملف التعريفي</h3>
+                    <p class="action-description">اطلع على الملف التعريفي الكامل للمشروع والبرامج والمبادرات المتاحة</p>
+                    <a href="#" class="action-btn">تحميل الملف التعريفي</a>
+                </div>
+                <div class="action-card secondary">
+                    <div class="action-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3 class="action-title">انضم إلينا</h3>
+                    <p class="action-description">سجل الآن في برامجنا التدريبية واستفد من الفرص المتاحة</p>
+                    <a href="#" class="action-btn">التسجيل في المشروع</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Slider functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function moveSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const sliderTrack = document.getElementById('sliderTrack');
+            sliderTrack.style.transform = `translateX(${currentSlide * 100}%)`;
+        }
+
+        // Auto slide
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+
+        // Smooth scroll to section
+        function scrollToSection(event, sectionId) {
+            event.preventDefault();
+            const section = document.getElementById(sectionId);
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            // Remove active class from all nav items
+            navItems.forEach(item => item.classList.remove('active'));
+            
+            // Add active class to clicked nav item
+            event.target.classList.add('active');
+            
+            // Scroll to section
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Update active nav item on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
