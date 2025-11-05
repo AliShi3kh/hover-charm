@@ -151,7 +151,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(200, 168, 130, 0.15) 0%, rgba(180, 149, 106, 0.15) 100%);
+            background: linear-gradient(135deg, rgba(226, 166, 129, 0.15) 0%, rgba(226, 166, 129, 0.1) 100%);
             transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 0;
         }
@@ -162,9 +162,9 @@
         }
 
         .nav-item:hover {
-            border-bottom-color: #c8a882;
+            border-bottom-color: #e2a681;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(200, 168, 130, 0.25);
+            box-shadow: 0 8px 25px rgba(226, 166, 129, 0.3);
         }
 
         .nav-item:hover::before {
@@ -172,10 +172,10 @@
         }
 
         .nav-item.active {
-            background: linear-gradient(135deg, #c8a882 0%, #b8956a 100%);
+            background: linear-gradient(135deg, #e2a681 0%, #d89967 100%);
             color: white;
             border-bottom-color: #06232f;
-            box-shadow: 0 10px 30px rgba(200, 168, 130, 0.4);
+            box-shadow: 0 10px 30px rgba(226, 166, 129, 0.45);
             animation: activePulse 2s ease infinite;
         }
 
@@ -185,10 +185,10 @@
 
         @keyframes activePulse {
             0%, 100% {
-                box-shadow: 0 10px 30px rgba(200, 168, 130, 0.4);
+                box-shadow: 0 10px 30px rgba(226, 166, 129, 0.45);
             }
             50% {
-                box-shadow: 0 10px 40px rgba(200, 168, 130, 0.6);
+                box-shadow: 0 10px 40px rgba(226, 166, 129, 0.65);
             }
         }
 
