@@ -129,8 +129,9 @@
         .nav-item {
             padding: 14px 28px;
             background: white;
-            border: 2px solid #e8ecf1;
-            border-radius: 12px;
+            border: none;
+            border-bottom: 3px solid transparent;
+            border-radius: 8px 8px 0 0;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             color: #06232f;
@@ -174,7 +175,7 @@
         }
 
         .nav-item:hover {
-            border-color: #ea5c48;
+            border-bottom-color: #ea5c48;
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(234, 92, 72, 0.25);
         }
@@ -190,7 +191,7 @@
         .nav-item.active {
             background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
             color: white;
-            border-color: #ea5c48;
+            border-bottom-color: #00953f;
             box-shadow: 0 10px 30px rgba(234, 92, 72, 0.4);
             animation: activePulse 2s ease infinite;
         }
