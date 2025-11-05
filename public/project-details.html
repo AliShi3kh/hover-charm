@@ -300,71 +300,102 @@
         }
 
         .action-box {
-            background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
+            background: white;
             padding: 20px;
             border-radius: 12px;
-            color: white;
+            border: 2px solid #e8ecf1;
             position: relative;
             overflow: hidden;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
         }
 
-        .action-box::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        .action-box:hover {
+            border-color: #ea5c48;
+            box-shadow: 0 8px 25px rgba(234, 92, 72, 0.15);
+            transform: translateY(-2px);
         }
 
-        .action-box.secondary {
-            background: linear-gradient(135deg, #00953f 0%, #007832 100%);
+        .action-box.secondary:hover {
+            border-color: #00953f;
+            box-shadow: 0 8px 25px rgba(0, 149, 63, 0.15);
         }
 
         .action-box-icon {
-            font-size: 2em;
-            margin-bottom: 12px;
-            position: relative;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+            flex-shrink: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .action-box.secondary .action-box-icon {
+            background: linear-gradient(135deg, #00953f 0%, #007832 100%);
+        }
+
+        .action-box:hover .action-box-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .action-box-content {
+            flex: 1;
+            text-align: right;
         }
 
         .action-box-title {
-            font-size: 1.2em;
-            margin-bottom: 8px;
+            font-size: 1.1em;
+            margin-bottom: 5px;
             font-weight: bold;
-            position: relative;
+            color: #06232f;
         }
 
         .action-box-description {
-            margin-bottom: 12px;
             line-height: 1.5;
-            position: relative;
-            font-size: 0.9em;
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 12px;
         }
 
         .action-box-btn {
-            background: white;
-            color: #ea5c48;
-            padding: 8px 20px;
+            background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
+            color: white;
+            padding: 10px 0;
             border: none;
-            border-radius: 20px;
+            border-radius: 8px;
             font-size: 0.9em;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(234, 92, 72, 0.25);
         }
 
         .action-box.secondary .action-box-btn {
-            color: #00953f;
+            background: linear-gradient(135deg, #00953f 0%, #007832 100%);
+            box-shadow: 0 4px 12px rgba(0, 149, 63, 0.25);
         }
 
         .action-box-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(234, 92, 72, 0.35);
+        }
+
+        .action-box.secondary .action-box-btn:hover {
+            box-shadow: 0 6px 20px rgba(0, 149, 63, 0.35);
         }
 
         /* About Section - Compact */
@@ -980,17 +1011,27 @@
                     <div class="action-box-icon">
                         <i class="fas fa-file-pdf"></i>
                     </div>
-                    <h3 class="action-box-title">الملف التعريفي</h3>
-                    <p class="action-box-description">اطلع على الملف التعريفي الكامل للمشروع</p>
-                    <a href="#" class="action-box-btn">تحميل الملف</a>
+                    <div class="action-box-content">
+                        <h3 class="action-box-title">الملف التعريفي</h3>
+                        <p class="action-box-description">اطلع على الملف التعريفي الكامل للمشروع</p>
+                        <a href="#" class="action-box-btn">
+                            <i class="fas fa-download"></i>
+                            <span>تحميل الملف</span>
+                        </a>
+                    </div>
                 </div>
                 <div class="action-box secondary">
                     <div class="action-box-icon">
                         <i class="fas fa-user-plus"></i>
                     </div>
-                    <h3 class="action-box-title">انضم إلينا</h3>
-                    <p class="action-box-description">سجل الآن في برامجنا التدريبية</p>
-                    <a href="#" class="action-box-btn">التسجيل</a>
+                    <div class="action-box-content">
+                        <h3 class="action-box-title">انضم إلينا</h3>
+                        <p class="action-box-description">سجل الآن في برامجنا التدريبية</p>
+                        <a href="#" class="action-box-btn">
+                            <i class="fas fa-edit"></i>
+                            <span>التسجيل</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
