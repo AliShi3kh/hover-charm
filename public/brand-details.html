@@ -772,6 +772,199 @@
             box-shadow: 0 6px 18px rgba(234, 92, 72, 0.35);
         }
 
+        /* Activities Table Section */
+        .activities-table-wrapper {
+            overflow-x: auto;
+            margin-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .activities-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .activities-table thead {
+            background: linear-gradient(135deg, #06232f 0%, #0a3d52 100%);
+            color: white;
+        }
+
+        .activities-table thead th {
+            padding: 16px 12px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 0.9em;
+            border-bottom: 3px solid #ea5c48;
+            white-space: nowrap;
+        }
+
+        .activities-table tbody tr {
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #e8ecf1;
+        }
+
+        .activities-table tbody tr:hover {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .activities-table tbody td {
+            padding: 14px 12px;
+            text-align: center;
+            font-size: 0.85em;
+            color: #06232f;
+        }
+
+        /* Parent Activity Row */
+        .activity-parent {
+            background: linear-gradient(135deg, #e2a681 0%, #d89967 100%);
+            font-weight: 700;
+            color: white !important;
+        }
+
+        .activity-parent td {
+            color: white !important;
+            font-weight: 600;
+        }
+
+        .activity-parent:hover {
+            background: linear-gradient(135deg, #d89967 0%, #c88755 100%);
+            transform: translateX(-3px);
+        }
+
+        /* Child Activity Row */
+        .activity-child {
+            background: white;
+        }
+
+        .activity-child td {
+            padding-right: 30px;
+        }
+
+        /* Toggle Button */
+        .toggle-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+        }
+
+        .toggle-btn:hover {
+            background: white;
+            color: #e2a681;
+            transform: scale(1.1);
+        }
+
+        .toggle-btn.collapsed .fa-minus {
+            display: none;
+        }
+
+        .toggle-btn.collapsed .fa-plus {
+            display: inline;
+        }
+
+        .toggle-btn:not(.collapsed) .fa-plus {
+            display: none;
+        }
+
+        .toggle-btn:not(.collapsed) .fa-minus {
+            display: inline;
+        }
+
+        /* Status Badge */
+        .status-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .status-badge.planned {
+            background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+            color: white;
+        }
+
+        .status-badge.in-progress {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+        }
+
+        .status-badge.completed {
+            background: linear-gradient(135deg, #00953f 0%, #007832 100%);
+            color: white;
+        }
+
+        /* Progress Bar */
+        .progress-bar-cell {
+            min-width: 120px;
+        }
+
+        .progress-bar-container {
+            background: #e8ecf1;
+            border-radius: 20px;
+            height: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #00953f 0%, #007832 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75em;
+            font-weight: 600;
+            transition: width 0.5s ease;
+        }
+
+        /* Responsive Table */
+        @media (max-width: 1200px) {
+            .activities-table thead th,
+            .activities-table tbody td {
+                padding: 12px 8px;
+                font-size: 0.8em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .activities-table-wrapper {
+                border-radius: 8px;
+            }
+
+            .activities-table thead th,
+            .activities-table tbody td {
+                padding: 10px 6px;
+                font-size: 0.75em;
+            }
+
+            .toggle-btn {
+                width: 25px;
+                height: 25px;
+                font-size: 0.8em;
+            }
+
+            .status-badge {
+                padding: 4px 8px;
+                font-size: 0.7em;
+            }
+        }
+
         /* Gallery Slider */
         .gallery-container {
             position: relative;
@@ -1160,6 +1353,10 @@
                             <i class="fas fa-chalkboard-teacher"></i>
                             <span>الدورات القائمة</span>
                         </a>
+                        <a href="#activities" class="nav-item" onclick="setActiveNav(event)">
+                            <i class="fas fa-tasks"></i>
+                            <span>جدول الأنشطة</span>
+                        </a>
                         <a href="#partners" class="nav-item" onclick="setActiveNav(event)">
                             <i class="fas fa-handshake"></i>
                             <span>الرعاة</span>
@@ -1461,6 +1658,206 @@
             </div>
         </div>
 
+        <!-- Activities Section -->
+        <div class="section" id="activities">
+            <h2 class="section-title">
+                <i class="fas fa-tasks"></i>
+                جدول الأنشطة
+            </h2>
+            <div class="activities-table-wrapper">
+                <table class="activities-table table">
+                    <thead>
+                        <tr>
+                            <th>العمليات</th>
+                            <th>اسم النشاط</th>
+                            <th>الوصف</th>
+                            <th>تاريخ البداية</th>
+                            <th>تاريخ النهاية</th>
+                            <th>المسؤول</th>
+                            <th>الحالة</th>
+                            <th>نسبة التقدم</th>
+                            <th>الميزانية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Parent Activity 1 -->
+                        <tr class="activity-parent">
+                            <td>
+                                <button class="toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#activity1Children" aria-expanded="false">
+                                    <i class="fas fa-plus"></i>
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </td>
+                            <td>المرحلة الأولى - التخطيط</td>
+                            <td>مرحلة التخطيط والإعداد للمشروع</td>
+                            <td>2025-01-01</td>
+                            <td>2025-03-31</td>
+                            <td>أحمد محمد</td>
+                            <td><span class="status-badge in-progress">جاري التنفيذ</span></td>
+                            <td class="progress-bar-cell">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" style="width: 65%">65%</div>
+                                </div>
+                            </td>
+                            <td>500,000 ريال</td>
+                        </tr>
+                        <!-- Child Activities of Activity 1 -->
+                        <tr class="collapse activity-child" id="activity1Children">
+                            <td></td>
+                            <td>دراسة الجدوى</td>
+                            <td>إعداد دراسة جدوى شاملة للمشروع</td>
+                            <td>2025-01-01</td>
+                            <td>2025-01-31</td>
+                            <td>سارة أحمد</td>
+                            <td><span class="status-badge completed">مكتمل</span></td>
+                            <td class="progress-bar-cell">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" style="width: 100%">100%</div>
+                                </div>
+                            </td>
+                            <td>150,000 ريال</td>
+                        </tr>
+                        <tr class="collapse activity-child" id="activity1Children">
+                            <td></td>
+                            <td>تحديد الموارد</td>
+                            <td>تحديد الموارد البشرية والمادية المطلوبة</td>
+                            <td>2025-02-01</td>
+                            <td>2025-02-28</td>
+                            <td>خالد علي</td>
+                            <td><span class="status-badge in-progress">جاري التنفيذ</span></td>
+                            <td class="progress-bar-cell">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" style="width: 70%">70%</div>
+                                </div>
+                            </td>
+                            <td>200,000 ريال</td>
+                        </tr>
+                        <tr class="collapse activity-child" id="activity1Children">
+                            <td></td>
+                            <td>إعداد الخطة التنفيذية</td>
+                            <td>وضع خطة تنفيذية تفصيلية للمشروع</td>
+                            <td>2025-03-01</td>
+                            <td>2025-03-31</td>
+                            <td>منى حسن</td>
+                            <td><span class="status-badge planned">مخطط</span></td>
+                            <td class="progress-bar-cell">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" style="width: 25%">25%</div>
+                                </div>
+                            </td>
+                            <td>150,000 ريال</td>
+                        </tr>
+
+                        <!-- Parent Activity 2 -->
+                        <tr class="activity-parent">
+                            <td>
+                                <button class="toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#activity2Children" aria-expanded="false">
+                                    <i class="fas fa-plus"></i>
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </td>
+                            <td>المرحلة الثانية - التنفيذ</td>
+                            <td>مرحلة تنفيذ الأنشطة الرئيسية</td>
+                            <td>2025-04-01</td>
+                            <td>2025-08-31</td>
+                            <td>فهد عبدالله</td>
+                            <td><span class="status-badge planned">مخطط</span></td>
+                            <td class="progress-bar-cell">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" style="width: 0%">0%</div>
+                                </div>
+                            </td>
+                            <td>1,200,000 ريال</td>
+                        </tr>
+                        <!-- Child Activities of Activity 2 -->
+                        <tr class="collapse activity-child" id="activity2Children">
+                            <td></td>
+                            <td>تطوير المحتوى</td>
+                            <td>إنشاء وتطوير المحتوى التدريبي</td>
+                            <td>2025-04-01</td>
+                            <td>2025-05-31</td>
+                            <td>نورة سعيد</td>
+                            <td><span class="status-badge planned">مخطط</span></td>
+                            <td class="progress-bar-cell">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" style="width: 0%">0%</div>
+                                </div>
+                            </td>
+                            <td>400,000 ريال</td>
+                        </tr>
+                        <tr class="collapse activity-child" id="activity2Children">
+                            <td></td>
+                            <td>تنفيذ البرامج التدريبية</td>
+                            <td>تقديم الدورات والورش التدريبية</td>
+                            <td>2025-06-01</td>
+                            <td>2025-08-31</td>
+                            <td>عمر يوسف</td>
+                            <td><span class="status-badge planned">مخطط</span></td>
+                            <td class="progress-bar-cell">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" style="width: 0%">0%</div>
+                                </div>
+                            </td>
+                            <td>800,000 ريال</td>
+                        </tr>
+
+                        <!-- Parent Activity 3 -->
+                        <tr class="activity-parent">
+                            <td>
+                                <button class="toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#activity3Children" aria-expanded="false">
+                                    <i class="fas fa-plus"></i>
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </td>
+                            <td>المرحلة الثالثة - التقييم</td>
+                            <td>مرحلة تقييم النتائج والأداء</td>
+                            <td>2025-09-01</td>
+                            <td>2025-10-31</td>
+                            <td>ريم محمود</td>
+                            <td><span class="status-badge planned">مخطط</span></td>
+                            <td class="progress-bar-cell">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" style="width: 0%">0%</div>
+                                </div>
+                            </td>
+                            <td>300,000 ريال</td>
+                        </tr>
+                        <!-- Child Activities of Activity 3 -->
+                        <tr class="collapse activity-child" id="activity3Children">
+                            <td></td>
+                            <td>جمع البيانات</td>
+                            <td>جمع وتحليل بيانات الأداء</td>
+                            <td>2025-09-01</td>
+                            <td>2025-09-30</td>
+                            <td>لينا كمال</td>
+                            <td><span class="status-badge planned">مخطط</span></td>
+                            <td class="progress-bar-cell">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" style="width: 0%">0%</div>
+                                </div>
+                            </td>
+                            <td>100,000 ريال</td>
+                        </tr>
+                        <tr class="collapse activity-child" id="activity3Children">
+                            <td></td>
+                            <td>إعداد التقرير النهائي</td>
+                            <td>كتابة وإعداد التقرير الختامي للمشروع</td>
+                            <td>2025-10-01</td>
+                            <td>2025-10-31</td>
+                            <td>طارق ناصر</td>
+                            <td><span class="status-badge planned">مخطط</span></td>
+                            <td class="progress-bar-cell">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" style="width: 0%">0%</div>
+                                </div>
+                            </td>
+                            <td>200,000 ريال</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         <!-- Gallery Section -->
         <div class="section" id="gallery">
             <h2 class="section-title">
@@ -1668,7 +2065,7 @@
 
         // Highlight active section on scroll
         window.addEventListener('scroll', function() {
-            const sections = ['home', 'about', 'vmp', 'services', 'courses', 'gallery', 'partners'];
+            const sections = ['home', 'about', 'vmp', 'services', 'courses', 'activities', 'gallery', 'partners'];
             const navHeight = document.querySelector('.brand-nav').offsetHeight;
             
             let currentSection = 'home';
