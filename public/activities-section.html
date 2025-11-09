@@ -155,10 +155,11 @@
 
         /* Parent Activity Row */
         .activity-parent {
-            background: linear-gradient(135deg, #e2a681 0%, #d89967 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             font-weight: 700;
             color: white !important;
             cursor: pointer;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
         }
 
         .activity-parent td {
@@ -167,9 +168,9 @@
         }
 
         .activity-parent:hover {
-            background: linear-gradient(135deg, #d89967 0%, #c88755 100%);
+            background: linear-gradient(135deg, #5568d3 0%, #6a4091 100%);
             transform: translateX(-3px);
-            box-shadow: 0 4px 15px rgba(226, 166, 129, 0.3);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
 
         /* Child Activity Row */
@@ -178,7 +179,7 @@
         }
 
         .activity-child td {
-            background: #f8f9fa;
+            background: #f8fafb;
         }
 
         .activity-child td:first-child {
@@ -190,8 +191,9 @@
             content: '└─';
             position: absolute;
             right: 25px;
-            color: #e2a681;
+            color: #667eea;
             font-weight: bold;
+            font-size: 1.2em;
         }
 
         /* Toggle Button */
@@ -232,22 +234,70 @@
             font-size: 0.85em;
             font-weight: 600;
             display: inline-block;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .status-badge.planned {
-            background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
             color: white;
         }
 
         .status-badge.in-progress {
-            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
             color: white;
         }
 
         .status-badge.completed {
-            background: linear-gradient(135deg, #00953f 0%, #007832 100%);
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
             color: white;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .action-btn {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .action-btn.edit {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+        }
+
+        .action-btn.edit:hover {
+            background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        }
+
+        .action-btn.delete {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+        }
+
+        .action-btn.delete:hover {
+            background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+        }
+
+        .action-btn i {
+            font-size: 0.9em;
         }
 
         /* Progress Bar */
@@ -399,7 +449,7 @@
             padding: 25px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
-            border-left: 4px solid #ea5c48;
+            border-left: 4px solid #667eea;
         }
 
         .stat-card:hover {
@@ -408,15 +458,15 @@
         }
 
         .stat-card.green {
-            border-left-color: #00953f;
+            border-left-color: #27ae60;
         }
 
         .stat-card.blue {
-            border-left-color: #007bff;
+            border-left-color: #3498db;
         }
 
         .stat-card.orange {
-            border-left-color: #e2a681;
+            border-left-color: #f39c12;
         }
 
         .stat-card h3 {
@@ -534,6 +584,10 @@
                                 <i class="fas fa-money-bill-wave"></i>
                                 الميزانية (ريال)
                             </th>
+                            <th>
+                                <i class="fas fa-cogs"></i>
+                                الإجراءات
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -557,6 +611,18 @@
                                 </div>
                             </td>
                             <td><strong>500,000</strong></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" onclick="editActivity('ACT-001')">
+                                        <i class="fas fa-edit"></i>
+                                        <span>تعديل</span>
+                                    </button>
+                                    <button class="action-btn delete" onclick="deleteActivity('ACT-001')">
+                                        <i class="fas fa-trash"></i>
+                                        <span>حذف</span>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
 
                         <!-- Child Activities of Activity 1 -->
@@ -575,6 +641,16 @@
                                 </div>
                             </td>
                             <td>150,000</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" onclick="editActivity('ACT-001-1')">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" onclick="deleteActivity('ACT-001-1')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
                         <tr class="collapse activity-child" id="activity1Children">
                             <td></td>
@@ -591,6 +667,16 @@
                                 </div>
                             </td>
                             <td>200,000</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" onclick="editActivity('ACT-001-2')">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" onclick="deleteActivity('ACT-001-2')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
                         <tr class="collapse activity-child" id="activity1Children">
                             <td></td>
@@ -607,6 +693,16 @@
                                 </div>
                             </td>
                             <td>150,000</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" onclick="editActivity('ACT-001-3')">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" onclick="deleteActivity('ACT-001-3')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
 
                         <!-- Parent Activity 2 -->
@@ -629,6 +725,18 @@
                                 </div>
                             </td>
                             <td><strong>1,200,000</strong></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" onclick="editActivity('ACT-002')">
+                                        <i class="fas fa-edit"></i>
+                                        <span>تعديل</span>
+                                    </button>
+                                    <button class="action-btn delete" onclick="deleteActivity('ACT-002')">
+                                        <i class="fas fa-trash"></i>
+                                        <span>حذف</span>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
 
                         <!-- Child Activities of Activity 2 -->
@@ -647,6 +755,16 @@
                                 </div>
                             </td>
                             <td>400,000</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" onclick="editActivity('ACT-002-1')">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" onclick="deleteActivity('ACT-002-1')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
                         <tr class="collapse activity-child" id="activity2Children">
                             <td></td>
@@ -663,6 +781,16 @@
                                 </div>
                             </td>
                             <td>600,000</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" onclick="editActivity('ACT-002-2')">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" onclick="deleteActivity('ACT-002-2')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
                         <tr class="collapse activity-child" id="activity2Children">
                             <td></td>
@@ -679,6 +807,16 @@
                                 </div>
                             </td>
                             <td>200,000</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" onclick="editActivity('ACT-002-3')">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" onclick="deleteActivity('ACT-002-3')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
 
                         <!-- Parent Activity 3 -->
@@ -701,6 +839,18 @@
                                 </div>
                             </td>
                             <td><strong>300,000</strong></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" onclick="editActivity('ACT-003')">
+                                        <i class="fas fa-edit"></i>
+                                        <span>تعديل</span>
+                                    </button>
+                                    <button class="action-btn delete" onclick="deleteActivity('ACT-003')">
+                                        <i class="fas fa-trash"></i>
+                                        <span>حذف</span>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
 
                         <!-- Child Activities of Activity 3 -->
@@ -719,6 +869,16 @@
                                 </div>
                             </td>
                             <td>100,000</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" onclick="editActivity('ACT-003-1')">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" onclick="deleteActivity('ACT-003-1')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
                         <tr class="collapse activity-child" id="activity3Children">
                             <td></td>
@@ -735,6 +895,16 @@
                                 </div>
                             </td>
                             <td>120,000</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" onclick="editActivity('ACT-003-2')">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" onclick="deleteActivity('ACT-003-2')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
                         <tr class="collapse activity-child" id="activity3Children">
                             <td></td>
@@ -751,6 +921,16 @@
                                 </div>
                             </td>
                             <td>80,000</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" onclick="editActivity('ACT-003-3')">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" onclick="deleteActivity('ACT-003-3')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
 
                         <!-- Parent Activity 4 -->
@@ -773,6 +953,18 @@
                                 </div>
                             </td>
                             <td><strong>400,000</strong></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" onclick="editActivity('ACT-004')">
+                                        <i class="fas fa-edit"></i>
+                                        <span>تعديل</span>
+                                    </button>
+                                    <button class="action-btn delete" onclick="deleteActivity('ACT-004')">
+                                        <i class="fas fa-trash"></i>
+                                        <span>حذف</span>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
 
                         <!-- Child Activities of Activity 4 -->
@@ -791,6 +983,16 @@
                                 </div>
                             </td>
                             <td>200,000</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" onclick="editActivity('ACT-004-1')">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" onclick="deleteActivity('ACT-004-1')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
                         <tr class="collapse activity-child" id="activity4Children">
                             <td></td>
@@ -807,6 +1009,16 @@
                                 </div>
                             </td>
                             <td>100,000</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" onclick="editActivity('ACT-004-2')">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" onclick="deleteActivity('ACT-004-2')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
                         <tr class="collapse activity-child" id="activity4Children">
                             <td></td>
@@ -823,6 +1035,16 @@
                                 </div>
                             </td>
                             <td>100,000</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-btn edit" onclick="editActivity('ACT-004-3')">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" onclick="deleteActivity('ACT-004-3')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -879,6 +1101,20 @@
         // Initialize Bootstrap tooltips if needed
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+        // Edit Activity Function
+        function editActivity(activityId) {
+            alert(`تعديل النشاط: ${activityId}\nسيتم فتح نموذج التعديل قريباً`);
+            // يمكنك هنا إضافة كود لفتح نافذة منبثقة للتعديل
+        }
+
+        // Delete Activity Function
+        function deleteActivity(activityId) {
+            if (confirm(`هل أنت متأكد من حذف النشاط: ${activityId}؟`)) {
+                alert(`تم حذف النشاط: ${activityId}`);
+                // يمكنك هنا إضافة كود لحذف النشاط من قاعدة البيانات
+            }
+        }
     </script>
 </body>
 </html>
