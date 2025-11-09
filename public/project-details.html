@@ -693,6 +693,206 @@
             left: 5px;
         }
 
+        /* Brands Section */
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .brand-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #e8ecf1;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .brand-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ea5c48 0%, #e2a681 50%, #00953f 100%);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-8px);
+            border-color: #ea5c48;
+            box-shadow: 0 12px 35px rgba(234, 92, 72, 0.2);
+        }
+
+        .brand-card:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .brand-header {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            margin-bottom: 18px;
+            padding-bottom: 18px;
+            border-bottom: 2px solid #f0f2f5;
+        }
+
+        .brand-logo-container {
+            width: 85px;
+            height: 85px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 16px;
+            padding: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            border: 2px solid #e8ecf1;
+        }
+
+        .brand-card:hover .brand-logo-container {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 8px 20px rgba(234, 92, 72, 0.15);
+            border-color: #ea5c48;
+        }
+
+        .brand-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .brand-card:hover .brand-logo {
+            transform: scale(1.1);
+        }
+
+        .brand-info {
+            flex: 1;
+        }
+
+        .brand-name {
+            color: #06232f;
+            font-size: 1.25em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.3;
+            transition: color 0.3s ease;
+        }
+
+        .brand-card:hover .brand-name {
+            color: #ea5c48;
+        }
+
+        .brand-category {
+            color: #6c757d;
+            font-size: 0.85em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+
+        .brand-category i {
+            color: #e2a681;
+            font-size: 0.9em;
+        }
+
+        .brand-description {
+            color: #495057;
+            line-height: 1.7;
+            font-size: 0.95em;
+            margin-bottom: 20px;
+            min-height: 85px;
+        }
+
+        .brand-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(234, 92, 72, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .brand-btn:hover::before {
+            left: 100%;
+        }
+
+        .brand-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(234, 92, 72, 0.4);
+            background: linear-gradient(135deg, #d84a36 0%, #c13e2a 100%);
+        }
+
+        .brand-btn:active {
+            transform: translateY(0);
+        }
+
+        .brand-btn i {
+            transition: transform 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        .brand-btn:hover i {
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 768px) {
+            .brands-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .brand-card {
+                padding: 20px;
+            }
+
+            .brand-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .brand-logo-container {
+                width: 75px;
+                height: 75px;
+            }
+
+            .brand-description {
+                min-height: auto;
+            }
+        }
+
 
         /* Statistics Section - Compact */
         .stats-grid {
@@ -973,6 +1173,7 @@
             <a href="#tracks" class="nav-item" onclick="scrollToSection(event, 'tracks')">مسارات المشروع</a>
             <a href="#outputs" class="nav-item" onclick="scrollToSection(event, 'outputs')">مخرجات المشروع</a>
             <a href="#statistics" class="nav-item" onclick="scrollToSection(event, 'statistics')">أرقام وإنجازات</a>
+            <a href="#brands" class="nav-item" onclick="scrollToSection(event, 'brands')">العلامات التجارية</a>
             <a href="#gallery" class="nav-item" onclick="scrollToSection(event, 'gallery')">صور المشروع</a>
         </div>
     </nav>
@@ -1318,6 +1519,69 @@
             </div>
         </section>
 
+        <!-- Brands Section -->
+        <section id="brands" class="section">
+            <h2 class="section-title">العلامات التجارية</h2>
+            <div class="brands-grid">
+                <div class="brand-card">
+                    <div class="brand-header">
+                        <div class="brand-logo-container">
+                            <img src="images/brand-logo-1.svg" alt="علامة ليبل الوطنية" class="brand-logo">
+                        </div>
+                        <div class="brand-info">
+                            <h3 class="brand-name">علامة ليبل الوطنية</h3>
+                            <p class="brand-category"><i class="fas fa-tag"></i> خدمات التدريب والتطوير</p>
+                        </div>
+                    </div>
+                    <p class="brand-description">
+                        علامة تجارية متخصصة في تقديم حلول التدريب المهني والتطوير الوظيفي المتكاملة للشباب والمؤسسات في جميع القطاعات
+                    </p>
+                    <button class="brand-btn" onclick="viewBrandDetails(1)">
+                        <span>عرض تفاصيل العلامة</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-header">
+                        <div class="brand-logo-container">
+                            <img src="images/brand-logo-2.svg" alt="علامة جمعيات التعاون" class="brand-logo">
+                        </div>
+                        <div class="brand-info">
+                            <h3 class="brand-name">علامة جمعيات التعاون</h3>
+                            <p class="brand-category"><i class="fas fa-handshake"></i> الشراكات المجتمعية</p>
+                        </div>
+                    </div>
+                    <p class="brand-description">
+                        تربط الجمعيات التعاونية بالمجتمع من خلال برامج تنموية شاملة تركز على التمكين الاقتصادي والاجتماعي المستدام
+                    </p>
+                    <button class="brand-btn" onclick="viewBrandDetails(2)">
+                        <span>عرض تفاصيل العلامة</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+
+                <div class="brand-card">
+                    <div class="brand-header">
+                        <div class="brand-logo-container">
+                            <img src="images/brand-logo-3.svg" alt="علامة قطاع الأعمال" class="brand-logo">
+                        </div>
+                        <div class="brand-info">
+                            <h3 class="brand-name">علامة قطاع الأعمال</h3>
+                            <p class="brand-category"><i class="fas fa-briefcase"></i> الاستثمار والتطوير</p>
+                        </div>
+                    </div>
+                    <p class="brand-description">
+                        منصة متكاملة لدعم المشاريع التعاونية والاستثمارية، تقدم حلولاً مبتكرة في مجالات ريادة الأعمال والتنمية المستدامة
+                    </p>
+                    <button class="brand-btn" onclick="viewBrandDetails(3)">
+                        <span>عرض تفاصيل العلامة</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <!-- Gallery Section -->
         <section id="gallery" class="section">
             <h2 class="section-title">صور من المشروع</h2>
@@ -1472,6 +1736,13 @@
                 closeGalleryModal();
             }
         });
+
+        // View brand details
+        function viewBrandDetails(brandId) {
+            // Here you can implement navigation to brand details page
+            console.log('Viewing details for brand:', brandId);
+            alert('سيتم توجيهك لصفحة تفاصيل العلامة التجارية رقم ' + brandId);
+        }
     </script>
 </body>
 </html>
