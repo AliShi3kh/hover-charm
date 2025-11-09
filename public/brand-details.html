@@ -20,48 +20,54 @@
             overflow-x: hidden;
         }
 
-        /* Brand Cover Header */
-        .brand-cover {
+        /* Header Section - Compact */
+        .brand-header {
             background: linear-gradient(135deg, rgba(6, 35, 47, 0.95) 0%, rgba(10, 61, 82, 0.95) 100%), 
                         url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1920') center/cover;
             padding: 0;
             position: relative;
             overflow: hidden;
-            min-height: 350px;
         }
 
-        .brand-cover::before {
+        .brand-header::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(234, 92, 72, 0.2) 0%, rgba(226, 166, 129, 0.2) 100%);
+            background: rgba(6, 35, 47, 0.7);
         }
 
-        .cover-content {
+        .header-content {
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
-            padding: 40px 20px;
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+            padding: 0 20px 20px;
+            min-height: 220px;
         }
 
         .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
             color: white;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
+            border-radius: 8px;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 8px;
             font-weight: 600;
             transition: all 0.3s ease;
-            margin-bottom: 40px;
+            font-size: 0.9em;
         }
 
         .back-button:hover {
@@ -71,566 +77,379 @@
             transform: translateY(-2px);
         }
 
-        .brand-header-info {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            animation: fadeInUp 0.8s ease;
-        }
-
-        .brand-logo-large {
-            width: 140px;
-            height: 140px;
+        .brand-logo-header {
+            width: 100px;
+            height: 100px;
             background: white;
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 0.8s ease;
             flex-shrink: 0;
-            border: 4px solid white;
-            animation: fadeInLeft 0.8s ease;
+            border: 3px solid white;
         }
 
-        .brand-logo-large img {
+        .brand-logo-header img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
 
-        .brand-main-info {
+        .brand-info {
             flex: 1;
-            animation: fadeInRight 0.8s ease 0.2s backwards;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
         }
 
-        .brand-title-large {
+        .brand-title-main {
             color: white;
-            font-size: 2.5em;
+            font-size: 2em;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .brand-type {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 10px 20px;
-            border-radius: 25px;
-            color: white;
-            font-size: 1.1em;
-            font-weight: 600;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .brand-type i {
-            color: #e2a681;
-            font-size: 1.2em;
-        }
-
-        /* Content Sections */
-        .content-wrapper {
-            max-width: 1400px;
-            margin: -60px auto 60px;
-            padding: 0 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Stats Bar */
-        .stats-bar {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-            border: 2px solid #e8ecf1;
-            animation: fadeInUp 0.6s ease;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-            border-radius: 15px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .stat-item:hover {
-            border-color: #ea5c48;
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(234, 92, 72, 0.15);
-        }
-
-        .stat-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            background: linear-gradient(135deg, #ea5c48 0%, #e2a681 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            color: #6c757d;
-            font-size: 1.1em;
-            font-weight: 600;
-        }
-
-        /* About Brand Section */
-        .about-brand-section {
-            background: white;
-            border-radius: 20px;
-            padding: 50px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            border: 2px solid #e8ecf1;
-            margin-bottom: 40px;
-            animation: fadeInUp 0.8s ease;
-        }
-
-        .about-brand-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-brand-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, rgba(0, 149, 63, 0.1) 0%, rgba(0, 122, 51, 0.05) 100%);
-            color: #00953f;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.95em;
-            margin-bottom: 20px;
-            border: 2px solid rgba(0, 149, 63, 0.2);
-        }
-
-        .about-brand-badge i {
-            font-size: 1.1em;
-        }
-
-        .about-brand-title {
-            font-size: 2.2em;
-            color: #06232f;
-            font-weight: bold;
-            line-height: 1.3;
-            margin-bottom: 20px;
-        }
-
-        .about-brand-description {
-            color: #495057;
-            font-size: 1.05em;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-
-        .about-brand-features {
-            display: grid;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .feature-item {
+        .brand-meta {
             display: flex;
-            gap: 20px;
-            align-items: flex-start;
-            padding: 20px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            border-radius: 15px;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .feature-item:hover {
-            border-color: rgba(0, 149, 63, 0.3);
-            transform: translateX(-5px);
-            box-shadow: 0 5px 20px rgba(0, 149, 63, 0.1);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, rgba(0, 149, 63, 0.1) 0%, rgba(0, 122, 51, 0.05) 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            border: 2px solid rgba(0, 149, 63, 0.2);
-        }
-
-        .feature-icon i {
-            font-size: 1.6em;
-            color: #00953f;
-        }
-
-        .feature-content h4 {
-            color: #06232f;
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .feature-content p {
-            color: #6c757d;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        .about-brand-footer {
-            display: flex;
-            align-items: center;
-            gap: 30px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
-        .read-more-btn {
-            display: inline-flex;
+        .meta-item {
+            display: flex;
             align-items: center;
-            gap: 12px;
-            background: linear-gradient(135deg, #00953f 0%, #007a33 100%);
+            gap: 6px;
             color: white;
-            padding: 16px 32px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05em;
-            box-shadow: 0 8px 25px rgba(0, 149, 63, 0.3);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .read-more-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .read-more-btn:hover::before {
-            left: 100%;
-        }
-
-        .read-more-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0, 149, 63, 0.4);
-        }
-
-        .rating-section {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .avatars-group {
-            display: flex;
-            align-items: center;
-        }
-
-        .avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 3px solid white;
-            margin-left: -12px;
-            background: linear-gradient(135deg, #ea5c48 0%, #e2a681 100%);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        .avatar:first-child {
-            margin-left: 0;
-        }
-
-        .avatar-count {
-            width: 50px;
-            height: 40px;
-            background: #06232f;
-            color: white;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.85em;
-            margin-left: -12px;
-            border: 3px solid white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        .rating-text {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .rating-label {
-            color: #6c757d;
-            font-size: 0.85em;
-        }
-
-        .rating-score {
-            color: #06232f;
-            font-size: 1.8em;
-            font-weight: bold;
-            line-height: 1;
-        }
-
-        .rating-desc {
-            color: #6c757d;
-            font-size: 0.85em;
-        }
-
-        .about-brand-media {
-            position: relative;
-        }
-
-        .media-container {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
-
-        .media-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 20px;
-        }
-
-        .experience-badge {
-            position: absolute;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #00953f 0%, #007a33 100%);
-            padding: 25px 35px;
+            font-size: 0.9em;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 14px;
             border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 149, 63, 0.4);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            animation: pulse 2s ease-in-out infinite;
+            backdrop-filter: blur(10px);
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        .experience-number {
-            font-size: 3.5em;
-            font-weight: bold;
-            color: white;
-            line-height: 1;
-        }
-
-        .experience-text {
-            display: flex;
-            flex-direction: column;
-            color: white;
-            font-weight: 600;
+        .meta-item i {
+            color: #e2a681;
             font-size: 1.1em;
-            line-height: 1.3;
         }
 
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(6, 35, 47, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        /* Content Container */
+        .content-container {
+            max-width: 1200px;
+            margin: 25px auto;
+            padding: 0 20px;
         }
 
-        .media-container:hover .video-overlay {
-            opacity: 1;
-        }
-
-        .play-button {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
-            border: none;
-            border-radius: 50%;
-            color: white;
-            font-size: 1.8em;
-            cursor: pointer;
-            box-shadow: 0 8px 30px rgba(234, 92, 72, 0.5);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-right: 5px;
-        }
-
-        .play-button:hover {
-            transform: scale(1.15);
-            box-shadow: 0 12px 40px rgba(234, 92, 72, 0.6);
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .info-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 2px solid #e8ecf1;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
             animation: fadeInUp 0.6s ease;
         }
 
-        .info-card::before {
-            content: '';
+        .section-title {
+            font-size: 1.6em;
+            color: #06232f;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #ea5c48;
+            display: inline-block;
+        }
+
+        /* Main Grid Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Slider Section */
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            height: 400px;
+            background: #f5f7fa;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-caption {
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #ea5c48 0%, #e2a681 100%);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.5s ease;
+            background: linear-gradient(to top, rgba(6, 35, 47, 0.95), transparent);
+            color: white;
+            padding: 25px;
+            font-size: 1.1em;
+            font-weight: 600;
         }
 
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(234, 92, 72, 0.15);
-            border-color: #ea5c48;
-        }
-
-        .info-card:hover::before {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-
-        .info-card-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
-            border-radius: 15px;
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(234, 92, 72, 0.95);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.3em;
+            transition: all 0.3s ease;
+            z-index: 10;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 20px rgba(234, 92, 72, 0.3);
+        }
+
+        .slider-btn:hover {
+            background: #ea5c48;
+            transform: translateY(-50%) scale(1.15);
+            box-shadow: 0 4px 15px rgba(234, 92, 72, 0.4);
+        }
+
+        .slider-btn.prev {
+            right: 15px;
+        }
+
+        .slider-btn.next {
+            left: 15px;
+        }
+
+        .slider-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid white;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .info-card:hover .info-card-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .info-card-icon i {
-            font-size: 1.8em;
-            color: white;
-        }
-
-        .info-card-title {
-            font-size: 1.5em;
-            color: #06232f;
-            font-weight: bold;
-            margin-bottom: 15px;
-            transition: color 0.3s ease;
-        }
-
-        .info-card:hover .info-card-title {
-            color: #ea5c48;
-        }
-
-        .info-card-text {
-            color: #495057;
-            font-size: 1.05em;
-            line-height: 1.8;
-        }
-
-        /* Services Section */
-        .services-section {
+        .indicator.active {
             background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transform: scale(1.3);
+        }
+
+        /* Actions Sidebar */
+        .actions-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .action-box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
             border: 2px solid #e8ecf1;
-            animation: fadeInUp 0.8s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: calc(50% - 7.5px);
         }
 
-        .services-header {
-            text-align: center;
-            margin-bottom: 40px;
+        .action-box:hover {
+            border-color: #ea5c48;
+            box-shadow: 0 8px 25px rgba(234, 92, 72, 0.15);
+            transform: translateY(-2px);
         }
 
-        .services-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, #00953f 0%, #007a33 100%);
-            border-radius: 50%;
+        .action-box.secondary:hover {
+            border-color: #00953f;
+            box-shadow: 0 8px 25px rgba(0, 149, 63, 0.15);
+        }
+
+        .action-box-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .action-box-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 25px rgba(0, 149, 63, 0.3);
-        }
-
-        .services-icon i {
-            font-size: 2em;
             color: white;
+            font-size: 1.5em;
+            flex-shrink: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .services-title {
-            font-size: 2em;
-            color: #06232f;
-            font-weight: bold;
-            margin-bottom: 10px;
+        .action-box.secondary .action-box-icon {
+            background: linear-gradient(135deg, #00953f 0%, #007832 100%);
         }
 
-        .services-subtitle {
-            color: #6c757d;
+        .action-box:hover .action-box-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .action-box-title {
             font-size: 1.1em;
+            font-weight: bold;
+            color: #06232f;
         }
 
+        .action-box-description {
+            line-height: 1.6;
+            font-size: 0.9em;
+            color: #666;
+            flex: 1;
+        }
+
+        .action-box-btn {
+            background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
+            color: white;
+            padding: 12px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(234, 92, 72, 0.25);
+        }
+
+        .action-box.secondary .action-box-btn {
+            background: linear-gradient(135deg, #00953f 0%, #007832 100%);
+            box-shadow: 0 4px 12px rgba(0, 149, 63, 0.25);
+        }
+
+        .action-box-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(234, 92, 72, 0.35);
+        }
+
+        .action-box.secondary .action-box-btn:hover {
+            box-shadow: 0 6px 20px rgba(0, 149, 63, 0.35);
+        }
+
+        /* About Section */
+        .about-intro {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-right: 4px solid #ea5c48;
+            margin-bottom: 20px;
+        }
+
+        .about-intro p {
+            color: #06232f;
+            line-height: 1.8;
+            font-size: 1em;
+        }
+
+        /* Vision Mission Promise Grid */
+        .vmp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .vmp-card {
+            background: linear-gradient(135deg, #06232f 0%, #0a3d52 100%);
+            padding: 25px;
+            border-radius: 12px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .vmp-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(234, 92, 72, 0.1) 0%, transparent 70%);
+            animation: pulse 3s ease infinite;
+        }
+
+        .vmp-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .vmp-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            color: #e2a681;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .vmp-card h3 i {
+            font-size: 1.2em;
+        }
+
+        .vmp-card p {
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+            font-size: 0.98em;
+        }
+
+        /* Services Section */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        .service-item {
+        .service-card {
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
             padding: 25px;
-            border-radius: 15px;
+            border-radius: 12px;
             border: 2px solid #e8ecf1;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
@@ -638,7 +457,7 @@
             overflow: hidden;
         }
 
-        .service-item::before {
+        .service-card::before {
             content: '';
             position: absolute;
             bottom: 0;
@@ -651,21 +470,21 @@
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .service-item:hover {
+        .service-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 35px rgba(0, 149, 63, 0.15);
             border-color: rgba(0, 149, 63, 0.3);
             background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
         }
 
-        .service-item:hover::before {
+        .service-card:hover::before {
             transform: scaleX(1);
             transform-origin: left;
         }
 
         .service-number {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background: linear-gradient(135deg, #e2a681 0%, #d89967 100%);
             border-radius: 10px;
             display: flex;
@@ -678,204 +497,96 @@
             box-shadow: 0 4px 12px rgba(226, 166, 129, 0.3);
         }
 
-        .service-name {
+        .service-card h3 {
             font-size: 1.2em;
             color: #06232f;
-            font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .service-name i {
+        .service-card h3 i {
             color: #00953f;
             font-size: 0.9em;
         }
 
-        .service-description {
+        .service-card p {
             color: #6c757d;
             line-height: 1.7;
             font-size: 0.95em;
         }
 
-        /* Gallery Section */
-        .gallery-section {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 2px solid #e8ecf1;
-            margin-top: 40px;
-            animation: fadeInUp 0.8s ease;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-icon-wrapper {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, #e2a681 0%, #d89967 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 25px rgba(226, 166, 129, 0.3);
-        }
-
-        .section-icon-wrapper i {
-            font-size: 2em;
-            color: white;
-        }
-
-        .section-header h2 {
-            font-size: 2em;
-            color: #06232f;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .section-header p {
-            color: #6c757d;
-            font-size: 1.1em;
-        }
-
-        .gallery-slider-container {
+        /* Gallery Slider */
+        .gallery-container {
             position: relative;
             overflow: hidden;
-            border-radius: 20px;
+            padding: 30px 0;
         }
 
-        .gallery-slider {
+        .gallery-track {
             display: flex;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            gap: 20px;
+            transition: transform 0.5s ease;
         }
 
-        .gallery-slide {
-            min-width: 100%;
+        .gallery-item {
+            min-width: calc(25% - 15px);
+            aspect-ratio: 16/10;
+            border-radius: 12px;
+            overflow: hidden;
             position: relative;
-            aspect-ratio: 16/9;
-        }
-
-        .gallery-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 20px;
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(6, 35, 47, 0.8) 0%, transparent 50%);
-            display: flex;
-            align-items: flex-end;
-            padding: 40px;
-            opacity: 1;
-        }
-
-        .gallery-caption {
-            color: white;
-            font-weight: 600;
-            font-size: 1.3em;
-        }
-
-        .slider-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            z-index: 10;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .slider-nav:hover {
-            background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
-            color: white;
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 6px 20px rgba(234, 92, 72, 0.3);
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(234, 92, 72, 0.2);
         }
 
-        .slider-nav i {
-            font-size: 1.2em;
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
         }
 
-        .slider-nav.prev {
-            right: 20px;
+        .gallery-item:hover img {
+            transform: scale(1.1);
         }
 
-        .slider-nav.next {
-            left: 20px;
-        }
-
-        .slider-dots {
+        .gallery-caption {
             position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 10;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(6, 35, 47, 0.9), transparent);
+            color: white;
+            padding: 15px;
+            font-weight: 600;
+            font-size: 0.95em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .slider-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            border: 2px solid white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .slider-dot.active {
-            background: white;
-            transform: scale(1.3);
-        }
-
-        .slider-dot:hover {
-            background: rgba(255, 255, 255, 0.8);
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
         }
 
         /* Partners Section */
-        .partners-section {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 2px solid #e8ecf1;
-            margin-top: 40px;
-            animation: fadeInUp 0.8s ease;
-        }
-
         .partners-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        .partner-item {
+        .partner-card {
             background: white;
             padding: 30px;
-            border-radius: 15px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -885,13 +596,13 @@
             cursor: pointer;
         }
 
-        .partner-item:hover {
+        .partner-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             border-color: #00953f;
         }
 
-        .partner-item img {
+        .partner-card img {
             max-width: 100%;
             max-height: 80px;
             object-fit: contain;
@@ -899,23 +610,20 @@
             transition: filter 0.3s ease;
         }
 
-        .partner-item:hover img {
+        .partner-card:hover img {
             filter: grayscale(0%);
         }
 
-        /* Contact Form Section */
-        .contact-section {
+        /* Contact Form */
+        .contact-form-container {
             background: linear-gradient(135deg, #06232f 0%, #0a3d52 100%);
-            border-radius: 20px;
-            padding: 50px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-            margin-top: 40px;
+            border-radius: 15px;
+            padding: 40px;
             position: relative;
             overflow: hidden;
-            animation: fadeInUp 0.8s ease;
         }
 
-        .contact-section::before {
+        .contact-form-container::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -931,35 +639,29 @@
             to { transform: rotate(360deg); }
         }
 
-        .contact-content {
+        .contact-form-content {
             position: relative;
             z-index: 1;
         }
 
-        .contact-section .section-icon-wrapper {
-            background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
-        }
-
-        .contact-section .section-header h2,
-        .contact-section .section-header p {
+        .contact-form-container .section-title {
             color: white;
+            border-bottom-color: #ea5c48;
         }
 
-        .contact-form {
-            max-width: 700px;
-            margin: 0 auto;
+        .form-grid {
             display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            margin-top: 25px;
         }
 
         .form-group {
             position: relative;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
         }
 
         .form-group label {
@@ -974,7 +676,7 @@
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 15px 20px;
+            padding: 14px 18px;
             border: 2px solid rgba(255, 255, 255, 0.2);
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.1);
@@ -1017,7 +719,7 @@
             color: white;
             border: none;
             padding: 16px 40px;
-            border-radius: 12px;
+            border-radius: 10px;
             font-size: 1.1em;
             font-weight: 600;
             cursor: pointer;
@@ -1029,6 +731,7 @@
             box-shadow: 0 8px 25px rgba(234, 92, 72, 0.4);
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .submit-btn::before {
@@ -1051,31 +754,6 @@
             box-shadow: 0 12px 35px rgba(234, 92, 72, 0.5);
         }
 
-        .submit-btn:active {
-            transform: translateY(-1px);
-        }
-
-        /* Success Message */
-        .success-message {
-            display: none;
-            background: linear-gradient(135deg, #00953f 0%, #007a33 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            margin-top: 20px;
-            animation: fadeInUp 0.5s ease;
-        }
-
-        .success-message.show {
-            display: block;
-        }
-
-        .success-message i {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -1088,878 +766,502 @@
             }
         }
 
-        @keyframes fadeInLeft {
+        @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateX(-30px);
+                transform: translateY(-30px);
             }
             to {
                 opacity: 1;
-                transform: translateX(0);
+                transform: translateY(0);
             }
         }
 
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
             }
-            to {
-                opacity: 1;
-                transform: translateX(0);
+            50% {
+                transform: scale(1.05) rotate(5deg);
             }
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 90%;
-            position: relative;
-        }
-
-        .lightbox-content img {
-            max-width: 100%;
-            max-height: 90vh;
-            border-radius: 10px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border: none;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.5em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .lightbox-close:hover {
-            background: #ea5c48;
-            transform: rotate(90deg);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .brand-cover {
-                min-height: 280px;
-            }
-
-            .brand-header-info {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-
-            .brand-logo-large {
-                width: 110px;
-                height: 110px;
-            }
-
-            .brand-title-large {
-                font-size: 1.8em;
-            }
-
-            .brand-type {
-                font-size: 0.95em;
-            }
-
-            .content-wrapper {
-                margin-top: -40px;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
-            .stat-number {
-                font-size: 1.8em;
-            }
-
-            .info-grid {
+            .main-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
 
-            .info-card {
-                padding: 25px;
+            .slider-container {
+                height: 300px;
             }
 
-            .services-section,
-            .gallery-section,
-            .partners-section,
-            .contact-section {
-                padding: 30px 20px;
+            .actions-sidebar {
+                flex-direction: row;
             }
 
+            .action-box {
+                height: auto;
+            }
+
+            .brand-title-main {
+                font-size: 1.5em;
+            }
+
+            .header-content {
+                min-height: 180px;
+            }
+
+            .vmp-grid,
             .services-grid {
                 grid-template-columns: 1fr;
             }
 
-            .slider-nav {
-                width: 40px;
-                height: 40px;
+            .gallery-item {
+                min-width: calc(50% - 10px);
             }
 
-            .slider-nav.prev {
-                right: 10px;
-            }
-
-            .slider-nav.next {
-                left: 10px;
-            }
-
-            .gallery-overlay {
-                padding: 20px;
-            }
-
-            .gallery-caption {
-                font-size: 1em;
+            .form-grid {
+                grid-template-columns: 1fr;
             }
 
             .partners-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
-            .section-header h2 {
-                font-size: 1.6em;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .about-brand-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .about-brand-section {
-                padding: 30px 20px;
-            }
-
-            .about-brand-title {
-                font-size: 1.6em;
-            }
-
-            .about-brand-footer {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .experience-badge {
-                bottom: 15px;
-                right: 15px;
-                padding: 15px 20px;
-            }
-
-            .experience-number {
-                font-size: 2.5em;
-            }
-
-            .experience-text {
-                font-size: 0.9em;
-            }
-
-            .play-button {
-                width: 60px;
-                height: 60px;
-                font-size: 1.4em;
-            }
-
-            .lightbox-close {
-                top: 10px;
-                left: 10px;
-                width: 40px;
-                height: 40px;
-                font-size: 1.2em;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Brand Cover Header -->
-    <section class="brand-cover">
-        <div class="cover-content">
-            <a href="brands-section.html" class="back-button">
-                <i class="fas fa-arrow-right"></i>
-                <span>العودة للعلامات التجارية</span>
-            </a>
-            
-            <div class="brand-header-info">
-                <div class="brand-logo-large">
-                    <img src="images/brand-logo-1.svg" alt="شعار العلامة التجارية" id="brandLogo">
-                </div>
-                <div class="brand-main-info">
-                    <h1 class="brand-title-large" id="brandName">علامة ليبل الوطنية</h1>
-                    <div class="brand-type">
+    <!-- Brand Header -->
+    <section class="brand-header">
+        <a href="brands-section.html" class="back-button">
+            <i class="fas fa-arrow-right"></i>
+            <span>العودة</span>
+        </a>
+        <div class="header-content">
+            <div class="brand-logo-header">
+                <img src="images/brand-logo-1.svg" alt="شعار العلامة التجارية" id="brandLogo">
+            </div>
+            <div class="brand-info">
+                <h1 class="brand-title-main" id="brandName">علامة ليبل الوطنية</h1>
+                <div class="brand-meta">
+                    <div class="meta-item">
                         <i class="fas fa-tag"></i>
                         <span id="brandCategory">خدمات التدريب والتطوير</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>تأسست 2020</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>الرياض، المملكة العربية السعودية</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Content Sections -->
-    <div class="content-wrapper">
-        <!-- About Brand Section -->
-        <div class="about-brand-section">
-            <div class="about-brand-content">
-                <div class="about-brand-text">
-                    <div class="about-brand-badge">
-                        <i class="fas fa-building"></i>
-                        <span>نبذة عن علامتنا</span>
+    <!-- Content Container -->
+    <div class="content-container">
+        <!-- Main Grid: Slider + Actions -->
+        <div class="main-grid">
+            <!-- Slider Section -->
+            <div class="slider-container">
+                <div class="slider-track" id="sliderTrack">
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&h=800" alt="صورة العلامة التجارية 1">
+                        <div class="slide-caption">فريق عمل متميز ومحترف</div>
                     </div>
-                    <h2 class="about-brand-title">نحدد أنواع المخاطر التي تحتاج للتغطية التأمينية</h2>
-                    <p class="about-brand-description">
-                        تعمل شركات التأمين على توفير الشعور بالأمان والطمأنينة للعملاء، 
-                        حيث يمنحهم وجود التغطية التأمينية الثقة في مواجهة الأوقات الصعبة والتحديات المختلفة.
-                        نلتزم بتقديم خدمات تأمينية متكاملة تلبي احتياجات عملائنا وتحقق توقعاتهم.
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&h=800" alt="صورة العلامة التجارية 2">
+                        <div class="slide-caption">بيئة عمل ملهمة ومبتكرة</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&h=800" alt="صورة العلامة التجارية 3">
+                        <div class="slide-caption">تدريب مهني عالي الجودة</div>
+                    </div>
+                </div>
+                <button class="slider-btn prev" onclick="changeSlide(-1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <button class="slider-btn next" onclick="changeSlide(1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="slider-indicators" id="sliderIndicators"></div>
+            </div>
+
+            <!-- Actions Sidebar -->
+            <div class="actions-sidebar">
+                <div class="action-box">
+                    <div class="action-box-header">
+                        <div class="action-box-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="action-box-title">الملف التعريفي</div>
+                    </div>
+                    <p class="action-box-description">
+                        تحميل الملف التعريفي الكامل للعلامة التجارية مع جميع التفاصيل والإنجازات
                     </p>
-                    
-                    <div class="about-brand-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-wallet"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>نوفر لك المال</h4>
-                                <p>تعمل شركات التأمين على توفير المزيد من الأمان والطمأنينة.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-certificate"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>تأمين معتمد</h4>
-                                <p>تعمل شركات التأمين على توفير المزيد من الأمان والطمأنينة.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="about-brand-footer">
-                        <a href="#contact" class="read-more-btn">
-                            <span>اقرأ المزيد</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
-                        <div class="rating-section">
-                            <div class="avatars-group">
-                                <div class="avatar"></div>
-                                <div class="avatar"></div>
-                                <div class="avatar"></div>
-                                <div class="avatar-count">45K+</div>
-                            </div>
-                            <div class="rating-text">
-                                <span class="rating-label">متوسط التقييم</span>
-                                <span class="rating-score">4.8</span>
-                                <span class="rating-desc">يجعلنا أفضل شركة في العالم</span>
-                            </div>
-                        </div>
-                    </div>
+                    <button class="action-box-btn" onclick="downloadProfile()">
+                        <i class="fas fa-download"></i>
+                        <span>تحميل الملف</span>
+                    </button>
                 </div>
 
-                <div class="about-brand-media">
-                    <div class="media-container">
-                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&h=600" 
-                             alt="فريق العمل" class="media-image">
-                        <div class="experience-badge">
-                            <div class="experience-number">25</div>
-                            <div class="experience-text">
-                                <span>سنوات من</span>
-                                <span>الخبرة</span>
-                            </div>
+                <div class="action-box secondary">
+                    <div class="action-box-header">
+                        <div class="action-box-icon">
+                            <i class="fas fa-user-plus"></i>
                         </div>
-                        <div class="video-overlay">
-                            <button class="play-button" onclick="playVideo()">
-                                <i class="fas fa-play"></i>
-                            </button>
-                        </div>
+                        <div class="action-box-title">التسجيل</div>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Stats Bar -->
-        <div class="stats-bar">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" data-count="150">0</div>
-                    <div class="stat-label">مشروع ناجح</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="5000">0</div>
-                    <div class="stat-label">مستفيد</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="50">0</div>
-                    <div class="stat-label">شريك استراتيجي</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-count="98">0</div>
-                    <div class="stat-label">نسبة الرضا %</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- About Brand Section -->
-        <div class="about-brand-section">
-            <div class="about-brand-content">
-                <div class="about-brand-text">
-                    <div class="about-brand-badge">
-                        <i class="fas fa-building"></i>
-                        <span>نبذة عن علامتنا</span>
-                    </div>
-                    <h2 class="about-brand-title">نحدد أنواع المخاطر التي تحتاج للتغطية التأمينية</h2>
-                    <p class="about-brand-description">
-                        تعمل شركات التأمين على توفير الشعور بالأمان والطمأنينة للعملاء، 
-                        حيث يمنحهم وجود التغطية التأمينية الثقة في مواجهة الأوقات الصعبة والتحديات المختلفة.
-                        نلتزم بتقديم خدمات تأمينية متكاملة تلبي احتياجات عملائنا وتحقق توقعاتهم.
+                    <p class="action-box-description">
+                        سجل الآن للانضمام إلى برامجنا التدريبية والاستفادة من خدماتنا المتميزة
                     </p>
-                    
-                    <div class="about-brand-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-wallet"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>نوفر لك المال</h4>
-                                <p>تعمل شركات التأمين على توفير المزيد من الأمان والطمأنينة.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-certificate"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>تأمين معتمد</h4>
-                                <p>تعمل شركات التأمين على توفير المزيد من الأمان والطمأنينة.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="about-brand-footer">
-                        <a href="#contact" class="read-more-btn">
-                            <span>اقرأ المزيد</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
-                        <div class="rating-section">
-                            <div class="avatars-group">
-                                <div class="avatar"></div>
-                                <div class="avatar"></div>
-                                <div class="avatar"></div>
-                                <div class="avatar-count">45K+</div>
-                            </div>
-                            <div class="rating-text">
-                                <span class="rating-label">متوسط التقييم</span>
-                                <span class="rating-score">4.8</span>
-                                <span class="rating-desc">يجعلنا أفضل شركة في العالم</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="about-brand-media">
-                    <div class="media-container">
-                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&h=600" 
-                             alt="فريق العمل" class="media-image">
-                        <div class="experience-badge">
-                            <div class="experience-number">25</div>
-                            <div class="experience-text">
-                                <span>سنوات من</span>
-                                <span>الخبرة</span>
-                            </div>
-                        </div>
-                        <div class="video-overlay">
-                            <button class="play-button" onclick="playVideo()">
-                                <i class="fas fa-play"></i>
-                            </button>
-                        </div>
-                    </div>
+                    <button class="action-box-btn" onclick="register()">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>سجل الآن</span>
+                    </button>
                 </div>
             </div>
         </div>
 
-        <!-- Vision, Mission, Promise Grid -->
-        <div class="info-grid">
-            <!-- Vision -->
-            <div class="info-card">
-                <div class="info-card-icon">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <h3 class="info-card-title">رؤيتنا</h3>
-                <p class="info-card-text" id="visionText">
-                    أن نكون الخيار الأول للتدريب المهني والتطوير الوظيفي في المملكة، نسعى لتمكين الشباب والمؤسسات بأحدث المهارات والمعارف التي تواكب متطلبات سوق العمل المتغير
+        <!-- About Section -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-info-circle"></i>
+                نبذة عن العلامة التجارية
+            </h2>
+            <div class="about-intro">
+                <p>
+                    تُعد علامة ليبل الوطنية واحدة من الشركات الرائدة في مجال التدريب والتطوير المهني في المملكة العربية السعودية. 
+                    نسعى دائماً لتقديم برامج تدريبية متميزة تلبي احتياجات السوق المحلي والإقليمي، مع التركيز على تطوير المهارات 
+                    والقدرات الفردية والمؤسسية. نفخر بشراكاتنا الاستراتيجية مع كبرى المؤسسات الوطنية والدولية، ونلتزم بتقديم 
+                    خدمات تدريبية عالية الجودة تساهم في تحقيق رؤية المملكة 2030.
                 </p>
             </div>
+        </div>
 
-            <!-- Mission -->
-            <div class="info-card">
-                <div class="info-card-icon">
-                    <i class="fas fa-bullseye"></i>
+        <!-- Vision, Mission, Promise -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-compass"></i>
+                رؤيتنا، رسالتنا، ووعدنا
+            </h2>
+            <div class="vmp-grid">
+                <div class="vmp-card">
+                    <h3>
+                        <i class="fas fa-eye"></i>
+                        رؤيتنا
+                    </h3>
+                    <p>
+                        أن نكون الخيار الأول للتدريب المهني والتطوير الوظيفي في المملكة، نسعى لتمكين الشباب والمؤسسات 
+                        بأحدث المهارات والمعارف التي تواكب متطلبات سوق العمل المتغير وتحقق أهداف التنمية المستدامة.
+                    </p>
                 </div>
-                <h3 class="info-card-title">رسالتنا</h3>
-                <p class="info-card-text" id="missionText">
-                    تقديم برامج تدريبية متميزة ومعتمدة تساهم في رفع كفاءة الموارد البشرية وتطوير قدراتهم، من خلال منهجيات حديثة ومدربين محترفين في بيئة تعليمية محفزة
-                </p>
-            </div>
-
-            <!-- Promise -->
-            <div class="info-card">
-                <div class="info-card-icon">
-                    <i class="fas fa-handshake"></i>
+                <div class="vmp-card">
+                    <h3>
+                        <i class="fas fa-bullseye"></i>
+                        رسالتنا
+                    </h3>
+                    <p>
+                        تقديم برامج تدريبية متميزة ومعتمدة تساهم في رفع كفاءة الموارد البشرية وتطوير قدراتهم، من خلال 
+                        منهجيات حديثة ومدربين محترفين في بيئة تعليمية محفزة تشجع على الابتكار والإبداع.
+                    </p>
                 </div>
-                <h3 class="info-card-title">وعدنا</h3>
-                <p class="info-card-text" id="promiseText">
-                    نلتزم بتوفير تجربة تدريبية استثنائية تحقق أهدافكم المهنية، مع ضمان جودة المحتوى، ومرونة التنفيذ، ومتابعة مستمرة لضمان تطبيق ما تم تعلمه في بيئة العمل
-                </p>
+                <div class="vmp-card">
+                    <h3>
+                        <i class="fas fa-handshake"></i>
+                        وعدنا
+                    </h3>
+                    <p>
+                        نلتزم بتوفير تجربة تدريبية استثنائية تحقق أهدافكم المهنية، مع ضمان جودة المحتوى، ومرونة التنفيذ، 
+                        ومتابعة مستمرة لضمان تطبيق ما تم تعلمه في بيئة العمل وتحقيق النتائج المرجوة.
+                    </p>
+                </div>
             </div>
         </div>
 
         <!-- Services Section -->
-        <div class="services-section">
-            <div class="section-header">
-                <div class="section-icon-wrapper">
-                    <i class="fas fa-briefcase"></i>
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-briefcase"></i>
+                خدمات العلامة التجارية
+            </h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">1</div>
+                    <h3>
+                        <i class="fas fa-check-circle"></i>
+                        التدريب المهني المتخصص
+                    </h3>
+                    <p>
+                        برامج تدريبية متكاملة في مختلف المجالات المهنية بأحدث الأساليب التدريبية المعتمدة
+                    </p>
                 </div>
-                <h2>خدمات العلامة التجارية</h2>
-                <p>نقدم مجموعة شاملة من الخدمات المتخصصة</p>
-            </div>
-
-            <div class="services-grid" id="servicesGrid">
-                <!-- Services will be loaded dynamically -->
+                <div class="service-card">
+                    <div class="service-number">2</div>
+                    <h3>
+                        <i class="fas fa-check-circle"></i>
+                        تطوير القيادات
+                    </h3>
+                    <p>
+                        برامج خاصة لتطوير المهارات القيادية والإدارية للقيادات الحالية والمستقبلية
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">3</div>
+                    <h3>
+                        <i class="fas fa-check-circle"></i>
+                        الاستشارات التدريبية
+                    </h3>
+                    <p>
+                        خدمات استشارية متخصصة لتحديد الاحتياجات التدريبية وتصميم البرامج المناسبة
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">4</div>
+                    <h3>
+                        <i class="fas fa-check-circle"></i>
+                        التدريب الإلكتروني
+                    </h3>
+                    <p>
+                        منصة تدريبية إلكترونية متطورة توفر دورات تفاعلية يمكن الوصول إليها في أي وقت
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">5</div>
+                    <h3>
+                        <i class="fas fa-check-circle"></i>
+                        التقييم والاعتماد
+                    </h3>
+                    <p>
+                        خدمات التقييم المهني والحصول على شهادات معتمدة محلياً ودولياً
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">6</div>
+                    <h3>
+                        <i class="fas fa-check-circle"></i>
+                        التدريب المؤسسي
+                    </h3>
+                    <p>
+                        حلول تدريبية مخصصة للمؤسسات والشركات حسب احتياجاتها الخاصة
+                    </p>
+                </div>
             </div>
         </div>
 
         <!-- Gallery Section -->
-        <div class="gallery-section">
-            <div class="section-header">
-                <div class="section-icon-wrapper">
-                    <i class="fas fa-images"></i>
-                </div>
-                <h2>معرض الصور</h2>
-                <p>جولة مصورة في أبرز إنجازاتنا وفعالياتنا</p>
-            </div>
-
-            <div class="gallery-slider-container">
-                <div class="gallery-slider" id="gallerySlider">
-                    <!-- Gallery slides will be loaded dynamically -->
-                </div>
-                <button class="slider-nav prev" onclick="prevSlide()">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                <button class="slider-nav next" onclick="nextSlide()">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="slider-dots" id="sliderDots">
-                    <!-- Dots will be generated dynamically -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-images"></i>
+                معرض الصور
+            </h2>
+            <div class="gallery-container">
+                <div class="gallery-track" id="galleryTrack">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&h=400" alt="معرض 1">
+                        <div class="gallery-caption">ورشة عمل تطوير القيادات</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&h=400" alt="معرض 2">
+                        <div class="gallery-caption">برنامج التدريب المهني</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&h=400" alt="معرض 3">
+                        <div class="gallery-caption">جلسة تدريبية تفاعلية</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&h=400" alt="معرض 4">
+                        <div class="gallery-caption">فريق العمل المتميز</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&h=400" alt="معرض 5">
+                        <div class="gallery-caption">حفل التخرج السنوي</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=600&h=400" alt="معرض 6">
+                        <div class="gallery-caption">مركز التدريب الحديث</div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Partners Section -->
-        <div class="partners-section">
-            <div class="section-header">
-                <div class="section-icon-wrapper">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <h2>شركاؤنا</h2>
-                <p>نفخر بشراكاتنا مع كبرى المؤسسات الوطنية والدولية</p>
-            </div>
-
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-handshake"></i>
+                الشركاء والرعاة
+            </h2>
             <div class="partners-grid">
-                <div class="partner-item">
-                    <img src="images/ccj-logo.svg" alt="شعار الشريك">
+                <div class="partner-card">
+                    <img src="images/ccj-logo.svg" alt="شريك 1">
                 </div>
-                <div class="partner-item">
-                    <img src="images/council-network-logo.jpg" alt="شعار الشريك">
+                <div class="partner-card">
+                    <img src="images/council-network-logo.jpg" alt="شريك 2">
                 </div>
-                <div class="partner-item">
-                    <img src="images/jadarah-logo.jpg" alt="شعار الشريك">
+                <div class="partner-card">
+                    <img src="images/jadarah-logo.jpg" alt="شريك 3">
                 </div>
-                <div class="partner-item">
-                    <img src="images/deem-logo.jpg" alt="شعار الشريك">
+                <div class="partner-card">
+                    <img src="images/deem-logo.jpg" alt="شريك 4">
                 </div>
             </div>
         </div>
 
-        <!-- Contact Form Section -->
-        <div class="contact-section">
-            <div class="contact-content">
-                <div class="section-header">
-                    <div class="section-icon-wrapper">
+        <!-- Contact Form -->
+        <div class="section">
+            <div class="contact-form-container">
+                <div class="contact-form-content">
+                    <h2 class="section-title">
                         <i class="fas fa-envelope"></i>
-                    </div>
-                    <h2>تواصل معنا</h2>
-                    <p>نسعد بالاستماع إليك والإجابة على استفساراتك</p>
-                </div>
-
-                <form class="contact-form" id="contactForm">
-                    <div class="form-row">
+                        تواصل معنا
+                    </h2>
+                    <form class="form-grid" id="contactForm" onsubmit="handleSubmit(event)">
                         <div class="form-group">
                             <label for="fullName">الاسم الكامل *</label>
-                            <input type="text" id="fullName" name="fullName" required placeholder="أدخل اسمك الكامل" maxlength="100">
+                            <input type="text" id="fullName" name="fullName" required placeholder="أدخل اسمك الكامل">
                         </div>
                         <div class="form-group">
                             <label for="email">البريد الإلكتروني *</label>
-                            <input type="email" id="email" name="email" required placeholder="example@email.com" maxlength="255">
+                            <input type="email" id="email" name="email" required placeholder="example@email.com">
                         </div>
-                    </div>
-
-                    <div class="form-row">
                         <div class="form-group">
                             <label for="phone">رقم الجوال *</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="05xxxxxxxx" pattern="[0-9]{10}" maxlength="10">
+                            <input type="tel" id="phone" name="phone" required placeholder="05xxxxxxxx">
                         </div>
                         <div class="form-group">
                             <label for="subject">الموضوع *</label>
                             <select id="subject" name="subject" required>
                                 <option value="">اختر الموضوع</option>
-                                <option value="inquiry">استفسار عام</option>
-                                <option value="service">طلب خدمة</option>
-                                <option value="partnership">فرصة شراكة</option>
-                                <option value="complaint">شكوى</option>
+                                <option value="training">استفسار عن التدريب</option>
+                                <option value="partnership">شراكة استراتيجية</option>
+                                <option value="registration">التسجيل في البرامج</option>
                                 <option value="other">أخرى</option>
                             </select>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">رسالتك *</label>
-                        <textarea id="message" name="message" required placeholder="اكتب رسالتك هنا..." maxlength="1000"></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn">
-                        <span>إرسال الرسالة</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-
-                    <div class="success-message" id="successMessage">
-                        <i class="fas fa-check-circle"></i>
-                        <p>تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.</p>
-                    </div>
-                </form>
+                        <div class="form-group full-width">
+                            <label for="message">الرسالة *</label>
+                            <textarea id="message" name="message" required placeholder="اكتب رسالتك هنا..."></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>إرسال الرسالة</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()">
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="lightbox-content">
-            <img src="" alt="صورة مكبرة" id="lightboxImage">
-        </div>
-    </div>
-
     <script>
-        // Gallery images data
-        const galleryImages = [
-            { url: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800', caption: 'فريق العمل المتميز' },
-            { url: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800', caption: 'ورشة تدريبية' },
-            { url: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=800', caption: 'مؤتمر سنوي' },
-            { url: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800', caption: 'بيئة عمل إبداعية' },
-            { url: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800', caption: 'اجتماع الشركاء' },
-            { url: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800', caption: 'مشاريع ناجحة' }
-        ];
-
-        // Brand data
-        const brandsData = {
-            1: {
-                name: 'علامة ليبل الوطنية',
-                category: 'خدمات التدريب والتطوير',
-                logo: 'images/brand-logo-1.svg',
-                vision: 'أن نكون الخيار الأول للتدريب المهني والتطوير الوظيفي في المملكة، نسعى لتمكين الشباب والمؤسسات بأحدث المهارات والمعارف التي تواكب متطلبات سوق العمل المتغير',
-                mission: 'تقديم برامج تدريبية متميزة ومعتمدة تساهم في رفع كفاءة الموارد البشرية وتطوير قدراتهم، من خلال منهجيات حديثة ومدربين محترفين في بيئة تعليمية محفزة',
-                promise: 'نلتزم بتوفير تجربة تدريبية استثنائية تحقق أهدافكم المهنية، مع ضمان جودة المحتوى، ومرونة التنفيذ، ومتابعة مستمرة لضمان تطبيق ما تم تعلمه في بيئة العمل',
-                services: [
-                    { icon: 'fa-chalkboard-teacher', name: 'البرامج التدريبية المتخصصة', description: 'دورات تدريبية شاملة في مختلف المجالات المهنية والتقنية' },
-                    { icon: 'fa-certificate', name: 'الشهادات المهنية المعتمدة', description: 'شهادات احترافية معترف بها محلياً ودولياً' },
-                    { icon: 'fa-users-cog', name: 'تطوير الموارد البشرية', description: 'حلول متكاملة لتطوير كفاءات الموظفين والفرق' },
-                    { icon: 'fa-laptop-code', name: 'التدريب الإلكتروني', description: 'منصة تعليمية متقدمة للتدريب عن بعد' },
-                    { icon: 'fa-user-tie', name: 'التدريب القيادي', description: 'برامج خاصة لتطوير المهارات القيادية والإدارية' },
-                    { icon: 'fa-chart-line', name: 'الاستشارات التطويرية', description: 'خدمات استشارية لتحسين الأداء المؤسسي' }
-                ]
-            },
-            2: {
-                name: 'علامة جمعيات التعاون',
-                category: 'الشراكات المجتمعية',
-                logo: 'images/brand-logo-2.svg',
-                vision: 'بناء مجتمع متعاون ومترابط يحقق التنمية المستدامة من خلال تمكين الجمعيات التعاونية وتعزيز دورها في خدمة المجتمع',
-                mission: 'تقديم الدعم الشامل للجمعيات التعاونية من خلال برامج تنموية مبتكرة تركز على التمكين الاقتصادي والاجتماعي للأفراد والمجتمعات',
-                promise: 'نضمن لكم شراكة فعالة تحقق أهدافكم التنموية مع توفير الموارد والخبرات اللازمة لضمان النجاح والاستدامة',
-                services: [
-                    { icon: 'fa-hands-helping', name: 'دعم الجمعيات التعاونية', description: 'خدمات متكاملة لتأسيس وتطوير الجمعيات' },
-                    { icon: 'fa-coins', name: 'التمويل التعاوني', description: 'حلول تمويلية مبتكرة للمشاريع التعاونية' },
-                    { icon: 'fa-people-arrows', name: 'بناء الشراكات', description: 'ربط الجمعيات بالقطاعين العام والخاص' },
-                    { icon: 'fa-seedling', name: 'التنمية المستدامة', description: 'برامج تنموية تحقق الاستدامة طويلة الأمد' },
-                    { icon: 'fa-graduation-cap', name: 'التوعية والتثقيف', description: 'برامج توعوية عن الثقافة التعاونية' },
-                    { icon: 'fa-project-diagram', name: 'إدارة المشاريع', description: 'دعم إداري وفني للمشاريع التعاونية' }
-                ]
-            },
-            3: {
-                name: 'علامة قطاع الأعمال',
-                category: 'الاستثمار والتطوير',
-                logo: 'images/brand-logo-3.svg',
-                vision: 'قيادة الابتكار في مجال المشاريع التعاونية والاستثمارية لتحقيق نمو اقتصادي مستدام يساهم في تنمية المجتمع',
-                mission: 'توفير منصة متكاملة تدعم رواد الأعمال والمستثمرين بحلول مبتكرة وموارد متميزة لتحويل الأفكار إلى مشاريع ناجحة',
-                promise: 'نلتزم بمرافقتكم في رحلة النجاح من الفكرة حتى التنفيذ، مع توفير الدعم الفني والمالي والاستشاري اللازم',
-                services: [
-                    { icon: 'fa-rocket', name: 'دعم ريادة الأعمال', description: 'برامج حاضنة ومسرعة للمشاريع الناشئة' },
-                    { icon: 'fa-dollar-sign', name: 'فرص استثمارية', description: 'ربط المستثمرين بالمشاريع الواعدة' },
-                    { icon: 'fa-lightbulb', name: 'الاستشارات الإستراتيجية', description: 'خدمات استشارية متخصصة في التخطيط والتطوير' },
-                    { icon: 'fa-balance-scale', name: 'الامتثال القانوني', description: 'دعم قانوني وتنظيمي للمشاريع' },
-                    { icon: 'fa-network-wired', name: 'بناء الشبكات', description: 'فعاليات تواصل بين رواد الأعمال والمستثمرين' },
-                    { icon: 'fa-chart-pie', name: 'دراسات الجدوى', description: 'تحليلات اقتصادية شاملة للمشاريع الاستثمارية' }
-                ]
-            }
-        };
-
-        // Get brand ID from URL
+        // Load brand data from URL
         const urlParams = new URLSearchParams(window.location.search);
         const brandId = urlParams.get('id') || '1';
 
-        // Load brand data
-        function loadBrandData() {
-            const brand = brandsData[brandId];
-            if (!brand) return;
+        const brandsData = {
+            '1': {
+                name: 'علامة ليبل الوطنية',
+                category: 'خدمات التدريب والتطوير',
+                logo: 'images/brand-logo-1.svg'
+            },
+            '2': {
+                name: 'علامة إدارة الجودة',
+                category: 'خدمات الاستشارات',
+                logo: 'images/brand-logo-2.svg'
+            },
+            '3': {
+                name: 'علامة التميز المؤسسي',
+                category: 'خدمات التطوير المؤسسي',
+                logo: 'images/brand-logo-3.svg'
+            }
+        };
 
-            // Update header info
-            document.getElementById('brandLogo').src = brand.logo;
-            document.getElementById('brandName').textContent = brand.name;
-            document.getElementById('brandCategory').textContent = brand.category;
+        const brandData = brandsData[brandId] || brandsData['1'];
 
-            // Update vision, mission, promise
-            document.getElementById('visionText').textContent = brand.vision;
-            document.getElementById('missionText').textContent = brand.mission;
-            document.getElementById('promiseText').textContent = brand.promise;
+        document.getElementById('brandName').textContent = brandData.name;
+        document.getElementById('brandCategory').textContent = brandData.category;
+        document.getElementById('brandLogo').src = brandData.logo;
 
-            // Load services
-            const servicesGrid = document.getElementById('servicesGrid');
-            servicesGrid.innerHTML = '';
+        // Main Slider
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function createIndicators() {
+            const indicatorsContainer = document.getElementById('sliderIndicators');
+            for (let i = 0; i < totalSlides; i++) {
+                const indicator = document.createElement('div');
+                indicator.className = 'indicator' + (i === 0 ? ' active' : '');
+                indicator.onclick = () => goToSlide(i);
+                indicatorsContainer.appendChild(indicator);
+            }
+        }
+
+        function updateSlider() {
+            const sliderTrack = document.getElementById('sliderTrack');
+            sliderTrack.style.transform = `translateX(${currentSlideIndex * 100}%)`;
             
-            brand.services.forEach((service, index) => {
-                const serviceItem = `
-                    <div class="service-item" style="animation-delay: ${index * 0.1}s">
-                        <div class="service-number">${index + 1}</div>
-                        <h4 class="service-name">
-                            <i class="fas ${service.icon}"></i>
-                            ${service.name}
-                        </h4>
-                        <p class="service-description">${service.description}</p>
-                    </div>
-                `;
-                servicesGrid.innerHTML += serviceItem;
+            document.querySelectorAll('.indicator').forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlideIndex);
             });
         }
 
-        // Load gallery slider
-        function loadGallery() {
-            const slider = document.getElementById('gallerySlider');
-            const dotsContainer = document.getElementById('sliderDots');
-            slider.innerHTML = '';
-            dotsContainer.innerHTML = '';
-            
-            galleryImages.forEach((image, index) => {
-                const slide = document.createElement('div');
-                slide.className = 'gallery-slide';
-                slide.innerHTML = `
-                    <img src="${image.url}" alt="${image.caption}">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">${image.caption}</div>
-                    </div>
-                `;
-                slider.appendChild(slide);
-
-                const dot = document.createElement('div');
-                dot.className = `slider-dot ${index === 0 ? 'active' : ''}`;
-                dot.onclick = () => goToSlide(index);
-                dotsContainer.appendChild(dot);
-            });
-
-            // Auto-play slider
-            setInterval(nextSlide, 5000);
-        }
-
-        // Gallery slider controls
-        let currentSlide = 0;
-        const totalSlides = galleryImages.length;
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateSlider();
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        function changeSlide(direction) {
+            currentSlideIndex = (currentSlideIndex + direction + totalSlides) % totalSlides;
             updateSlider();
         }
 
         function goToSlide(index) {
-            currentSlide = index;
+            currentSlideIndex = index;
             updateSlider();
         }
 
-        function updateSlider() {
-            const slider = document.getElementById('gallerySlider');
-            const dots = document.querySelectorAll('.slider-dot');
-            
-            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-            });
+        // Auto-play slider
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
+        // Initialize slider
+        createIndicators();
+
+        // Gallery auto-scroll
+        let galleryPosition = 0;
+        const galleryTrack = document.getElementById('galleryTrack');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const itemWidth = galleryItems[0].offsetWidth + 20; // width + gap
+
+        setInterval(() => {
+            galleryPosition -= 1;
+            if (Math.abs(galleryPosition) >= itemWidth) {
+                galleryPosition = 0;
+                galleryTrack.style.transition = 'none';
+                galleryTrack.appendChild(galleryTrack.firstElementChild);
+                setTimeout(() => {
+                    galleryTrack.style.transition = 'transform 0.5s ease';
+                }, 10);
+            }
+            galleryTrack.style.transform = `translateX(${galleryPosition}px)`;
+        }, 30);
+
+        // Action buttons
+        function downloadProfile() {
+            alert('سيتم تحميل الملف التعريفي للعلامة التجارية');
         }
 
-        // Lightbox functions
-        function openLightbox(imageUrl) {
-            document.getElementById('lightbox').classList.add('active');
-            document.getElementById('lightboxImage').src = imageUrl;
-            document.body.style.overflow = 'hidden';
+        function register() {
+            alert('سيتم توجيهك لصفحة التسجيل');
         }
 
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close lightbox on background click
-        document.getElementById('lightbox').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeLightbox();
-            }
-        });
-
-        // Close lightbox on escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            }
-        });
-
-        // Video play function
-        function playVideo() {
-            // In a real implementation, this would open a video modal
-            alert('هنا سيتم تشغيل الفيديو التعريفي للعلامة التجارية');
-            // You can integrate with YouTube, Vimeo, or use HTML5 video player
-        }
-
-        // Animated counter for stats
-        function animateCounter(element) {
-            const target = parseInt(element.getAttribute('data-count'));
-            const duration = 2000;
-            const step = target / (duration / 16);
-            let current = 0;
-
-            const timer = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                    element.textContent = target + (element.parentElement.querySelector('.stat-label').textContent.includes('%') ? '' : '+');
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(current) + (element.parentElement.querySelector('.stat-label').textContent.includes('%') ? '' : '+');
-                }
-            }, 16);
-        }
-
-        // Observe stats for animation
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statNumbers = entry.target.querySelectorAll('.stat-number');
-                    statNumbers.forEach(num => animateCounter(num));
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        // Contact form validation and submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const fullName = document.getElementById('fullName').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value.trim();
-
-            // Basic validation
-            if (!fullName || fullName.length > 100) {
-                alert('الرجاء إدخال اسم صحيح (أقل من 100 حرف)');
-                return;
-            }
-
-            if (!email || email.length > 255 || !email.includes('@')) {
-                alert('الرجاء إدخال بريد إلكتروني صحيح');
-                return;
-            }
-
-            if (!phone || !/^[0-9]{10}$/.test(phone)) {
-                alert('الرجاء إدخال رقم جوال صحيح (10 أرقام)');
-                return;
-            }
-
-            if (!message || message.length > 1000) {
-                alert('الرجاء إدخال رسالة صحيحة (أقل من 1000 حرف)');
-                return;
-            }
-
-            // Show success message
-            document.getElementById('successMessage').classList.add('show');
-            
-            // Reset form
-            this.reset();
-
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                document.getElementById('successMessage').classList.remove('show');
-            }, 5000);
-
-            // Here you can add actual form submission logic (e.g., send to API)
-        });
-
-        // Load data on page load
-        loadBrandData();
-        loadGallery();
-        
-        // Observe stats bar
-        const statsBar = document.querySelector('.stats-bar');
-        if (statsBar) {
-            statsObserver.observe(statsBar);
+        // Contact form
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
+            document.getElementById('contactForm').reset();
         }
     </script>
 </body>
