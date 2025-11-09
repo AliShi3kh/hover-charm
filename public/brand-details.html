@@ -632,7 +632,7 @@
             padding: 25px;
             border-radius: 15px;
             border: 2px solid #e8ecf1;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             position: relative;
             overflow: hidden;
@@ -641,23 +641,26 @@
         .service-item::before {
             content: '';
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, #ea5c48 0%, #00953f 100%);
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ea5c48 0%, #00953f 100%);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .service-item:hover {
-            transform: translateX(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            border-color: #00953f;
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 149, 63, 0.15);
+            border-color: rgba(0, 149, 63, 0.3);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
         }
 
         .service-item:hover::before {
-            transform: scaleY(1);
+            transform: scaleX(1);
+            transform-origin: left;
         }
 
         .service-number {
@@ -741,36 +744,28 @@
             font-size: 1.1em;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
+        .gallery-slider-container {
             position: relative;
-            border-radius: 15px;
             overflow: hidden;
-            cursor: pointer;
-            aspect-ratio: 16/10;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease;
+            border-radius: 20px;
         }
 
-        .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(234, 92, 72, 0.2);
+        .gallery-slider {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .gallery-item img {
+        .gallery-slide {
+            min-width: 100%;
+            position: relative;
+            aspect-ratio: 16/9;
+        }
+
+        .gallery-slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
+            border-radius: 20px;
         }
 
         .gallery-overlay {
@@ -779,22 +774,84 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to top, rgba(6, 35, 47, 0.9) 0%, transparent 60%);
+            background: linear-gradient(to top, rgba(6, 35, 47, 0.8) 0%, transparent 50%);
             display: flex;
             align-items: flex-end;
-            padding: 20px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-overlay {
+            padding: 40px;
             opacity: 1;
         }
 
         .gallery-caption {
             color: white;
             font-weight: 600;
-            font-size: 1.1em;
+            font-size: 1.3em;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-nav:hover {
+            background: linear-gradient(135deg, #ea5c48 0%, #d84a36 100%);
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(234, 92, 72, 0.3);
+        }
+
+        .slider-nav i {
+            font-size: 1.2em;
+        }
+
+        .slider-nav.prev {
+            right: 20px;
+        }
+
+        .slider-nav.next {
+            left: 20px;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: white;
+            transform: scale(1.3);
+        }
+
+        .slider-dot:hover {
+            background: rgba(255, 255, 255, 0.8);
         }
 
         /* Partners Section */
@@ -1165,9 +1222,29 @@
                 padding: 30px 20px;
             }
 
-            .services-grid,
-            .gallery-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .slider-nav {
+                width: 40px;
+                height: 40px;
+            }
+
+            .slider-nav.prev {
+                right: 10px;
+            }
+
+            .slider-nav.next {
+                left: 10px;
+            }
+
+            .gallery-overlay {
+                padding: 20px;
+            }
+
+            .gallery-caption {
+                font-size: 1em;
             }
 
             .partners-grid {
@@ -1257,6 +1334,84 @@
 
     <!-- Content Sections -->
     <div class="content-wrapper">
+        <!-- About Brand Section -->
+        <div class="about-brand-section">
+            <div class="about-brand-content">
+                <div class="about-brand-text">
+                    <div class="about-brand-badge">
+                        <i class="fas fa-building"></i>
+                        <span>نبذة عن علامتنا</span>
+                    </div>
+                    <h2 class="about-brand-title">نحدد أنواع المخاطر التي تحتاج للتغطية التأمينية</h2>
+                    <p class="about-brand-description">
+                        تعمل شركات التأمين على توفير الشعور بالأمان والطمأنينة للعملاء، 
+                        حيث يمنحهم وجود التغطية التأمينية الثقة في مواجهة الأوقات الصعبة والتحديات المختلفة.
+                        نلتزم بتقديم خدمات تأمينية متكاملة تلبي احتياجات عملائنا وتحقق توقعاتهم.
+                    </p>
+                    
+                    <div class="about-brand-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>نوفر لك المال</h4>
+                                <p>تعمل شركات التأمين على توفير المزيد من الأمان والطمأنينة.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>تأمين معتمد</h4>
+                                <p>تعمل شركات التأمين على توفير المزيد من الأمان والطمأنينة.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-brand-footer">
+                        <a href="#contact" class="read-more-btn">
+                            <span>اقرأ المزيد</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                        <div class="rating-section">
+                            <div class="avatars-group">
+                                <div class="avatar"></div>
+                                <div class="avatar"></div>
+                                <div class="avatar"></div>
+                                <div class="avatar-count">45K+</div>
+                            </div>
+                            <div class="rating-text">
+                                <span class="rating-label">متوسط التقييم</span>
+                                <span class="rating-score">4.8</span>
+                                <span class="rating-desc">يجعلنا أفضل شركة في العالم</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-brand-media">
+                    <div class="media-container">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&h=600" 
+                             alt="فريق العمل" class="media-image">
+                        <div class="experience-badge">
+                            <div class="experience-number">25</div>
+                            <div class="experience-text">
+                                <span>سنوات من</span>
+                                <span>الخبرة</span>
+                            </div>
+                        </div>
+                        <div class="video-overlay">
+                            <button class="play-button" onclick="playVideo()">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Stats Bar -->
         <div class="stats-bar">
             <div class="stats-grid">
@@ -1418,8 +1573,19 @@
                 <p>جولة مصورة في أبرز إنجازاتنا وفعالياتنا</p>
             </div>
 
-            <div class="gallery-grid" id="galleryGrid">
-                <!-- Gallery items will be loaded dynamically -->
+            <div class="gallery-slider-container">
+                <div class="gallery-slider" id="gallerySlider">
+                    <!-- Gallery slides will be loaded dynamically -->
+                </div>
+                <button class="slider-nav prev" onclick="prevSlide()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <button class="slider-nav next" onclick="nextSlide()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="slider-dots" id="sliderDots">
+                    <!-- Dots will be generated dynamically -->
+                </div>
             </div>
         </div>
 
@@ -1620,21 +1786,61 @@
             });
         }
 
-        // Load gallery
+        // Load gallery slider
         function loadGallery() {
-            const galleryGrid = document.getElementById('galleryGrid');
-            galleryGrid.innerHTML = '';
+            const slider = document.getElementById('gallerySlider');
+            const dotsContainer = document.getElementById('sliderDots');
+            slider.innerHTML = '';
+            dotsContainer.innerHTML = '';
             
             galleryImages.forEach((image, index) => {
-                const galleryItem = `
-                    <div class="gallery-item" onclick="openLightbox('${image.url}')" style="animation-delay: ${index * 0.1}s">
-                        <img src="${image.url}" alt="${image.caption}">
-                        <div class="gallery-overlay">
-                            <span class="gallery-caption">${image.caption}</span>
-                        </div>
+                const slide = document.createElement('div');
+                slide.className = 'gallery-slide';
+                slide.innerHTML = `
+                    <img src="${image.url}" alt="${image.caption}">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">${image.caption}</div>
                     </div>
                 `;
-                galleryGrid.innerHTML += galleryItem;
+                slider.appendChild(slide);
+
+                const dot = document.createElement('div');
+                dot.className = `slider-dot ${index === 0 ? 'active' : ''}`;
+                dot.onclick = () => goToSlide(index);
+                dotsContainer.appendChild(dot);
+            });
+
+            // Auto-play slider
+            setInterval(nextSlide, 5000);
+        }
+
+        // Gallery slider controls
+        let currentSlide = 0;
+        const totalSlides = galleryImages.length;
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const slider = document.getElementById('gallerySlider');
+            const dots = document.querySelectorAll('.slider-dot');
+            
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
             });
         }
 
