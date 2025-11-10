@@ -154,6 +154,36 @@
                         </div>
                     </div>
 
+                    <!-- Visit Type and Visitor Type Row -->
+                    <div class="row mb-4">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="visitType" class="form-label required-field">نوع الزيارة</label>
+                            <select class="form-select" id="visitType" required>
+                                <option value="" selected disabled>اختر نوع الزيارة</option>
+                                <option value="تعريفية">تعريفية</option>
+                                <option value="إعلامية">إعلامية</option>
+                                <option value="تطوعية">تطوعية</option>
+                                <option value="تقييم مشروع">تقييم مشروع</option>
+                                <option value="تعاون">تعاون</option>
+                                <option value="طلابية">طلابية</option>
+                                <option value="أخرى">أخرى</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="visitorType" class="form-label required-field">نوع الجهة / صفة الزائر</label>
+                            <select class="form-select" id="visitorType" required>
+                                <option value="" selected disabled>اختر نوع الجهة</option>
+                                <option value="فرد">فرد</option>
+                                <option value="جهة مانحة">جهة مانحة</option>
+                                <option value="حكومية">حكومية</option>
+                                <option value="إعلامية">إعلامية</option>
+                                <option value="تعليمية">تعليمية</option>
+                                <option value="تطوعية">تطوعية</option>
+                                <option value="شريكة">شريكة</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <!-- Visit Reason -->
                     <div class="mb-4">
                         <label for="visitReason" class="form-label required-field">سبب الزيارة</label>
@@ -263,6 +293,8 @@
                 email: document.getElementById('email').value,
                 phone: document.getElementById('phone').value,
                 organization: document.getElementById('organization').value,
+                visitType: document.getElementById('visitType').value,
+                visitorType: document.getElementById('visitorType').value,
                 visitReason: document.getElementById('visitReason').value,
                 message: document.getElementById('message').value,
                 appointmentDate: document.getElementById('appointmentDate').value,
