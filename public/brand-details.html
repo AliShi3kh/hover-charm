@@ -688,7 +688,7 @@
 
         function updateSlider() {
             const sliderTrack = document.getElementById('sliderTrack');
-            sliderTrack.style.transform = `translateX(${currentSlideIndex * 100}%)`;
+            sliderTrack.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
             
             document.querySelectorAll('.indicator').forEach((indicator, index) => {
                 indicator.classList.toggle('active', index === currentSlideIndex);
