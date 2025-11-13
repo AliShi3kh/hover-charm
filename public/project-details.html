@@ -452,9 +452,9 @@
             updateSlider();
         }
 
-        function updateSlider() {
+function updateSlider() {
             const sliderTrack = document.getElementById('sliderTrack');
-            sliderTrack.style.transform = `translateX(${currentSlide * 100}%)`;
+            sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
 
         // Auto slide
@@ -518,10 +518,10 @@
             updateSponsorsSlider();
         }
 
-        function updateSponsorsSlider() {
+function updateSponsorsSlider() {
             const track = document.getElementById('sponsorsTrack');
             const cardWidth = sponsorCards[0].offsetWidth + 20; // width + gap
-            track.style.transform = `translateX(${currentSponsorIndex * cardWidth}px)`;
+            track.style.transform = `translateX(-${currentSponsorIndex * cardWidth}px)`;
         }
 
         // Auto slide sponsors
