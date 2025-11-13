@@ -1504,6 +1504,23 @@ textarea.form-control {
     cursor: pointer;
 }
 
+/* Apply base button styles to primary/secondary buttons as well */
+.btn-primary,
+.btn-secondary {
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .btn-map {
     background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
     color: white;
