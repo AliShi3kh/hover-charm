@@ -1673,3 +1673,106 @@ textarea.form-control {
         padding: 35px 25px;
     }
 }
+
+/* ==============================
+   FIX KIT: Missing mappings for pages
+   ============================== */
+
+/* Shared section header bits used in many HTMLs */
+.section-breadcrumb{color:#64748b;font-weight:600;margin-bottom:8px}
+.section-divider{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:14px}
+.section-divider .divider-line{height:3px;width:80px;background:linear-gradient(90deg,#5DD0F0,rgba(93,208,240,0))}
+.section-divider .divider-line.right{background:linear-gradient(90deg,rgba(93,208,240,0),#3B82F6)}
+.section-divider .divider-icon{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#5DD0F0,#3B82F6);box-shadow:0 6px 18px rgba(93,208,240,.25)}
+.section-divider .divider-icon svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:3}
+
+/* Projects list page (projects-section.html) */
+.projects-container{max-width:1400px;margin:0 auto;padding:20px}
+.project-content{padding:24px}
+.project-title{font-size:22px;font-weight:800;color:#0f172a;margin:0 0 10px}
+.project-description{color:#475569;font-size:15px;line-height:1.8;margin-bottom:18px}
+.project-info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:18px}
+@media(min-width:992px){.project-info-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.project-info-item{display:flex;flex-direction:column;gap:6px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:12px}
+.project-info-label{color:#64748b;font-size:12px;font-weight:700}
+.project-info-value{display:flex;align-items:center;gap:8px;color:#0f172a;font-weight:600}
+.project-info-icon{width:18px;height:18px;color:#3B82F6}
+.project-badge{position:absolute;top:16px;left:16px;background:#0ea5e9;color:#fff;padding:8px 12px;border-radius:999px;font-weight:700;font-size:12px;box-shadow:0 6px 18px rgba(2,132,199,.25);z-index:2}
+.project-image-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.0) 40%,rgba(0,0,0,.35) 100%);z-index:1}
+.project-progress{margin-top:12px}
+.progress-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.progress-label{color:#64748b;font-weight:600}
+.progress-percentage{font-weight:800;color:#0f172a}
+.progress-bar-container{height:10px;border-radius:999px;background:#e2e8f0;overflow:hidden}
+.progress-bar-fill{height:100%;background:linear-gradient(90deg,#5DD0F0,#3B82F6)}
+.project-dates{display:flex;gap:16px;margin-top:14px}
+.project-date{display:flex;gap:6px;color:#475569}
+.date-label{font-weight:700;color:#64748b}
+.project-details-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#5DD0F0,#3B82F6);color:#fff;border:0;border-radius:12px;padding:12px 20px;font-weight:700;margin-top:14px;box-shadow:0 8px 22px rgba(59,130,246,.25);cursor:pointer;transition:transform .2s ease}
+.project-details-btn:hover{transform:translateY(-2px)}
+.project-details-btn .btn-icon{width:18px;height:18px}
+
+/* Project details (project-details.html) */
+.project-header{background:linear-gradient(135deg,#5DD0F0,#3B82F6);border-radius:24px;padding:40px 24px;color:#fff;margin:0 auto 24px;max-width:1400px;box-shadow:0 20px 60px rgba(59,130,246,.25)}
+.project-header .header-content{display:flex;align-items:center;gap:20px;justify-content:center}
+.project-logo-header img{width:110px;height:110px;object-fit:contain;background:#fff;border-radius:18px;padding:10px;box-shadow:0 6px 20px rgba(0,0,0,.15)}
+.project-title-main{font-size:32px;font-weight:900;margin:0 0 8px}
+.project-meta{display:flex;gap:16px;flex-wrap:wrap;opacity:.95}
+.project-meta .meta-item{display:flex;align-items:center;gap:8px}
+
+.project-nav{position:sticky;top:0;background:rgba(255,255,255,.7);backdrop-filter:blur(8px);border:1px solid #e2e8f0;border-radius:14px;margin:10px auto;max-width:1200px}
+.project-nav .nav-container{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:10px}
+.project-nav .nav-item{padding:10px 16px;border-radius:10px;color:#0f172a;font-weight:700;text-decoration:none}
+.project-nav .nav-item.active,.project-nav .nav-item:hover{background:linear-gradient(135deg,#E3F7FC,#D5F2FA);color:#2563EB}
+
+/* Generic slider used by details pages */
+.slider-container{position:relative;overflow:hidden;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.slider-track{display:flex;transition:transform .5s ease}
+.slide{min-width:100%;position:relative}
+.slide img{width:100%;height:420px;object-fit:cover;display:block}
+.slide-caption{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.45);color:#fff;padding:8px 12px;border-radius:10px;font-weight:700}
+.slider-btn{position:absolute;top:50%;transform:translateY(-50%);border:0;background:rgba(255,255,255,.85);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.2);cursor:pointer}
+.slider-btn.prev{right:12px}
+.slider-btn.next{left:12px}
+
+/* Actions sidebar */
+.main-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px;align-items:start}
+.actions-sidebar{display:flex;flex-direction:column;gap:16px}
+.action-box{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:18px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.action-box.secondary{background:linear-gradient(135deg,#f8fafc,#eef2ff)}
+.action-box-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#5DD0F0,#3B82F6);color:#fff;margin-bottom:10px}
+.action-box-title{font-weight:800;margin-bottom:6px}
+.action-box-btn{display:inline-flex;align-items:center;gap:8px;background:#0ea5e9;color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none}
+
+@media(max-width:992px){.main-grid{grid-template-columns:1fr}}
+
+/* Brand details: top hero and nav */
+section.brand-header{background:linear-gradient(135deg,#5DD0F0,#3B82F6);border-radius:24px;margin:0 auto 24px;max-width:1400px;color:#fff;box-shadow:0 20px 60px rgba(59,130,246,.25);padding:28px}
+.brand-logo-header img{width:110px;height:110px;object-fit:contain;background:#fff;border-radius:18px;padding:10px;box-shadow:0 6px 20px rgba(0,0,0,.15)}
+.brand-title-main{font-size:32px;font-weight:900;margin:0 0 8px}
+.brand-meta .meta-item{display:flex;align-items:center;gap:8px}
+.brand-nav{position:sticky;top:0;background:rgba(255,255,255,.7);backdrop-filter:blur(8px);border:1px solid #e2e8f0;border-radius:14px;margin:10px auto;max-width:1200px}
+.brand-nav .nav-item{padding:10px 14px;border-radius:10px;color:#0f172a;font-weight:700;text-decoration:none}
+.brand-nav .nav-item.active,.brand-nav .nav-item:hover{background:linear-gradient(135deg,#E3F7FC,#D5F2FA);color:#2563EB}
+
+/* Membership page grid + modal */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:24px}
+@media(max-width:992px){.pricing-grid{grid-template-columns:1fr}}
+.card-header .plan-name{font-size:22px;font-weight:800;color:#0f172a;margin:0 0 6px}
+.plan-description{color:#64748b;margin:0}
+.price-section{margin:14px 0}
+.price{font-size:32px;font-weight:900;color:#0f172a}
+.price .price-currency{font-size:16px;color:#64748b;margin-left:6px}
+.price-period{color:#64748b;margin-top:4px}
+.buttons-container{display:flex;gap:10px;margin-top:16px}
+.best-value-badge{position:absolute;top:12px;right:12px;background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;font-weight:800;border-radius:999px;padding:6px 12px;box-shadow:0 8px 22px rgba(22,163,74,.25)}
+.free-badge{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;border-radius:10px;padding:6px 10px;font-weight:800;display:inline-block}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .2s ease}
+.modal-overlay.active{opacity:1;pointer-events:auto}
+.modal-container{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;transform:translateY(20px);transition:all .2s ease;pointer-events:none}
+.modal-container.active{opacity:1;transform:none;pointer-events:auto}
+.modal-header{background:#0ea5e9;color:#fff;padding:16px 20px;border-radius:16px 16px 0 0}
+.modal-body{background:#fff;padding:18px 20px;border-inline:1px solid #e2e8f0}
+.modal-footer{background:#fff;border:1px solid #e2e8f0;border-top:0;border-radius:0 0 16px 16px;padding:12px 20px}
+.modal-subscribe-btn{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;border:0;border-radius:10px;padding:10px 14px;font-weight:800}
