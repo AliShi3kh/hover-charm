@@ -713,7 +713,7 @@
         }
 
         function updateSlider() {
-            sliderTrack.style.transform = `translateX(${currentSlide * 100}%)`;
+            sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
             
             // Update dots
             document.querySelectorAll('.slider-dot').forEach((dot, index) => {
@@ -722,7 +722,7 @@
         }
 
         function moveSlide(direction) {
-            currentSlide -= direction;
+            currentSlide += direction;
             if (currentSlide < 0) currentSlide = totalSlides - 1;
             if (currentSlide >= totalSlides) currentSlide = 0;
             updateSlider();
@@ -735,7 +735,7 @@
 
         // Auto-play slider
         setInterval(() => {
-            moveSlide(-1);
+            moveSlide(1);
         }, 5000);
 
         // Contact Form Handler
