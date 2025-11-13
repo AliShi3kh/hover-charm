@@ -1,0 +1,772 @@
+/* ========================================
+   Global Styles - مجلس الجمعيات الأهلية
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e3e9f0 100%);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ========================================
+   Section Headers
+   ======================================== */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.section-subtitle {
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+}
+
+.title-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.decoration-line {
+    height: 2px;
+    width: 80px;
+    background: linear-gradient(to left, #5DD0F0, transparent);
+}
+
+.decoration-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(93, 208, 240, 0.3);
+}
+
+.decoration-icon i,
+.decoration-icon svg {
+    color: white;
+    fill: white;
+    font-size: 18px;
+    width: 20px;
+    height: 20px;
+}
+
+/* ========================================
+   Appointment Booking Form
+   ======================================== */
+
+.booking-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.booking-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.booking-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+.booking-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.booking-header p {
+    margin: 10px 0 0 0;
+    opacity: 0.95;
+}
+
+.booking-body {
+    padding: 40px;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-control,
+.form-select {
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+textarea.form-control {
+    resize: none;
+}
+
+.appointment-section {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 25px 0;
+    border: 2px solid #e9ecef;
+}
+
+.appointment-section h5 {
+    color: #667eea;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.time-slot {
+    padding: 12px;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.time-slot:hover {
+    border-color: #667eea;
+    background: #f0f2ff;
+}
+
+.time-slot.selected {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    padding: 15px 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.required-field::after {
+    content: " *";
+    color: #dc3545;
+}
+
+/* ========================================
+   Branch Cards
+   ======================================== */
+
+.branch-card {
+    background: white;
+    border-radius: 20px;
+    border: 2px solid #e8f4f8;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(93, 208, 240, 0.1);
+}
+
+.branch-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(93, 208, 240, 0.25);
+    border-color: #5DD0F0;
+}
+
+.card-header-custom {
+    padding: 40px 30px 25px;
+    text-align: center;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8fbfd 0%, #f0f9fb 100%);
+    border-bottom: 2px solid #e8f4f8;
+}
+
+.branch-logo {
+    width: 140px;
+    height: 140px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    transition: all 0.3s ease;
+    border: 3px solid rgba(93, 208, 240, 0.2);
+    box-shadow: 0 8px 25px rgba(93, 208, 240, 0.15);
+}
+
+.branch-card:hover .branch-logo {
+    transform: scale(1.08);
+    background: linear-gradient(135deg, #D5F2FA 0%, #E3F7FC 100%);
+    border-color: #5DD0F0;
+}
+
+.branch-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card-body-custom {
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.branch-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 18px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.branch-location {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 12px;
+    color: #64748b;
+    font-size: 15px;
+    margin-bottom: 24px;
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border-top: 3px solid #5DD0F0;
+}
+
+.branch-location i {
+    color: #5DD0F0;
+    font-size: 20px;
+    margin-top: 3px;
+}
+
+/* ========================================
+   Brand Cards
+   ======================================== */
+
+.brand-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #e8ecf1;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.brand-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ea5c48 0%, #e2a681 50%, #00953f 100%);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease;
+}
+
+.brand-card:hover {
+    transform: translateY(-8px);
+    border-color: #ea5c48;
+    box-shadow: 0 12px 35px rgba(234, 92, 72, 0.2);
+}
+
+.brand-card:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.brand-header {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #f0f2f5;
+}
+
+.brand-logo-container {
+    width: 85px;
+    height: 85px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    border: 2px solid #e8ecf1;
+}
+
+.brand-card:hover .brand-logo-container {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 8px 20px rgba(234, 92, 72, 0.15);
+    border-color: #ea5c48;
+}
+
+/* ========================================
+   Project Cards
+   ======================================== */
+
+.project-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.project-image-container {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.1);
+}
+
+.project-logo {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 90px;
+    height: 90px;
+    background: white;
+    border-radius: 15px;
+    padding: 12px;
+    box-shadow: 0 6px 25px rgba(6, 35, 47, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+/* ========================================
+   Role Cards
+   ======================================== */
+
+.role-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 50px 40px;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    overflow: hidden;
+}
+
+.role-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #5DD0F0 0%, #3B82F6 50%, #2563EB 100%);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+.role-card:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.role-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 60px rgba(93, 208, 240, 0.15), 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: rgba(93, 208, 240, 0.3);
+}
+
+/* ========================================
+   Service Cards
+   ======================================== */
+
+.service-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 35px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+    border: 2px solid rgba(226, 232, 240, 0.8);
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(93, 208, 240, 0.15), 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: rgba(93, 208, 240, 0.4);
+}
+
+.service-logo {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.service-logo img {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+    transition: all 0.3s ease;
+}
+
+/* ========================================
+   Statistics Section
+   ======================================== */
+
+.statistics-section {
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 50%, #2563EB 100%);
+    border-radius: 32px;
+    padding: 50px 60px;
+    box-shadow: 0 25px 80px -20px rgba(93, 208, 240, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-item {
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.stat-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.icon-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px dashed rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.4s ease;
+    animation: rotate-border 15s linear infinite;
+}
+
+@keyframes rotate-border {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    letter-spacing: -1px;
+}
+
+.stat-label {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.6;
+}
+
+/* ========================================
+   Membership/Pricing Cards
+   ======================================== */
+
+.pricing-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+    border: 2px solid rgba(226, 232, 240, 0.8);
+    min-height: 480px;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(93, 208, 240, 0.15), 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: rgba(93, 208, 240, 0.4);
+}
+
+.pricing-card.featured {
+    border: 2px solid #5DD0F0;
+    box-shadow: 0 8px 30px rgba(93, 208, 240, 0.2), 0 2px 8px rgba(0, 0, 0, 0.05);
+    transform: scale(1.05);
+}
+
+/* ========================================
+   Council/Personality Cards
+   ======================================== */
+
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    min-height: 400px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 20px 60px -15px rgba(93, 208, 240, 0.4);
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 30px 70px -20px rgba(93, 208, 240, 0.6);
+}
+
+.card-1 {
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B9EC5 100%);
+}
+
+.card-2 {
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+}
+
+.card-3 {
+    background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 100%);
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+
+.btn-custom {
+    flex: 1;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-map {
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(93, 208, 240, 0.3);
+}
+
+.btn-map:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(93, 208, 240, 0.45);
+    color: white;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(93, 208, 240, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(93, 208, 240, 0.4);
+}
+
+.btn-secondary {
+    background: white;
+    color: #3B82F6;
+    border: 2px solid #e2e8f0;
+}
+
+.btn-secondary:hover {
+    background: #f8fafc;
+    border-color: #5DD0F0;
+    color: #2563EB;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(93, 208, 240, 0.1);
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 10px 30px rgba(93, 208, 240, 0.25);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(93, 208, 240, 0.35);
+    }
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 36px;
+    }
+
+    .branch-logo,
+    .brand-logo-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .booking-body {
+        padding: 30px 20px;
+    }
+
+    .time-slots {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding: 40px 15px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .booking-header h1 {
+        font-size: 1.5rem;
+    }
+}
