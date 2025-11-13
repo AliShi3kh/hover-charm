@@ -13,6 +13,13 @@ body {
     background: linear-gradient(135deg, #f5f7fa 0%, #e3e9f0 100%);
     line-height: 1.6;
     overflow-x: hidden;
+    padding: 50px 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 20px;
 }
 
 /* ========================================
@@ -69,13 +76,175 @@ body {
     box-shadow: 0 4px 15px rgba(93, 208, 240, 0.3);
 }
 
+.decoration-icon-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .decoration-icon i,
 .decoration-icon svg {
     color: white;
     fill: white;
+    stroke: white;
     font-size: 18px;
     width: 20px;
     height: 20px;
+}
+
+/* ========================================
+   Page Headers (for detail pages)
+   ======================================== */
+
+.page-header {
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+    padding: 60px 30px;
+    border-radius: 24px;
+    margin-bottom: 40px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(93, 208, 240, 0.3);
+}
+
+.brands-header,
+.branches-header {
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+    padding: 60px 30px;
+    border-radius: 24px;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 12px 24px;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 30px;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateX(5px);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.page-title {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: white;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.page-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ========================================
+   Section Title Container
+   ======================================== */
+
+.section-title-container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    box-shadow: 0 10px 30px rgba(93, 208, 240, 0.3);
+}
+
+.section-icon i {
+    font-size: 36px;
+    color: white;
+}
+
+.section-description {
+    color: #64748b;
+    font-size: 16px;
+    max-width: 700px;
+    margin: 15px auto 0;
+    line-height: 1.8;
+}
+
+/* ========================================
+   Content Container
+   ======================================== */
+
+.content-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ========================================
+   Grid Layouts
+   ======================================== */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    margin-top: 50px;
+}
+
+.branches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 35px;
+    margin-top: 50px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
 }
 
 /* ========================================
@@ -303,6 +472,12 @@ textarea.form-control {
     margin-top: 3px;
 }
 
+.card-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
 /* ========================================
    Brand Cards
    ======================================== */
@@ -369,6 +544,65 @@ textarea.form-control {
     border-color: #ea5c48;
 }
 
+.brand-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.brand-info {
+    flex: 1;
+}
+
+.brand-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.brand-category {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.brand-category i {
+    color: #ea5c48;
+}
+
+.brand-description {
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.brand-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #ea5c48 0%, #e2a681 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(234, 92, 72, 0.2);
+}
+
+.brand-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(234, 92, 72, 0.35);
+}
+
 /* ========================================
    Project Cards
    ======================================== */
@@ -420,6 +654,52 @@ textarea.form-control {
     z-index: 2;
 }
 
+.project-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.project-body {
+    padding: 30px;
+}
+
+.project-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.project-description {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(93, 208, 240, 0.3);
+}
+
+.project-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(93, 208, 240, 0.45);
+}
+
 /* ========================================
    Role Cards
    ======================================== */
@@ -463,6 +743,127 @@ textarea.form-control {
     border-color: rgba(93, 208, 240, 0.3);
 }
 
+.card-bg-accent {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(93, 208, 240, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.card-number {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 72px;
+    font-weight: 900;
+    color: rgba(93, 208, 240, 0.08);
+    line-height: 1;
+}
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(93, 208, 240, 0.25);
+    transition: all 0.3s ease;
+}
+
+.role-card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 30px rgba(93, 208, 240, 0.35);
+}
+
+.card-icon svg {
+    width: 36px;
+    height: 36px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2;
+}
+
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+.role-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #E3F7FC 0%, #D5F2FA 100%);
+    color: #3B82F6;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+.role-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.title-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #5DD0F0 0%, #3B82F6 100%);
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+
+.role-description {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.8;
+    flex: 1;
+}
+
+.arrow-indicator {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+    border: 2px solid #e2e8f0;
+}
+
+.role-card:hover .arrow-indicator {
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+    border-color: #5DD0F0;
+}
+
+.arrow-indicator svg {
+    width: 24px;
+    height: 24px;
+    stroke: #64748b;
+    fill: none;
+    stroke-width: 2;
+    transition: all 0.3s ease;
+}
+
+.role-card:hover .arrow-indicator svg {
+    stroke: white;
+    transform: translateX(-5px);
+}
+
 /* ========================================
    Service Cards
    ======================================== */
@@ -488,6 +889,17 @@ textarea.form-control {
     border-color: rgba(93, 208, 240, 0.4);
 }
 
+.service-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #E3F7FC 0%, #D5F2FA 100%);
+    color: #3B82F6;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
 .service-logo {
     width: 100%;
     height: 140px;
@@ -507,6 +919,100 @@ textarea.form-control {
     transition: all 0.3s ease;
 }
 
+.service-card:hover .service-logo img {
+    transform: scale(1.08);
+}
+
+.service-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.service-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #5DD0F0 0%, #3B82F6 100%);
+    margin: 0 auto 20px;
+    border-radius: 2px;
+}
+
+.service-description {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.service-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(93, 208, 240, 0.3);
+}
+
+.service-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(93, 208, 240, 0.45);
+    color: white;
+}
+
+.button-icon {
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.service-button:hover .button-icon {
+    transform: translateX(-3px);
+}
+
+.all-services-container {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.btn-all-services {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    color: #3B82F6;
+    padding: 16px 36px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.btn-all-services:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(93, 208, 240, 0.2);
+    border-color: #5DD0F0;
+    color: #2563EB;
+}
+
+.btn-all-services svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+}
+
 /* ========================================
    Statistics Section
    ======================================== */
@@ -518,6 +1024,60 @@ textarea.form-control {
     box-shadow: 0 25px 80px -20px rgba(93, 208, 240, 0.5);
     position: relative;
     overflow: hidden;
+}
+
+.stats-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.05;
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px);
+}
+
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+    top: -200px;
+    right: -100px;
+}
+
+.orb-2 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(93, 208, 240, 0.5) 0%, transparent 70%);
+    bottom: -150px;
+    left: -100px;
+}
+
+.stats-title {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.stats-title h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.stats-title p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .stats-grid {
@@ -564,6 +1124,30 @@ textarea.form-control {
     to { transform: rotate(360deg); }
 }
 
+.stat-item:hover .icon-circle {
+    border-style: solid;
+    border-width: 4px;
+}
+
+.icon-inner {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.icon-inner svg {
+    width: 36px;
+    height: 36px;
+    stroke: white;
+    fill: white;
+    stroke-width: 2;
+}
+
 .stat-number {
     font-size: 48px;
     font-weight: 800;
@@ -571,6 +1155,11 @@ textarea.form-control {
     margin-bottom: 10px;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     letter-spacing: -1px;
+}
+
+.plus-sign {
+    font-size: 36px;
+    margin-right: 5px;
 }
 
 .stat-label {
@@ -640,6 +1229,261 @@ textarea.form-control {
     background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 100%);
 }
 
+.card-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,.15) 20px, rgba(255,255,255,.15) 40px);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, transparent 100%);
+}
+
+.card-arrow {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+
+.card:hover .card-arrow {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.card-arrow svg {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2.5;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 70px 40px 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card-bg-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.08;
+    z-index: 1;
+}
+
+.card-bg-icon svg {
+    width: 280px;
+    height: 280px;
+    stroke: white;
+    fill: white;
+    stroke-width: 1;
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.card-icon svg {
+    width: 40px;
+    height: 40px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2;
+}
+
+.card-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-description {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.8;
+}
+
+/* ========================================
+   Activities Section
+   ======================================== */
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.activity-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 2px solid #f0f2f5;
+}
+
+.activity-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(93, 208, 240, 0.2);
+    border-color: #5DD0F0;
+}
+
+.activity-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.activity-card:hover .activity-image {
+    transform: scale(1.1);
+}
+
+.activity-content {
+    padding: 25px;
+}
+
+.activity-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.activity-description {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* ========================================
+   Detail Pages
+   ======================================== */
+
+.detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.detail-hero {
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+    border-radius: 24px;
+    padding: 60px 40px;
+    color: white;
+    margin-bottom: 50px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(93, 208, 240, 0.3);
+}
+
+.detail-hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.detail-hero p {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.95;
+}
+
+.detail-section {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid #f0f2f5;
+}
+
+.detail-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #5DD0F0;
+}
+
+.detail-section p {
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.detail-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.detail-section li {
+    padding: 12px 0;
+    padding-right: 30px;
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.7;
+    position: relative;
+}
+
+.detail-section li::before {
+    content: "✓";
+    position: absolute;
+    right: 0;
+    color: #5DD0F0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
 /* ========================================
    Buttons
    ======================================== */
@@ -657,6 +1501,7 @@ textarea.form-control {
     justify-content: center;
     gap: 8px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .btn-map {
@@ -680,6 +1525,7 @@ textarea.form-control {
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(93, 208, 240, 0.4);
+    color: white;
 }
 
 .btn-secondary {
@@ -733,12 +1579,42 @@ textarea.form-control {
     }
 }
 
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 /* ========================================
    Responsive Design
    ======================================== */
 
+@media (max-width: 992px) {
+    .cards-grid,
+    .services-grid,
+    .branches-grid,
+    .brands-grid,
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+}
+
 @media (max-width: 768px) {
+    body {
+        padding: 30px 15px;
+    }
+
     .section-title {
+        font-size: 36px;
+    }
+
+    .page-title {
         font-size: 36px;
     }
 
@@ -755,18 +1631,45 @@ textarea.form-control {
     .time-slots {
         grid-template-columns: 1fr;
     }
+
+    .statistics-section {
+        padding: 40px 30px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 }
 
 @media (max-width: 576px) {
     body {
-        padding: 40px 15px;
+        padding: 20px 10px;
     }
 
     .section-title {
         font-size: 28px;
     }
 
+    .page-title {
+        font-size: 28px;
+    }
+
     .booking-header h1 {
         font-size: 1.5rem;
+    }
+
+    .card-content {
+        padding: 50px 25px 35px;
+    }
+
+    .card-title {
+        font-size: 24px;
+    }
+
+    .role-card,
+    .service-card,
+    .pricing-card {
+        padding: 35px 25px;
     }
 }
