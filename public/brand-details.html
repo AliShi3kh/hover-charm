@@ -209,21 +209,35 @@
                 <!-- About Section -->
                 <section id="about" class="content-section">
                     <div class="about-vmp-container">
-                        <!-- About Card -->
+                        <!-- About Card with Image -->
                         <div class="about-main-card">
-                            <div class="about-card-header">
-                                <div class="about-icon-wrapper">
-                                    <i class="fas fa-info-circle"></i>
+                            <div class="row g-4 align-items-center">
+                                <div class="col-lg-7 col-md-12">
+                                    <div class="about-card-header">
+                                        <div class="about-icon-wrapper">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <h2 class="about-card-title">نبذة عن العلامة التجارية</h2>
+                                    </div>
+                                    <div class="about-card-content">
+                                        <p class="about-description">
+                                            علامة ليبل الوطنية واحدة من الشركات الرائدة في مجال التدريب والتطوير المهني في المملكة العربية السعودية. نسعى دائماً لتقديم برامج تدريبية متميزة تلبي احتياجات السوق المحلي والإقليمي، مع التركيز على تطوير المهارات والقدرات الفريدة.
+                                        </p>
+                                        <p class="about-description">
+                                            نفخر بشراكاتنا الاستراتيجية مع كبرى المؤسسات الوطنية والدولية، ونلتزم بتقديم خدمات تدريبية عالية الجودة تساهم في تحقيق رؤية المملكة 2030.
+                                        </p>
+                                    </div>
                                 </div>
-                                <h2 class="about-card-title">نبذة عن العلامة التجارية</h2>
-                            </div>
-                            <div class="about-card-content">
-                                <p class="about-description">
-                                    علامة ليبل الوطنية واحدة من الشركات الرائدة في مجال التدريب والتطوير المهني في المملكة العربية السعودية. نسعى دائماً لتقديم برامج تدريبية متميزة تلبي احتياجات السوق المحلي والإقليمي، مع التركيز على تطوير المهارات والقدرات الفريدة.
-                                </p>
-                                <p class="about-description">
-                                    نفخر بشراكاتنا الاستراتيجية مع كبرى المؤسسات الوطنية والدولية، ونلتزم بتقديم خدمات تدريبية عالية الجودة تساهم في تحقيق رؤية المملكة 2030.
-                                </p>
+                                <div class="col-lg-5 col-md-12">
+                                    <div class="about-image-container">
+                                        <div class="about-image-decoration"></div>
+                                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&h=600" alt="نبذة عن العلامة" class="about-main-image">
+                                        <div class="about-image-badge">
+                                            <i class="fas fa-award"></i>
+                                            <span>أكثر من 10,000 متدرب</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -370,115 +384,58 @@
                             الدورات القائمة
                         </h2>
                     </div>
-                    <div class="row g-4">
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="course-card-brand">
-                                <div class="course-badge">جديد</div>
-                                <div class="course-header-brand">
-                                    <div class="course-icon-brand">
-                                        <i class="fas fa-code"></i>
-                                    </div>
-                                    <h3 class="course-name">تطوير الويب المتقدم</h3>
+                    <div class="courses-grid-modern">
+                        <div class="course-card-modern">
+                            <div class="course-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&h=500" alt="تطوير الويب المتقدم">
+                                <div class="course-badge-modern">جديد</div>
+                            </div>
+                            <div class="course-content-modern">
+                                <h3 class="course-title-modern">تطوير الويب المتقدم</h3>
+                                <div class="course-meta-modern">
+                                    <span><i class="fas fa-clock"></i> 8 أسابيع</span>
+                                    <span><i class="fas fa-calendar"></i> 15 ديسمبر</span>
+                                    <span><i class="fas fa-users"></i> 25 مقعد</span>
                                 </div>
-                                <div class="course-details-brand">
-                                    <div class="course-info-row">
-                                        <span class="info-label-brand">
-                                            <i class="fas fa-clock"></i>
-                                            المدة
-                                        </span>
-                                        <span class="info-value-brand">8 أسابيع</span>
-                                    </div>
-                                    <div class="course-info-row">
-                                        <span class="info-label-brand">
-                                            <i class="fas fa-calendar"></i>
-                                            البداية
-                                        </span>
-                                        <span class="info-value-brand">15 ديسمبر 2024</span>
-                                    </div>
-                                    <div class="course-info-row">
-                                        <span class="info-label-brand">
-                                            <i class="fas fa-users"></i>
-                                            المقاعد
-                                        </span>
-                                        <span class="info-value-brand seats-available">25 مقعد متاح</span>
-                                    </div>
-                                </div>
-                                <button class="course-enroll-btn" onclick="enrollCourse('web-dev')">
+                                <button class="btn-enroll-modern" onclick="enrollCourse('web-dev')">
                                     <span>التسجيل الآن</span>
                                     <i class="fas fa-arrow-left"></i>
                                 </button>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="course-card-brand">
-                                <div class="course-badge badge-popular">الأكثر طلباً</div>
-                                <div class="course-header-brand">
-                                    <div class="course-icon-brand">
-                                        <i class="fas fa-chart-line"></i>
-                                    </div>
-                                    <h3 class="course-name">إدارة المشاريع الاحترافية</h3>
+                        
+                        <div class="course-card-modern">
+                            <div class="course-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&h=500" alt="إدارة المشاريع الاحترافية">
+                                <div class="course-badge-modern badge-popular">الأكثر طلباً</div>
+                            </div>
+                            <div class="course-content-modern">
+                                <h3 class="course-title-modern">إدارة المشاريع الاحترافية</h3>
+                                <div class="course-meta-modern">
+                                    <span><i class="fas fa-clock"></i> 6 أسابيع</span>
+                                    <span><i class="fas fa-calendar"></i> 20 ديسمبر</span>
+                                    <span><i class="fas fa-users"></i> 30 مقعد</span>
                                 </div>
-                                <div class="course-details-brand">
-                                    <div class="course-info-row">
-                                        <span class="info-label-brand">
-                                            <i class="fas fa-clock"></i>
-                                            المدة
-                                        </span>
-                                        <span class="info-value-brand">6 أسابيع</span>
-                                    </div>
-                                    <div class="course-info-row">
-                                        <span class="info-label-brand">
-                                            <i class="fas fa-calendar"></i>
-                                            البداية
-                                        </span>
-                                        <span class="info-value-brand">20 ديسمبر 2024</span>
-                                    </div>
-                                    <div class="course-info-row">
-                                        <span class="info-label-brand">
-                                            <i class="fas fa-users"></i>
-                                            المقاعد
-                                        </span>
-                                        <span class="info-value-brand seats-limited">10 مقاعد متبقية</span>
-                                    </div>
-                                </div>
-                                <button class="course-enroll-btn" onclick="enrollCourse('project-mgmt')">
+                                <button class="btn-enroll-modern" onclick="enrollCourse('project-mgmt')">
                                     <span>التسجيل الآن</span>
                                     <i class="fas fa-arrow-left"></i>
                                 </button>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="course-card-brand">
-                                <div class="course-header-brand">
-                                    <div class="course-icon-brand">
-                                        <i class="fas fa-paint-brush"></i>
-                                    </div>
-                                    <h3 class="course-name">تصميم تجربة المستخدم</h3>
+                        
+                        <div class="course-card-modern">
+                            <div class="course-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500" alt="تحليل البيانات المتقدم">
+                                <div class="course-badge-modern">محدود</div>
+                            </div>
+                            <div class="course-content-modern">
+                                <h3 class="course-title-modern">تحليل البيانات المتقدم</h3>
+                                <div class="course-meta-modern">
+                                    <span><i class="fas fa-clock"></i> 7 أسابيع</span>
+                                    <span><i class="fas fa-calendar"></i> 10 يناير</span>
+                                    <span><i class="fas fa-users"></i> 20 مقعد</span>
                                 </div>
-                                <div class="course-details-brand">
-                                    <div class="course-info-row">
-                                        <span class="info-label-brand">
-                                            <i class="fas fa-clock"></i>
-                                            المدة
-                                        </span>
-                                        <span class="info-value-brand">10 أسابيع</span>
-                                    </div>
-                                    <div class="course-info-row">
-                                        <span class="info-label-brand">
-                                            <i class="fas fa-calendar"></i>
-                                            البداية
-                                        </span>
-                                        <span class="info-value-brand">1 يناير 2025</span>
-                                    </div>
-                                    <div class="course-info-row">
-                                        <span class="info-label-brand">
-                                            <i class="fas fa-users"></i>
-                                            المقاعد
-                                        </span>
-                                        <span class="info-value-brand seats-available">30 مقعد متاح</span>
-                                    </div>
-                                </div>
-                                <button class="course-enroll-btn" onclick="enrollCourse('ux-design')">
+                                <button class="btn-enroll-modern" onclick="enrollCourse('data-analysis')">
                                     <span>التسجيل الآن</span>
                                     <i class="fas fa-arrow-left"></i>
                                 </button>
@@ -495,43 +452,60 @@
                             معرض الصور
                         </h2>
                     </div>
-                    <div class="gallery-grid-brand">
-                        <div class="gallery-item-brand">
-                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&h=400" alt="نشاط 1">
-                            <div class="gallery-overlay-brand">
-                                <h4>ورشة عمل تطوير القيادة</h4>
+                    <div class="gallery-slider-container">
+                        <div class="gallery-slider" id="gallerySlider">
+                            <div class="gallery-track" id="galleryTrack">
+                                <div class="gallery-slide">
+                                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&h=600" alt="نشاط 1">
+                                    <div class="gallery-slide-overlay">
+                                        <h4>ورشة عمل تطوير القيادة</h4>
+                                        <p>تطوير مهارات القيادة الفعالة</p>
+                                    </div>
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&h=600" alt="نشاط 2">
+                                    <div class="gallery-slide-overlay">
+                                        <h4>دورة التسويق الرقمي</h4>
+                                        <p>استراتيجيات التسويق الحديثة</p>
+                                    </div>
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&h=600" alt="نشاط 3">
+                                    <div class="gallery-slide-overlay">
+                                        <h4>مؤتمر الابتكار السنوي</h4>
+                                        <p>أحدث الابتكارات والتقنيات</p>
+                                    </div>
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&h=600" alt="نشاط 4">
+                                    <div class="gallery-slide-overlay">
+                                        <h4>حفل تخريج الدفعة الخامسة</h4>
+                                        <p>تكريم المتدربين المتميزين</p>
+                                    </div>
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&h=600" alt="نشاط 5">
+                                    <div class="gallery-slide-overlay">
+                                        <h4>اجتماع الشركاء الاستراتيجيين</h4>
+                                        <p>بناء شراكات استراتيجية قوية</p>
+                                    </div>
+                                </div>
+                                <div class="gallery-slide">
+                                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&h=600" alt="نشاط 6">
+                                    <div class="gallery-slide-overlay">
+                                        <h4>ورشة عمل الإبداع والابتكار</h4>
+                                        <p>تحفيز الإبداع والتفكير النقدي</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="gallery-item-brand">
-                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&h=400" alt="نشاط 2">
-                            <div class="gallery-overlay-brand">
-                                <h4>دورة التسويق الرقمي</h4>
-                            </div>
-                        </div>
-                        <div class="gallery-item-brand">
-                            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=600&h=400" alt="نشاط 3">
-                            <div class="gallery-overlay-brand">
-                                <h4>مؤتمر الابتكار السنوي</h4>
-                            </div>
-                        </div>
-                        <div class="gallery-item-brand">
-                            <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=600&h=400" alt="نشاط 4">
-                            <div class="gallery-overlay-brand">
-                                <h4>حفل تخريج الدفعة الخامسة</h4>
-                            </div>
-                        </div>
-                        <div class="gallery-item-brand">
-                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&h=400" alt="نشاط 5">
-                            <div class="gallery-overlay-brand">
-                                <h4>اجتماع الشركاء الاستراتيجيين</h4>
-                            </div>
-                        </div>
-                        <div class="gallery-item-brand">
-                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&h=400" alt="نشاط 6">
-                            <div class="gallery-overlay-brand">
-                                <h4>ورشة عمل الإبداع والابتكار</h4>
-                            </div>
-                        </div>
+                        <button class="gallery-nav-btn prev-btn" id="galleryPrevBtn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button class="gallery-nav-btn next-btn" id="galleryNextBtn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="gallery-indicators" id="galleryIndicators"></div>
                     </div>
                 </section>
 
@@ -543,24 +517,51 @@
                             شركاؤنا ورعاتنا
                         </h2>
                     </div>
-                    <div class="partners-grid-brand">
-                        <div class="partner-card-brand">
-                            <div class="partner-logo-brand">
-                                <img src="images/council-network-logo.jpg" alt="شريك 1">
+                    <div class="partners-carousel-container">
+                        <div class="partners-carousel" id="partnersCarousel">
+                            <div class="partners-track" id="partnersTrack">
+                                <div class="partner-slide">
+                                    <div class="partner-logo-box">
+                                        <img src="images/council-network-logo.jpg" alt="شريك 1">
+                                    </div>
+                                </div>
+                                <div class="partner-slide">
+                                    <div class="partner-logo-box">
+                                        <img src="images/deem-logo.jpg" alt="شريك 2">
+                                    </div>
+                                </div>
+                                <div class="partner-slide">
+                                    <div class="partner-logo-box">
+                                        <img src="images/jadarah-logo.jpg" alt="شريك 3">
+                                    </div>
+                                </div>
+                                <div class="partner-slide">
+                                    <div class="partner-logo-box">
+                                        <img src="images/ccj-logo.svg" alt="شريك 4">
+                                    </div>
+                                </div>
+                                <!-- Duplicate for infinite scroll -->
+                                <div class="partner-slide">
+                                    <div class="partner-logo-box">
+                                        <img src="images/council-network-logo.jpg" alt="شريك 1">
+                                    </div>
+                                </div>
+                                <div class="partner-slide">
+                                    <div class="partner-logo-box">
+                                        <img src="images/deem-logo.jpg" alt="شريك 2">
+                                    </div>
+                                </div>
+                                <div class="partner-slide">
+                                    <div class="partner-logo-box">
+                                        <img src="images/jadarah-logo.jpg" alt="شريك 3">
+                                    </div>
+                                </div>
+                                <div class="partner-slide">
+                                    <div class="partner-logo-box">
+                                        <img src="images/ccj-logo.svg" alt="شريك 4">
+                                    </div>
+                                </div>
                             </div>
-                            <h4 class="partner-name">الشريك الاستراتيجي الأول</h4>
-                        </div>
-                        <div class="partner-card-brand">
-                            <div class="partner-logo-brand">
-                                <img src="images/deem-logo.jpg" alt="شريك 2">
-                            </div>
-                            <h4 class="partner-name">الشريك الاستراتيجي الثاني</h4>
-                        </div>
-                        <div class="partner-card-brand">
-                            <div class="partner-logo-brand">
-                                <img src="images/jadarah-logo.jpg" alt="شريك 3">
-                            </div>
-                            <h4 class="partner-name">الشريك الاستراتيجي الثالث</h4>
                         </div>
                     </div>
                 </section>
@@ -705,6 +706,64 @@
         function enrollCourse(courseId) {
             alert(`التسجيل في الدورة: ${courseId}`);
         }
+        
+        // Gallery Slider
+        let galleryCurrentIndex = 0;
+        const galleryTrack = document.getElementById('galleryTrack');
+        const gallerySlides = document.querySelectorAll('.gallery-slide');
+        const galleryTotal = gallerySlides.length;
+        const galleryIndicatorsContainer = document.getElementById('galleryIndicators');
+        
+        // Create indicators
+        for (let i = 0; i < galleryTotal; i++) {
+            const indicator = document.createElement('div');
+            indicator.className = 'gallery-indicator' + (i === 0 ? ' active' : '');
+            indicator.addEventListener('click', () => goToGallerySlide(i));
+            galleryIndicatorsContainer.appendChild(indicator);
+        }
+        
+        function updateGallerySlider() {
+            galleryTrack.style.transform = `translateX(${galleryCurrentIndex * 100}%)`;
+            document.querySelectorAll('.gallery-indicator').forEach((ind, idx) => {
+                ind.classList.toggle('active', idx === galleryCurrentIndex);
+            });
+        }
+        
+        function nextGallerySlide() {
+            galleryCurrentIndex = (galleryCurrentIndex + 1) % galleryTotal;
+            updateGallerySlider();
+        }
+        
+        function prevGallerySlide() {
+            galleryCurrentIndex = (galleryCurrentIndex - 1 + galleryTotal) % galleryTotal;
+            updateGallerySlider();
+        }
+        
+        function goToGallerySlide(index) {
+            galleryCurrentIndex = index;
+            updateGallerySlider();
+        }
+        
+        document.getElementById('galleryNextBtn').addEventListener('click', nextGallerySlide);
+        document.getElementById('galleryPrevBtn').addEventListener('click', prevGallerySlide);
+        
+        // Auto slide every 5 seconds
+        setInterval(nextGallerySlide, 5000);
+        
+        // Partners Carousel - Auto sliding
+        const partnersTrack = document.getElementById('partnersTrack');
+        let partnersPosition = 0;
+        
+        function animatePartners() {
+            partnersPosition -= 0.5;
+            if (Math.abs(partnersPosition) >= partnersTrack.scrollWidth / 2) {
+                partnersPosition = 0;
+            }
+            partnersTrack.style.transform = `translateX(${partnersPosition}px)`;
+            requestAnimationFrame(animatePartners);
+        }
+        
+        animatePartners();
     </script>
 </body>
 </html>
