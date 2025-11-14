@@ -14,42 +14,54 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Brand Header -->
-    <section class="brand-header">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12">
-                    <a href="/brands-section.html" class="back-button">
-                        <i class="fas fa-arrow-right"></i>
-                        <span>العودة</span>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-3 col-12 text-center mb-4 mb-md-0">
-                    <div class="brand-logo-header">
-                        <img src="images/brand-logo-1.svg" alt="شعار العلامة التجارية" id="brandLogo">
-                    </div>
-                </div>
-                <div class="col-lg-10 col-md-9 col-12">
-                    <div class="brand-info">
-                        <h1 class="brand-title-main" id="brandName">علامة ليبل الوطنية</h1>
-                        <div class="brand-meta">
-                            <div class="row g-3">
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="meta-item">
-                                        <i class="fas fa-tag"></i>
-                                        <span id="brandCategory">خدمات التدريب والتطوير</span>
+    <div class="brand-details-page">
+        <!-- Brand Header -->
+        <section class="brand-details-header">
+            <div class="container">
+                <a href="/brands-section.html" class="btn-back-brand">
+                    <i class="fas fa-arrow-right"></i>
+                    <span>العودة للعلامات</span>
+                </a>
+                
+                <div class="brand-header-content">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-2 col-md-3 col-12">
+                            <div class="brand-logo-wrapper">
+                                <div class="logo-glow"></div>
+                                <img src="images/brand-logo-1.svg" alt="شعار العلامة التجارية" id="brandLogo" class="brand-main-logo">
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-md-9 col-12">
+                            <div class="brand-header-info">
+                                <h1 class="brand-main-title" id="brandName">علامة ليبل الوطنية</h1>
+                                <p class="brand-tagline">نحو مستقبل أفضل بخدمات متميزة</p>
+                                <div class="brand-meta-grid">
+                                    <div class="meta-card">
+                                        <div class="meta-icon">
+                                            <i class="fas fa-tag"></i>
+                                        </div>
+                                        <div class="meta-content">
+                                            <span class="meta-label">التصنيف</span>
+                                            <span class="meta-value" id="brandCategory">خدمات التدريب والتطوير</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="meta-item">
-                                        <i class="fas fa-calendar-alt"></i>
-                                        <span>تأسست 2020</span>
+                                    <div class="meta-card">
+                                        <div class="meta-icon">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </div>
+                                        <div class="meta-content">
+                                            <span class="meta-label">تاريخ التأسيس</span>
+                                            <span class="meta-value">2020</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-md-12 col-12">
-                                    <div class="meta-item">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span>الرياض، المملكة العربية السعودية</span>
+                                    <div class="meta-card">
+                                        <div class="meta-icon">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div class="meta-content">
+                                            <span class="meta-label">الموقع</span>
+                                            <span class="meta-value">الرياض، السعودية</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -57,807 +69,631 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Navigation Menu -->
-    <nav class="brand-nav">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="navbar navbar-expand-lg p-0">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#brandNavbar" aria-controls="brandNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-center" id="brandNavbar">
-                            <ul class="nav-menu-list d-flex flex-column flex-lg-row align-items-center justify-content-center gap-2 w-100 mb-0 p-0 list-unstyled">
-                                <li><a href="#home" class="nav-item active" onclick="setActiveNav(event)">
-                                    <i class="fas fa-home"></i>
-                                    <span>الرئيسية</span>
-                                </a></li>
-                                <li><a href="#about" class="nav-item" onclick="setActiveNav(event)">
-                                    <i class="fas fa-info-circle"></i>
-                                    <span>عن العلامة</span>
-                                </a></li>
-                                <li><a href="#vmp" class="nav-item" onclick="setActiveNav(event)">
-                                    <i class="fas fa-compass"></i>
-                                    <span>الرؤية والرسالة</span>
-                                </a></li>
-                                <li><a href="#services" class="nav-item" onclick="setActiveNav(event)">
-                                    <i class="fas fa-briefcase"></i>
-                                    <span>الخدمات</span>
-                                </a></li>
-                                <li><a href="#gallery" class="nav-item" onclick="setActiveNav(event)">
-                                    <i class="fas fa-images"></i>
-                                    <span>معرض الصور</span>
-                                </a></li>
-                                <li><a href="#courses" class="nav-item" onclick="setActiveNav(event)">
-                                    <i class="fas fa-book"></i>
-                                    <span>الدورات القائمة</span>
-                                </a></li>
-                                <li><a href="#activities" class="nav-item" onclick="setActiveNav(event)">
-                                    <i class="fas fa-tasks"></i>
-                                    <span>جدول الأنشطة</span>
-                                </a></li>
-                                <li><a href="#partners" class="nav-item" onclick="setActiveNav(event)">
+        <!-- Navigation Menu -->
+        <nav class="brand-details-nav" id="brandNav">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <button class="mobile-nav-toggle" id="mobileNavToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="brand-nav-list">
+                        <li class="nav-list-item">
+                            <a href="#home" class="brand-nav-link active" data-section="home">
+                                <i class="fas fa-home"></i>
+                                <span>الرئيسية</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="#about" class="brand-nav-link" data-section="about">
+                                <i class="fas fa-info-circle"></i>
+                                <span>عن العلامة</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="#vmp" class="brand-nav-link" data-section="vmp">
+                                <i class="fas fa-compass"></i>
+                                <span>الرؤية والرسالة</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="#services" class="brand-nav-link" data-section="services">
+                                <i class="fas fa-briefcase"></i>
+                                <span>الخدمات</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="#courses" class="brand-nav-link" data-section="courses">
+                                <i class="fas fa-book"></i>
+                                <span>الدورات</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="#gallery" class="brand-nav-link" data-section="gallery">
+                                <i class="fas fa-images"></i>
+                                <span>معرض الصور</span>
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="#partners" class="brand-nav-link" data-section="partners">
+                                <i class="fas fa-handshake"></i>
+                                <span>الرعاة</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="brand-details-content">
+            <div class="container">
+                <!-- Hero Section with Slider -->
+                <section id="home" class="content-section hero-section-brand">
+                    <div class="row g-4">
+                        <div class="col-lg-8 col-md-12">
+                            <div class="brand-slider-card">
+                                <div class="slider-main" id="brandSlider">
+                                    <div class="slider-track" id="sliderTrack">
+                                        <div class="slider-item active">
+                                            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&h=600" alt="فريق عمل متميز">
+                                            <div class="slider-overlay">
+                                                <h3>فريق عمل متميز ومحترف</h3>
+                                            </div>
+                                        </div>
+                                        <div class="slider-item">
+                                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&h=600" alt="بيئة عمل ملهمة">
+                                            <div class="slider-overlay">
+                                                <h3>بيئة عمل ملهمة ومبتكرة</h3>
+                                            </div>
+                                        </div>
+                                        <div class="slider-item">
+                                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&h=600" alt="خدمات متطورة">
+                                            <div class="slider-overlay">
+                                                <h3>خدمات متطورة وشاملة</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="slider-btn slider-btn-prev" id="prevSlide">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                    <button class="slider-btn slider-btn-next" id="nextSlide">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <div class="slider-indicators" id="sliderIndicators"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="quick-actions-card">
+                                <h3 class="actions-title">الإجراءات السريعة</h3>
+                                <div class="actions-list">
+                                    <button class="action-btn action-btn-primary" onclick="downloadProfile()">
+                                        <i class="fas fa-download"></i>
+                                        <span>تحميل ملف التعريف</span>
+                                    </button>
+                                    <button class="action-btn action-btn-secondary" onclick="registerBrand()">
+                                        <i class="fas fa-user-plus"></i>
+                                        <span>التسجيل في العلامة</span>
+                                    </button>
+                                    <button class="action-btn action-btn-outline" onclick="contactBrand()">
+                                        <i class="fas fa-phone"></i>
+                                        <span>تواصل معنا</span>
+                                    </button>
+                                </div>
+                                <div class="contact-info-box">
+                                    <h4>معلومات التواصل</h4>
+                                    <div class="contact-items">
+                                        <div class="contact-detail">
+                                            <i class="fas fa-envelope"></i>
+                                            <span>info@brand.com</span>
+                                        </div>
+                                        <div class="contact-detail">
+                                            <i class="fas fa-phone"></i>
+                                            <span>+966 50 123 4567</span>
+                                        </div>
+                                        <div class="contact-detail">
+                                            <i class="fas fa-globe"></i>
+                                            <span>www.brand.com</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section id="about" class="content-section">
+                    <div class="section-header-brand">
+                        <h2 class="section-title-brand">
+                            <i class="fas fa-info-circle"></i>
+                            عن العلامة التجارية
+                        </h2>
+                    </div>
+                    <div class="content-card">
+                        <p class="about-text">
+                            علامة ليبل الوطنية هي إحدى العلامات التجارية الرائدة في مجال التدريب والتطوير المهني. 
+                            نسعى إلى تقديم خدمات متميزة تساهم في تطوير المهارات وبناء القدرات للأفراد والمؤسسات. 
+                            نحن ملتزمون بتوفير بيئة تعليمية محفزة ومبتكرة تواكب أحدث التطورات في مجال التدريب والتعليم المهني.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Vision, Mission, Promise -->
+                <section id="vmp" class="content-section">
+                    <div class="section-header-brand">
+                        <h2 class="section-title-brand">
+                            <i class="fas fa-compass"></i>
+                            الرؤية والرسالة والوعد
+                        </h2>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="vmp-card vision-card">
+                                <div class="vmp-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <h3 class="vmp-title">الرؤية</h3>
+                                <p class="vmp-text">
+                                    أن نكون الخيار الأول للتدريب والتطوير المهني في المملكة، ورائدين في تقديم حلول تعليمية 
+                                    مبتكرة تساهم في بناء جيل من المحترفين المؤهلين.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="vmp-card mission-card">
+                                <div class="vmp-icon">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <h3 class="vmp-title">الرسالة</h3>
+                                <p class="vmp-text">
+                                    تقديم برامج تدريبية متميزة ومعتمدة تلبي احتياجات سوق العمل، من خلال كوادر مؤهلة 
+                                    وبنية تحتية حديثة، بما يضمن تحقيق التميز والجودة.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-12">
+                            <div class="vmp-card promise-card">
+                                <div class="vmp-icon">
                                     <i class="fas fa-handshake"></i>
-                                    <span>الرعاة</span>
-                                </a></li>
-                            </ul>
+                                </div>
+                                <h3 class="vmp-title">الوعد</h3>
+                                <p class="vmp-text">
+                                    نعدكم بتجربة تعليمية استثنائية تجمع بين الجودة والاحترافية، مع دعم مستمر 
+                                    ومتابعة دقيقة لضمان تحقيق أهدافكم التطويرية والمهنية.
+                                </p>
+                            </div>
                         </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </nav>
-                            <i class="fas fa-chalkboard-teacher"></i>
-                            <span>الدورات القائمة</span>
-                        </a>
-                        <a href="#activities" class="nav-item" onclick="setActiveNav(event)">
-                            <i class="fas fa-tasks"></i>
-                            <span>جدول الأنشطة</span>
-                        </a>
-                        <a href="#partners" class="nav-item" onclick="setActiveNav(event)">
+                    </div>
+                </section>
+
+                <!-- Services Section -->
+                <section id="services" class="content-section">
+                    <div class="section-header-brand">
+                        <h2 class="section-title-brand">
+                            <i class="fas fa-briefcase"></i>
+                            خدماتنا المتميزة
+                        </h2>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="service-card-brand">
+                                <div class="service-icon-wrapper">
+                                    <i class="fas fa-chalkboard-teacher"></i>
+                                </div>
+                                <div class="service-content-brand">
+                                    <h3 class="service-title-brand">التدريب المهني</h3>
+                                    <p class="service-description-brand">
+                                        برامج تدريبية متخصصة تغطي مختلف المجالات المهنية بمناهج حديثة ومدربين معتمدين.
+                                    </p>
+                                    <button class="service-action-btn" onclick="requestService('training')">
+                                        <span>طلب الخدمة</span>
+                                        <i class="fas fa-arrow-left"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="service-card-brand">
+                                <div class="service-icon-wrapper">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="service-content-brand">
+                                    <h3 class="service-title-brand">الشهادات المعتمدة</h3>
+                                    <p class="service-description-brand">
+                                        شهادات احترافية معتمدة محلياً وعالمياً تعزز من فرصك المهنية في سوق العمل.
+                                    </p>
+                                    <button class="service-action-btn" onclick="requestService('certificates')">
+                                        <span>طلب الخدمة</span>
+                                        <i class="fas fa-arrow-left"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="service-card-brand">
+                                <div class="service-icon-wrapper">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <div class="service-content-brand">
+                                    <h3 class="service-title-brand">التدريب الإلكتروني</h3>
+                                    <p class="service-description-brand">
+                                        منصة تعليمية إلكترونية متطورة توفر دورات تفاعلية يمكن الوصول إليها في أي وقت.
+                                    </p>
+                                    <button class="service-action-btn" onclick="requestService('online')">
+                                        <span>طلب الخدمة</span>
+                                        <i class="fas fa-arrow-left"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="service-card-brand">
+                                <div class="service-icon-wrapper">
+                                    <i class="fas fa-users-cog"></i>
+                                </div>
+                                <div class="service-content-brand">
+                                    <h3 class="service-title-brand">الاستشارات المؤسسية</h3>
+                                    <p class="service-description-brand">
+                                        حلول استشارية متكاملة لتطوير الموارد البشرية ورفع كفاءة المؤسسات.
+                                    </p>
+                                    <button class="service-action-btn" onclick="requestService('consulting')">
+                                        <span>طلب الخدمة</span>
+                                        <i class="fas fa-arrow-left"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Courses Section -->
+                <section id="courses" class="content-section">
+                    <div class="section-header-brand">
+                        <h2 class="section-title-brand">
+                            <i class="fas fa-book"></i>
+                            الدورات القائمة
+                        </h2>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="course-card-brand">
+                                <div class="course-badge">جديد</div>
+                                <div class="course-header-brand">
+                                    <div class="course-icon-brand">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <h3 class="course-name">تطوير الويب المتقدم</h3>
+                                </div>
+                                <div class="course-details-brand">
+                                    <div class="course-info-row">
+                                        <span class="info-label-brand">
+                                            <i class="fas fa-clock"></i>
+                                            المدة
+                                        </span>
+                                        <span class="info-value-brand">8 أسابيع</span>
+                                    </div>
+                                    <div class="course-info-row">
+                                        <span class="info-label-brand">
+                                            <i class="fas fa-calendar"></i>
+                                            البداية
+                                        </span>
+                                        <span class="info-value-brand">15 ديسمبر 2024</span>
+                                    </div>
+                                    <div class="course-info-row">
+                                        <span class="info-label-brand">
+                                            <i class="fas fa-users"></i>
+                                            المقاعد
+                                        </span>
+                                        <span class="info-value-brand seats-available">25 مقعد متاح</span>
+                                    </div>
+                                </div>
+                                <button class="course-enroll-btn" onclick="enrollCourse('web-dev')">
+                                    <span>التسجيل الآن</span>
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="course-card-brand">
+                                <div class="course-badge badge-popular">الأكثر طلباً</div>
+                                <div class="course-header-brand">
+                                    <div class="course-icon-brand">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <h3 class="course-name">إدارة المشاريع الاحترافية</h3>
+                                </div>
+                                <div class="course-details-brand">
+                                    <div class="course-info-row">
+                                        <span class="info-label-brand">
+                                            <i class="fas fa-clock"></i>
+                                            المدة
+                                        </span>
+                                        <span class="info-value-brand">6 أسابيع</span>
+                                    </div>
+                                    <div class="course-info-row">
+                                        <span class="info-label-brand">
+                                            <i class="fas fa-calendar"></i>
+                                            البداية
+                                        </span>
+                                        <span class="info-value-brand">20 ديسمبر 2024</span>
+                                    </div>
+                                    <div class="course-info-row">
+                                        <span class="info-label-brand">
+                                            <i class="fas fa-users"></i>
+                                            المقاعد
+                                        </span>
+                                        <span class="info-value-brand seats-limited">10 مقاعد متبقية</span>
+                                    </div>
+                                </div>
+                                <button class="course-enroll-btn" onclick="enrollCourse('project-mgmt')">
+                                    <span>التسجيل الآن</span>
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="course-card-brand">
+                                <div class="course-header-brand">
+                                    <div class="course-icon-brand">
+                                        <i class="fas fa-paint-brush"></i>
+                                    </div>
+                                    <h3 class="course-name">تصميم تجربة المستخدم</h3>
+                                </div>
+                                <div class="course-details-brand">
+                                    <div class="course-info-row">
+                                        <span class="info-label-brand">
+                                            <i class="fas fa-clock"></i>
+                                            المدة
+                                        </span>
+                                        <span class="info-value-brand">10 أسابيع</span>
+                                    </div>
+                                    <div class="course-info-row">
+                                        <span class="info-label-brand">
+                                            <i class="fas fa-calendar"></i>
+                                            البداية
+                                        </span>
+                                        <span class="info-value-brand">1 يناير 2025</span>
+                                    </div>
+                                    <div class="course-info-row">
+                                        <span class="info-label-brand">
+                                            <i class="fas fa-users"></i>
+                                            المقاعد
+                                        </span>
+                                        <span class="info-value-brand seats-available">30 مقعد متاح</span>
+                                    </div>
+                                </div>
+                                <button class="course-enroll-btn" onclick="enrollCourse('ux-design')">
+                                    <span>التسجيل الآن</span>
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Gallery Section -->
+                <section id="gallery" class="content-section">
+                    <div class="section-header-brand">
+                        <h2 class="section-title-brand">
+                            <i class="fas fa-images"></i>
+                            معرض الصور
+                        </h2>
+                    </div>
+                    <div class="gallery-grid-brand">
+                        <div class="gallery-item-brand">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&h=400" alt="نشاط 1">
+                            <div class="gallery-overlay-brand">
+                                <h4>ورشة عمل تطوير القيادة</h4>
+                            </div>
+                        </div>
+                        <div class="gallery-item-brand">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&h=400" alt="نشاط 2">
+                            <div class="gallery-overlay-brand">
+                                <h4>دورة التسويق الرقمي</h4>
+                            </div>
+                        </div>
+                        <div class="gallery-item-brand">
+                            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=600&h=400" alt="نشاط 3">
+                            <div class="gallery-overlay-brand">
+                                <h4>مؤتمر الابتكار السنوي</h4>
+                            </div>
+                        </div>
+                        <div class="gallery-item-brand">
+                            <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=600&h=400" alt="نشاط 4">
+                            <div class="gallery-overlay-brand">
+                                <h4>حفل تخريج الدفعة الخامسة</h4>
+                            </div>
+                        </div>
+                        <div class="gallery-item-brand">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&h=400" alt="نشاط 5">
+                            <div class="gallery-overlay-brand">
+                                <h4>اجتماع الشركاء الاستراتيجيين</h4>
+                            </div>
+                        </div>
+                        <div class="gallery-item-brand">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&h=400" alt="نشاط 6">
+                            <div class="gallery-overlay-brand">
+                                <h4>ورشة عمل الإبداع والابتكار</h4>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Partners Section -->
+                <section id="partners" class="content-section">
+                    <div class="section-header-brand">
+                        <h2 class="section-title-brand">
                             <i class="fas fa-handshake"></i>
-                            <span>الرعاة</span>
-                        </a>
+                            شركاؤنا ورعاتنا
+                        </h2>
                     </div>
-                </div>
-            </nav>
-        </div>
-    </nav>
-
-    <!-- Content Container -->
-    <div class="content-container" id="home">
-        <!-- Main Grid: Slider + Actions -->
-        <div class="main-grid">
-                <!-- Slider Section -->
-                <div class="col-lg-8 col-md-12">
-                    <div class="slider-container">
-                        <div class="slider-track" id="sliderTrack">
-                            <div class="slide">
-                                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&h=800" alt="صورة العلامة التجارية 1">
-                                <div class="slide-caption">فريق عمل متميز ومحترف</div>
+                    <div class="partners-grid-brand">
+                        <div class="partner-card-brand">
+                            <div class="partner-logo-brand">
+                                <img src="images/council-network-logo.jpg" alt="شريك 1">
                             </div>
-                            <div class="slide">
-                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&h=800" alt="صورة العلامة التجارية 2">
-                                <div class="slide-caption">بيئة عمل ملهمة ومبتكرة</div>
-                            </div>
-                            <div class="slide">
-                                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&h=800" alt="صورة العلامة التجارية 3">
-                                <div class="slide-caption">تدريب مهني عالي الجودة</div>
-                            </div>
+                            <h4 class="partner-name">الشريك الاستراتيجي الأول</h4>
                         </div>
-                        <button class="slider-btn prev" onclick="changeSlide(-1)">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                        <button class="slider-btn next" onclick="changeSlide(1)">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <div class="slider-indicators" id="sliderIndicators"></div>
-                    </div>
-                </div>
-
-                <!-- Actions Sidebar -->
-                <div class="col-lg-4 col-md-12">
-                    <div class="actions-sidebar">
-                <div class="action-box">
-                    <div class="action-box-header">
-                        <div class="action-box-icon">
-                            <i class="fas fa-file-pdf"></i>
+                        <div class="partner-card-brand">
+                            <div class="partner-logo-brand">
+                                <img src="images/deem-logo.jpg" alt="شريك 2">
+                            </div>
+                            <h4 class="partner-name">الشريك الاستراتيجي الثاني</h4>
                         </div>
-                        <div class="action-box-title">الملف التعريفي</div>
-                    </div>
-                    <p class="action-box-description">
-                        تحميل الملف التعريفي الكامل للعلامة التجارية مع جميع التفاصيل والإنجازات
-                    </p>
-                    <button class="action-box-btn" onclick="downloadProfile()">
-                        <i class="fas fa-download"></i>
-                        <span>تحميل الملف</span>
-                    </button>
-                </div>
-
-                <div class="action-box secondary">
-                    <div class="action-box-header">
-                        <div class="action-box-icon">
-                            <i class="fas fa-user-plus"></i>
+                        <div class="partner-card-brand">
+                            <div class="partner-logo-brand">
+                                <img src="images/jadarah-logo.jpg" alt="شريك 3">
+                            </div>
+                            <h4 class="partner-name">الشريك الاستراتيجي الثالث</h4>
                         </div>
-                        <div class="action-box-title">التسجيل</div>
                     </div>
-                    <p class="action-box-description">
-                        سجل الآن للانضمام إلى برامجنا التدريبية والاستفادة من خدماتنا المتميزة
-                    </p>
-                    <button class="action-box-btn" onclick="register()">
-                        <i class="fas fa-arrow-left"></i>
-                        <span>سجل الآن</span>
-                    </button>
-                </div>
+                </section>
             </div>
-        </div>
-
-        <!-- About Section -->
-        <div class="section" id="about">
-            <h2 class="section-title">
-                <i class="fas fa-info-circle"></i>
-                نبذة عن العلامة التجارية
-            </h2>
-            <div class="about-intro">
-                <p>
-                    تُعد علامة ليبل الوطنية واحدة من الشركات الرائدة في مجال التدريب والتطوير المهني في المملكة العربية السعودية. 
-                    نسعى دائماً لتقديم برامج تدريبية متميزة تلبي احتياجات السوق المحلي والإقليمي، مع التركيز على تطوير المهارات 
-                    والقدرات الفردية والمؤسسية. نفخر بشراكاتنا الاستراتيجية مع كبرى المؤسسات الوطنية والدولية، ونلتزم بتقديم 
-                    خدمات تدريبية عالية الجودة تساهم في تحقيق رؤية المملكة 2030.
-                </p>
-            </div>
-        </div>
-
-        <!-- Vision, Mission, Promise -->
-        <div class="section" id="vmp">
-            <h2 class="section-title">
-                <i class="fas fa-compass"></i>
-                رؤيتنا، رسالتنا، ووعدنا
-            </h2>
-            <div class="vmp-grid">
-                <div class="vmp-card">
-                    <h3>
-                        <i class="fas fa-eye"></i>
-                        رؤيتنا
-                    </h3>
-                    <p>
-                        أن نكون الخيار الأول للتدريب المهني والتطوير الوظيفي في المملكة، نسعى لتمكين الشباب والمؤسسات 
-                        بأحدث المهارات والمعارف التي تواكب متطلبات سوق العمل المتغير وتحقق أهداف التنمية المستدامة.
-                    </p>
-                </div>
-                <div class="vmp-card">
-                    <h3>
-                        <i class="fas fa-bullseye"></i>
-                        رسالتنا
-                    </h3>
-                    <p>
-                        تقديم برامج تدريبية متميزة ومعتمدة تساهم في رفع كفاءة الموارد البشرية وتطوير قدراتهم، من خلال 
-                        منهجيات حديثة ومدربين محترفين في بيئة تعليمية محفزة تشجع على الابتكار والإبداع.
-                    </p>
-                </div>
-                <div class="vmp-card">
-                    <h3>
-                        <i class="fas fa-handshake"></i>
-                        وعدنا
-                    </h3>
-                    <p>
-                        نلتزم بتوفير تجربة تدريبية استثنائية تحقق أهدافكم المهنية، مع ضمان جودة المحتوى، ومرونة التنفيذ، 
-                        ومتابعة مستمرة لضمان تطبيق ما تم تعلمه في بيئة العمل وتحقيق النتائج المرجوة.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Services Section -->
-        <div class="section" id="services">
-            <h2 class="section-title">
-                <i class="fas fa-briefcase"></i>
-                خدمات العلامة التجارية
-            </h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>التدريب المهني المتخصص</h3>
-                    <p>
-                        برامج تدريبية متكاملة في مختلف المجالات المهنية بأحدث الأساليب التدريبية المعتمدة
-                    </p>
-                    <button class="service-request-btn" onclick="requestService('التدريب المهني المتخصص')">
-                        <i class="fas fa-paper-plane"></i>
-                        <span>طلب خدمة أونلاين</span>
-                    </button>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-users-cog"></i>
-                    </div>
-                    <h3>تطوير القيادات</h3>
-                    <p>
-                        برامج خاصة لتطوير المهارات القيادية والإدارية للقيادات الحالية والمستقبلية
-                    </p>
-                    <button class="service-request-btn" onclick="requestService('تطوير القيادات')">
-                        <i class="fas fa-paper-plane"></i>
-                        <span>طلب خدمة أونلاين</span>
-                    </button>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-clipboard-list"></i>
-                    </div>
-                    <h3>الاستشارات التدريبية</h3>
-                    <p>
-                        خدمات استشارية متخصصة لتحديد الاحتياجات التدريبية وتصميم البرامج المناسبة
-                    </p>
-                    <button class="service-request-btn" onclick="requestService('الاستشارات التدريبية')">
-                        <i class="fas fa-paper-plane"></i>
-                        <span>طلب خدمة أونلاين</span>
-                    </button>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>التدريب الإلكتروني</h3>
-                    <p>
-                        منصة تدريبية إلكترونية متطورة توفر دورات تفاعلية يمكن الوصول إليها في أي وقت
-                    </p>
-                    <button class="service-request-btn" onclick="requestService('التدريب الإلكتروني')">
-                        <i class="fas fa-paper-plane"></i>
-                        <span>طلب خدمة أونلاين</span>
-                    </button>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>التقييم والاعتماد</h3>
-                    <p>
-                        خدمات التقييم المهني والحصول على شهادات معتمدة محلياً ودولياً
-                    </p>
-                    <button class="service-request-btn" onclick="requestService('التقييم والاعتماد')">
-                        <i class="fas fa-paper-plane"></i>
-                        <span>طلب خدمة أونلاين</span>
-                    </button>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>التدريب المؤسسي</h3>
-                    <p>
-                        حلول تدريبية مخصصة للمؤسسات والشركات حسب احتياجاتها الخاصة
-                    </p>
-                    <button class="service-request-btn" onclick="requestService('التدريب المؤسسي')">
-                        <i class="fas fa-paper-plane"></i>
-                        <span>طلب خدمة أونلاين</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Current Courses Section -->
-        <div class="section" id="courses">
-            <h2 class="section-title">
-                <i class="fas fa-chalkboard-teacher"></i>
-                الدورات القائمة الآن
-            </h2>
-            <div class="courses-grid">
-                <div class="course-card">
-                    <div class="course-badge">متاح الآن</div>
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&h=400" alt="دورة القيادة الاستراتيجية" class="course-image">
-                    <div class="course-content">
-                        <h3 class="course-title">دورة القيادة الاستراتيجية المتقدمة</h3>
-                        <p class="course-description">
-                            برنامج شامل لتطوير مهارات القيادة الاستراتيجية والتخطيط طويل المدى للقيادات التنفيذية
-                        </p>
-                        <div class="course-meta">
-                            <div class="course-meta-item">
-                                <i class="fas fa-clock"></i>
-                                <span>40 ساعة</span>
-                            </div>
-                            <div class="course-meta-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <span>15 يناير 2025</span>
-                            </div>
-                        </div>
-                        <button class="course-enroll-btn" onclick="enrollCourse('القيادة الاستراتيجية المتقدمة')">
-                            <i class="fas fa-user-plus"></i>
-                            <span>التسجيل في الدورة</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="course-card">
-                    <div class="course-badge">متاح الآن</div>
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&h=400" alt="دورة إدارة المشاريع" class="course-image">
-                    <div class="course-content">
-                        <h3 class="course-title">إدارة المشاريع الاحترافية PMP</h3>
-                        <p class="course-description">
-                            برنامج معتمد للحصول على شهادة إدارة المشاريع الاحترافية مع تطبيقات عملية
-                        </p>
-                        <div class="course-meta">
-                            <div class="course-meta-item">
-                                <i class="fas fa-clock"></i>
-                                <span>60 ساعة</span>
-                            </div>
-                            <div class="course-meta-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <span>20 يناير 2025</span>
-                            </div>
-                        </div>
-                        <button class="course-enroll-btn" onclick="enrollCourse('إدارة المشاريع الاحترافية')">
-                            <i class="fas fa-user-plus"></i>
-                            <span>التسجيل في الدورة</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="course-card">
-                    <div class="course-badge">متاح الآن</div>
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&h=400" alt="دورة التسويق الرقمي" class="course-image">
-                    <div class="course-content">
-                        <h3 class="course-title">التسويق الرقمي ووسائل التواصل الاجتماعي</h3>
-                        <p class="course-description">
-                            استراتيجيات التسويق الحديثة عبر المنصات الرقمية وقياس الأداء والعائد على الاستثمار
-                        </p>
-                        <div class="course-meta">
-                            <div class="course-meta-item">
-                                <i class="fas fa-clock"></i>
-                                <span>30 ساعة</span>
-                            </div>
-                            <div class="course-meta-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <span>25 يناير 2025</span>
-                            </div>
-                        </div>
-                        <button class="course-enroll-btn" onclick="enrollCourse('التسويق الرقمي')">
-                            <i class="fas fa-user-plus"></i>
-                            <span>التسجيل في الدورة</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Activities Section -->
-        <div class="section" id="activities">
-            <h2 class="section-title">
-                <i class="fas fa-tasks"></i>
-                جدول الأنشطة
-            </h2>
-            <div class="activities-table-wrapper">
-                <table class="activities-table table">
-                    <thead>
-                        <tr>
-                            <th>العمليات</th>
-                            <th>اسم النشاط</th>
-                            <th>الوصف</th>
-                            <th>تاريخ البداية</th>
-                            <th>تاريخ النهاية</th>
-                            <th>المسؤول</th>
-                            <th>الحالة</th>
-                            <th>نسبة التقدم</th>
-                            <th>الميزانية</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Parent Activity 1 -->
-                        <tr class="activity-parent">
-                            <td>
-                                <button class="toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#activity1Children" aria-expanded="false">
-                                    <i class="fas fa-plus"></i>
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                            </td>
-                            <td>المرحلة الأولى - التخطيط</td>
-                            <td>مرحلة التخطيط والإعداد للمشروع</td>
-                            <td>2025-01-01</td>
-                            <td>2025-03-31</td>
-                            <td>أحمد محمد</td>
-                            <td><span class="status-badge in-progress">جاري التنفيذ</span></td>
-                            <td class="progress-bar-cell">
-                                <div class="progress-bar-container">
-                                    <div class="progress-bar-fill" style="width: 65%">65%</div>
-                                </div>
-                            </td>
-                            <td>500,000 ريال</td>
-                        </tr>
-                        <!-- Child Activities of Activity 1 -->
-                        <tr class="collapse activity-child" id="activity1Children">
-                            <td></td>
-                            <td>دراسة الجدوى</td>
-                            <td>إعداد دراسة جدوى شاملة للمشروع</td>
-                            <td>2025-01-01</td>
-                            <td>2025-01-31</td>
-                            <td>سارة أحمد</td>
-                            <td><span class="status-badge completed">مكتمل</span></td>
-                            <td class="progress-bar-cell">
-                                <div class="progress-bar-container">
-                                    <div class="progress-bar-fill" style="width: 100%">100%</div>
-                                </div>
-                            </td>
-                            <td>150,000 ريال</td>
-                        </tr>
-                        <tr class="collapse activity-child" id="activity1Children">
-                            <td></td>
-                            <td>تحديد الموارد</td>
-                            <td>تحديد الموارد البشرية والمادية المطلوبة</td>
-                            <td>2025-02-01</td>
-                            <td>2025-02-28</td>
-                            <td>خالد علي</td>
-                            <td><span class="status-badge in-progress">جاري التنفيذ</span></td>
-                            <td class="progress-bar-cell">
-                                <div class="progress-bar-container">
-                                    <div class="progress-bar-fill" style="width: 70%">70%</div>
-                                </div>
-                            </td>
-                            <td>200,000 ريال</td>
-                        </tr>
-                        <tr class="collapse activity-child" id="activity1Children">
-                            <td></td>
-                            <td>إعداد الخطة التنفيذية</td>
-                            <td>وضع خطة تنفيذية تفصيلية للمشروع</td>
-                            <td>2025-03-01</td>
-                            <td>2025-03-31</td>
-                            <td>منى حسن</td>
-                            <td><span class="status-badge planned">مخطط</span></td>
-                            <td class="progress-bar-cell">
-                                <div class="progress-bar-container">
-                                    <div class="progress-bar-fill" style="width: 25%">25%</div>
-                                </div>
-                            </td>
-                            <td>150,000 ريال</td>
-                        </tr>
-
-                        <!-- Parent Activity 2 -->
-                        <tr class="activity-parent">
-                            <td>
-                                <button class="toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#activity2Children" aria-expanded="false">
-                                    <i class="fas fa-plus"></i>
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                            </td>
-                            <td>المرحلة الثانية - التنفيذ</td>
-                            <td>مرحلة تنفيذ الأنشطة الرئيسية</td>
-                            <td>2025-04-01</td>
-                            <td>2025-08-31</td>
-                            <td>فهد عبدالله</td>
-                            <td><span class="status-badge planned">مخطط</span></td>
-                            <td class="progress-bar-cell">
-                                <div class="progress-bar-container">
-                                    <div class="progress-bar-fill" style="width: 0%">0%</div>
-                                </div>
-                            </td>
-                            <td>1,200,000 ريال</td>
-                        </tr>
-                        <!-- Child Activities of Activity 2 -->
-                        <tr class="collapse activity-child" id="activity2Children">
-                            <td></td>
-                            <td>تطوير المحتوى</td>
-                            <td>إنشاء وتطوير المحتوى التدريبي</td>
-                            <td>2025-04-01</td>
-                            <td>2025-05-31</td>
-                            <td>نورة سعيد</td>
-                            <td><span class="status-badge planned">مخطط</span></td>
-                            <td class="progress-bar-cell">
-                                <div class="progress-bar-container">
-                                    <div class="progress-bar-fill" style="width: 0%">0%</div>
-                                </div>
-                            </td>
-                            <td>400,000 ريال</td>
-                        </tr>
-                        <tr class="collapse activity-child" id="activity2Children">
-                            <td></td>
-                            <td>تنفيذ البرامج التدريبية</td>
-                            <td>تقديم الدورات والورش التدريبية</td>
-                            <td>2025-06-01</td>
-                            <td>2025-08-31</td>
-                            <td>عمر يوسف</td>
-                            <td><span class="status-badge planned">مخطط</span></td>
-                            <td class="progress-bar-cell">
-                                <div class="progress-bar-container">
-                                    <div class="progress-bar-fill" style="width: 0%">0%</div>
-                                </div>
-                            </td>
-                            <td>800,000 ريال</td>
-                        </tr>
-
-                        <!-- Parent Activity 3 -->
-                        <tr class="activity-parent">
-                            <td>
-                                <button class="toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#activity3Children" aria-expanded="false">
-                                    <i class="fas fa-plus"></i>
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                            </td>
-                            <td>المرحلة الثالثة - التقييم</td>
-                            <td>مرحلة تقييم النتائج والأداء</td>
-                            <td>2025-09-01</td>
-                            <td>2025-10-31</td>
-                            <td>ريم محمود</td>
-                            <td><span class="status-badge planned">مخطط</span></td>
-                            <td class="progress-bar-cell">
-                                <div class="progress-bar-container">
-                                    <div class="progress-bar-fill" style="width: 0%">0%</div>
-                                </div>
-                            </td>
-                            <td>300,000 ريال</td>
-                        </tr>
-                        <!-- Child Activities of Activity 3 -->
-                        <tr class="collapse activity-child" id="activity3Children">
-                            <td></td>
-                            <td>جمع البيانات</td>
-                            <td>جمع وتحليل بيانات الأداء</td>
-                            <td>2025-09-01</td>
-                            <td>2025-09-30</td>
-                            <td>لينا كمال</td>
-                            <td><span class="status-badge planned">مخطط</span></td>
-                            <td class="progress-bar-cell">
-                                <div class="progress-bar-container">
-                                    <div class="progress-bar-fill" style="width: 0%">0%</div>
-                                </div>
-                            </td>
-                            <td>100,000 ريال</td>
-                        </tr>
-                        <tr class="collapse activity-child" id="activity3Children">
-                            <td></td>
-                            <td>إعداد التقرير النهائي</td>
-                            <td>كتابة وإعداد التقرير الختامي للمشروع</td>
-                            <td>2025-10-01</td>
-                            <td>2025-10-31</td>
-                            <td>طارق ناصر</td>
-                            <td><span class="status-badge planned">مخطط</span></td>
-                            <td class="progress-bar-cell">
-                                <div class="progress-bar-container">
-                                    <div class="progress-bar-fill" style="width: 0%">0%</div>
-                                </div>
-                            </td>
-                            <td>200,000 ريال</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Gallery Section -->
-        <div class="section" id="gallery">
-            <h2 class="section-title">
-                <i class="fas fa-images"></i>
-                معرض الصور
-            </h2>
-            <div class="gallery-container">
-                <div class="gallery-track" id="galleryTrack">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&h=400" alt="معرض 1">
-                        <div class="gallery-caption">ورشة عمل تطوير القيادات</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&h=400" alt="معرض 2">
-                        <div class="gallery-caption">برنامج التدريب المهني</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&h=400" alt="معرض 3">
-                        <div class="gallery-caption">جلسة تدريبية تفاعلية</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&h=400" alt="معرض 4">
-                        <div class="gallery-caption">فريق العمل المتميز</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&h=400" alt="معرض 5">
-                        <div class="gallery-caption">حفل التخرج السنوي</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=600&h=400" alt="معرض 6">
-                        <div class="gallery-caption">مركز التدريب الحديث</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Partners Section -->
-        <div class="section" id="partners">
-            <h2 class="section-title">
-                <i class="fas fa-handshake"></i>
-                الشركاء والرعاة
-            </h2>
-            <div class="partners-grid">
-                <div class="partner-card">
-                    <img src="images/ccj-logo.svg" alt="شريك 1">
-                </div>
-                <div class="partner-card">
-                    <img src="images/council-network-logo.jpg" alt="شريك 2">
-                </div>
-                <div class="partner-card">
-                    <img src="images/jadarah-logo.jpg" alt="شريك 3">
-                </div>
-                <div class="partner-card">
-                    <img src="images/deem-logo.jpg" alt="شريك 4">
-                </div>
-            </div>
-        </div>
-
+        </main>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Load brand data from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const brandId = urlParams.get('id') || '1';
-
-        const brandsData = {
-            '1': {
-                name: 'علامة ليبل الوطنية',
-                category: 'خدمات التدريب والتطوير',
-                logo: 'images/brand-logo-1.svg'
-            },
-            '2': {
-                name: 'علامة إدارة الجودة',
-                category: 'خدمات الاستشارات',
-                logo: 'images/brand-logo-2.svg'
-            },
-            '3': {
-                name: 'علامة التميز المؤسسي',
-                category: 'خدمات التطوير المؤسسي',
-                logo: 'images/brand-logo-3.svg'
-            }
-        };
-
-        const brandData = brandsData[brandId] || brandsData['1'];
-
-        document.getElementById('brandName').textContent = brandData.name;
-        document.getElementById('brandCategory').textContent = brandData.category;
-        document.getElementById('brandLogo').src = brandData.logo;
-
-        // Main Slider
-        let currentSlideIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-
-        function createIndicators() {
-            const indicatorsContainer = document.getElementById('sliderIndicators');
-            for (let i = 0; i < totalSlides; i++) {
-                const indicator = document.createElement('div');
-                indicator.className = 'indicator' + (i === 0 ? ' active' : '');
-                indicator.onclick = () => goToSlide(i);
-                indicatorsContainer.appendChild(indicator);
-            }
-        }
-
-        function updateSlider() {
-            const sliderTrack = document.getElementById('sliderTrack');
-            sliderTrack.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+        // Slider functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider-item');
+        const indicatorsContainer = document.getElementById('sliderIndicators');
+        
+        // Create indicators
+        slides.forEach((_, index) => {
+            const indicator = document.createElement('button');
+            indicator.className = `slider-indicator ${index === 0 ? 'active' : ''}`;
+            indicator.addEventListener('click', () => goToSlide(index));
+            indicatorsContainer.appendChild(indicator);
+        });
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
             
-            document.querySelectorAll('.indicator').forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === currentSlideIndex);
+            const indicators = document.querySelectorAll('.slider-indicator');
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
             });
         }
-
-        function changeSlide(direction) {
-            currentSlideIndex = (currentSlideIndex + direction + totalSlides) % totalSlides;
-            updateSlider();
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
         }
-
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+        
         function goToSlide(index) {
-            currentSlideIndex = index;
-            updateSlider();
+            currentSlide = index;
+            showSlide(currentSlide);
         }
-
+        
+        document.getElementById('nextSlide').addEventListener('click', nextSlide);
+        document.getElementById('prevSlide').addEventListener('click', prevSlide);
+        
         // Auto-play slider
-        setInterval(() => {
-            changeSlide(1);
-        }, 5000);
-
-        // Initialize slider
-        createIndicators();
-
-        // Gallery auto-scroll
-        let galleryPosition = 0;
-        const galleryTrack = document.getElementById('galleryTrack');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        const itemWidth = galleryItems[0].offsetWidth + 20; // width + gap
-
-        setInterval(() => {
-            galleryPosition -= 1;
-            if (Math.abs(galleryPosition) >= itemWidth) {
-                galleryPosition = 0;
-                galleryTrack.style.transition = 'none';
-                galleryTrack.appendChild(galleryTrack.firstElementChild);
-                setTimeout(() => {
-                    galleryTrack.style.transition = 'transform 0.5s ease';
-                }, 10);
-            }
-            galleryTrack.style.transform = `translateX(${galleryPosition}px)`;
-        }, 30);
-
-        // Action buttons
-        function downloadProfile() {
-            alert('سيتم تحميل الملف التعريفي للعلامة التجارية');
-        }
-
-        function register() {
-            alert('سيتم توجيهك لصفحة التسجيل');
-        }
-
-        // Service request
-        function requestService(serviceName) {
-            alert(`تم طلب خدمة: ${serviceName}\nسيتم التواصل معك قريباً لتأكيد الطلب`);
-        }
-
-        // Course enrollment
-        function enrollCourse(courseName) {
-            alert(`تم التسجيل في دورة: ${courseName}\nسيتم إرسال تفاصيل التسجيل على بريدك الإلكتروني`);
-        }
-
-        // Navigation menu functionality
-        function setActiveNav(event) {
-            event.preventDefault();
-            const targetId = event.currentTarget.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            // Remove active class from all nav items
-            document.querySelectorAll('.nav-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            // Add active class to clicked item
-            event.currentTarget.classList.add('active');
-            
-            // Close mobile menu
-            const navbarCollapse = document.getElementById('brandNavbar');
-            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                    toggle: false
-                });
-                bsCollapse.hide();
-            }
-            
-            // Smooth scroll to section
-            if (targetElement) {
-                const navHeight = document.querySelector('.brand-nav').offsetHeight;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - navHeight - 20;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }
-
-        // Highlight active section on scroll
-        window.addEventListener('scroll', function() {
-            const sections = ['home', 'about', 'vmp', 'services', 'courses', 'activities', 'gallery', 'partners'];
-            const navHeight = document.querySelector('.brand-nav').offsetHeight;
-            
-            let currentSection = 'home';
-            
-            sections.forEach(sectionId => {
-                const section = document.getElementById(sectionId);
-                if (section) {
-                    const sectionTop = section.offsetTop - navHeight - 100;
-                    const sectionBottom = sectionTop + section.offsetHeight;
+        setInterval(nextSlide, 5000);
+        
+        // Navigation functionality
+        const navLinks = document.querySelectorAll('.brand-nav-link');
+        const sections = document.querySelectorAll('.content-section');
+        
+        // Mobile navigation toggle
+        const mobileNavToggle = document.getElementById('mobileNavToggle');
+        const navList = document.querySelector('.brand-nav-list');
+        
+        mobileNavToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            mobileNavToggle.classList.toggle('active');
+        });
+        
+        // Smooth scroll to sections
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    const navHeight = document.querySelector('.brand-details-nav').offsetHeight;
+                    const targetPosition = targetSection.offsetTop - navHeight - 20;
                     
-                    if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionBottom) {
-                        currentSection = sectionId;
-                    }
-                }
-            });
-            
-            // Update active nav item
-            document.querySelectorAll('.nav-item').forEach(item => {
-                const href = item.getAttribute('href').substring(1);
-                if (href === currentSection) {
-                    item.classList.add('active');
-                } else {
-                    item.classList.remove('active');
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active link
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                    
+                    // Close mobile menu
+                    navList.classList.remove('active');
+                    mobileNavToggle.classList.remove('active');
                 }
             });
         });
+        
+        // Update active nav on scroll
+        window.addEventListener('scroll', () => {
+            const navHeight = document.querySelector('.brand-details-nav').offsetHeight;
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - navHeight - 100;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Sticky nav
+            const nav = document.querySelector('.brand-details-nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('sticky');
+            } else {
+                nav.classList.remove('sticky');
+            }
+        });
+        
+        // Action buttons
+        function downloadProfile() {
+            alert('جاري تحميل ملف التعريف...');
+        }
+        
+        function registerBrand() {
+            alert('سيتم توجيهك إلى صفحة التسجيل...');
+        }
+        
+        function contactBrand() {
+            alert('سيتم توجيهك إلى صفحة التواصل...');
+        }
+        
+        function requestService(serviceType) {
+            alert(`تم طلب خدمة: ${serviceType}`);
+        }
+        
+        function enrollCourse(courseId) {
+            alert(`التسجيل في الدورة: ${courseId}`);
+        }
     </script>
-
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
