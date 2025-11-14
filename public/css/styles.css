@@ -8103,3 +8103,230 @@ section.brand-header::before {
         font-size: 1.2rem;
     }
 }
+
+/* ===============================================
+   Project Outputs Section - Professional & Modern
+   =============================================== */
+
+.outputs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    padding: 0 15px;
+}
+
+.output-item-card {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(255, 255, 255, 0.98) 100%
+    );
+    border-radius: 20px;
+    padding: 35px;
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.08),
+        0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(26, 71, 42, 0.08);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.output-item-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(180deg, #1A472A 0%, #5DD0F0 100%);
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.output-item-card:hover::before {
+    height: 100%;
+}
+
+.output-item-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at center,
+        rgba(93, 208, 240, 0.15) 0%,
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.output-item-card:hover::after {
+    opacity: 1;
+}
+
+.output-item-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 20px 60px rgba(26, 71, 42, 0.12),
+        0 8px 20px rgba(93, 208, 240, 0.15);
+    border-color: rgba(93, 208, 240, 0.3);
+}
+
+.output-icon-wrapper {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.output-check-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #1A472A 0%, #2A6B4A 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 
+        0 10px 30px rgba(26, 71, 42, 0.25),
+        0 0 0 8px rgba(26, 71, 42, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.output-check-icon::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, 
+        rgba(93, 208, 240, 0.3) 0%, 
+        rgba(26, 71, 42, 0.2) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.output-item-card:hover .output-check-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 
+        0 15px 40px rgba(26, 71, 42, 0.35),
+        0 0 0 12px rgba(93, 208, 240, 0.15);
+}
+
+.output-item-card:hover .output-check-icon::before {
+    opacity: 1;
+}
+
+.output-check-icon i {
+    font-size: 1.8rem;
+    color: #5DD0F0;
+    font-weight: 900;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.output-item-card:hover .output-check-icon i {
+    transform: scale(1.15);
+    color: #FFFFFF;
+    text-shadow: 0 0 20px rgba(93, 208, 240, 0.6);
+}
+
+.output-content {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.output-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #1A472A;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    transition: all 0.3s ease;
+}
+
+.output-item-card:hover .output-title {
+    color: #0F3821;
+    transform: translateX(-3px);
+}
+
+.output-description {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #4A5568;
+    margin: 0;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.output-item-card:hover .output-description {
+    color: #2D3748;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .outputs-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 10px;
+    }
+    
+    .output-item-card {
+        padding: 25px 20px;
+        gap: 20px;
+        flex-direction: row;
+    }
+    
+    .output-check-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .output-check-icon i {
+        font-size: 1.4rem;
+    }
+    
+    .output-title {
+        font-size: 1.15rem;
+        margin-bottom: 12px;
+    }
+    
+    .output-description {
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+}
+
+@media (max-width: 480px) {
+    .output-item-card {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+    
+    .output-check-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 12px;
+    }
+    
+    .output-check-icon i {
+        font-size: 1.2rem;
+    }
+    
+    .output-title {
+        font-size: 1.05rem;
+    }
+    
+    .output-description {
+        font-size: 0.9rem;
+    }
+}
