@@ -1608,6 +1608,353 @@ textarea.form-control {
 }
 
 /* ========================================
+   Interactive Map Styles
+   ======================================== */
+
+.interactive-map-section {
+    padding: 40px 0;
+}
+
+.map-container-wrapper {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    overflow: hidden;
+}
+
+/* Filters */
+.map-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    gap: 15px;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.map-select {
+    padding: 12px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e293b;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Cairo', sans-serif;
+    min-width: 200px;
+}
+
+.map-select:hover {
+    border-color: #5DD0F0;
+    box-shadow: 0 4px 12px rgba(93, 208, 240, 0.15);
+}
+
+.map-select:focus {
+    outline: none;
+    border-color: #5DD0F0;
+    box-shadow: 0 0 0 4px rgba(93, 208, 240, 0.1);
+}
+
+.total-count {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+    padding: 12px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(93, 208, 240, 0.3);
+}
+
+.count-label {
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.count-number {
+    color: white;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+/* Map Content Grid */
+.map-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Map Side */
+.map-side {
+    position: sticky;
+    top: 20px;
+}
+
+.saudi-map-wrapper {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.saudi-map-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.map-region {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.map-region:hover {
+    filter: drop-shadow(0 4px 8px rgba(93, 208, 240, 0.4));
+    transform: scale(1.02);
+}
+
+.map-region.active {
+    filter: drop-shadow(0 6px 12px rgba(13, 122, 145, 0.5));
+    animation: pulse-region 2s infinite;
+}
+
+@keyframes pulse-region {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.85;
+    }
+}
+
+/* Data Side */
+.data-side {
+    max-height: 700px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.data-side::-webkit-scrollbar {
+    width: 8px;
+}
+
+.data-side::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.data-side::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+    border-radius: 10px;
+}
+
+.data-side::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #3B82F6 0%, #5DD0F0 100%);
+}
+
+.data-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Location Card */
+.location-card {
+    background: white;
+    border: 2px solid #f1f5f9;
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.location-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.location-card:hover {
+    border-color: #5DD0F0;
+    box-shadow: 0 8px 24px rgba(93, 208, 240, 0.15);
+    transform: translateX(-4px);
+}
+
+.location-card:hover::before {
+    transform: scaleY(1);
+}
+
+.location-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fef3c7;
+    color: #92400e;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.location-status i {
+    font-size: 14px;
+}
+
+.location-name {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+.location-description {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.location-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.location-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.location-action-btn:first-child {
+    background: linear-gradient(135deg, #5DD0F0 0%, #3B82F6 100%);
+    color: white;
+}
+
+.location-action-btn:first-child:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(93, 208, 240, 0.4);
+}
+
+.location-action-btn:last-child {
+    background: white;
+    color: #0d7a91;
+    border-color: #5DD0F0;
+}
+
+.location-action-btn:last-child:hover {
+    background: #f0f9ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(93, 208, 240, 0.2);
+}
+
+.location-action-btn i {
+    font-size: 14px;
+}
+
+/* No Data Message */
+.no-data {
+    text-align: center;
+    padding: 60px 20px;
+    color: #64748b;
+}
+
+.no-data i {
+    font-size: 48px;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.no-data p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Responsive Design for Map */
+@media (max-width: 1024px) {
+    .map-content-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .map-side {
+        position: static;
+    }
+
+    .saudi-map-wrapper {
+        padding: 20px;
+    }
+
+    .data-side {
+        max-height: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .map-container-wrapper {
+        padding: 20px;
+    }
+
+    .map-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group {
+        flex-direction: column;
+    }
+
+    .map-select {
+        min-width: 100%;
+    }
+
+    .total-count {
+        justify-content: center;
+    }
+
+    .location-card {
+        padding: 20px;
+    }
+
+    .location-actions {
+        flex-direction: column;
+    }
+
+    .location-action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ========================================
    Responsive Design
    ======================================== */
 
