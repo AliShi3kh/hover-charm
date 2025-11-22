@@ -54,15 +54,26 @@
                 </ul>
                 
                 <div class="d-flex align-items-center gap-3">
-                    <!-- Language Switcher -->
-                    <div class="language-switcher">
-                        <button class="lang-btn active" data-lang="ar">
-                            <i class="fas fa-globe ms-1"></i>
-                            العربية
+                    <!-- Language Dropdown -->
+                    <div class="dropdown language-dropdown">
+                        <button class="btn btn-language dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe ms-2"></i>
+                            <span class="lang-text">العربية</span>
                         </button>
-                        <button class="lang-btn" data-lang="en">
-                            English
-                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li>
+                                <a class="dropdown-item active" href="#" data-lang="ar">
+                                    <i class="fas fa-check ms-2"></i>
+                                    العربية
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-lang="en">
+                                    <i class="fas fa-check ms-2 invisible"></i>
+                                    English
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                     
                     <a href="#contact" class="btn btn-contact">
@@ -245,12 +256,23 @@
             youtubeVideo.src = '';
         });
         
-        // Language switcher
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        // Language dropdown
+        document.querySelectorAll('.dropdown-item[data-lang]').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                const langText = this.textContent.trim();
+                
+                // Update button text
+                document.querySelector('.lang-text').textContent = langText;
+                
+                // Update active state
+                document.querySelectorAll('.dropdown-item[data-lang]').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.fa-check').classList.add('invisible');
+                });
                 this.classList.add('active');
-                // Here you can add language switching logic
+                this.querySelector('.fa-check').classList.remove('invisible');
             });
         });
     </script>

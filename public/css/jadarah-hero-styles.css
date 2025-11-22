@@ -38,7 +38,7 @@ body {
     padding: 1rem 2rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
-    max-width: 1400px;
+    max-width: 1500px;
 }
 
 .navbar.scrolled .container {
@@ -143,7 +143,7 @@ body {
     border-radius: 40px;
     padding: 3rem 2rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
-    max-width: 1400px;
+    max-width: 1500px;
 }
 
 /* Decorative Background Hexagons */
@@ -401,10 +401,10 @@ body {
 .hero-main-image {
     position: relative;
     z-index: 2;
-    clip-path: polygon(50% 5%, 90% 25%, 90% 75%, 50% 95%, 10% 75%, 10% 25%);
+    clip-path: polygon(50% 8%, 85% 28%, 85% 72%, 50% 92%, 15% 72%, 15% 28%);
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    max-width: 85%;
+    max-width: 75%;
     margin: 0 auto;
 }
 
@@ -487,7 +487,7 @@ body {
     width: 40px;
     height: 46px;
     background: var(--accent-color);
-    clip-path: polygon(50% 5%, 90% 25%, 90% 75%, 50% 95%, 10% 75%, 10% 25%);
+    clip-path: polygon(50% 8%, 85% 28%, 85% 72%, 50% 92%, 15% 72%, 15% 28%);
     opacity: 0.6;
     animation: pulse 2s ease-in-out infinite;
 }
@@ -523,37 +523,86 @@ body {
     }
 }
 
-/* ==================== Language Switcher ==================== */
-.language-switcher {
-    display: flex;
-    gap: 0.5rem;
-    background: rgba(0, 153, 204, 0.05);
-    padding: 0.25rem;
-    border-radius: 50px;
-    border: 1px solid var(--accent-color);
-}
-
-.lang-btn {
-    background: transparent;
-    border: none;
-    color: var(--text-dark);
-    padding: 0.4rem 1rem;
-    border-radius: 50px;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.lang-btn:hover {
-    background: rgba(0, 153, 204, 0.1);
+/* ==================== Language Dropdown ==================== */
+.btn-language {
+    background: linear-gradient(135deg, rgba(0, 153, 204, 0.08), rgba(0, 153, 204, 0.12));
     color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    padding: 0.625rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 12px rgba(0, 153, 204, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.lang-btn.active {
-    background: var(--accent-color);
+.btn-language:hover {
+    background: linear-gradient(135deg, var(--accent-color), #00b8d4);
     color: var(--white);
-    box-shadow: 0 2px 10px rgba(0, 153, 204, 0.3);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 153, 204, 0.3);
+}
+
+.btn-language:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 153, 204, 0.2);
+}
+
+.btn-language::after {
+    margin-right: 0.5rem;
+}
+
+.language-dropdown .dropdown-menu {
+    background: var(--white);
+    border: 2px solid var(--accent-color);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem;
+    min-width: 160px;
+    margin-top: 0.5rem;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.language-dropdown .dropdown-item {
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-weight: 500;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.language-dropdown .dropdown-item:hover {
+    background: linear-gradient(135deg, rgba(0, 153, 204, 0.1), rgba(0, 153, 204, 0.15));
+    color: var(--accent-color);
+    transform: translateX(-3px);
+}
+
+.language-dropdown .dropdown-item.active {
+    background: linear-gradient(135deg, var(--accent-color), #00b8d4);
+    color: var(--white);
+    font-weight: 600;
+}
+
+.language-dropdown .dropdown-item .fa-check {
+    font-size: 0.85rem;
 }
 
 /* ==================== Video Button ==================== */
@@ -561,37 +610,71 @@ body {
     position: absolute;
     top: 50px;
     right: -40px;
-    background: var(--white);
-    padding: 1.25rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, var(--white), #f8f9ff);
+    padding: 1.5rem 1.75rem;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(0, 153, 204, 0.25);
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
     z-index: 3;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: floatCard 3s ease-in-out infinite;
-    animation-delay: 0.5s;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: floatVideoBtn 4s ease-in-out infinite;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.floating-video-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 153, 204, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+@keyframes floatVideoBtn {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.05);
+    }
 }
 
 .floating-video-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 20px 60px rgba(0, 153, 204, 0.4);
+    border-color: var(--accent-color);
 }
 
 .video-icon {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--accent-color), #00b8d4);
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--accent-color), #00d4ff);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
+    font-size: 1.4rem;
+    transition: all 0.4s ease;
     position: relative;
+    padding-right: 3px;
 }
 
 .video-icon::before {
@@ -601,30 +684,44 @@ body {
     height: 100%;
     border-radius: 50%;
     background: var(--accent-color);
-    opacity: 0.3;
-    animation: ripple 2s infinite;
+    opacity: 0.4;
+    animation: ripplePulse 2s ease-out infinite;
 }
 
-@keyframes ripple {
+.video-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--accent-color);
+    opacity: 0.3;
+    animation: ripplePulse 2s ease-out infinite;
+    animation-delay: 1s;
+}
+
+@keyframes ripplePulse {
     0% {
         transform: scale(1);
-        opacity: 0.3;
+        opacity: 0.4;
     }
     100% {
-        transform: scale(1.5);
+        transform: scale(1.8);
         opacity: 0;
     }
 }
 
 .floating-video-btn:hover .video-icon {
-    transform: scale(1.1);
-    background: linear-gradient(135deg, #00b8d4, var(--accent-color));
+    transform: scale(1.15) rotate(360deg);
+    background: linear-gradient(135deg, #00d4ff, var(--accent-color));
 }
 
 .video-text {
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     color: var(--secondary-color);
+    position: relative;
+    z-index: 1;
 }
 
 /* Video Modal Styles */
@@ -706,7 +803,7 @@ body {
         top: -40px;
     }
     
-    .language-switcher {
+    .language-dropdown {
         margin-top: 1rem;
     }
 }
