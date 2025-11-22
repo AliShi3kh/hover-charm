@@ -84,7 +84,7 @@
 
 /* ==================== Facilitators Section ==================== */
 .facilitators-section {
-    padding: 80px 0;
+    padding: 40px 0 80px;
     background: #F8F9FA;
 }
 
@@ -112,14 +112,18 @@
 
 .filter-controls {
     text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-start;
 }
 
 .filter-label {
-    display: block;
     font-weight: 600;
     color: var(--secondary-color);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
     font-size: 1rem;
+    white-space: nowrap;
 }
 
 .filter-dropdown-wrapper {
@@ -384,68 +388,146 @@
     font-weight: 600;
     font-size: 0.95rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-request-facilitator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-request-facilitator:hover::before {
+    left: 100%;
 }
 
 .btn-request-facilitator:hover {
     background: #d85c3f;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(232, 108, 79, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(232, 108, 79, 0.3);
+}
+
+.btn-request-facilitator:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(232, 108, 79, 0.2);
 }
 
 /* ==================== CV Modal Styling ==================== */
 .cv-section {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: #F9FAFB;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
 }
 
 .cv-section-title {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--secondary-color);
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.cv-section-title::before {
+    content: '';
+    width: 5px;
+    height: 24px;
+    background: var(--primary-color);
+    border-radius: 3px;
 }
 
 .cv-list {
     list-style: none;
     padding-right: 0;
+    margin-top: 1rem;
 }
 
 .cv-list li {
-    padding: 0.75rem 0;
-    padding-right: 1.5rem;
+    padding: 0.85rem 0;
+    padding-right: 2rem;
     position: relative;
     color: var(--text-dark);
-    line-height: 1.6;
+    line-height: 1.8;
+    background: white;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    padding: 0.85rem 1.25rem;
+    padding-right: 2.5rem;
+    border: 1px solid #E5E7EB;
+    transition: all 0.3s ease;
+}
+
+.cv-list li:hover {
+    border-color: var(--primary-color);
+    background: #FEF3F2;
+    transform: translateX(-5px);
 }
 
 .cv-list li::before {
     content: '◆';
     position: absolute;
-    right: 0;
+    right: 1rem;
     color: var(--primary-color);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .btn-primary-custom {
     background: var(--primary-color);
     border: none;
-    padding: 0.75rem 1.5rem;
+    padding: 0.9rem 2rem;
     font-weight: 600;
     border-radius: 10px;
     transition: all 0.3s ease;
     color: white;
+    font-size: 1rem;
+    min-width: 150px;
 }
 
 .btn-primary-custom:hover {
     background: #d85c3f;
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(232, 108, 79, 0.25);
+    box-shadow: 0 8px 25px rgba(232, 108, 79, 0.3);
+}
+
+/* Modal Header Enhancement */
+.modal-header {
+    background: linear-gradient(135deg, #F9FAFB 0%, white 100%);
+    border-bottom: 2px solid #E5E7EB;
+    padding: 1.5rem 2rem;
+}
+
+.modal-title {
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-footer {
+    background: #F9FAFB;
+    border-top: 2px solid #E5E7EB;
+    padding: 1.25rem 2rem;
 }
 
 /* ==================== Animations ==================== */
