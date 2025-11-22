@@ -128,12 +128,33 @@
                     <div class="col-lg-6">
                         <div class="filter-controls">
                             <label class="filter-label"><i class="fas fa-filter ms-2"></i> تصفية حسب المنطقة:</label>
-                            <div class="filter-buttons">
-                                <button class="filter-btn active" data-region="all">الكل</button>
-                                <button class="filter-btn" data-region="الرياض">الرياض</button>
-                                <button class="filter-btn" data-region="جدة">جدة</button>
-                                <button class="filter-btn" data-region="الدمام">الدمام</button>
-                                <button class="filter-btn" data-region="مكة">مكة</button>
+                            <div class="filter-dropdown-wrapper">
+                                <button class="filter-dropdown-btn" id="regionDropdownBtn">
+                                    <span id="selectedRegion">جميع المناطق</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="filter-dropdown-menu" id="regionDropdownMenu">
+                                    <div class="filter-dropdown-item active" data-region="all">
+                                        <i class="fas fa-check"></i>
+                                        <span>جميع المناطق</span>
+                                    </div>
+                                    <div class="filter-dropdown-item" data-region="الرياض">
+                                        <i class="fas fa-check"></i>
+                                        <span>الرياض</span>
+                                    </div>
+                                    <div class="filter-dropdown-item" data-region="جدة">
+                                        <i class="fas fa-check"></i>
+                                        <span>جدة</span>
+                                    </div>
+                                    <div class="filter-dropdown-item" data-region="الدمام">
+                                        <i class="fas fa-check"></i>
+                                        <span>الدمام</span>
+                                    </div>
+                                    <div class="filter-dropdown-item" data-region="مكة">
+                                        <i class="fas fa-check"></i>
+                                        <span>مكة</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -148,6 +169,17 @@
                         <div class="hexagon-border"></div>
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="أحمد السعيد" class="facilitator-image">
                         <div class="facilitator-status">متاح</div>
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" title="X (Twitter)">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <button class="social-link" onclick="openCV('أحمد السعيد')" title="السيرة الذاتية">
+                                <i class="fas fa-file-alt"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="facilitator-content">
                         <h3 class="facilitator-name">أحمد السعيد</h3>
@@ -163,17 +195,6 @@
                         </div>
 
                         <div class="facilitator-actions">
-                            <div class="social-links">
-                                <a href="#" class="social-link" title="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="#" class="social-link" title="X (Twitter)">
-                                    <i class="fab fa-x-twitter"></i>
-                                </a>
-                                <button class="social-link" onclick="openCV('أحمد السعيد')" title="السيرة الذاتية">
-                                    <i class="fas fa-file-alt"></i>
-                                </button>
-                            </div>
                             <button class="btn-request-facilitator" onclick="requestFacilitator('أحمد السعيد')">
                                 <i class="fas fa-paper-plane ms-2"></i>
                                 طلب الميسر أونلاين
@@ -188,6 +209,17 @@
                         <div class="hexagon-border"></div>
                         <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop" alt="فاطمة العمري" class="facilitator-image">
                         <div class="facilitator-status">متاح</div>
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" title="X (Twitter)">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <button class="social-link" onclick="openCV('فاطمة العمري')" title="السيرة الذاتية">
+                                <i class="fas fa-file-alt"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="facilitator-content">
                         <h3 class="facilitator-name">فاطمة العمري</h3>
@@ -203,17 +235,6 @@
                         </div>
 
                         <div class="facilitator-actions">
-                            <div class="social-links">
-                                <a href="#" class="social-link" title="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="#" class="social-link" title="X (Twitter)">
-                                    <i class="fab fa-x-twitter"></i>
-                                </a>
-                                <button class="social-link" onclick="openCV('فاطمة العمري')" title="السيرة الذاتية">
-                                    <i class="fas fa-file-alt"></i>
-                                </button>
-                            </div>
                             <button class="btn-request-facilitator" onclick="requestFacilitator('فاطمة العمري')">
                                 <i class="fas fa-paper-plane ms-2"></i>
                                 طلب الميسر أونلاين
@@ -228,6 +249,17 @@
                         <div class="hexagon-border"></div>
                         <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop" alt="محمد الخالدي" class="facilitator-image">
                         <div class="facilitator-status">متاح</div>
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" title="X (Twitter)">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <button class="social-link" onclick="openCV('محمد الخالدي')" title="السيرة الذاتية">
+                                <i class="fas fa-file-alt"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="facilitator-content">
                         <h3 class="facilitator-name">محمد الخالدي</h3>
@@ -243,17 +275,6 @@
                         </div>
 
                         <div class="facilitator-actions">
-                            <div class="social-links">
-                                <a href="#" class="social-link" title="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="#" class="social-link" title="X (Twitter)">
-                                    <i class="fab fa-x-twitter"></i>
-                                </a>
-                                <button class="social-link" onclick="openCV('محمد الخالدي')" title="السيرة الذاتية">
-                                    <i class="fas fa-file-alt"></i>
-                                </button>
-                            </div>
                             <button class="btn-request-facilitator" onclick="requestFacilitator('محمد الخالدي')">
                                 <i class="fas fa-paper-plane ms-2"></i>
                                 طلب الميسر أونلاين
@@ -268,6 +289,17 @@
                         <div class="hexagon-border"></div>
                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" alt="نورة الحربي" class="facilitator-image">
                         <div class="facilitator-status">متاح</div>
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" title="X (Twitter)">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <button class="social-link" onclick="openCV('نورة الحربي')" title="السيرة الذاتية">
+                                <i class="fas fa-file-alt"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="facilitator-content">
                         <h3 class="facilitator-name">نورة الحربي</h3>
@@ -283,17 +315,6 @@
                         </div>
 
                         <div class="facilitator-actions">
-                            <div class="social-links">
-                                <a href="#" class="social-link" title="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="#" class="social-link" title="X (Twitter)">
-                                    <i class="fab fa-x-twitter"></i>
-                                </a>
-                                <button class="social-link" onclick="openCV('نورة الحربي')" title="السيرة الذاتية">
-                                    <i class="fas fa-file-alt"></i>
-                                </button>
-                            </div>
                             <button class="btn-request-facilitator" onclick="requestFacilitator('نورة الحربي')">
                                 <i class="fas fa-paper-plane ms-2"></i>
                                 طلب الميسر أونلاين
@@ -308,6 +329,17 @@
                         <div class="hexagon-border"></div>
                         <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop" alt="خالد المطيري" class="facilitator-image">
                         <div class="facilitator-status">متاح</div>
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" title="X (Twitter)">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <button class="social-link" onclick="openCV('خالد المطيري')" title="السيرة الذاتية">
+                                <i class="fas fa-file-alt"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="facilitator-content">
                         <h3 class="facilitator-name">خالد المطيري</h3>
@@ -323,17 +355,6 @@
                         </div>
 
                         <div class="facilitator-actions">
-                            <div class="social-links">
-                                <a href="#" class="social-link" title="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="#" class="social-link" title="X (Twitter)">
-                                    <i class="fab fa-x-twitter"></i>
-                                </a>
-                                <button class="social-link" onclick="openCV('خالد المطيري')" title="السيرة الذاتية">
-                                    <i class="fas fa-file-alt"></i>
-                                </button>
-                            </div>
                             <button class="btn-request-facilitator" onclick="requestFacilitator('خالد المطيري')">
                                 <i class="fas fa-paper-plane ms-2"></i>
                                 طلب الميسر أونلاين
@@ -348,6 +369,17 @@
                         <div class="hexagon-border"></div>
                         <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" alt="سارة القحطاني" class="facilitator-image">
                         <div class="facilitator-status">متاح</div>
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" title="X (Twitter)">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <button class="social-link" onclick="openCV('سارة القحطاني')" title="السيرة الذاتية">
+                                <i class="fas fa-file-alt"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="facilitator-content">
                         <h3 class="facilitator-name">سارة القحطاني</h3>
@@ -363,17 +395,6 @@
                         </div>
 
                         <div class="facilitator-actions">
-                            <div class="social-links">
-                                <a href="#" class="social-link" title="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="#" class="social-link" title="X (Twitter)">
-                                    <i class="fab fa-x-twitter"></i>
-                                </a>
-                                <button class="social-link" onclick="openCV('سارة القحطاني')" title="السيرة الذاتية">
-                                    <i class="fas fa-file-alt"></i>
-                                </button>
-                            </div>
                             <button class="btn-request-facilitator" onclick="requestFacilitator('سارة القحطاني')">
                                 <i class="fas fa-paper-plane ms-2"></i>
                                 طلب الميسر أونلاين
@@ -552,19 +573,43 @@
             }
         });
 
-        // Filter functionality
-        const filterButtons = document.querySelectorAll('.filter-btn');
+        // Dropdown functionality
+        const dropdownBtn = document.getElementById('regionDropdownBtn');
+        const dropdownMenu = document.getElementById('regionDropdownMenu');
+        const dropdownItems = document.querySelectorAll('.filter-dropdown-item');
+        const selectedRegionSpan = document.getElementById('selectedRegion');
         const facilitatorCards = document.querySelectorAll('.facilitator-card');
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
+        // Toggle dropdown
+        dropdownBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('show');
+            dropdownBtn.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.classList.remove('show');
+                dropdownBtn.classList.remove('active');
+            }
+        });
+
+        // Filter functionality
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove active class from all items
+                dropdownItems.forEach(i => i.classList.remove('active'));
+                // Add active class to clicked item
                 this.classList.add('active');
+
+                // Update selected region text
+                const regionText = this.querySelector('span').textContent;
+                selectedRegionSpan.textContent = regionText;
 
                 const selectedRegion = this.getAttribute('data-region');
 
+                // Filter cards
                 facilitatorCards.forEach(card => {
                     if (selectedRegion === 'all' || card.getAttribute('data-region') === selectedRegion) {
                         card.style.display = 'block';
@@ -580,6 +625,10 @@
                         }, 300);
                     }
                 });
+
+                // Close dropdown
+                dropdownMenu.classList.remove('show');
+                dropdownBtn.classList.remove('active');
             });
         });
 
