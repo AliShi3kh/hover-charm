@@ -1134,24 +1134,31 @@ body {
 /* About Image Content */
 .about-image-modern {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     border-radius: 24px;
     height: 100%;
-    min-height: 380px;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
 }
 
 .about-image-modern img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: auto;
+    aspect-ratio: 4/5;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
-    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-    border-radius: 24px;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    clip-path: polygon(25% 6.7%, 75% 6.7%, 93.3% 25%, 93.3% 75%, 75% 93.3%, 25% 93.3%, 6.7% 75%, 6.7% 25%);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(231, 111, 81, 0.15);
 }
 
 .about-image-modern:hover img {
-    transform: scale(1.05) rotate(1deg);
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 20px 50px rgba(231, 111, 81, 0.25);
 }
 
 /* Video Overlay Button */
@@ -2628,6 +2635,7 @@ body {
     margin-bottom: 4rem;
     position: relative;
     z-index: 1;
+    text-align: center;
 }
 
 .section-title-roles {
@@ -2641,6 +2649,7 @@ body {
     padding: 1.25rem 3rem;
     border-radius: 50px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
 }
 
 .section-title-roles::after {
@@ -2666,8 +2675,11 @@ body {
     border-radius: 24px;
     padding: 2.5rem;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     overflow: hidden;
     border: 2px solid transparent;
 }
@@ -2708,6 +2720,9 @@ body {
 }
 
 .role-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
