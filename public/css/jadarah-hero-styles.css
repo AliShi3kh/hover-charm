@@ -383,8 +383,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 75%;
-    height: 75%;
+    width: 80%;
+    height: 80%;
     z-index: 1;
     animation: rotate 30s linear infinite;
 }
@@ -402,10 +402,10 @@ body {
 .hero-main-image {
     position: relative;
     z-index: 2;
-    clip-path: polygon(50% 8%, 85% 28%, 85% 72%, 50% 92%, 15% 72%, 15% 28%);
+    clip-path: polygon(50% 5%, 90% 25%, 90% 75%, 50% 95%, 10% 75%, 10% 25%);
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    max-width: 75%;
+    max-width: 85%;
     margin: 0 auto;
 }
 
@@ -488,7 +488,7 @@ body {
     width: 40px;
     height: 46px;
     background: var(--accent-color);
-    clip-path: polygon(50% 8%, 85% 28%, 85% 72%, 50% 92%, 15% 72%, 15% 28%);
+    clip-path: polygon(50% 5%, 90% 25%, 90% 75%, 50% 95%, 10% 75%, 10% 25%);
     opacity: 0.6;
     animation: pulse 2s ease-in-out infinite;
 }
