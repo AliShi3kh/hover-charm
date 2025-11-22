@@ -1,0 +1,520 @@
+/* ==================== Page Header Section ==================== */
+.page-header-section {
+    position: relative;
+    height: 400px;
+    background: linear-gradient(135deg, #E86C4F 0%, #0099CC 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.page-header-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(0, 153, 204, 0.2) 0%, transparent 50%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.page-header-curve {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: #F8F9FA;
+    clip-path: ellipse(70% 100% at 50% 100%);
+    z-index: 1;
+}
+
+.page-header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.breadcrumb-nav {
+    margin-bottom: 1.5rem;
+}
+
+.breadcrumb {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    display: inline-flex;
+    margin: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumb-item {
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.breadcrumb-item a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+}
+
+.breadcrumb-item a:hover {
+    opacity: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.breadcrumb-item.active {
+    color: white;
+    font-weight: 600;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    padding: 0 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.page-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.page-subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    opacity: 0.95;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+/* ==================== Facilitators Section ==================== */
+.facilitators-section {
+    padding: 80px 0;
+    background: #F8F9FA;
+}
+
+/* ==================== Filter Section ==================== */
+.filter-section {
+    margin-bottom: 60px;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #E86C4F, #0099CC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-description {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.filter-controls {
+    text-align: left;
+}
+
+.filter-label {
+    display: block;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #E5E7EB;
+    background: white;
+    color: var(--text-dark);
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(232, 108, 79, 0.2);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #E86C4F, #ff8a6b);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 5px 20px rgba(232, 108, 79, 0.3);
+}
+
+/* ==================== Facilitators Grid ==================== */
+.facilitators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* ==================== Facilitator Card ==================== */
+.facilitator-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.facilitator-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* ==================== Facilitator Image ==================== */
+.facilitator-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    background: linear-gradient(135deg, #E86C4F, #0099CC);
+    overflow: hidden;
+}
+
+.facilitator-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: all 0.4s ease;
+}
+
+.facilitator-card:hover .facilitator-image {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Hexagon Border Animation */
+.hexagon-border {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 92%;
+    height: 92%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: linear-gradient(135deg, #E86C4F, #0099CC, #00CBA9);
+    background-size: 200% 200%;
+    animation: rotateGradient 3s ease infinite;
+    z-index: 0;
+}
+
+@keyframes rotateGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.facilitator-status {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 200, 100, 0.95);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 200, 100, 0.3);
+    z-index: 10;
+}
+
+/* ==================== Facilitator Content ==================== */
+.facilitator-content {
+    padding: 2rem;
+}
+
+.facilitator-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 0.75rem;
+}
+
+.facilitator-region {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.facilitator-region i {
+    color: var(--primary-color);
+}
+
+.facilitator-bio {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* ==================== Specialties ==================== */
+.facilitator-specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.specialty-tag {
+    background: linear-gradient(135deg, rgba(232, 108, 79, 0.1), rgba(0, 153, 204, 0.1));
+    color: var(--primary-color);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(232, 108, 79, 0.2);
+}
+
+/* ==================== Actions ==================== */
+.facilitator-actions {
+    border-top: 1px solid #E5E7EB;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F3F4F6;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.social-link:hover {
+    background: linear-gradient(135deg, #E86C4F, #0099CC);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(232, 108, 79, 0.3);
+}
+
+.btn-request-facilitator {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #E86C4F, #ff8a6b);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-request-facilitator:hover {
+    background: linear-gradient(135deg, #ff8a6b, #E86C4F);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(232, 108, 79, 0.4);
+}
+
+/* ==================== CV Modal Styling ==================== */
+.cv-section {
+    margin-bottom: 2rem;
+}
+
+.cv-section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.cv-list {
+    list-style: none;
+    padding-right: 0;
+}
+
+.cv-list li {
+    padding: 0.75rem 0;
+    padding-right: 1.5rem;
+    position: relative;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.cv-list li::before {
+    content: '◆';
+    position: absolute;
+    right: 0;
+    color: var(--primary-color);
+    font-size: 0.8rem;
+}
+
+.btn-primary-custom {
+    background: linear-gradient(135deg, #E86C4F, #ff8a6b);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.btn-primary-custom:hover {
+    background: linear-gradient(135deg, #ff8a6b, #E86C4F);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(232, 108, 79, 0.3);
+}
+
+/* ==================== Animations ==================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 768px) {
+    .page-header-section {
+        height: 350px;
+        margin-top: 70px;
+    }
+
+    .page-title {
+        font-size: 2.5rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+    }
+
+    .filter-section {
+        padding: 30px 20px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .filter-controls {
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+
+    .filter-buttons {
+        justify-content: center;
+    }
+
+    .facilitators-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .breadcrumb {
+        padding: 0.5rem 1rem;
+    }
+
+    .breadcrumb-item {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .filter-btn {
+        font-size: 0.85rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .facilitator-content {
+        padding: 1.5rem;
+    }
+
+    .facilitator-name {
+        font-size: 1.3rem;
+    }
+}
