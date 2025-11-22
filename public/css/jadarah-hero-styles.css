@@ -1147,8 +1147,8 @@ body {
 .about-image-modern::before {
     content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 75%;
+    height: 75%;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     background: linear-gradient(135deg, #E76F51, #F4A261);
     animation: rotate-hexagon 20s linear infinite;
@@ -1165,7 +1165,7 @@ body {
 }
 
 .about-image-modern img {
-    width: 100%;
+    width: 75%;
     height: auto;
     aspect-ratio: 1/1;
     object-fit: cover;
@@ -2177,21 +2177,65 @@ body {
     pointer-events: none;
 }
 
+/* Unified Section Header Design */
+.section-header-unified {
+    margin-bottom: 4rem;
+    text-align: center;
+    position: relative;
+}
+
+.section-title-unified {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: #1A2B49;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.section-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #E86C4F 0%, #00CBA9 100%);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.section-subtitle-unified {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #6B7280;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Keep old styles for backward compatibility */
 .section-header-stats {
     margin-bottom: 4rem;
+    text-align: center;
 }
 
 .section-title-stats {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #E86C4F;
-    margin-bottom: 1rem;
-    line-height: 1.3;
-    background: white;
-    padding: 1.25rem 3rem;
-    border-radius: 50px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    display: inline-block;
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: #1A2B49;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.section-divider-stats {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #E86C4F 0%, #00CBA9 100%);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.section-subtitle-stats {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #6B7280;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .stats-grid-jadarah {
@@ -2295,7 +2339,16 @@ body {
     }
     
     .section-title-stats {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
+    }
+    
+    .section-divider-stats {
+        width: 70px;
+        height: 2.5px;
+    }
+
+    .section-subtitle-stats {
+        font-size: 0.85rem;
     }
     
     .stat-card-jadarah {
@@ -2318,7 +2371,16 @@ body {
     }
     
     .section-title-stats {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+    }
+    
+    .section-divider-stats {
+        width: 60px;
+        height: 2px;
+    }
+
+    .section-subtitle-stats {
+        font-size: 0.8rem;
     }
     
     .stat-card-jadarah {
@@ -2374,20 +2436,31 @@ body {
 .section-header-goals {
     margin-bottom: 4rem;
     position: relative;
+    text-align: center;
 }
 
 .section-title-goals {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 2.75rem;
+    font-weight: 800;
     color: #1A2B49;
-    margin-bottom: 1rem;
-    line-height: 1.3;
-    position: relative;
-    display: inline-block;
-    background: white;
-    padding: 1.25rem 3rem;
-    border-radius: 50px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.section-divider-goals {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #E86C4F 0%, #00CBA9 100%);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.section-subtitle-goals {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #6B7280;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .goals-grid-jadarah {
@@ -2505,7 +2578,16 @@ body {
 /* Responsive */
 @media (max-width: 991px) {
     .section-title-goals {
-        font-size: 2rem;
+        font-size: 2.2rem;
+    }
+    
+    .section-divider-goals {
+        width: 70px;
+        height: 2.5px;
+    }
+
+    .section-subtitle-goals {
+        font-size: 0.85rem;
     }
     
     .goals-grid-jadarah {
@@ -2527,7 +2609,16 @@ body {
     }
     
     .section-title-goals {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
+    }
+    
+    .section-divider-goals {
+        width: 60px;
+        height: 2px;
+    }
+
+    .section-subtitle-goals {
+        font-size: 0.8rem;
     }
     
     .goals-grid-jadarah {
@@ -2662,14 +2753,24 @@ body {
     font-size: 2.75rem;
     font-weight: 800;
     color: #1A2B49;
-    margin-bottom: 1rem;
-    position: relative;
-    display: inline-block;
-    background: white;
-    padding: 1.25rem 3rem;
-    border-radius: 50px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    text-align: center;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.section-divider-roles {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #E86C4F 0%, #00CBA9 100%);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.section-subtitle-roles {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #6B7280;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .section-title-roles::after {
@@ -2840,8 +2941,23 @@ body {
         padding: 4rem 0;
     }
 
-    .section-title-roles {
+    .section-title-roles,
+    .section-title-goals,
+    .section-title-stats {
         font-size: 2.2rem;
+    }
+
+    .section-divider-roles,
+    .section-divider-goals,
+    .section-divider-stats {
+        width: 70px;
+        height: 2.5px;
+    }
+
+    .section-subtitle-roles,
+    .section-subtitle-goals,
+    .section-subtitle-stats {
+        font-size: 0.85rem;
     }
 
     .roles-grid-jadarah {
@@ -2875,8 +2991,23 @@ body {
         margin-bottom: 2.5rem;
     }
 
-    .section-title-roles {
+    .section-title-roles,
+    .section-title-goals,
+    .section-title-stats {
         font-size: 1.8rem;
+    }
+
+    .section-divider-roles,
+    .section-divider-goals,
+    .section-divider-stats {
+        width: 60px;
+        height: 2px;
+    }
+
+    .section-subtitle-roles,
+    .section-subtitle-goals,
+    .section-subtitle-stats {
+        font-size: 0.8rem;
     }
 
     .roles-grid-jadarah {
