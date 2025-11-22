@@ -76,10 +76,10 @@
                         </ul>
                     </div>
                     
-                    <a href="#contact" class="btn btn-contact">
+                    <button class="btn btn-contact" data-bs-toggle="modal" data-bs-target="#contactModal">
                         <i class="fas fa-envelope ms-2"></i>
                         اتصل بنا
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -214,6 +214,107 @@
         </div>
     </div>
 
+    <!-- Contact Form Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content contact-modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="contactModalLabel">
+                        <i class="fas fa-envelope-open-text ms-2"></i>
+                        نموذج اتصل بنا
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="contactForm" class="contact-form">
+                        <div class="row g-3">
+                            <!-- الاسم -->
+                            <div class="col-md-6">
+                                <label for="contactName" class="form-label">
+                                    <i class="fas fa-user ms-2"></i>
+                                    الاسم
+                                </label>
+                                <input type="text" class="form-control" id="contactName" required>
+                            </div>
+
+                            <!-- الرقم -->
+                            <div class="col-md-6">
+                                <label for="contactPhone" class="form-label">
+                                    <i class="fas fa-phone ms-2"></i>
+                                    الرقم
+                                </label>
+                                <input type="tel" class="form-control" id="contactPhone" required>
+                            </div>
+
+                            <!-- البريد -->
+                            <div class="col-12">
+                                <label for="contactEmail" class="form-label">
+                                    <i class="fas fa-envelope ms-2"></i>
+                                    البريد الإلكتروني
+                                </label>
+                                <input type="email" class="form-control" id="contactEmail" required>
+                            </div>
+
+                            <!-- الغرض من التواصل -->
+                            <div class="col-12">
+                                <label for="contactPurpose" class="form-label">
+                                    <i class="fas fa-list ms-2"></i>
+                                    الغرض من التواصل
+                                </label>
+                                <select class="form-select" id="contactPurpose" required>
+                                    <option value="">اختر الغرض من التواصل</option>
+                                    <option value="inquiry">استفسار عام</option>
+                                    <option value="partnership">شراكة</option>
+                                    <option value="services">طلب خدمة</option>
+                                    <option value="complaint">شكوى</option>
+                                    <option value="suggestion">اقتراح</option>
+                                    <option value="other">أخرى</option>
+                                </select>
+                            </div>
+
+                            <!-- عنوان الرسالة -->
+                            <div class="col-12">
+                                <label for="contactSubject" class="form-label">
+                                    <i class="fas fa-heading ms-2"></i>
+                                    عنوان الرسالة
+                                </label>
+                                <input type="text" class="form-control" id="contactSubject" required>
+                            </div>
+
+                            <!-- نص الرسالة -->
+                            <div class="col-12">
+                                <label for="contactMessage" class="form-label">
+                                    <i class="fas fa-comment-dots ms-2"></i>
+                                    نص الرسالة
+                                </label>
+                                <textarea class="form-control" id="contactMessage" rows="4" required></textarea>
+                            </div>
+
+                            <!-- Captcha -->
+                            <div class="col-12">
+                                <div class="form-check captcha-check">
+                                    <input class="form-check-input" type="checkbox" id="captchaCheck" required>
+                                    <label class="form-check-label" for="captchaCheck">
+                                        <i class="fas fa-shield-alt ms-2"></i>
+                                        أنا لست روبوت / أنا إنسان
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-submit-contact w-100">
+                                    <i class="fas fa-paper-plane ms-2"></i>
+                                    إرسال الرسالة
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
@@ -274,6 +375,32 @@
                 this.classList.add('active');
                 this.querySelector('.fa-check').classList.remove('invisible');
             });
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = {
+                name: document.getElementById('contactName').value,
+                phone: document.getElementById('contactPhone').value,
+                email: document.getElementById('contactEmail').value,
+                purpose: document.getElementById('contactPurpose').value,
+                subject: document.getElementById('contactSubject').value,
+                message: document.getElementById('contactMessage').value
+            };
+            
+            // Here you can add your form submission logic (send to server, etc.)
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
+            
+            // Close modal and reset form
+            const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+            modal.hide();
+            this.reset();
         });
     </script>
 </body>

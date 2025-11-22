@@ -380,10 +380,11 @@ body {
 /* Hexagon Frame */
 .hexagon-frame {
     position: absolute;
-    top: -30px;
-    left: -30px;
-    right: -30px;
-    bottom: -30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 75%;
     z-index: 1;
     animation: rotate 30s linear infinite;
 }
@@ -877,4 +878,125 @@ body {
         height: 50px;
         font-size: 1.2rem;
     }
+}
+
+/* ==================== Contact Modal Styles ==================== */
+.contact-modal-content {
+    border-radius: 25px;
+    border: none;
+    overflow: hidden;
+}
+
+.contact-modal-content .modal-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    border-bottom: none;
+}
+
+.contact-modal-content .modal-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.contact-form .form-label {
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(0, 153, 204, 0.1);
+    outline: none;
+}
+
+.contact-form textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.captcha-check {
+    background: linear-gradient(135deg, rgba(0, 153, 204, 0.05), rgba(232, 108, 79, 0.05));
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.captcha-check:has(.form-check-input:checked) {
+    border-color: var(--accent-color);
+    background: linear-gradient(135deg, rgba(0, 153, 204, 0.1), rgba(232, 108, 79, 0.1));
+}
+
+.captcha-check .form-check-input {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.captcha-check .form-check-input:checked {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.captcha-check .form-check-label {
+    font-weight: 600;
+    color: var(--secondary-color);
+    cursor: pointer;
+    margin-right: 0.75rem;
+}
+
+.btn-submit-contact {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 25px rgba(232, 108, 79, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-submit-contact::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-submit-contact:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+.btn-submit-contact:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(232, 108, 79, 0.5);
+}
+
+.btn-submit-contact:active {
+    transform: translateY(-1px) scale(1);
 }
