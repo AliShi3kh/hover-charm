@@ -1835,13 +1835,18 @@ body {
     border: 2px solid rgba(232, 108, 79, 0.15);
     border-radius: 16px;
     padding: 1.75rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.goal-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .goal-card-jadarah::before {
@@ -1888,6 +1893,11 @@ body {
     box-shadow: 0 6px 25px rgba(232, 108, 79, 0.4);
 }
 
+.goal-card-jadarah.active .goal-icon-plus {
+    transform: rotate(45deg);
+    background: linear-gradient(135deg, #17A2B8 0%, #1a8f9e 100%);
+}
+
 .goal-title-jadarah {
     font-size: 1.15rem;
     font-weight: 600;
@@ -1896,6 +1906,30 @@ body {
     flex: 1;
     text-align: right;
     line-height: 1.5;
+    margin-left: 1.5rem;
+}
+
+.goal-description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    padding-top: 0;
+}
+
+.goal-card-jadarah.active .goal-description {
+    max-height: 200px;
+    opacity: 1;
+    padding-top: 1rem;
+}
+
+.goal-description p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #495057;
+    text-align: right;
+    padding-right: 3.5rem;
 }
 
 /* Responsive */
