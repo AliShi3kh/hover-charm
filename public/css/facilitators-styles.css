@@ -545,6 +545,92 @@
     padding: 1.25rem 2rem;
 }
 
+/* ==================== Request Facilitator Form Styling ==================== */
+#requestFacilitatorModal .modal-content {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+#requestFacilitatorModal .modal-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #d85c3f 100%);
+    color: white;
+    border-radius: 16px 16px 0 0;
+    padding: 1.75rem 2rem;
+}
+
+#requestFacilitatorModal .modal-title {
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+#requestFacilitatorModal .btn-close {
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+#requestFacilitatorModal .btn-close:hover {
+    opacity: 1;
+}
+
+#requestFacilitatorModal .form-label {
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+#requestFacilitatorModal .form-control,
+#requestFacilitatorModal .form-select {
+    border: 2px solid #E5E7EB;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+#requestFacilitatorModal .form-control:focus,
+#requestFacilitatorModal .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(232, 108, 79, 0.15);
+}
+
+#requestFacilitatorModal .text-danger {
+    color: #dc3545;
+    font-weight: 700;
+}
+
+#requestFacilitatorModal .form-text {
+    color: #6c757d;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+}
+
+#requestFacilitatorModal .modal-footer {
+    background: white;
+    border-top: 2px solid #E5E7EB;
+    padding: 1.5rem 2rem;
+    justify-content: center;
+}
+
+#requestFacilitatorModal .btn-primary-custom {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    min-width: 200px;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+#requestFacilitatorModal .btn-primary-custom:hover {
+    background: #d85c3f;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(232, 108, 79, 0.3);
+}
+
 /* ==================== Animations ==================== */
 @keyframes fadeInUp {
     from {
