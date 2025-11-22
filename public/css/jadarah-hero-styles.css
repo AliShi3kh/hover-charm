@@ -380,11 +380,11 @@ body {
 /* Hexagon Frame */
 .hexagon-frame {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 42%;
+    left: 51%;
     transform: translate(-50%, -50%);
-    width: 500px;
-    height: 500px;
+    width: 460px;
+    height: 460px;
     z-index: 0;
     animation: rotate 30s linear infinite;
 }
