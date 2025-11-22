@@ -197,6 +197,109 @@
         </div>
     </section>
 
+    <!-- Leadership Vision Section -->
+    <section class="leadership-vision-section" dir="rtl">
+        <div class="container">
+            <div class="leadership-vision-container">
+                <!-- Section Header -->
+                <div class="section-header-vision text-center mb-5">
+                    <p class="section-subtitle">رؤية القيادة</p>
+                    <h2 class="section-title-vision">كلمات رسمت.. وقصص تحققت</h2>
+                    <div class="title-divider">
+                        <div class="divider-line"></div>
+                        <div class="divider-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="divider-line"></div>
+                    </div>
+                </div>
+
+                <!-- Content Grid -->
+                <div class="row align-items-center g-5">
+                    <!-- Left Side - Leadership Image -->
+                    <div class="col-lg-6">
+                        <div class="leadership-image-wrapper">
+                            <div class="image-decorative-frame"></div>
+                            <div class="leadership-image-container">
+                                <img src="images/leadership-vision.png" alt="الملك سلمان وولي العهد محمد بن سلمان" class="leadership-image">
+                                <div class="image-overlay"></div>
+                            </div>
+                            <div class="floating-element element-1">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="floating-element element-2">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side - Animated Quotes -->
+                    <div class="col-lg-6">
+                        <div class="quotes-container">
+                            <!-- Quote 1 -->
+                            <div class="quote-item active" data-quote="1">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                                <p class="quote-text">
+                                    مستقبل المملكة مبشر وواعد، وستبقى بلادنا العزيزة أكثر مما تحقق، لدينا طموح كبير ومستقبل باهر
+                                </p>
+                                <div class="quote-author">
+                                    <div class="author-image-placeholder"></div>
+                                    <div class="author-info">
+                                        <h4 class="author-name">الأمير محمد بن سلمان بن عبدالعزيز آل سعود</h4>
+                                        <p class="author-title">صاحب السمو الملكي ولي العهد</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quote 2 -->
+                            <div class="quote-item" data-quote="2">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                                <p class="quote-text">
+                                    رأت سيقوم بتصناعة دورها وريادة أسهموا في صناعة هذا المستقبل، رأت سنقوم بصناعة دورنا وريادتنا معاً
+                                </p>
+                                <div class="quote-author">
+                                    <div class="author-image-placeholder"></div>
+                                    <div class="author-info">
+                                        <h4 class="author-name">الملك سلمان بن عبدالعزيز آل سعود</h4>
+                                        <p class="author-title">خادم الحرمين الشريفين</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quote 3 -->
+                            <div class="quote-item" data-quote="3">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                                <p class="quote-text">
+                                    نحن اليوم نضع بلدنا العزيز على بداية الطريق الصحيح، وواثقون بأن نحقق أحلامنا وأهدافنا
+                                </p>
+                                <div class="quote-author">
+                                    <div class="author-image-placeholder"></div>
+                                    <div class="author-info">
+                                        <h4 class="author-name">الأمير محمد بن سلمان بن عبدالعزيز آل سعود</h4>
+                                        <p class="author-title">صاحب السمو الملكي ولي العهد</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Navigation Dots -->
+                            <div class="quote-navigation">
+                                <span class="quote-dot active" data-goto="1"></span>
+                                <span class="quote-dot" data-goto="2"></span>
+                                <span class="quote-dot" data-goto="3"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Video Modal -->
     <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -402,6 +505,65 @@
             modal.hide();
             this.reset();
         });
+
+        // Leadership Vision Quotes Carousel
+        let currentQuote = 1;
+        const totalQuotes = 3;
+        const quoteItems = document.querySelectorAll('.quote-item');
+        const quoteDots = document.querySelectorAll('.quote-dot');
+
+        function showQuote(quoteNumber) {
+            // Hide all quotes
+            quoteItems.forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Remove active from all dots
+            quoteDots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+
+            // Show selected quote
+            const selectedQuote = document.querySelector(`.quote-item[data-quote="${quoteNumber}"]`);
+            const selectedDot = document.querySelector(`.quote-dot[data-goto="${quoteNumber}"]`);
+            
+            if (selectedQuote) selectedQuote.classList.add('active');
+            if (selectedDot) selectedDot.classList.add('active');
+
+            currentQuote = quoteNumber;
+        }
+
+        function nextQuote() {
+            currentQuote = currentQuote >= totalQuotes ? 1 : currentQuote + 1;
+            showQuote(currentQuote);
+        }
+
+        // Auto rotate quotes every 5 seconds
+        let quoteInterval = setInterval(nextQuote, 5000);
+
+        // Manual navigation with dots
+        quoteDots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const gotoQuote = parseInt(this.getAttribute('data-goto'));
+                showQuote(gotoQuote);
+                
+                // Reset interval when manually navigating
+                clearInterval(quoteInterval);
+                quoteInterval = setInterval(nextQuote, 5000);
+            });
+        });
+
+        // Pause auto-rotation on hover
+        const quotesContainer = document.querySelector('.quotes-container');
+        if (quotesContainer) {
+            quotesContainer.addEventListener('mouseenter', function() {
+                clearInterval(quoteInterval);
+            });
+
+            quotesContainer.addEventListener('mouseleave', function() {
+                quoteInterval = setInterval(nextQuote, 5000);
+            });
+        }
     </script>
 
     <!-- Footer -->
