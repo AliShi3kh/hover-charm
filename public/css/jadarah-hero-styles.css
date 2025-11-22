@@ -1014,14 +1014,19 @@ body {
 
 /* ==================== Footer Section ==================== */
 .footer-section {
-    background: linear-gradient(135deg, #f8f9ff 0%, #fff5f3 100%);
     padding: 3rem 0 1.5rem;
-    border-top: 3px solid var(--accent-color);
     margin-top: 4rem;
 }
 
 .footer-section .container {
     max-width: 1400px;
+    background: linear-gradient(135deg, rgba(248, 249, 255, 0.95) 0%, rgba(255, 245, 243, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem 2rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-top: 3px solid var(--accent-color);
 }
 
 /* Footer Logo & About */
