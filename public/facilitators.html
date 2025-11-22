@@ -499,6 +499,115 @@
         </div>
     </div>
 
+    <!-- Request Facilitator Modal -->
+    <div class="modal fade" id="requestFacilitatorModal" tabindex="-1" aria-labelledby="requestFacilitatorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="requestFacilitatorModalLabel">طلب ميسر أونلاين</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="facilitatorRequestForm">
+                        <!-- Day Selection -->
+                        <div class="mb-4">
+                            <label for="requestDay" class="form-label">
+                                <span class="text-danger">*</span> يرجى تحديد اليوم:
+                            </label>
+                            <select class="form-select" id="requestDay" required>
+                                <option value="" disabled selected>يوم الأحد</option>
+                                <option value="الأحد">الأحد</option>
+                                <option value="الإثنين">الإثنين</option>
+                                <option value="الثلاثاء">الثلاثاء</option>
+                                <option value="الأربعاء">الأربعاء</option>
+                                <option value="الخميس">الخميس</option>
+                                <option value="الجمعة">الجمعة</option>
+                                <option value="السبت">السبت</option>
+                            </select>
+                        </div>
+
+                        <!-- Date and Time -->
+                        <div class="mb-4">
+                            <label class="form-label">
+                                <span class="text-danger">*</span> يرجى تحديد التاريخ والوقت:
+                            </label>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="date" class="form-control" id="requestDate" required>
+                                    <small class="form-text text-muted">Date</small>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="time" class="form-control" id="requestTime" required>
+                                    <small class="form-text text-muted">Time</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Association Name -->
+                        <div class="mb-4">
+                            <label for="associationName" class="form-label">
+                                <span class="text-danger">*</span> مسمى الجمعية:
+                            </label>
+                            <input type="text" class="form-control" id="associationName" required>
+                        </div>
+
+                        <!-- Administrative Region -->
+                        <div class="mb-4">
+                            <label for="administrativeRegion" class="form-label">
+                                <span class="text-danger">*</span> يرجى اختيار المنطقة الإدارية:
+                            </label>
+                            <select class="form-select" id="administrativeRegion" required>
+                                <option value="" disabled selected>منطقة الباحة</option>
+                                <option value="الرياض">الرياض</option>
+                                <option value="مكة المكرمة">مكة المكرمة</option>
+                                <option value="المدينة المنورة">المدينة المنورة</option>
+                                <option value="القصيم">القصيم</option>
+                                <option value="المنطقة الشرقية">المنطقة الشرقية</option>
+                                <option value="عسير">عسير</option>
+                                <option value="تبوك">تبوك</option>
+                                <option value="حائل">حائل</option>
+                                <option value="الحدود الشمالية">الحدود الشمالية</option>
+                                <option value="جازان">جازان</option>
+                                <option value="نجران">نجران</option>
+                                <option value="الباحة">الباحة</option>
+                                <option value="الجوف">الجوف</option>
+                            </select>
+                        </div>
+
+                        <!-- Representative Name -->
+                        <div class="mb-4">
+                            <label for="representativeName" class="form-label">
+                                <span class="text-danger">*</span> اسم ممثل الجمعية:
+                            </label>
+                            <input type="text" class="form-control" id="representativeName" required>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-4">
+                            <label for="representativeEmail" class="form-label">
+                                <span class="text-danger">*</span> يرجى كتابة البريد الإلكتروني الخاص بممثل الجمعية:
+                            </label>
+                            <input type="email" class="form-control" id="representativeEmail" required>
+                            <small class="form-text text-muted">وذلك للتواصل من قبل فريق خاصة جدارة (للتأكيد موعد عقد الجلسة)</small>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div class="mb-4">
+                            <label for="representativePhone" class="form-label">
+                                <span class="text-danger">*</span> يرجى كتابة رقم الهاتف الخاص بممثل الجمعية:
+                            </label>
+                            <input type="tel" class="form-control" id="representativePhone" required>
+                            <small class="form-text text-muted">وذلك للتواصل من قبل فريق خاصة جدارة (للتأكيد موعد عقد الجلسة)</small>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary-custom" onclick="submitFacilitatorRequest()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Contact Modal (same as main page) -->
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -728,9 +837,23 @@
             cvModal.show();
         }
 
-        // Request Facilitator
+        // Request Facilitator - Open Modal
         function requestFacilitator(name) {
-            alert(`تم إرسال طلبك للتواصل مع ${name}. سنتواصل معك قريباً!`);
+            const modal = new bootstrap.Modal(document.getElementById('requestFacilitatorModal'));
+            document.getElementById('requestFacilitatorModalLabel').textContent = `طلب الميسر: ${name}`;
+            modal.show();
+        }
+
+        // Submit Facilitator Request
+        function submitFacilitatorRequest() {
+            const form = document.getElementById('facilitatorRequestForm');
+            if (form.checkValidity()) {
+                alert('تم إرسال طلبك بنجاح! سنتواصل معك قريباً.');
+                bootstrap.Modal.getInstance(document.getElementById('requestFacilitatorModal')).hide();
+                form.reset();
+            } else {
+                form.reportValidity();
+            }
         }
     </script>
 
