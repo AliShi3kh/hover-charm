@@ -127,32 +127,74 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="filter-controls">
-                            <label class="filter-label"><i class="fas fa-filter ms-2"></i> تصفية حسب المنطقة:</label>
-                            <div class="filter-dropdown-wrapper">
-                                <button class="filter-dropdown-btn" id="regionDropdownBtn">
-                                    <span id="selectedRegion">جميع المناطق</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                                <div class="filter-dropdown-menu" id="regionDropdownMenu">
-                                    <div class="filter-dropdown-item active" data-region="all">
-                                        <i class="fas fa-check"></i>
-                                        <span>جميع المناطق</span>
+                            <div class="filter-group">
+                                <label class="filter-label"><i class="fas fa-map-marker-alt ms-2"></i> المنطقة:</label>
+                                <div class="filter-dropdown-wrapper">
+                                    <button class="filter-dropdown-btn" id="regionDropdownBtn">
+                                        <span id="selectedRegion">جميع المناطق</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="filter-dropdown-menu" id="regionDropdownMenu">
+                                        <div class="filter-dropdown-item active" data-region="all">
+                                            <i class="fas fa-check"></i>
+                                            <span>جميع المناطق</span>
+                                        </div>
+                                        <div class="filter-dropdown-item" data-region="الرياض">
+                                            <i class="fas fa-check"></i>
+                                            <span>الرياض</span>
+                                        </div>
+                                        <div class="filter-dropdown-item" data-region="جدة">
+                                            <i class="fas fa-check"></i>
+                                            <span>جدة</span>
+                                        </div>
+                                        <div class="filter-dropdown-item" data-region="الدمام">
+                                            <i class="fas fa-check"></i>
+                                            <span>الدمام</span>
+                                        </div>
+                                        <div class="filter-dropdown-item" data-region="مكة">
+                                            <i class="fas fa-check"></i>
+                                            <span>مكة</span>
+                                        </div>
                                     </div>
-                                    <div class="filter-dropdown-item" data-region="الرياض">
-                                        <i class="fas fa-check"></i>
-                                        <span>الرياض</span>
-                                    </div>
-                                    <div class="filter-dropdown-item" data-region="جدة">
-                                        <i class="fas fa-check"></i>
-                                        <span>جدة</span>
-                                    </div>
-                                    <div class="filter-dropdown-item" data-region="الدمام">
-                                        <i class="fas fa-check"></i>
-                                        <span>الدمام</span>
-                                    </div>
-                                    <div class="filter-dropdown-item" data-region="مكة">
-                                        <i class="fas fa-check"></i>
-                                        <span>مكة</span>
+                                </div>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <label class="filter-label"><i class="fas fa-briefcase ms-2"></i> المجال:</label>
+                                <div class="filter-dropdown-wrapper">
+                                    <button class="filter-dropdown-btn" id="specialtyDropdownBtn">
+                                        <span id="selectedSpecialty">جميع المجالات</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="filter-dropdown-menu" id="specialtyDropdownMenu">
+                                        <div class="filter-dropdown-item active" data-specialty="all">
+                                            <i class="fas fa-check"></i>
+                                            <span>جميع المجالات</span>
+                                        </div>
+                                        <div class="filter-dropdown-item" data-specialty="الإدارة الاستراتيجية">
+                                            <i class="fas fa-check"></i>
+                                            <span>الإدارة الاستراتيجية</span>
+                                        </div>
+                                        <div class="filter-dropdown-item" data-specialty="التسويق">
+                                            <i class="fas fa-check"></i>
+                                            <span>التسويق</span>
+                                        </div>
+                                        <div class="filter-dropdown-item" data-specialty="الإدارة المالية">
+                                            <i class="fas fa-check"></i>
+                                            <span>الإدارة المالية</span>
+                                        </div>
+                                        <div class="filter-dropdown-item" data-specialty="الموارد البشرية">
+                                            <i class="fas fa-check"></i>
+                                            <span>الموارد البشرية</span>
+                                        </div>
+                                        <div class="filter-dropdown-item" data-specialty="التخطيط">
+                                            <i class="fas fa-check"></i>
+                                            <span>التخطيط</span>
+                                        </div>
+                                        <div class="filter-dropdown-item" data-specialty="الحوكمة">
+                                            <i class="fas fa-check"></i>
+                                            <span>الحوكمة</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -164,7 +206,7 @@
             <!-- Facilitators Grid -->
             <div class="facilitators-grid">
                 <!-- Facilitator Card 1 -->
-                <div class="facilitator-card" data-region="الرياض">
+                <div class="facilitator-card" data-region="الرياض" data-specialty="الإدارة الاستراتيجية,التخطيط">
                     <div class="facilitator-image-wrapper">
                         <div class="hexagon-border"></div>
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="أحمد السعيد" class="facilitator-image">
@@ -204,7 +246,7 @@
                 </div>
 
                 <!-- Facilitator Card 2 -->
-                <div class="facilitator-card" data-region="جدة">
+                <div class="facilitator-card" data-region="جدة" data-specialty="التسويق,العلامة التجارية">
                     <div class="facilitator-image-wrapper">
                         <div class="hexagon-border"></div>
                         <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop" alt="فاطمة العمري" class="facilitator-image">
@@ -244,7 +286,7 @@
                 </div>
 
                 <!-- Facilitator Card 3 -->
-                <div class="facilitator-card" data-region="الدمام">
+                <div class="facilitator-card" data-region="الدمام" data-specialty="الإدارة المالية,الحوكمة">
                     <div class="facilitator-image-wrapper">
                         <div class="hexagon-border"></div>
                         <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop" alt="محمد الخالدي" class="facilitator-image">
@@ -284,7 +326,7 @@
                 </div>
 
                 <!-- Facilitator Card 4 -->
-                <div class="facilitator-card" data-region="مكة">
+                <div class="facilitator-card" data-region="مكة" data-specialty="الموارد البشرية,التدريب">
                     <div class="facilitator-image-wrapper">
                         <div class="hexagon-border"></div>
                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" alt="نورة الحربي" class="facilitator-image">
@@ -574,61 +616,109 @@
         });
 
         // Dropdown functionality
-        const dropdownBtn = document.getElementById('regionDropdownBtn');
-        const dropdownMenu = document.getElementById('regionDropdownMenu');
-        const dropdownItems = document.querySelectorAll('.filter-dropdown-item');
+        const regionDropdownBtn = document.getElementById('regionDropdownBtn');
+        const regionDropdownMenu = document.getElementById('regionDropdownMenu');
+        const specialtyDropdownBtn = document.getElementById('specialtyDropdownBtn');
+        const specialtyDropdownMenu = document.getElementById('specialtyDropdownMenu');
+        
+        const regionDropdownItems = document.querySelectorAll('#regionDropdownMenu .filter-dropdown-item');
+        const specialtyDropdownItems = document.querySelectorAll('#specialtyDropdownMenu .filter-dropdown-item');
+        
         const selectedRegionSpan = document.getElementById('selectedRegion');
+        const selectedSpecialtySpan = document.getElementById('selectedSpecialty');
         const facilitatorCards = document.querySelectorAll('.facilitator-card');
 
-        // Toggle dropdown
-        dropdownBtn.addEventListener('click', function(e) {
+        let currentRegion = 'all';
+        let currentSpecialty = 'all';
+
+        // Toggle region dropdown
+        regionDropdownBtn.addEventListener('click', function(e) {
             e.stopPropagation();
-            dropdownMenu.classList.toggle('show');
-            dropdownBtn.classList.toggle('active');
+            regionDropdownMenu.classList.toggle('show');
+            regionDropdownBtn.classList.toggle('active');
+            // Close specialty dropdown
+            specialtyDropdownMenu.classList.remove('show');
+            specialtyDropdownBtn.classList.remove('active');
         });
 
-        // Close dropdown when clicking outside
+        // Toggle specialty dropdown
+        specialtyDropdownBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            specialtyDropdownMenu.classList.toggle('show');
+            specialtyDropdownBtn.classList.toggle('active');
+            // Close region dropdown
+            regionDropdownMenu.classList.remove('show');
+            regionDropdownBtn.classList.remove('active');
+        });
+
+        // Close dropdowns when clicking outside
         document.addEventListener('click', function(e) {
-            if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
-                dropdownMenu.classList.remove('show');
-                dropdownBtn.classList.remove('active');
+            if (!regionDropdownBtn.contains(e.target) && !regionDropdownMenu.contains(e.target)) {
+                regionDropdownMenu.classList.remove('show');
+                regionDropdownBtn.classList.remove('active');
+            }
+            if (!specialtyDropdownBtn.contains(e.target) && !specialtyDropdownMenu.contains(e.target)) {
+                specialtyDropdownMenu.classList.remove('show');
+                specialtyDropdownBtn.classList.remove('active');
             }
         });
 
-        // Filter functionality
-        dropdownItems.forEach(item => {
-            item.addEventListener('click', function() {
-                // Remove active class from all items
-                dropdownItems.forEach(i => i.classList.remove('active'));
-                // Add active class to clicked item
-                this.classList.add('active');
+        // Filter function
+        function filterCards() {
+            facilitatorCards.forEach(card => {
+                const cardRegion = card.getAttribute('data-region');
+                const cardSpecialties = card.getAttribute('data-specialty').split(',');
+                
+                const regionMatch = currentRegion === 'all' || cardRegion === currentRegion;
+                const specialtyMatch = currentSpecialty === 'all' || cardSpecialties.some(spec => spec.includes(currentSpecialty));
+                
+                if (regionMatch && specialtyMatch) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 10);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
 
-                // Update selected region text
+        // Region filter functionality
+        regionDropdownItems.forEach(item => {
+            item.addEventListener('click', function() {
+                regionDropdownItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+                
                 const regionText = this.querySelector('span').textContent;
                 selectedRegionSpan.textContent = regionText;
+                currentRegion = this.getAttribute('data-region');
+                
+                filterCards();
+                
+                regionDropdownMenu.classList.remove('show');
+                regionDropdownBtn.classList.remove('active');
+            });
+        });
 
-                const selectedRegion = this.getAttribute('data-region');
-
-                // Filter cards
-                facilitatorCards.forEach(card => {
-                    if (selectedRegion === 'all' || card.getAttribute('data-region') === selectedRegion) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 10);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-
-                // Close dropdown
-                dropdownMenu.classList.remove('show');
-                dropdownBtn.classList.remove('active');
+        // Specialty filter functionality
+        specialtyDropdownItems.forEach(item => {
+            item.addEventListener('click', function() {
+                specialtyDropdownItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+                
+                const specialtyText = this.querySelector('span').textContent;
+                selectedSpecialtySpan.textContent = specialtyText;
+                currentSpecialty = this.getAttribute('data-specialty');
+                
+                filterCards();
+                
+                specialtyDropdownMenu.classList.remove('show');
+                specialtyDropdownBtn.classList.remove('active');
             });
         });
 
