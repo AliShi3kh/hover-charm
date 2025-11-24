@@ -48,15 +48,20 @@ body {
 }
 
 .logo-container {
-    margin-bottom: 20px;
+    margin: 0 auto;
     position: relative;
     z-index: 1;
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 16px;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .logo {
-    height: 80px;
+    height: 100px;
     width: auto;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    display: block;
 }
 
 .header-title {
