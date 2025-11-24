@@ -24,7 +24,7 @@ body {
 
 /* Header Section */
 .email-header {
-    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecef 100%);
+    background: linear-gradient(135deg, #f5f7fa 0%, #f7f7f7 100%);
     padding: 40px 30px;
     text-align: center;
     position: relative;
@@ -51,11 +51,9 @@ body {
     margin: 0 auto;
     position: relative;
     z-index: 1;
-    background: #f8f9fa;
-    padding: 30px;
+    padding: 10px;
     border-radius: 16px;
     display: inline-block;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .logo {
