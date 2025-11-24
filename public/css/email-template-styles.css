@@ -472,6 +472,56 @@ body {
   margin-bottom: 20px;
 }
 
+/* Message Subject Section */
+.message-subject-section {
+  margin-bottom: 25px;
+}
+
+.message-subject-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e8ecef;
+}
+
+.message-subject-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+/* Message Content Section */
+.message-content-section {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e8ecef;
+}
+
+.message-content-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e8ecef;
+}
+
+.message-content-text {
+  color: #06232f;
+  font-size: 15px;
+  line-height: 1.8;
+  padding: 10px 15px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-right: 3px solid #ea5c48;
+}
+
 .social-links {
   display: flex;
   justify-content: center;
