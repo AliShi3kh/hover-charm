@@ -54,12 +54,16 @@ body {
   }
 }
 
-.logo-container Specificity: (0,1,0) {
+.logo-container {
   margin: 0 auto;
   position: relative;
-  z-index: 1; /* background: #f8f9fa; / padding: 10px;
- border-radius: 16px; display: inline-block;
- / box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); */
+  z-index: 1;
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 16px;
+  display: block;
+  width: fit-content;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .logo {
