@@ -13,36 +13,48 @@
     <!-- Google Fonts - Arabic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/style-cart.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header-section">
+    <!-- Unified Header -->
+    <header class="webyan-header">
         <div class="container">
-            <div class="d-flex justify-content-between align-items-center py-3">
-                <a href="/" class="logo-link">
-                    <img src="images/webyan-logo.png" alt="ويبيان" class="logo-img">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">
+                    <img src="images/webyan-logo.png" alt="منصة ويبيان" class="header-logo">
                 </a>
-                <nav class="d-none d-lg-flex align-items-center gap-4">
-                    <a href="#" class="nav-link-custom">الرئيسية</a>
-                    <a href="#" class="nav-link-custom">المنتجات</a>
-                    <a href="#" class="nav-link-custom">الخدمات</a>
-                    <a href="#" class="nav-link-custom">التبرعات</a>
-                    <a href="#" class="nav-link-custom">تواصل معنا</a>
-                </nav>
-                <div class="d-flex align-items-center gap-3">
-                    <a href="#" class="cart-icon-link position-relative">
-                        <i class="bi bi-cart3"></i>
-                        <span class="cart-badge">7</span>
-                    </a>
-                    <a href="#" class="btn btn-login">
-                        <i class="bi bi-person"></i>
-                        تسجيل الدخول
-                    </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="association-store.html">المتجر</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="association-store.html#products">المنتجات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="association-store.html#services">الخدمات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="donations-gate.html">بوابة التبرعات</a>
+                        </li>
+                    </ul>
+                    <div class="header-actions">
+                        <a href="cart.html" class="btn btn-header-cart active" title="سلة المشتريات">
+                            <i class="bi bi-cart3"></i>
+                            <span class="cart-badge cart-badge-store">3</span>
+                        </a>
+                        <a href="donations-cart.html" class="btn btn-header-cart btn-donations-cart" title="سلة التبرعات">
+                            <i class="bi bi-heart"></i>
+                            <span class="cart-badge cart-badge-donations">2</span>
+                        </a>
+                    </div>
                 </div>
-            </div>
+            </nav>
         </div>
     </header>
 

@@ -36,7 +36,7 @@
 }
 
 body {
-    font-family: 'Cairo', sans-serif;
+    font-family: 'Tajawal', sans-serif;
     background-color: var(--webyan-light-bg);
     color: var(--webyan-text-dark);
     line-height: 1.7;
@@ -44,7 +44,99 @@ body {
 }
 
 /* ============================================
-   Header Styles
+   Unified Header Styles
+   ============================================ */
+.webyan-header {
+    background-color: var(--webyan-white);
+    box-shadow: var(--webyan-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.webyan-header .navbar {
+    padding: 0.75rem 0;
+}
+
+.header-logo {
+    height: 42px;
+    width: auto;
+}
+
+.webyan-header .nav-link {
+    color: var(--webyan-text-dark);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    margin: 0 0.15rem;
+    border-radius: var(--webyan-radius-xs);
+    font-size: 0.9rem;
+    transition: var(--webyan-transition);
+}
+
+.webyan-header .nav-link:hover,
+.webyan-header .nav-link.active {
+    color: var(--webyan-dark-blue);
+    background-color: var(--webyan-light-bg);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-header-cart {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--webyan-light-bg);
+    color: var(--webyan-text-dark);
+    border: none;
+    transition: var(--webyan-transition);
+    font-size: 1.1rem;
+}
+
+.btn-header-cart:hover,
+.btn-header-cart.active {
+    background-color: var(--webyan-dark-blue);
+    color: var(--webyan-white);
+}
+
+.btn-donations-cart:hover {
+    background-color: var(--webyan-success);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-badge-store {
+    background-color: var(--webyan-dark-blue);
+    color: var(--webyan-white);
+}
+
+.cart-badge-donations {
+    background-color: var(--webyan-success);
+    color: var(--webyan-white);
+}
+
+/* ============================================
+   Legacy Header Styles (kept for compatibility)
    ============================================ */
 .header-section {
     background-color: var(--webyan-white);

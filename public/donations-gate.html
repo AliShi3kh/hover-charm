@@ -10,103 +10,132 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Google Fonts - Cairo -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Tajawal -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/donations.css">
 </head>
 <body>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
+    <!-- Unified Header -->
+    <header class="webyan-header">
         <div class="container">
-            <div class="row align-items-center min-vh-75">
-                <div class="col-lg-6 hero-content">
-                    <span class="hero-badge">
-                        <i class="bi bi-heart-fill"></i>
-                        منصة ويبيان للتبرعات
-                    </span>
-                    <h1 class="hero-title">بوابة التبرعات</h1>
-                    <p class="hero-subtitle">شاركنا صناعة الأثر</p>
-                    <p class="hero-description">
-                        بوابتك الموثوقة لدعم المشاريع الخيرية والإنسانية. ساهم معنا في إحداث فرق حقيقي في حياة المحتاجين من خلال مشاريع تنموية مستدامة.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-hero-primary">
-                            <i class="bi bi-grid-3x3-gap-fill"></i>
-                            استعرض المشاريع
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">
+                    <img src="images/webyan-logo.png" alt="منصة ويبيان" class="header-logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="association-store.html">المتجر</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="association-store.html#products">المنتجات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="association-store.html#services">الخدمات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="donations-gate.html">بوابة التبرعات</a>
+                        </li>
+                    </ul>
+                    <div class="header-actions">
+                        <a href="cart.html" class="btn btn-header-cart" title="سلة المشتريات">
+                            <i class="bi bi-cart3"></i>
+                            <span class="cart-badge cart-badge-store">3</span>
                         </a>
-                        <a href="#statistics" class="btn btn-hero-outline">
-                            <i class="bi bi-bar-chart-fill"></i>
-                            تعرف على أثر تبرعاتك
+                        <a href="donations-cart.html" class="btn btn-header-cart btn-donations-cart" title="سلة التبرعات">
+                            <i class="bi bi-heart"></i>
+                            <span class="cart-badge cart-badge-donations">2</span>
                         </a>
                     </div>
-                    <div class="hero-stats">
-                        <div class="hero-stat-item">
-                            <span class="hero-stat-number">2,500+</span>
-                            <span class="hero-stat-label">متبرع</span>
-                        </div>
-                        <div class="hero-stat-item">
-                            <span class="hero-stat-number">150+</span>
-                            <span class="hero-stat-label">مشروع</span>
-                        </div>
-                        <div class="hero-stat-item">
-                            <span class="hero-stat-number">10,000+</span>
-                            <span class="hero-stat-label">مستفيد</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section - Full Width Carousel -->
+    <section class="hero-carousel-section">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="hero-slide-fullwidth">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&h=700&fit=crop" alt="كفالة الأيتام">
+                        <div class="hero-slide-content">
+                            <div class="container">
+                                <span class="hero-slide-badge">فرصة للأجر</span>
+                                <h1 class="hero-slide-title">كفالة الأيتام</h1>
+                                <p class="hero-slide-description">اكفل يتيمًا وكن سببًا في رسم البسمة على وجه طفل محتاج</p>
+                                <div class="hero-slide-buttons">
+                                    <a href="#projects" class="btn btn-hero-light">
+                                        <i class="bi bi-heart-fill"></i>
+                                        تبرع الآن
+                                    </a>
+                                    <a href="#categories" class="btn btn-hero-outline-light">
+                                        استعرض المشاريع
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="hero-carousel-wrapper">
-                        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="hero-slide">
-                                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=500&fit=crop" alt="مشروع كفالة الأيتام">
-                                        <div class="hero-slide-overlay">
-                                            <h3>كفالة الأيتام</h3>
-                                            <p>اكفل يتيمًا وكن سببًا في رسم البسمة</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="hero-slide">
-                                        <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800&h=500&fit=crop" alt="مشاريع تعليمية">
-                                        <div class="hero-slide-overlay">
-                                            <h3>المشاريع التعليمية</h3>
-                                            <p>ساهم في بناء جيل متعلم ومثقف</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="hero-slide">
-                                        <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&h=500&fit=crop" alt="دعم الأسر">
-                                        <div class="hero-slide-overlay">
-                                            <h3>دعم الأسر المحتاجة</h3>
-                                            <p>كن عونًا للأسر في أوقات الشدة</p>
-                                        </div>
-                                    </div>
+                <div class="carousel-item">
+                    <div class="hero-slide-fullwidth">
+                        <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=1920&h=700&fit=crop" alt="المشاريع التعليمية">
+                        <div class="hero-slide-content">
+                            <div class="container">
+                                <span class="hero-slide-badge">صدقة جارية</span>
+                                <h1 class="hero-slide-title">المشاريع التعليمية</h1>
+                                <p class="hero-slide-description">ساهم في بناء جيل متعلم ومثقف من خلال دعم الطلاب المحتاجين</p>
+                                <div class="hero-slide-buttons">
+                                    <a href="#projects" class="btn btn-hero-light">
+                                        <i class="bi bi-heart-fill"></i>
+                                        تبرع الآن
+                                    </a>
+                                    <a href="#categories" class="btn btn-hero-outline-light">
+                                        استعرض المشاريع
+                                    </a>
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon"></span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon"></span>
-                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="hero-slide-fullwidth">
+                        <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1920&h=700&fit=crop" alt="دعم الأسر">
+                        <div class="hero-slide-content">
+                            <div class="container">
+                                <span class="hero-slide-badge">أجر عظيم</span>
+                                <h1 class="hero-slide-title">دعم الأسر المحتاجة</h1>
+                                <p class="hero-slide-description">كن عونًا للأسر في أوقات الشدة وساهم في تخفيف معاناتهم</p>
+                                <div class="hero-slide-buttons">
+                                    <a href="#projects" class="btn btn-hero-light">
+                                        <i class="bi bi-heart-fill"></i>
+                                        تبرع الآن
+                                    </a>
+                                    <a href="#categories" class="btn btn-hero-outline-light">
+                                        استعرض المشاريع
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="hero-decoration">
-            <div class="hero-shape hero-shape-1"></div>
-            <div class="hero-shape hero-shape-2"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
     </section>
 
