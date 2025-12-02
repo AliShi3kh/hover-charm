@@ -57,8 +57,9 @@ img {
 }
 
 /* ========================================
-   Header Styles
+   Unified Header Styles
    ======================================== */
+.webyan-header,
 .store-header {
     background-color: var(--webyan-white);
     box-shadow: var(--shadow-sm);
@@ -67,23 +68,29 @@ img {
     z-index: 1000;
 }
 
+.webyan-header .navbar,
 .store-header .navbar {
-    padding: 1rem 0;
+    padding: 0.75rem 0;
 }
 
 .header-logo {
-    height: 45px;
+    height: 42px;
     width: auto;
 }
 
+.webyan-header .nav-link,
 .store-header .nav-link {
     color: var(--webyan-text-dark);
     font-weight: 500;
     padding: 0.5rem 1rem;
-    margin: 0 0.25rem;
+    margin: 0 0.15rem;
     border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    transition: var(--transition);
 }
 
+.webyan-header .nav-link:hover,
+.webyan-header .nav-link.active,
 .store-header .nav-link:hover,
 .store-header .nav-link.active {
     color: var(--webyan-dark-blue);
@@ -93,7 +100,56 @@ img {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
+}
+
+.btn-header-cart {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--webyan-light-gray);
+    color: var(--webyan-text-dark);
+    border: none;
+    transition: var(--transition);
+    font-size: 1.1rem;
+}
+
+.btn-header-cart:hover {
+    background-color: var(--webyan-dark-blue);
+    color: var(--webyan-white);
+}
+
+.btn-donations-cart:hover {
+    background-color: var(--webyan-success);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-badge-store {
+    background-color: var(--webyan-dark-blue);
+    color: var(--webyan-white);
+}
+
+.cart-badge-donations {
+    background-color: var(--webyan-success);
+    color: var(--webyan-white);
 }
 
 .btn-cart {
