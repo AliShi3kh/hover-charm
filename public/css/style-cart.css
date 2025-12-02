@@ -245,6 +245,23 @@ body {
     background-color: var(--webyan-white);
     padding: 1.5rem 0;
     border-bottom: 1px solid var(--webyan-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.breadcrumb-pattern-right {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.breadcrumb-pattern-right img {
+    height: 100%;
+    width: auto;
 }
 
 .breadcrumb {
