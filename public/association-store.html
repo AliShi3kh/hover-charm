@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="متجر الجمعية - منتجات وخدمات تصنع أثراً مستداماً">
+    <title>متجر الجمعية | منصة ويبيان</title>
+    
+    <!-- Bootstrap 5 RTL CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts - Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/store.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="store-header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">
+                    <img src="images/webyan-logo.png" alt="منصة ويبيان" class="header-logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#products">المنتجات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">الخدمات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="donations-portal.html">بوابة التبرعات</a>
+                        </li>
+                    </ul>
+                    <div class="header-actions">
+                        <a href="cart.html" class="btn btn-cart">
+                            <i class="bi bi-cart3"></i>
+                            <span class="cart-badge">3</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <span class="hero-badge">متجر الجمعية</span>
+                    <h1 class="hero-title">منتج واحد يصنع أثرًا مستدامًا</h1>
+                    <p class="hero-description">
+                        نقدم لكم مجموعة متنوعة من المنتجات والخدمات التي تساهم في دعم برامج الجمعية وتحقيق رسالتها في خدمة المجتمع.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn btn-primary-custom">
+                            <i class="bi bi-box-seam"></i>
+                            تصفح المنتجات
+                        </a>
+                        <a href="#services" class="btn btn-outline-custom">
+                            <i class="bi bi-gear"></i>
+                            تصفح الخدمات
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-carousel-wrapper">
+                    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="hero-slide">
+                                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop" alt="منتجات المتجر">
+                                    <div class="slide-overlay">
+                                        <span class="slide-label">منتجات متميزة</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="hero-slide">
+                                    <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=600&h=400&fit=crop" alt="خدمات احترافية">
+                                    <div class="slide-overlay">
+                                        <span class="slide-label">خدمات احترافية</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="hero-slide">
+                                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=400&fit=crop" alt="حقائب تدريبية">
+                                    <div class="slide-overlay">
+                                        <span class="slide-label">حقائب تدريبية</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-decoration"></div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">تصنيفات المتجر</h2>
+                <p class="section-subtitle">اختر التصنيف المناسب لاحتياجاتك</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="bi bi-cup-hot"></i>
+                        </div>
+                        <h3 class="category-title">منتجات القهوة</h3>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <h3 class="category-title">ملفات وأدلة</h3>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="bi bi-gift"></i>
+                        </div>
+                        <h3 class="category-title">هدايا تعريفية</h3>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="bi bi-briefcase"></i>
+                        </div>
+                        <h3 class="category-title">حقائب تدريبية</h3>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="bi bi-book"></i>
+                        </div>
+                        <h3 class="category-title">الكتب والمطبوعات</h3>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="bi bi-palette"></i>
+                        </div>
+                        <h3 class="category-title">منتجات إبداعية</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">منتجاتنا</h2>
+                <p class="section-subtitle">منتجات متنوعة تدعم برامج الجمعية</p>
+            </div>
+            <div class="row g-4">
+                <!-- Product 1 -->
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=300&fit=crop" alt="قهوة عربية فاخرة" class="product-image">
+                            <span class="product-badge badge-product">منتج</span>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">قهوة عربية فاخرة</h3>
+                            <p class="product-description">قهوة عربية أصيلة محمصة بعناية من أجود الحبوب</p>
+                            <div class="product-price">75 ر.س</div>
+                            <div class="product-actions">
+                                <div class="quantity-control">
+                                    <button class="btn-qty" type="button">
+                                        <i class="bi bi-dash"></i>
+                                    </button>
+                                    <input type="number" class="qty-input" value="1" min="1">
+                                    <button class="btn-qty" type="button">
+                                        <i class="bi bi-plus"></i>
+                                    </button>
+                                </div>
+                                <button class="btn btn-add-cart">
+                                    <i class="bi bi-cart-plus"></i>
+                                    أضف للسلة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=300&fit=crop" alt="دليل العمل التطوعي" class="product-image">
+                            <span class="product-badge badge-product">منتج</span>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">دليل العمل التطوعي</h3>
+                            <p class="product-description">دليل شامل يحتوي على أساسيات وأفضل ممارسات التطوع</p>
+                            <div class="product-price">45 ر.س</div>
+                            <div class="product-actions">
+                                <div class="quantity-control">
+                                    <button class="btn-qty" type="button">
+                                        <i class="bi bi-dash"></i>
+                                    </button>
+                                    <input type="number" class="qty-input" value="1" min="1">
+                                    <button class="btn-qty" type="button">
+                                        <i class="bi bi-plus"></i>
+                                    </button>
+                                </div>
+                                <button class="btn btn-add-cart">
+                                    <i class="bi bi-cart-plus"></i>
+                                    أضف للسلة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400&h=300&fit=crop" alt="حقيبة هدايا تعريفية" class="product-image">
+                            <span class="product-badge badge-product">منتج</span>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">حقيبة هدايا تعريفية</h3>
+                            <p class="product-description">حقيبة أنيقة تحتوي على هدايا تعريفية بالجمعية</p>
+                            <div class="product-price">120 ر.س</div>
+                            <div class="product-actions">
+                                <div class="quantity-control">
+                                    <button class="btn-qty" type="button">
+                                        <i class="bi bi-dash"></i>
+                                    </button>
+                                    <input type="number" class="qty-input" value="1" min="1">
+                                    <button class="btn-qty" type="button">
+                                        <i class="bi bi-plus"></i>
+                                    </button>
+                                </div>
+                                <button class="btn btn-add-cart">
+                                    <i class="bi bi-cart-plus"></i>
+                                    أضف للسلة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?w=400&h=300&fit=crop" alt="حقيبة تدريبية متكاملة" class="product-image">
+                            <span class="product-badge badge-product">منتج</span>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">حقيبة تدريبية متكاملة</h3>
+                            <p class="product-description">حقيبة تدريبية شاملة للمدربين والمتدربين</p>
+                            <div class="product-price">250 ر.س</div>
+                            <div class="product-actions">
+                                <div class="quantity-control">
+                                    <button class="btn-qty" type="button">
+                                        <i class="bi bi-dash"></i>
+                                    </button>
+                                    <input type="number" class="qty-input" value="1" min="1">
+                                    <button class="btn-qty" type="button">
+                                        <i class="bi bi-plus"></i>
+                                    </button>
+                                </div>
+                                <button class="btn btn-add-cart">
+                                    <i class="bi bi-cart-plus"></i>
+                                    أضف للسلة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?w=400&h=300&fit=crop" alt="كتاب القيادة الفعالة" class="product-image">
+                            <span class="product-badge badge-product">منتج</span>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">كتاب القيادة الفعالة</h3>
+                            <p class="product-description">كتاب متخصص في مهارات القيادة للقطاع غير الربحي</p>
+                            <div class="product-price">85 ر.س</div>
+                            <div class="product-actions">
+                                <div class="quantity-control">
+                                    <button class="btn-qty" type="button">
+                                        <i class="bi bi-dash"></i>
+                                    </button>
+                                    <input type="number" class="qty-input" value="1" min="1">
+                                    <button class="btn-qty" type="button">
+                                        <i class="bi bi-plus"></i>
+                                    </button>
+                                </div>
+                                <button class="btn btn-add-cart">
+                                    <i class="bi bi-cart-plus"></i>
+                                    أضف للسلة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1531685250784-7569952593d2?w=400&h=300&fit=crop" alt="تمور فاخرة" class="product-image">
+                            <span class="product-badge badge-product">منتج</span>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">تمور فاخرة</h3>
+                            <p class="product-description">تمور سعودية فاخرة في علبة أنيقة</p>
+                            <div class="product-price">95 ر.س</div>
+                            <div class="product-actions">
+                                <div class="quantity-control">
+                                    <button class="btn-qty" type="button">
+                                        <i class="bi bi-dash"></i>
+                                    </button>
+                                    <input type="number" class="qty-input" value="1" min="1">
+                                    <button class="btn-qty" type="button">
+                                        <i class="bi bi-plus"></i>
+                                    </button>
+                                </div>
+                                <button class="btn btn-add-cart">
+                                    <i class="bi bi-cart-plus"></i>
+                                    أضف للسلة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=300&fit=crop" alt="ميدالية تذكارية" class="product-image">
+                            <span class="product-badge badge-product">منتج</span>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">ميدالية تذكارية</h3>
+                            <p class="product-description">ميدالية تذكارية بشعار الجمعية</p>
+                            <div class="product-price">35 ر.س</div>
+                            <div class="product-actions">
+                                <div class="quantity-control">
+                                    <button class="btn-qty" type="button">
+                                        <i class="bi bi-dash"></i>
+                                    </button>
+                                    <input type="number" class="qty-input" value="1" min="1">
+                                    <button class="btn-qty" type="button">
+                                        <i class="bi bi-plus"></i>
+                                    </button>
+                                </div>
+                                <button class="btn btn-add-cart">
+                                    <i class="bi bi-cart-plus"></i>
+                                    أضف للسلة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop" alt="دفتر ملاحظات فاخر" class="product-image">
+                            <span class="product-badge badge-product">منتج</span>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">دفتر ملاحظات فاخر</h3>
+                            <p class="product-description">دفتر ملاحظات بتصميم أنيق وجودة عالية</p>
+                            <div class="product-price">55 ر.س</div>
+                            <div class="product-actions">
+                                <div class="quantity-control">
+                                    <button class="btn-qty" type="button">
+                                        <i class="bi bi-dash"></i>
+                                    </button>
+                                    <input type="number" class="qty-input" value="1" min="1">
+                                    <button class="btn-qty" type="button">
+                                        <i class="bi bi-plus"></i>
+                                    </button>
+                                </div>
+                                <button class="btn btn-add-cart">
+                                    <i class="bi bi-cart-plus"></i>
+                                    أضف للسلة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-footer">
+                <a href="#" class="btn btn-view-all">
+                    عرض جميع المنتجات
+                    <i class="bi bi-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">خدماتنا</h2>
+                <p class="section-subtitle">خدمات احترافية تلبي احتياجاتكم</p>
+            </div>
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-person-workspace"></i>
+                        </div>
+                        <div class="service-content">
+                            <span class="service-badge">خدمة</span>
+                            <h3 class="service-title">استشارات إدارية</h3>
+                            <p class="service-description">
+                                استشارات متخصصة في تطوير المنظمات غير الربحية وتحسين أدائها
+                            </p>
+                            <div class="service-price">500 ر.س</div>
+                            <button class="btn btn-request-service">
+                                اطلب الخدمة
+                                <i class="bi bi-arrow-left"></i>
+                            </button>
+                            <p class="service-note">
+                                <i class="bi bi-info-circle"></i>
+                                الخدمة يمكن طلبها مرة واحدة لكل عملية شراء
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-mortarboard"></i>
+                        </div>
+                        <div class="service-content">
+                            <span class="service-badge">خدمة</span>
+                            <h3 class="service-title">دورات تدريبية</h3>
+                            <p class="service-description">
+                                برامج تدريبية متخصصة للعاملين في القطاع غير الربحي
+                            </p>
+                            <div class="service-price">750 ر.س</div>
+                            <button class="btn btn-request-service">
+                                اطلب الخدمة
+                                <i class="bi bi-arrow-left"></i>
+                            </button>
+                            <p class="service-note">
+                                <i class="bi bi-info-circle"></i>
+                                الخدمة يمكن طلبها مرة واحدة لكل عملية شراء
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-calendar-event"></i>
+                        </div>
+                        <div class="service-content">
+                            <span class="service-badge">خدمة</span>
+                            <h3 class="service-title">تنظيم فعاليات</h3>
+                            <p class="service-description">
+                                تنظيم وإدارة الفعاليات والمؤتمرات بشكل احترافي
+                            </p>
+                            <div class="service-price">1,200 ر.س</div>
+                            <button class="btn btn-request-service">
+                                اطلب الخدمة
+                                <i class="bi bi-arrow-left"></i>
+                            </button>
+                            <p class="service-note">
+                                <i class="bi bi-info-circle"></i>
+                                الخدمة يمكن طلبها مرة واحدة لكل عملية شراء
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-palette2"></i>
+                        </div>
+                        <div class="service-content">
+                            <span class="service-badge">خدمة</span>
+                            <h3 class="service-title">تصميم الهوية البصرية</h3>
+                            <p class="service-description">
+                                تصميم هوية بصرية متكاملة للمنظمات والمبادرات
+                            </p>
+                            <div class="service-price">2,500 ر.س</div>
+                            <button class="btn btn-request-service">
+                                اطلب الخدمة
+                                <i class="bi bi-arrow-left"></i>
+                            </button>
+                            <p class="service-note">
+                                <i class="bi bi-info-circle"></i>
+                                الخدمة يمكن طلبها مرة واحدة لكل عملية شراء
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-clipboard-data"></i>
+                        </div>
+                        <div class="service-content">
+                            <span class="service-badge">خدمة</span>
+                            <h3 class="service-title">دراسات وأبحاث</h3>
+                            <p class="service-description">
+                                إعداد الدراسات والأبحاث المتخصصة في القطاع غير الربحي
+                            </p>
+                            <div class="service-price">3,000 ر.س</div>
+                            <button class="btn btn-request-service">
+                                اطلب الخدمة
+                                <i class="bi bi-arrow-left"></i>
+                            </button>
+                            <p class="service-note">
+                                <i class="bi bi-info-circle"></i>
+                                الخدمة يمكن طلبها مرة واحدة لكل عملية شراء
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-megaphone"></i>
+                        </div>
+                        <div class="service-content">
+                            <span class="service-badge">خدمة</span>
+                            <h3 class="service-title">التسويق والإعلام</h3>
+                            <p class="service-description">
+                                حملات تسويقية وإعلامية للجمعيات والمبادرات الخيرية
+                            </p>
+                            <div class="service-price">1,800 ر.س</div>
+                            <button class="btn btn-request-service">
+                                اطلب الخدمة
+                                <i class="bi bi-arrow-left"></i>
+                            </button>
+                            <p class="service-note">
+                                <i class="bi bi-info-circle"></i>
+                                الخدمة يمكن طلبها مرة واحدة لكل عملية شراء
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-footer">
+                <a href="#" class="btn btn-view-all">
+                    عرض جميع الخدمات
+                    <i class="bi bi-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics-section">
+        <div class="container">
+            <div class="section-header section-header-light">
+                <h2 class="section-title">أرقام تعكس أثر المتجر</h2>
+                <p class="section-subtitle">نفخر بما حققناه معكم</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-lg-3">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="bi bi-box-seam"></i>
+                        </div>
+                        <div class="stat-number">156</div>
+                        <div class="stat-label">منتج متاح</div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="bi bi-gear"></i>
+                        </div>
+                        <div class="stat-number">42</div>
+                        <div class="stat-label">خدمة احترافية</div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="bi bi-bag-check"></i>
+                        </div>
+                        <div class="stat-number">2,847</div>
+                        <div class="stat-label">طلب منفذ</div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="bi bi-emoji-smile"></i>
+                        </div>
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">نسبة رضا العملاء</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">قالوا عن متجر الجمعية</h2>
+                <p class="section-subtitle">آراء عملائنا ومستفيدينا</p>
+            </div>
+            <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-quote">
+                                        <i class="bi bi-quote"></i>
+                                    </div>
+                                    <p class="testimonial-text">
+                                        تجربة رائعة مع متجر الجمعية، المنتجات ذات جودة عالية والخدمات احترافية. أنصح الجميع بالتعامل معهم.
+                                    </p>
+                                    <div class="testimonial-author">
+                                        <div class="author-avatar">
+                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="أحمد محمد">
+                                        </div>
+                                        <div class="author-info">
+                                            <h4 class="author-name">أحمد محمد</h4>
+                                            <span class="author-role">عميل</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-quote">
+                                        <i class="bi bi-quote"></i>
+                                    </div>
+                                    <p class="testimonial-text">
+                                        الحقائب التدريبية ممتازة ومحتواها غني ومفيد جداً. ساعدتنا في تطوير فريق العمل بشكل ملحوظ.
+                                    </p>
+                                    <div class="testimonial-author">
+                                        <div class="author-avatar">
+                                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="سارة العتيبي">
+                                        </div>
+                                        <div class="author-info">
+                                            <h4 class="author-name">سارة العتيبي</h4>
+                                            <span class="author-role">مديرة منظمة</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-quote">
+                                        <i class="bi bi-quote"></i>
+                                    </div>
+                                    <p class="testimonial-text">
+                                        خدمة الاستشارات كانت نقطة تحول لجمعيتنا. فريق محترف وتوصيات عملية قابلة للتطبيق.
+                                    </p>
+                                    <div class="testimonial-author">
+                                        <div class="author-avatar">
+                                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="خالد الشمري">
+                                        </div>
+                                        <div class="author-info">
+                                            <h4 class="author-name">خالد الشمري</h4>
+                                            <span class="author-role">رئيس جمعية</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2"></button>
+                    </div>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">هل تبحث عن فرص للتبرع؟</h2>
+                <p class="cta-description">زر بوابة التبرعات واكتشف مشاريعنا التي تصنع الفرق</p>
+                <a href="donations-portal.html" class="btn btn-cta">
+                    <i class="bi bi-heart"></i>
+                    زيارة بوابة التبرعات
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="store-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <img src="images/webyan-logo.png" alt="منصة ويبيان" class="footer-logo">
+                        <p class="footer-about">
+                            متجر الجمعية هو منصة متكاملة لعرض وبيع منتجات وخدمات الجمعيات غير الربحية، بهدف دعم برامجها ورسالتها في خدمة المجتمع.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h4 class="footer-title">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#products">المنتجات</a></li>
+                        <li><a href="#services">الخدمات</a></li>
+                        <li><a href="#">عن الجمعية</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h4 class="footer-title">الدعم</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">سياسة الإرجاع</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">تواصل معنا</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="footer-title">تواصل معنا</h4>
+                    <div class="footer-contact">
+                        <p><i class="bi bi-geo-alt"></i> المملكة العربية السعودية - الرياض</p>
+                        <p><i class="bi bi-telephone"></i> 920000000</p>
+                        <p><i class="bi bi-envelope"></i> info@association.org.sa</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة © 2024 متجر الجمعية | مدعوم بمنصة ويبيان</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
