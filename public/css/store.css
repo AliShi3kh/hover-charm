@@ -187,6 +187,113 @@ img {
     border-radius: 50%;
 }
 
+/* Header Cart Buttons with Labels */
+.btn-header-cart-labeled {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background-color: var(--webyan-light-gray);
+    color: var(--webyan-text-dark);
+    border: 1px solid var(--webyan-border);
+    transition: var(--transition);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.btn-header-cart-labeled:hover {
+    background-color: var(--webyan-dark-blue);
+    color: var(--webyan-white);
+    border-color: var(--webyan-dark-blue);
+}
+
+.btn-header-cart-labeled i {
+    font-size: 1.1rem;
+}
+
+.cart-label {
+    font-weight: 600;
+}
+
+.cart-badge-inline {
+    background-color: var(--webyan-dark-blue);
+    color: var(--webyan-white);
+    padding: 2px 8px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+/* Donations Cart - Green Theme */
+.btn-donations-cart-labeled {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--webyan-success);
+    border-color: var(--webyan-success);
+}
+
+.btn-donations-cart-labeled:hover {
+    background-color: var(--webyan-success);
+    color: var(--webyan-white);
+    border-color: var(--webyan-success);
+}
+
+.cart-badge-green {
+    background-color: var(--webyan-success);
+    color: var(--webyan-white);
+}
+
+/* Auth Buttons */
+.header-auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 1rem;
+    padding-right: 1rem;
+    border-right: 1px solid var(--webyan-border);
+}
+
+.btn-auth-login {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background-color: transparent;
+    color: var(--webyan-dark-blue);
+    border: 1px solid var(--webyan-dark-blue);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-auth-login:hover {
+    background-color: var(--webyan-dark-blue);
+    color: var(--webyan-white);
+}
+
+.btn-auth-register {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: var(--webyan-gradient);
+    color: var(--webyan-white);
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-auth-register:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    color: var(--webyan-white);
+}
+
 /* ========================================
    Hero Section
    ======================================== */
