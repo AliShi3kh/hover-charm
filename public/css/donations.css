@@ -89,6 +89,63 @@ body {
     gap: 0.75rem;
 }
 
+/* Header Cart Buttons with Labels */
+.btn-header-cart-labeled {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background-color: var(--webyan-gray-100);
+    color: var(--webyan-gray-700);
+    border: 1px solid var(--webyan-gray-200);
+    transition: var(--webyan-transition);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.btn-header-cart-labeled:hover {
+    background-color: var(--webyan-primary);
+    color: var(--webyan-white);
+    border-color: var(--webyan-primary);
+}
+
+.btn-header-cart-labeled i {
+    font-size: 1.1rem;
+}
+
+.cart-label {
+    font-weight: 600;
+}
+
+.cart-badge-inline {
+    background-color: var(--webyan-primary);
+    color: var(--webyan-white);
+    padding: 2px 8px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+/* Donations Cart - Green Theme */
+.btn-donations-cart-labeled {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--webyan-accent);
+    border-color: var(--webyan-accent);
+}
+
+.btn-donations-cart-labeled:hover {
+    background-color: var(--webyan-accent);
+    color: var(--webyan-white);
+    border-color: var(--webyan-accent);
+}
+
+.cart-badge-green {
+    background-color: var(--webyan-accent);
+    color: var(--webyan-white);
+}
+
+/* Legacy icon-only cart buttons */
 .btn-header-cart {
     position: relative;
     width: 42px;
@@ -604,20 +661,21 @@ body {
    Categories Section
    ============================================ */
 .categories-section {
-    padding: 50px 0;
+    padding: 40px 0;
     background: var(--webyan-gray-100);
 }
 
 .category-card {
     background: var(--webyan-white);
     border-radius: var(--webyan-radius);
-    padding: 24px 18px;
+    padding: 20px 14px;
     text-align: center;
     border: 1px solid var(--webyan-gray-200);
     transition: var(--webyan-transition);
     height: 100%;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .category-card::before {
@@ -643,19 +701,19 @@ body {
 }
 
 .category-icon {
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
     background: linear-gradient(135deg, var(--webyan-primary), var(--webyan-secondary));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 14px;
+    margin: 0 auto 12px;
     transition: var(--webyan-transition);
 }
 
 .category-icon i {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: var(--webyan-white);
 }
 
@@ -664,16 +722,16 @@ body {
 }
 
 .category-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: var(--webyan-gray-800);
     margin-bottom: 6px;
 }
 
 .category-description {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--webyan-gray-600);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     line-height: 1.5;
 }
 
@@ -1078,13 +1136,198 @@ body {
 }
 
 /* ============================================
-   Sub Projects Section - With Images
+   Sub Projects Section - Professional Design
    ============================================ */
 .sub-projects-section {
     padding: 50px 0;
     background: var(--webyan-gray-100);
 }
 
+/* New Professional Sub Donation Cards */
+.sub-donation-card {
+    background: var(--webyan-white);
+    border-radius: var(--webyan-radius);
+    overflow: hidden;
+    border: 1px solid var(--webyan-gray-200);
+    transition: var(--webyan-transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-donation-card:hover {
+    border-color: var(--webyan-secondary);
+    box-shadow: var(--webyan-shadow-lg);
+    transform: translateY(-5px);
+}
+
+.sub-donation-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.sub-donation-header img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    transition: var(--webyan-transition);
+}
+
+.sub-donation-card:hover .sub-donation-header img {
+    transform: scale(1.05);
+}
+
+.sub-donation-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--webyan-primary);
+    color: var(--webyan-white);
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.sub-badge-orange {
+    background: var(--webyan-warning);
+}
+
+.sub-badge-red {
+    background: var(--webyan-danger);
+}
+
+.sub-badge-green {
+    background: var(--webyan-accent);
+}
+
+.sub-donation-body {
+    padding: 14px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-donation-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--webyan-gray-800);
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.sub-donation-parent {
+    font-size: 0.7rem;
+    color: var(--webyan-gray-500);
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.sub-donation-progress-wrapper {
+    margin-bottom: 12px;
+}
+
+.sub-donation-progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 0.7rem;
+}
+
+.sub-progress-current {
+    font-weight: 700;
+    color: var(--webyan-primary);
+}
+
+.sub-progress-target {
+    color: var(--webyan-gray-500);
+}
+
+.sub-donation-progress {
+    height: 6px;
+    background: var(--webyan-gray-200);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.sub-donation-progress .progress-bar {
+    background: linear-gradient(90deg, var(--webyan-primary), var(--webyan-secondary));
+    border-radius: 50px;
+}
+
+.sub-donation-amounts {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sub-preset-btn {
+    background: var(--webyan-gray-100);
+    color: var(--webyan-gray-700);
+    border: 1px solid var(--webyan-gray-200);
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    transition: var(--webyan-transition);
+}
+
+.sub-preset-btn:hover,
+.sub-preset-btn.active {
+    background: var(--webyan-primary);
+    color: var(--webyan-white);
+    border-color: var(--webyan-primary);
+}
+
+.sub-donation-footer {
+    padding: 12px 14px;
+    background: var(--webyan-gray-100);
+    display: flex;
+    gap: 8px;
+}
+
+.btn-sub-donate {
+    flex: 1;
+    background: var(--webyan-accent);
+    color: var(--webyan-white);
+    padding: 8px 12px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: var(--webyan-transition);
+}
+
+.btn-sub-donate:hover {
+    background: var(--webyan-accent-light);
+    color: var(--webyan-white);
+}
+
+.btn-sub-cart {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--webyan-gray-300);
+    background: var(--webyan-white);
+    color: var(--webyan-gray-600);
+    transition: var(--webyan-transition);
+}
+
+.btn-sub-cart:hover {
+    background: var(--webyan-primary);
+    border-color: var(--webyan-primary);
+    color: var(--webyan-white);
+}
+
+/* Legacy Sub Project Card Styles (kept for compatibility) */
 .sub-project-card {
     background: var(--webyan-white);
     border-radius: var(--webyan-radius);
