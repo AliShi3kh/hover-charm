@@ -778,7 +778,7 @@ img {
 .service-card {
     background-color: var(--webyan-light-gray);
     border-radius: var(--radius-lg);
-    padding: 2rem;
+    padding: 1.5rem;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -794,16 +794,16 @@ img {
 }
 
 .service-icon {
-    width: 72px;
-    height: 72px;
+    width: 56px;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--webyan-gradient);
     color: var(--webyan-white);
-    font-size: 2rem;
+    font-size: 1.5rem;
     border-radius: var(--radius-md);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     transition: var(--transition);
 }
 
@@ -819,36 +819,40 @@ img {
 
 .service-badge {
     display: inline-block;
-    padding: 0.35rem 0.75rem;
+    padding: 0.25rem 0.6rem;
     background-color: rgba(39, 196, 244, 0.15);
     color: var(--webyan-sky-blue);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
     border-radius: 50px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     align-self: flex-start;
 }
 
 .service-title {
-    font-size: 1.125rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--webyan-text-dark);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .service-description {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--webyan-text-muted);
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
     flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .service-price {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 800;
     color: var(--webyan-dark-blue);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .btn-request-service {
@@ -856,35 +860,20 @@ img {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.875rem 1.5rem;
+    padding: 0.65rem 1rem;
     background: var(--webyan-gradient);
     color: var(--webyan-white);
     font-weight: 600;
+    font-size: 0.85rem;
     border: none;
     border-radius: var(--radius-sm);
     cursor: pointer;
     transition: var(--transition);
-    margin-bottom: 1rem;
 }
 
 .btn-request-service:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(29, 59, 139, 0.3);
-}
-
-.service-note {
-    font-size: 0.8rem;
-    color: var(--webyan-text-muted);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 0;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--webyan-border-gray);
-}
-
-.service-note i {
-    color: var(--webyan-sky-blue);
 }
 
 /* ========================================
@@ -956,10 +945,14 @@ img {
     background-color: var(--webyan-light-gray);
 }
 
+.testimonials-slider-wrapper {
+    position: relative;
+}
+
 .testimonial-card {
     background-color: var(--webyan-white);
     border-radius: var(--radius-lg);
-    padding: 1.75rem;
+    padding: 1.5rem;
     height: 100%;
     box-shadow: var(--shadow-sm);
     position: relative;
@@ -976,41 +969,46 @@ img {
 }
 
 .testimonial-header {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .rating-stars {
     display: flex;
-    gap: 3px;
+    gap: 2px;
 }
 
 .rating-stars i {
     color: #FFD700;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .testimonial-text {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--webyan-text-dark);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
     flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .testimonial-author {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding-top: 1rem;
+    gap: 10px;
+    padding-top: 0.75rem;
     border-top: 1px solid var(--webyan-border-gray);
 }
 
 .author-avatar {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid var(--webyan-sky-blue);
+    border: 2px solid var(--webyan-sky-blue);
+    flex-shrink: 0;
 }
 
 .author-avatar img {
@@ -1024,19 +1022,19 @@ img {
 }
 
 .author-name {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: var(--webyan-text-dark);
-    margin: 0 0 0.25rem;
+    margin: 0 0 0.15rem;
 }
 
 .author-role {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     color: var(--webyan-text-muted);
 }
 
 /* Testimonials Carousel Controls */
-.carousel-controls {
+.testimonials-controls {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1044,30 +1042,28 @@ img {
     margin-top: 2rem;
 }
 
-.testimonials-section .carousel-control-prev,
-.testimonials-section .carousel-control-next {
-    position: static;
-    width: 48px;
-    height: 48px;
+.carousel-control-btn {
+    width: 44px;
+    height: 44px;
     background-color: var(--webyan-white);
+    border: none;
     border-radius: 50%;
-    opacity: 1;
     box-shadow: var(--shadow-sm);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--webyan-dark-blue);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    cursor: pointer;
     transition: var(--transition);
 }
 
-.testimonials-section .carousel-control-prev:hover,
-.testimonials-section .carousel-control-next:hover {
+.carousel-control-btn:hover {
     background-color: var(--webyan-dark-blue);
     color: var(--webyan-white);
 }
 
-.testimonials-section .carousel-indicators {
+.testimonials-controls .carousel-indicators {
     position: static;
     margin: 0;
     display: flex;
@@ -1075,19 +1071,25 @@ img {
     gap: 0.5rem;
 }
 
-.testimonials-section .carousel-indicators button {
+.testimonials-controls .carousel-indicators button {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background-color: var(--webyan-border-gray);
+    border: none;
     opacity: 1;
     transition: var(--transition);
 }
 
-.testimonials-section .carousel-indicators button.active {
-    width: 32px;
+.testimonials-controls .carousel-indicators button.active {
+    width: 28px;
     border-radius: 50px;
     background-color: var(--webyan-dark-blue);
+}
+
+/* Carousel animation */
+#testimonialsSlider .carousel-item {
+    transition: transform 0.6s ease-in-out;
 }
 
 /* ========================================
