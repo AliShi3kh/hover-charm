@@ -145,6 +145,57 @@ body {
     color: var(--webyan-white);
 }
 
+/* Auth Buttons */
+.header-auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 1rem;
+    padding-right: 1rem;
+    border-right: 1px solid var(--webyan-gray-200);
+}
+
+.btn-auth-login {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background-color: transparent;
+    color: var(--webyan-primary);
+    border: 1px solid var(--webyan-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--webyan-transition);
+}
+
+.btn-auth-login:hover {
+    background-color: var(--webyan-primary);
+    color: var(--webyan-white);
+}
+
+.btn-auth-register {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--webyan-primary) 0%, var(--webyan-secondary) 100%);
+    color: var(--webyan-white);
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--webyan-transition);
+}
+
+.btn-auth-register:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    color: var(--webyan-white);
+}
+
 /* Legacy icon-only cart buttons */
 .btn-header-cart {
     position: relative;
