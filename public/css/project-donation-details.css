@@ -1,0 +1,1132 @@
+/* ========================================
+   Webyan Donation Project Details Page
+   ======================================== */
+
+/* CSS Variables */
+:root {
+    --webyan-primary: #1D3B8B;
+    --webyan-secondary: #27C4F4;
+    --webyan-light-bg: #F5F7FA;
+    --webyan-border-color: #E9ECEF;
+    --webyan-text-dark: #212529;
+    --webyan-text-muted: #6c757d;
+    --webyan-success: #28a745;
+    --webyan-warning: #ffc107;
+    --webyan-card-radius: 16px;
+    --webyan-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    --webyan-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --webyan-transition: all 0.3s ease;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--webyan-light-bg);
+    color: var(--webyan-text-dark);
+    line-height: 1.7;
+}
+
+/* Header Styles */
+.main-header {
+    background-color: #fff;
+    box-shadow: var(--webyan-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    gap: 20px;
+}
+
+.header-logo .logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-nav .nav-link {
+    color: var(--webyan-text-dark);
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--webyan-transition);
+}
+
+.header-nav .nav-link:hover,
+.header-nav .nav-link.active {
+    background-color: var(--webyan-primary);
+    color: #fff;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-header-cart {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background-color: var(--webyan-light-bg);
+    border-radius: 8px;
+    color: var(--webyan-text-dark);
+    text-decoration: none;
+    font-size: 14px;
+    transition: var(--webyan-transition);
+    position: relative;
+}
+
+.btn-header-cart:hover {
+    background-color: var(--webyan-border-color);
+    color: var(--webyan-primary);
+}
+
+.btn-header-cart .cart-label {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .btn-header-cart .cart-label {
+        display: inline;
+    }
+}
+
+.btn-header-cart .cart-badge {
+    background-color: var(--webyan-primary);
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+}
+
+.btn-donations-cart .cart-badge.donations-badge {
+    background-color: var(--webyan-success);
+}
+
+.btn-donations-cart:hover {
+    color: var(--webyan-success);
+}
+
+.header-auth-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-auth-login {
+    border: 1px solid var(--webyan-primary);
+    color: var(--webyan-primary);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: var(--webyan-transition);
+}
+
+.btn-auth-login:hover {
+    background-color: var(--webyan-primary);
+    color: #fff;
+}
+
+.btn-auth-register {
+    background-color: var(--webyan-primary);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: var(--webyan-transition);
+}
+
+.btn-auth-register:hover {
+    background-color: #152d6b;
+    color: #fff;
+}
+
+.mobile-menu-toggle {
+    font-size: 24px;
+    color: var(--webyan-primary);
+}
+
+/* Breadcrumb Section */
+.breadcrumb-section {
+    background-color: var(--webyan-light-bg);
+    padding: 16px 0;
+    border-bottom: 1px solid var(--webyan-border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.breadcrumb-pattern-right {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.breadcrumb-pattern-right img {
+    height: 80px;
+    width: auto;
+}
+
+.breadcrumb {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumb-item a {
+    color: var(--webyan-text-muted);
+    text-decoration: none;
+    transition: var(--webyan-transition);
+}
+
+.breadcrumb-item a:hover {
+    color: var(--webyan-primary);
+}
+
+.breadcrumb-item.active {
+    color: var(--webyan-primary);
+    font-weight: 500;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "←";
+    color: var(--webyan-text-muted);
+}
+
+/* Stepper Section */
+.stepper-section {
+    background-color: #fff;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--webyan-border-color);
+}
+
+.stepper-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+.stepper-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.stepper-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--webyan-border-color);
+    color: var(--webyan-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    transition: var(--webyan-transition);
+}
+
+.stepper-item.active .stepper-circle {
+    background-color: var(--webyan-primary);
+    color: #fff;
+}
+
+.stepper-label {
+    font-size: 14px;
+    color: var(--webyan-text-muted);
+    font-weight: 500;
+}
+
+.stepper-item.active .stepper-label {
+    color: var(--webyan-primary);
+}
+
+.stepper-line {
+    width: 100px;
+    height: 3px;
+    background-color: var(--webyan-border-color);
+    margin: 0 16px;
+    margin-bottom: 24px;
+}
+
+/* Main Content */
+.main-content {
+    padding: 32px 0;
+}
+
+/* Donation Card */
+.donation-card {
+    background-color: #fff;
+    border-radius: var(--webyan-card-radius);
+    box-shadow: var(--webyan-shadow);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.card-title-custom {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--webyan-text-dark);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--webyan-light-bg);
+}
+
+/* Amount Buttons */
+.amount-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.btn-amount {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 12px;
+    border: 2px solid var(--webyan-border-color);
+    border-radius: 12px;
+    background-color: #fff;
+    color: var(--webyan-text-dark);
+    transition: var(--webyan-transition);
+}
+
+.btn-amount:hover {
+    border-color: var(--webyan-secondary);
+    background-color: rgba(39, 196, 244, 0.05);
+}
+
+.btn-amount.active {
+    border-color: var(--webyan-primary);
+    background-color: rgba(29, 59, 139, 0.05);
+    color: var(--webyan-primary);
+}
+
+.btn-amount .amount-value {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.btn-amount .amount-currency {
+    font-size: 12px;
+    color: var(--webyan-text-muted);
+}
+
+/* Custom Amount */
+.custom-amount-wrapper {
+    margin-bottom: 20px;
+}
+
+.custom-amount-wrapper .input-group {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.custom-amount-wrapper .input-group-text {
+    background-color: var(--webyan-light-bg);
+    border-color: var(--webyan-border-color);
+    color: var(--webyan-text-muted);
+    font-weight: 500;
+}
+
+.custom-amount-wrapper .form-control {
+    border-color: var(--webyan-border-color);
+    padding: 12px 16px;
+}
+
+.custom-amount-wrapper .form-control:focus {
+    border-color: var(--webyan-secondary);
+    box-shadow: 0 0 0 3px rgba(39, 196, 244, 0.15);
+}
+
+.custom-amount-wrapper .form-text {
+    display: block;
+    margin-top: 8px;
+    color: var(--webyan-text-muted);
+    font-size: 13px;
+}
+
+/* Gift Section */
+.gift-section {
+    padding: 16px;
+    background-color: var(--webyan-light-bg);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.gift-section .form-check-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--webyan-text-dark);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.gift-section .form-check-label i {
+    color: var(--webyan-secondary);
+    font-size: 18px;
+}
+
+.gift-section .form-check-input:checked {
+    background-color: var(--webyan-primary);
+    border-color: var(--webyan-primary);
+}
+
+.gift-form {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--webyan-border-color);
+}
+
+.gift-form .form-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--webyan-text-dark);
+}
+
+.gift-form .form-control {
+    border-color: var(--webyan-border-color);
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+.gift-form .form-control:focus {
+    border-color: var(--webyan-secondary);
+    box-shadow: 0 0 0 3px rgba(39, 196, 244, 0.15);
+}
+
+/* Donor Info Section */
+.donor-info-section {
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--webyan-primary);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--webyan-border-color);
+}
+
+.donor-info-section .form-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--webyan-text-dark);
+}
+
+.donor-info-section .form-control {
+    border-color: var(--webyan-border-color);
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+.donor-info-section .form-control:focus {
+    border-color: var(--webyan-secondary);
+    box-shadow: 0 0 0 3px rgba(39, 196, 244, 0.15);
+}
+
+.donor-info-section .input-group-text {
+    background-color: var(--webyan-light-bg);
+    border-color: var(--webyan-border-color);
+    color: var(--webyan-text-muted);
+}
+
+/* Donation Buttons */
+.donation-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-donate-now {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--webyan-primary);
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: var(--webyan-transition);
+}
+
+.btn-donate-now:hover {
+    background-color: #152d6b;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(29, 59, 139, 0.3);
+}
+
+.btn-add-to-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #fff;
+    color: var(--webyan-primary);
+    border: 2px solid var(--webyan-primary);
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: var(--webyan-transition);
+}
+
+.btn-add-to-cart:hover {
+    background-color: var(--webyan-primary);
+    color: #fff;
+}
+
+/* Quick Stats */
+.quick-stats {
+    margin-top: 24px;
+}
+
+.stat-card {
+    background-color: #fff;
+    border-radius: var(--webyan-card-radius);
+    box-shadow: var(--webyan-shadow);
+    padding: 20px;
+    text-align: center;
+    transition: var(--webyan-transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--webyan-shadow-hover);
+}
+
+.stat-card i {
+    font-size: 28px;
+    color: var(--webyan-secondary);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.stat-card .stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--webyan-primary);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.stat-card .stat-label {
+    font-size: 13px;
+    color: var(--webyan-text-muted);
+}
+
+/* Project Details Card */
+.project-details-card {
+    background-color: #fff;
+    border-radius: var(--webyan-card-radius);
+    box-shadow: var(--webyan-shadow);
+    overflow: hidden;
+}
+
+.project-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.project-status-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.project-status-badge.available {
+    background-color: var(--webyan-success);
+    color: #fff;
+}
+
+.project-status-badge.completed {
+    background-color: var(--webyan-text-muted);
+    color: #fff;
+}
+
+.project-progress-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(29, 59, 139, 0.9), transparent);
+    padding: 40px 16px 12px;
+    text-align: left;
+}
+
+.project-progress-overlay .progress-percentage {
+    background-color: var(--webyan-secondary);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Project Info */
+.project-info {
+    padding: 24px;
+}
+
+.project-header {
+    margin-bottom: 16px;
+}
+
+.project-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--webyan-text-dark);
+    margin-bottom: 8px;
+}
+
+.project-id {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--webyan-text-muted);
+    font-size: 14px;
+}
+
+.project-id i {
+    color: var(--webyan-secondary);
+}
+
+.project-description {
+    color: var(--webyan-text-muted);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+/* Progress Section */
+.project-progress-section {
+    margin-bottom: 24px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.progress-label {
+    font-size: 14px;
+    color: var(--webyan-text-muted);
+}
+
+.progress-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--webyan-primary);
+}
+
+.project-progress-section .progress {
+    height: 10px;
+    border-radius: 10px;
+    background-color: var(--webyan-border-color);
+}
+
+.project-progress-section .progress-bar {
+    background: linear-gradient(90deg, var(--webyan-primary), var(--webyan-secondary));
+    border-radius: 10px;
+}
+
+/* Project Stats Grid */
+.project-stats-grid {
+    margin-bottom: 24px;
+}
+
+.project-stat-item {
+    background-color: var(--webyan-light-bg);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    height: 100%;
+}
+
+.project-stat-item .stat-title {
+    display: block;
+    font-size: 13px;
+    color: var(--webyan-text-muted);
+    margin-bottom: 6px;
+}
+
+.project-stat-item .stat-amount {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--webyan-text-dark);
+}
+
+.project-stat-item .stat-amount.highlight {
+    color: var(--webyan-primary);
+}
+
+/* Partner Section */
+.partner-section {
+    border-top: 1px solid var(--webyan-border-color);
+    padding-top: 20px;
+}
+
+.partner-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--webyan-text-dark);
+    margin-bottom: 12px;
+}
+
+.partner-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background-color: var(--webyan-light-bg);
+    border-radius: 12px;
+}
+
+.partner-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.partner-info {
+    flex: 1;
+}
+
+.partner-name {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--webyan-text-dark);
+    margin-bottom: 4px;
+}
+
+.partner-link {
+    font-size: 13px;
+    color: var(--webyan-secondary);
+    text-decoration: none;
+}
+
+.partner-link:hover {
+    color: var(--webyan-primary);
+    text-decoration: underline;
+}
+
+/* Similar Projects Section */
+.similar-projects-section {
+    background-color: #fff;
+    padding: 48px 0;
+    margin-top: 32px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--webyan-text-dark);
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.similar-project-card {
+    background-color: #fff;
+    border-radius: var(--webyan-card-radius);
+    box-shadow: var(--webyan-shadow);
+    overflow: hidden;
+    transition: var(--webyan-transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.similar-project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--webyan-shadow-hover);
+}
+
+.project-card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-progress-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--webyan-secondary);
+    color: #fff;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 0 0 0 12px;
+}
+
+.project-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-card-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--webyan-text-dark);
+    margin-bottom: 16px;
+}
+
+.project-card-title i {
+    color: var(--webyan-secondary);
+    flex-shrink: 0;
+}
+
+.project-card-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding: 12px;
+    background-color: var(--webyan-light-bg);
+    border-radius: 10px;
+}
+
+.project-card-stats .stat-item {
+    text-align: center;
+}
+
+.project-card-stats .label {
+    display: block;
+    font-size: 12px;
+    color: var(--webyan-text-muted);
+    margin-bottom: 4px;
+}
+
+.project-card-stats .value {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--webyan-primary);
+}
+
+.project-card-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.btn-outline-amount {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 12px;
+    border: 1px solid var(--webyan-border-color);
+    border-radius: 8px;
+    background-color: #fff;
+    color: var(--webyan-text-dark);
+    font-size: 13px;
+    transition: var(--webyan-transition);
+}
+
+.btn-outline-amount:hover {
+    border-color: var(--webyan-primary);
+    color: var(--webyan-primary);
+}
+
+.btn-donate-small {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 12px;
+    background-color: var(--webyan-primary);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: var(--webyan-transition);
+}
+
+.btn-donate-small:hover {
+    background-color: #152d6b;
+    color: #fff;
+}
+
+.view-details-link {
+    display: block;
+    text-align: center;
+    color: var(--webyan-text-muted);
+    font-size: 13px;
+    text-decoration: none;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid var(--webyan-border-color);
+}
+
+.view-details-link:hover {
+    color: var(--webyan-primary);
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--webyan-primary);
+    color: #fff;
+    padding: 48px 0 24px;
+    margin-top: 48px;
+}
+
+.footer-logo {
+    height: 50px;
+    margin-bottom: 16px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-about {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 18px;
+    transition: var(--webyan-transition);
+}
+
+.social-link:hover {
+    background-color: var(--webyan-secondary);
+    color: #fff;
+}
+
+.footer-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    transition: var(--webyan-transition);
+}
+
+.footer-links a:hover {
+    color: var(--webyan-secondary);
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-contact i {
+    color: var(--webyan-secondary);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 32px;
+    padding-top: 24px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 12px 16px;
+    color: var(--webyan-text-dark);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: var(--webyan-transition);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+    background-color: var(--webyan-primary);
+    color: #fff;
+}
+
+.mobile-auth-buttons {
+    padding-top: 16px;
+    border-top: 1px solid var(--webyan-border-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .header-content {
+        padding: 10px 0;
+    }
+
+    .header-logo .logo-img {
+        height: 40px;
+    }
+
+    .stepper-line {
+        width: 60px;
+    }
+
+    .project-image {
+        height: 220px;
+    }
+
+    .project-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-content {
+        padding: 20px 0;
+    }
+
+    .donation-card {
+        padding: 20px;
+    }
+
+    .amount-buttons {
+        flex-wrap: wrap;
+    }
+
+    .btn-amount {
+        min-width: calc(33.33% - 8px);
+    }
+
+    .project-stats-grid .col-6 {
+        width: 50%;
+    }
+
+    .similar-projects-section {
+        padding: 32px 0;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .btn-header-cart {
+        padding: 8px 10px;
+    }
+
+    .btn-header-cart .cart-badge {
+        position: absolute;
+        top: -4px;
+        left: -4px;
+    }
+}
+
+@media (max-width: 575px) {
+    .stepper-wrapper {
+        transform: scale(0.9);
+    }
+
+    .donation-buttons {
+        gap: 10px;
+    }
+
+    .btn-donate-now,
+    .btn-add-to-cart {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+
+    .stat-card .stat-value {
+        font-size: 18px;
+    }
+
+    .project-card-actions {
+        flex-direction: column;
+    }
+}
