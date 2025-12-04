@@ -540,10 +540,8 @@
                 payBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> جاري المعالجة...';
 
                 setTimeout(() => {
-                    // Redirect to success page or show success message
-                    alert('تمت عملية الدفع بنجاح! شكراً لتبرعك.');
-                    payBtn.disabled = false;
-                    payBtn.innerHTML = '<i class="bi bi-lock-fill"></i> <span>إتمام الدفع</span> <span class="pay-amount">100 ر.س</span>';
+                    // Redirect to payment success page
+                    window.location.href = 'payment-success.html';
                 }, 2000);
             });
 
