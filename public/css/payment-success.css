@@ -67,95 +67,69 @@ body {
 }
 
 .success-checkmark {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     margin: 0 auto;
+    position: relative;
 }
 
 .check-icon {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     position: relative;
     border-radius: 50%;
-    box-sizing: content-box;
+    box-sizing: border-box;
     border: 4px solid var(--success-green);
     background: var(--success-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: scale-in 0.5s ease-out;
 }
 
-.check-icon::before {
-    top: 3px;
-    left: -2px;
-    width: 30px;
-    transform-origin: 100% 50%;
-    border-radius: 100px 0 0 100px;
-}
-
-.check-icon::after {
-    top: 0;
-    left: 30px;
-    width: 60px;
-    transform-origin: 0 50%;
-    border-radius: 0 100px 100px 0;
-    animation: rotate-circle 4.25s ease-in;
-}
-
-.check-icon::before,
 .check-icon::after {
     content: '';
-    height: 100px;
-    position: absolute;
-    background: var(--light-bg);
-    transform: rotate(-45deg);
-}
-
-.icon-line {
-    height: 5px;
-    background-color: var(--white);
-    display: block;
-    border-radius: 2px;
-    position: absolute;
-    z-index: 10;
-}
-
-.icon-line.line-tip {
-    top: 52px;
-    left: 18px;
-    width: 25px;
+    width: 30px;
+    height: 55px;
+    border: solid var(--white);
+    border-width: 0 6px 6px 0;
     transform: rotate(45deg);
-    animation: icon-line-tip 0.75s;
+    margin-bottom: 10px;
+    animation: checkmark-draw 0.4s ease-out 0.3s both;
 }
 
-.icon-line.line-long {
-    top: 44px;
-    right: 16px;
-    width: 50px;
-    transform: rotate(-45deg);
-    animation: icon-line-long 0.75s;
+@keyframes scale-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
-.icon-circle {
-    top: -4px;
-    left: -4px;
-    z-index: 10;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    box-sizing: content-box;
-    border: 4px solid rgba(40, 167, 69, 0.5);
+@keyframes checkmark-draw {
+    0% {
+        height: 0;
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        height: 55px;
+        width: 30px;
+        opacity: 1;
+    }
 }
 
+.icon-line,
+.icon-circle,
 .icon-fix {
-    top: 8px;
-    width: 5px;
-    left: 32px;
-    z-index: 1;
-    height: 85px;
-    position: absolute;
-    transform: rotate(-45deg);
-    background-color: var(--success-green);
+    display: none;
 }
-
 @keyframes rotate-circle {
     0% {
         transform: rotate(-45deg);
