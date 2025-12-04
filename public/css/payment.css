@@ -311,124 +311,81 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 18px 20px;
+    padding: 15px;
     border: 2px solid var(--webyan-border);
     border-radius: var(--webyan-radius-sm);
     transition: all 0.3s ease;
-    background: white;
 }
 
 .payment-method input:checked + .method-content {
     border-color: var(--webyan-primary);
-    background: rgba(29, 59, 139, 0.02);
+    background: rgba(29, 59, 139, 0.03);
 }
 
 .method-content:hover {
     border-color: var(--webyan-secondary);
 }
 
-/* Custom Checkbox */
-.method-check-box {
-    flex-shrink: 0;
+.method-icon {
+    width: 60px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
-.check-box {
-    display: block;
-    width: 22px;
-    height: 22px;
-    border: 2px solid var(--webyan-border);
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    position: relative;
+.method-icon img {
+    max-height: 30px;
+    max-width: 55px;
+    object-fit: contain;
 }
 
-.payment-method input:checked + .method-content .check-box {
-    border-color: var(--webyan-primary);
-    background: var(--webyan-primary);
+.mada-icon img {
+    max-height: 28px;
+    max-width: 60px;
 }
 
-.payment-method input:checked + .method-content .check-box::after {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 7px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
+.applepay-icon i {
+    font-size: 2rem;
+    color: #000;
 }
 
-/* Method Info */
+.stcpay-icon img {
+    max-height: 32px;
+    max-width: 70px;
+}
+
+.tamara-icon img {
+    max-height: 35px;
+    max-width: 80px;
+}
+
 .method-info {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    text-align: right;
+    gap: 2px;
 }
 
 .method-name {
     font-weight: 600;
     color: var(--webyan-text);
-    font-size: 1rem;
 }
 
 .method-desc {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--webyan-text-muted);
 }
 
-/* Method Icons */
-.method-icon {
-    width: auto;
-    min-width: 80px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 8px;
-    flex-shrink: 0;
+.method-check {
+    color: var(--webyan-border);
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
 }
 
-.method-icon img {
-    max-height: 32px;
-    max-width: 60px;
-    object-fit: contain;
-}
-
-.mada-icon img {
-    max-height: 36px;
-    max-width: 70px;
-}
-
-.visa-icon {
-    gap: 6px;
-}
-
-.visa-icon img {
-    max-height: 28px;
-    max-width: 50px;
-}
-
-.applepay-icon {
-    min-width: 100px;
-}
-
-.apple-pay-svg {
-    height: 28px;
-    width: auto;
-}
-
-.stcpay-icon img {
-    max-height: 34px;
-    max-width: 90px;
-}
-
-.tamara-icon img {
-    max-height: 38px;
-    max-width: 90px;
-    border-radius: 6px;
+.payment-method input:checked + .method-content .method-check {
+    color: var(--webyan-success);
 }
 
 /* Card Details Form */
