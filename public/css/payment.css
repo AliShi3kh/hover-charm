@@ -336,9 +336,14 @@ body {
 }
 
 .method-icon img {
-    max-height: 25px;
-    max-width: 45px;
+    max-height: 30px;
+    max-width: 55px;
     object-fit: contain;
+}
+
+.mada-icon img {
+    max-height: 28px;
+    max-width: 60px;
 }
 
 .applepay-icon i {
@@ -346,14 +351,14 @@ body {
     color: #000;
 }
 
-.stcpay-icon .stc-text {
-    font-weight: 800;
-    font-size: 1rem;
-    color: #4c2a86;
-    background: linear-gradient(135deg, #4c2a86, #8e44ad);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.stcpay-icon img {
+    max-height: 32px;
+    max-width: 70px;
+}
+
+.tamara-icon img {
+    max-height: 35px;
+    max-width: 80px;
 }
 
 .method-info {
