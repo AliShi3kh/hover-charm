@@ -509,29 +509,30 @@
       
       grid.innerHTML = data.map(opportunity => `
         <div class="opportunity-card">
-          <div class="card-header">
-            <div class="card-brand">
-              <div class="brand-logo">
-                <i class="${opportunity.brandIcon}"></i>
-              </div>
-              <span class="brand-name">${opportunity.brand}</span>
+          <div class="card-image">
+            <img src="${opportunity.image}" alt="${opportunity.title}">
+            <div class="card-image-overlay"></div>
+            <span class="card-status-badge ${opportunity.status === 'متاحة' ? 'active' : opportunity.status === 'مغلقة' ? 'closed' : 'upcoming'}">
+              <i class="bi bi-${opportunity.status === 'متاحة' ? 'check-circle' : opportunity.status === 'مغلقة' ? 'x-circle' : 'clock'}"></i>
+              ${opportunity.status}
+            </span>
+            <div class="card-brand-badge">
+              <i class="${opportunity.brandIcon}"></i>
+              <span>${opportunity.brand}</span>
             </div>
-            <h3 class="card-title">${opportunity.title}</h3>
           </div>
           <div class="card-body">
+            <h3 class="card-title-body">${opportunity.title}</h3>
+            <p class="card-description">${opportunity.shortDescription}</p>
             <div class="card-meta">
               <span class="meta-badge type">
                 <i class="bi bi-tag"></i>
                 ${opportunity.type}
               </span>
-              <span class="meta-badge status ${opportunity.status === 'متاحة' ? 'active' : opportunity.status === 'مغلقة' ? 'closed' : ''}">
-                <i class="bi bi-${opportunity.status === 'متاحة' ? 'check-circle' : opportunity.status === 'مغلقة' ? 'x-circle' : 'clock'}"></i>
-                ${opportunity.status}
+              <span class="meta-badge date">
+                <i class="bi bi-calendar3"></i>
+                ${formatDate(opportunity.publishDate)}
               </span>
-            </div>
-            <div class="card-date">
-              <i class="bi bi-calendar3"></i>
-              <span>تاريخ النشر: ${formatDate(opportunity.publishDate)}</span>
             </div>
             <div class="card-actions">
               <button class="btn btn-primary" onclick="openModal(${opportunity.id})">
