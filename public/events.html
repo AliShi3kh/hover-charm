@@ -208,16 +208,16 @@
                 </div>
 
                 <!-- Event Card 2 - حضوري / قريباً / متاح للتسجيل -->
-                <div class="col-lg-4 col-md-6" data-category="community" data-type="onsite" data-status="upcoming" data-reg="open">
+                <div class="col-lg-4 col-md-6" data-category="community" data-type="onsite" data-status="upcoming" data-reg="open" data-animate>
                     <div class="card event-card h-100">
-                        <div class="position-relative">
+                        <div class="position-relative overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80" class="card-img-top event-img" alt="حفل تشجيع الأولاد الأيتام">
                             
+                            <!-- نوع الفعالية فوق الصورة فقط -->
                             <div class="event-badges">
                                 <span class="badge event-type-badge onsite">
-                                    <i class="bi bi-building me-1"></i>حضوري
+                                    <i class="bi bi-geo-alt-fill"></i>حضوري
                                 </span>
-                                <span class="badge event-status-badge upcoming">قريباً</span>
                             </div>
                             
                             <div class="event-date-badge">
@@ -226,32 +226,37 @@
                             </div>
                             
                             <div class="event-overlay">
-                                <a href="event-details.html" class="btn btn-light btn-sm">
-                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                <a href="event-details.html" class="btn">
+                                    <i class="bi bi-eye-fill me-2"></i>عرض التفاصيل
                                 </a>
                             </div>
                         </div>
                         
                         <div class="card-body">
-                            <span class="badge bg-warning-subtle text-warning mb-2">احتفالات مجتمعية</span>
+                            <!-- حالة الفعالية + حالة التسجيل بجانب بعض -->
+                            <div class="status-row">
+                                <span class="event-status-badge upcoming">
+                                    <span class="live-dot"></span>قريباً
+                                </span>
+                                <span class="registration-badge open">
+                                    <i class="bi bi-check-circle-fill"></i>متاح للتسجيل
+                                </span>
+                            </div>
+                            
                             <h5 class="card-title">
-                                <a href="event-details.html" class="text-decoration-none text-dark">حفل تشجيع الأولاد الأيتام</a>
+                                <a href="event-details.html" class="text-decoration-none">حفل تشجيع الأولاد الأيتام</a>
                             </h5>
-                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                            <div class="event-meta d-flex flex-wrap gap-3 small">
                                 <span><i class="bi bi-clock-fill me-1"></i>04:00 عصراً</span>
                                 <span><i class="bi bi-geo-alt-fill me-1"></i>جدة</span>
                             </div>
                         </div>
                         
-                        <div class="card-footer bg-transparent border-top-0">
+                        <div class="card-footer">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="attendees-info">
-                                    <span class="badge bg-success-subtle text-success">
-                                        <i class="bi bi-check-circle-fill me-1"></i>متاح للتسجيل
-                                    </span>
-                                </div>
+                                <span class="category-badge">احتفالات مجتمعية</span>
                                 <a href="event-details.html" class="btn btn-primary btn-sm">
-                                    <i class="bi bi-person-plus-fill me-1"></i>سجل الآن
+                                    <i class="bi bi-arrow-left me-1"></i>سجل الآن
                                 </a>
                             </div>
                         </div>
@@ -259,17 +264,15 @@
                 </div>
 
                 <!-- Event Card 3 - أونلاين / جاري الآن / متاح للتسجيل -->
-                <div class="col-lg-4 col-md-6" data-category="workshops" data-type="online" data-status="ongoing" data-reg="open">
+                <div class="col-lg-4 col-md-6" data-category="workshops" data-type="online" data-status="ongoing" data-reg="open" data-animate>
                     <div class="card event-card h-100">
-                        <div class="position-relative">
+                        <div class="position-relative overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" class="card-img-top event-img" alt="ورشة بناء القدرات">
                             
+                            <!-- نوع الفعالية فوق الصورة -->
                             <div class="event-badges">
                                 <span class="badge event-type-badge online">
-                                    <i class="bi bi-wifi me-1"></i>أونلاين
-                                </span>
-                                <span class="badge event-status-badge ongoing">
-                                    <span class="live-dot"></span>جاري الآن
+                                    <i class="bi bi-wifi"></i>أونلاين
                                 </span>
                             </div>
                             
@@ -279,30 +282,35 @@
                             </div>
                             
                             <div class="event-overlay">
-                                <a href="event-details.html" class="btn btn-light btn-sm">
-                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                <a href="event-details.html" class="btn">
+                                    <i class="bi bi-eye-fill me-2"></i>عرض التفاصيل
                                 </a>
                             </div>
                         </div>
                         
                         <div class="card-body">
-                            <span class="badge bg-info-subtle text-info mb-2">ورش عمل</span>
+                            <!-- حالة الفعالية + حالة التسجيل بجانب بعض -->
+                            <div class="status-row">
+                                <span class="event-status-badge ongoing">
+                                    <span class="live-dot"></span>جاري الآن
+                                </span>
+                                <span class="registration-badge open">
+                                    <i class="bi bi-check-circle-fill"></i>متاح للتسجيل
+                                </span>
+                            </div>
+                            
                             <h5 class="card-title">
-                                <a href="event-details.html" class="text-decoration-none text-dark">ورشة بناء القدرات المؤسسية</a>
+                                <a href="event-details.html" class="text-decoration-none">ورشة بناء القدرات المؤسسية</a>
                             </h5>
-                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                            <div class="event-meta d-flex flex-wrap gap-3 small">
                                 <span><i class="bi bi-clock-fill me-1"></i>10:00 صباحاً</span>
                                 <span><i class="bi bi-globe me-1"></i>عبر الإنترنت</span>
                             </div>
                         </div>
                         
-                        <div class="card-footer bg-transparent border-top-0">
+                        <div class="card-footer">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="attendees-info">
-                                    <span class="badge bg-success-subtle text-success">
-                                        <i class="bi bi-check-circle-fill me-1"></i>متاح للتسجيل
-                                    </span>
-                                </div>
+                                <span class="category-badge">ورش عمل</span>
                                 <a href="event-details.html" class="btn btn-success btn-sm">
                                     <i class="bi bi-camera-video-fill me-1"></i>انضم الآن
                                 </a>
@@ -312,16 +320,15 @@
                 </div>
 
                 <!-- Event Card 4 - حضوري / قريباً / متاح للتسجيل -->
-                <div class="col-lg-4 col-md-6" data-category="training" data-type="onsite" data-status="upcoming" data-reg="open">
+                <div class="col-lg-4 col-md-6" data-category="training" data-type="onsite" data-status="upcoming" data-reg="open" data-animate>
                     <div class="card event-card h-100">
-                        <div class="position-relative">
+                        <div class="position-relative overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80" class="card-img-top event-img" alt="دورة القيادة الإبداعية">
                             
                             <div class="event-badges">
                                 <span class="badge event-type-badge onsite">
-                                    <i class="bi bi-building me-1"></i>حضوري
+                                    <i class="bi bi-geo-alt-fill"></i>حضوري
                                 </span>
-                                <span class="badge event-status-badge upcoming">قريباً</span>
                             </div>
                             
                             <div class="event-date-badge">
@@ -330,32 +337,36 @@
                             </div>
                             
                             <div class="event-overlay">
-                                <a href="event-details.html" class="btn btn-light btn-sm">
-                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                <a href="event-details.html" class="btn">
+                                    <i class="bi bi-eye-fill me-2"></i>عرض التفاصيل
                                 </a>
                             </div>
                         </div>
                         
                         <div class="card-body">
-                            <span class="badge bg-success-subtle text-success mb-2">دورات تدريبية</span>
+                            <div class="status-row">
+                                <span class="event-status-badge upcoming">
+                                    <span class="live-dot"></span>قريباً
+                                </span>
+                                <span class="registration-badge open">
+                                    <i class="bi bi-check-circle-fill"></i>متاح للتسجيل
+                                </span>
+                            </div>
+                            
                             <h5 class="card-title">
-                                <a href="event-details.html" class="text-decoration-none text-dark">دورة القيادة الإبداعية للشباب</a>
+                                <a href="event-details.html" class="text-decoration-none">دورة القيادة الإبداعية للشباب</a>
                             </h5>
-                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                            <div class="event-meta d-flex flex-wrap gap-3 small">
                                 <span><i class="bi bi-clock-fill me-1"></i>05:00 مساءً</span>
                                 <span><i class="bi bi-geo-alt-fill me-1"></i>الدمام</span>
                             </div>
                         </div>
                         
-                        <div class="card-footer bg-transparent border-top-0">
+                        <div class="card-footer">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="attendees-info">
-                                    <span class="badge bg-success-subtle text-success">
-                                        <i class="bi bi-check-circle-fill me-1"></i>متاح للتسجيل
-                                    </span>
-                                </div>
+                                <span class="category-badge">دورات تدريبية</span>
                                 <a href="event-details.html" class="btn btn-primary btn-sm">
-                                    <i class="bi bi-person-plus-fill me-1"></i>سجل الآن
+                                    <i class="bi bi-arrow-left me-1"></i>سجل الآن
                                 </a>
                             </div>
                         </div>
@@ -363,16 +374,15 @@
                 </div>
 
                 <!-- Event Card 5 - حضوري / انتهت / انتهاء التسجيل -->
-                <div class="col-lg-4 col-md-6" data-category="conferences" data-type="onsite" data-status="ended" data-reg="closed">
+                <div class="col-lg-4 col-md-6" data-category="conferences" data-type="onsite" data-status="ended" data-reg="closed" data-animate>
                     <div class="card event-card h-100 event-ended">
-                        <div class="position-relative">
+                        <div class="position-relative overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80" class="card-img-top event-img" alt="ملتقى الجمعيات الشبابية">
                             
                             <div class="event-badges">
                                 <span class="badge event-type-badge onsite">
-                                    <i class="bi bi-building me-1"></i>حضوري
+                                    <i class="bi bi-geo-alt-fill"></i>حضوري
                                 </span>
-                                <span class="badge event-status-badge ended">انتهت</span>
                             </div>
                             
                             <div class="event-date-badge">
@@ -381,30 +391,34 @@
                             </div>
                             
                             <div class="event-overlay">
-                                <a href="event-details.html" class="btn btn-light btn-sm">
-                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                <a href="event-details.html" class="btn">
+                                    <i class="bi bi-eye-fill me-2"></i>عرض التفاصيل
                                 </a>
                             </div>
                         </div>
                         
                         <div class="card-body">
-                            <span class="badge bg-primary-subtle text-primary mb-2">مؤتمرات ومعارض</span>
+                            <div class="status-row">
+                                <span class="event-status-badge ended">
+                                    <i class="bi bi-calendar-x"></i>انتهت
+                                </span>
+                                <span class="registration-badge closed">
+                                    <i class="bi bi-x-circle-fill"></i>انتهاء التسجيل
+                                </span>
+                            </div>
+                            
                             <h5 class="card-title">
-                                <a href="event-details.html" class="text-decoration-none text-dark">الملتقى السنوي للجمعيات الشبابية</a>
+                                <a href="event-details.html" class="text-decoration-none">الملتقى السنوي للجمعيات الشبابية</a>
                             </h5>
-                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                            <div class="event-meta d-flex flex-wrap gap-3 small">
                                 <span><i class="bi bi-clock-fill me-1"></i>08:00 صباحاً</span>
                                 <span><i class="bi bi-geo-alt-fill me-1"></i>الرياض</span>
                             </div>
                         </div>
                         
-                        <div class="card-footer bg-transparent border-top-0">
+                        <div class="card-footer">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="attendees-info">
-                                    <span class="badge bg-danger-subtle text-danger">
-                                        <i class="bi bi-x-circle-fill me-1"></i>انتهاء التسجيل
-                                    </span>
-                                </div>
+                                <span class="category-badge">مؤتمرات ومعارض</span>
                                 <button class="btn btn-secondary btn-sm" disabled>
                                     <i class="bi bi-check-circle-fill me-1"></i>انتهت
                                 </button>
@@ -414,16 +428,15 @@
                 </div>
 
                 <!-- Event Card 6 - أونلاين / قريباً / متاح للتسجيل -->
-                <div class="col-lg-4 col-md-6" data-category="workshops" data-type="online" data-status="upcoming" data-reg="open">
+                <div class="col-lg-4 col-md-6" data-category="workshops" data-type="online" data-status="upcoming" data-reg="open" data-animate>
                     <div class="card event-card h-100">
-                        <div class="position-relative">
+                        <div class="position-relative overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80" class="card-img-top event-img" alt="ورشة التخطيط الاستراتيجي">
                             
                             <div class="event-badges">
                                 <span class="badge event-type-badge online">
-                                    <i class="bi bi-wifi me-1"></i>أونلاين
+                                    <i class="bi bi-wifi"></i>أونلاين
                                 </span>
-                                <span class="badge event-status-badge upcoming">قريباً</span>
                             </div>
                             
                             <div class="event-date-badge">
@@ -432,32 +445,36 @@
                             </div>
                             
                             <div class="event-overlay">
-                                <a href="event-details.html" class="btn btn-light btn-sm">
-                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                <a href="event-details.html" class="btn">
+                                    <i class="bi bi-eye-fill me-2"></i>عرض التفاصيل
                                 </a>
                             </div>
                         </div>
                         
                         <div class="card-body">
-                            <span class="badge bg-info-subtle text-info mb-2">ورش عمل</span>
+                            <div class="status-row">
+                                <span class="event-status-badge upcoming">
+                                    <span class="live-dot"></span>قريباً
+                                </span>
+                                <span class="registration-badge open">
+                                    <i class="bi bi-check-circle-fill"></i>متاح للتسجيل
+                                </span>
+                            </div>
+                            
                             <h5 class="card-title">
-                                <a href="event-details.html" class="text-decoration-none text-dark">ورشة التخطيط الاستراتيجي للمنظمات</a>
+                                <a href="event-details.html" class="text-decoration-none">ورشة التخطيط الاستراتيجي للمنظمات</a>
                             </h5>
-                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                            <div class="event-meta d-flex flex-wrap gap-3 small">
                                 <span><i class="bi bi-clock-fill me-1"></i>02:00 ظهراً</span>
                                 <span><i class="bi bi-globe me-1"></i>عبر الإنترنت</span>
                             </div>
                         </div>
                         
-                        <div class="card-footer bg-transparent border-top-0">
+                        <div class="card-footer">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="attendees-info">
-                                    <span class="badge bg-success-subtle text-success">
-                                        <i class="bi bi-check-circle-fill me-1"></i>متاح للتسجيل
-                                    </span>
-                                </div>
+                                <span class="category-badge">ورش عمل</span>
                                 <a href="event-details.html" class="btn btn-primary btn-sm">
-                                    <i class="bi bi-person-plus-fill me-1"></i>سجل الآن
+                                    <i class="bi bi-arrow-left me-1"></i>سجل الآن
                                 </a>
                             </div>
                         </div>
@@ -465,16 +482,15 @@
                 </div>
 
                 <!-- Event Card 7 - حضوري / قريباً / انتهاء التسجيل -->
-                <div class="col-lg-4 col-md-6" data-category="training" data-type="onsite" data-status="upcoming" data-reg="closed">
+                <div class="col-lg-4 col-md-6" data-category="training" data-type="onsite" data-status="upcoming" data-reg="closed" data-animate>
                     <div class="card event-card h-100">
-                        <div class="position-relative">
+                        <div class="position-relative overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" class="card-img-top event-img" alt="دورة إدارة المشاريع">
                             
                             <div class="event-badges">
                                 <span class="badge event-type-badge onsite">
-                                    <i class="bi bi-building me-1"></i>حضوري
+                                    <i class="bi bi-geo-alt-fill"></i>حضوري
                                 </span>
-                                <span class="badge event-status-badge upcoming">قريباً</span>
                             </div>
                             
                             <div class="event-date-badge">
@@ -483,32 +499,36 @@
                             </div>
                             
                             <div class="event-overlay">
-                                <a href="event-details.html" class="btn btn-light btn-sm">
-                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                <a href="event-details.html" class="btn">
+                                    <i class="bi bi-eye-fill me-2"></i>عرض التفاصيل
                                 </a>
                             </div>
                         </div>
                         
                         <div class="card-body">
-                            <span class="badge bg-success-subtle text-success mb-2">دورات تدريبية</span>
+                            <div class="status-row">
+                                <span class="event-status-badge upcoming">
+                                    <span class="live-dot"></span>قريباً
+                                </span>
+                                <span class="registration-badge closed">
+                                    <i class="bi bi-x-circle-fill"></i>اكتمال العدد
+                                </span>
+                            </div>
+                            
                             <h5 class="card-title">
-                                <a href="event-details.html" class="text-decoration-none text-dark">دورة إدارة المشاريع الاحترافية</a>
+                                <a href="event-details.html" class="text-decoration-none">دورة إدارة المشاريع الاحترافية</a>
                             </h5>
-                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                            <div class="event-meta d-flex flex-wrap gap-3 small">
                                 <span><i class="bi bi-clock-fill me-1"></i>09:00 صباحاً</span>
                                 <span><i class="bi bi-geo-alt-fill me-1"></i>الرياض</span>
                             </div>
                         </div>
                         
-                        <div class="card-footer bg-transparent border-top-0">
+                        <div class="card-footer">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="attendees-info">
-                                    <span class="badge bg-danger-subtle text-danger">
-                                        <i class="bi bi-x-circle-fill me-1"></i>انتهاء التسجيل
-                                    </span>
-                                </div>
+                                <span class="category-badge">دورات تدريبية</span>
                                 <button class="btn btn-outline-secondary btn-sm" disabled>
-                                    <i class="bi bi-lock-fill me-1"></i>اكتمال العدد
+                                    <i class="bi bi-lock-fill me-1"></i>مغلق
                                 </button>
                             </div>
                         </div>
@@ -516,17 +536,14 @@
                 </div>
 
                 <!-- Event Card 8 - أونلاين / جاري الآن / متاح للتسجيل -->
-                <div class="col-lg-4 col-md-6" data-category="conferences" data-type="online" data-status="ongoing" data-reg="open">
+                <div class="col-lg-4 col-md-6" data-category="conferences" data-type="online" data-status="ongoing" data-reg="open" data-animate>
                     <div class="card event-card h-100">
-                        <div class="position-relative">
+                        <div class="position-relative overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&q=80" class="card-img-top event-img" alt="مؤتمر الابتكار الاجتماعي">
                             
                             <div class="event-badges">
                                 <span class="badge event-type-badge online">
-                                    <i class="bi bi-wifi me-1"></i>أونلاين
-                                </span>
-                                <span class="badge event-status-badge ongoing">
-                                    <span class="live-dot"></span>جاري الآن
+                                    <i class="bi bi-wifi"></i>أونلاين
                                 </span>
                             </div>
                             
@@ -536,30 +553,34 @@
                             </div>
                             
                             <div class="event-overlay">
-                                <a href="event-details.html" class="btn btn-light btn-sm">
-                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                <a href="event-details.html" class="btn">
+                                    <i class="bi bi-eye-fill me-2"></i>عرض التفاصيل
                                 </a>
                             </div>
                         </div>
                         
                         <div class="card-body">
-                            <span class="badge bg-primary-subtle text-primary mb-2">مؤتمرات ومعارض</span>
+                            <div class="status-row">
+                                <span class="event-status-badge ongoing">
+                                    <span class="live-dot"></span>جاري الآن
+                                </span>
+                                <span class="registration-badge open">
+                                    <i class="bi bi-check-circle-fill"></i>متاح للتسجيل
+                                </span>
+                            </div>
+                            
                             <h5 class="card-title">
-                                <a href="event-details.html" class="text-decoration-none text-dark">مؤتمر الابتكار الاجتماعي</a>
+                                <a href="event-details.html" class="text-decoration-none">مؤتمر الابتكار الاجتماعي</a>
                             </h5>
-                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                            <div class="event-meta d-flex flex-wrap gap-3 small">
                                 <span><i class="bi bi-clock-fill me-1"></i>11:00 صباحاً</span>
                                 <span><i class="bi bi-globe me-1"></i>عبر الإنترنت</span>
                             </div>
                         </div>
                         
-                        <div class="card-footer bg-transparent border-top-0">
+                        <div class="card-footer">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="attendees-info">
-                                    <span class="badge bg-success-subtle text-success">
-                                        <i class="bi bi-check-circle-fill me-1"></i>متاح للتسجيل
-                                    </span>
-                                </div>
+                                <span class="category-badge">مؤتمرات ومعارض</span>
                                 <a href="event-details.html" class="btn btn-success btn-sm">
                                     <i class="bi bi-camera-video-fill me-1"></i>انضم الآن
                                 </a>
@@ -569,16 +590,15 @@
                 </div>
 
                 <!-- Event Card 9 - حضوري / انتهت / انتهاء التسجيل -->
-                <div class="col-lg-4 col-md-6" data-category="community" data-type="onsite" data-status="ended" data-reg="closed">
+                <div class="col-lg-4 col-md-6" data-category="community" data-type="onsite" data-status="ended" data-reg="closed" data-animate>
                     <div class="card event-card h-100 event-ended">
-                        <div class="position-relative">
+                        <div class="position-relative overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1529543544277-750e7e7d9b3d?w=800&q=80" class="card-img-top event-img" alt="احتفال اليوم الوطني">
                             
                             <div class="event-badges">
                                 <span class="badge event-type-badge onsite">
-                                    <i class="bi bi-building me-1"></i>حضوري
+                                    <i class="bi bi-geo-alt-fill"></i>حضوري
                                 </span>
-                                <span class="badge event-status-badge ended">انتهت</span>
                             </div>
                             
                             <div class="event-date-badge">
@@ -587,30 +607,34 @@
                             </div>
                             
                             <div class="event-overlay">
-                                <a href="event-details.html" class="btn btn-light btn-sm">
-                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                <a href="event-details.html" class="btn">
+                                    <i class="bi bi-eye-fill me-2"></i>عرض التفاصيل
                                 </a>
                             </div>
                         </div>
                         
                         <div class="card-body">
-                            <span class="badge bg-warning-subtle text-warning mb-2">احتفالات مجتمعية</span>
+                            <div class="status-row">
+                                <span class="event-status-badge ended">
+                                    <i class="bi bi-calendar-x"></i>انتهت
+                                </span>
+                                <span class="registration-badge closed">
+                                    <i class="bi bi-x-circle-fill"></i>انتهاء التسجيل
+                                </span>
+                            </div>
+                            
                             <h5 class="card-title">
-                                <a href="event-details.html" class="text-decoration-none text-dark">احتفال اليوم الوطني السعودي</a>
+                                <a href="event-details.html" class="text-decoration-none">احتفال اليوم الوطني السعودي</a>
                             </h5>
-                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                            <div class="event-meta d-flex flex-wrap gap-3 small">
                                 <span><i class="bi bi-clock-fill me-1"></i>06:00 مساءً</span>
                                 <span><i class="bi bi-geo-alt-fill me-1"></i>الرياض</span>
                             </div>
                         </div>
                         
-                        <div class="card-footer bg-transparent border-top-0">
+                        <div class="card-footer">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="attendees-info">
-                                    <span class="badge bg-danger-subtle text-danger">
-                                        <i class="bi bi-x-circle-fill me-1"></i>انتهاء التسجيل
-                                    </span>
-                                </div>
+                                <span class="category-badge">احتفالات مجتمعية</span>
                                 <button class="btn btn-secondary btn-sm" disabled>
                                     <i class="bi bi-check-circle-fill me-1"></i>انتهت
                                 </button>
