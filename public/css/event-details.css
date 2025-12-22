@@ -21,6 +21,115 @@
     --radius-sm: 12px;
 }
 
+/* ============================================
+   Scroll Animation Styles
+   ============================================ */
+
+/* Base state for all animated elements */
+[data-animate] {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fade In Up Animation */
+[data-animate="fade-in-up"] {
+    transform: translateY(50px);
+}
+
+[data-animate="fade-in-up"].animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade In Down Animation */
+[data-animate="fade-in-down"] {
+    transform: translateY(-50px);
+}
+
+[data-animate="fade-in-down"].animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade In Left Animation */
+[data-animate="fade-in-left"] {
+    transform: translateX(-50px);
+}
+
+[data-animate="fade-in-left"].animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Fade In Right Animation */
+[data-animate="fade-in-right"] {
+    transform: translateX(50px);
+}
+
+[data-animate="fade-in-right"].animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Zoom In Animation */
+[data-animate="zoom-in"] {
+    transform: scale(0.8);
+}
+
+[data-animate="zoom-in"].animated {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Zoom Out Animation */
+[data-animate="zoom-out"] {
+    transform: scale(1.2);
+}
+
+[data-animate="zoom-out"].animated {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Flip In Animation */
+[data-animate="flip-in"] {
+    transform: perspective(1000px) rotateY(-90deg);
+}
+
+[data-animate="flip-in"].animated {
+    opacity: 1;
+    transform: perspective(1000px) rotateY(0);
+}
+
+/* Bounce In Animation */
+[data-animate="bounce-in"] {
+    transform: scale(0.3);
+}
+
+[data-animate="bounce-in"].animated {
+    opacity: 1;
+    transform: scale(1);
+    animation: bounce-effect 0.6s ease-out;
+}
+
+@keyframes bounce-effect {
+    0% { transform: scale(0.3); }
+    50% { transform: scale(1.05); }
+    70% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+/* Slide Rotate Animation */
+[data-animate="slide-rotate"] {
+    transform: translateX(-100px) rotate(-10deg);
+}
+
+[data-animate="slide-rotate"].animated {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+}
+
 /* Page Layout */
 .event-page {
     background: linear-gradient(180deg, #f8fbfc 0%, #e8f4f8 100%);
