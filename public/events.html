@@ -152,53 +152,55 @@
             <div class="row g-4" id="eventsGrid">
                 
                 <!-- Event Card 1 - حضوري / قريباً / متاح للتسجيل -->
-                <div class="col-lg-4 col-md-6" data-category="conferences" data-type="onsite" data-status="upcoming" data-reg="open">
+                <div class="col-lg-4 col-md-6" data-category="conferences" data-type="onsite" data-status="upcoming" data-reg="open" data-animate>
                     <div class="card event-card h-100">
-                        <div class="position-relative">
+                        <div class="position-relative overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" class="card-img-top event-img" alt="تدشين منصة ويبيان">
                             
-                            <!-- Badges Container -->
+                            <!-- نوع الفعالية فوق الصورة -->
                             <div class="event-badges">
                                 <span class="badge event-type-badge onsite">
-                                    <i class="bi bi-building me-1"></i>حضوري
+                                    <i class="bi bi-geo-alt-fill"></i>حضوري
                                 </span>
-                                <span class="badge event-status-badge upcoming">قريباً</span>
                             </div>
                             
-                            <!-- Date Badge -->
                             <div class="event-date-badge">
                                 <span class="day">29</span>
                                 <span class="month">أغسطس</span>
                             </div>
                             
-                            <!-- Overlay -->
                             <div class="event-overlay">
-                                <a href="event-details.html" class="btn btn-light btn-sm">
-                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                <a href="event-details.html" class="btn">
+                                    <i class="bi bi-eye-fill me-2"></i>عرض التفاصيل
                                 </a>
                             </div>
                         </div>
                         
                         <div class="card-body">
-                            <span class="badge bg-primary-subtle text-primary mb-2">مؤتمرات ومعارض</span>
+                            <!-- حالة الفعالية + حالة التسجيل -->
+                            <div class="status-row">
+                                <span class="event-status-badge upcoming">
+                                    <span class="live-dot"></span>قريباً
+                                </span>
+                                <span class="registration-badge open">
+                                    <i class="bi bi-check-circle-fill"></i>متاح للتسجيل
+                                </span>
+                            </div>
+                            
                             <h5 class="card-title">
-                                <a href="event-details.html" class="text-decoration-none text-dark">تدشين منصة ويبيان</a>
+                                <a href="event-details.html" class="text-decoration-none">تدشين منصة ويبيان</a>
                             </h5>
-                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                            <div class="event-meta d-flex flex-wrap gap-3 small">
                                 <span><i class="bi bi-clock-fill me-1"></i>09:00 صباحاً</span>
                                 <span><i class="bi bi-geo-alt-fill me-1"></i>الرياض</span>
                             </div>
                         </div>
                         
-                        <div class="card-footer bg-transparent border-top-0">
+                        <div class="card-footer">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="attendees-info">
-                                    <span class="badge bg-success-subtle text-success">
-                                        <i class="bi bi-check-circle-fill me-1"></i>متاح للتسجيل
-                                    </span>
-                                </div>
+                                <span class="badge bg-primary-subtle text-primary px-3 py-2">مؤتمرات ومعارض</span>
                                 <a href="event-details.html" class="btn btn-primary btn-sm">
-                                    <i class="bi bi-person-plus-fill me-1"></i>سجل الآن
+                                    <i class="bi bi-arrow-left me-1"></i>سجل الآن
                                 </a>
                             </div>
                         </div>
