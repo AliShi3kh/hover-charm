@@ -25,430 +25,692 @@
 
     <!-- Hero Section -->
     <section class="events-hero">
-        <div class="events-hero-content">
-            <h1 class="events-hero-title">الأنشطة والفعاليات</h1>
-            <nav class="events-breadcrumb">
-                <a href="home.html">
-                    <i class="bi bi-house-fill"></i>
-                    الرئيسية
-                </a>
-                <span class="separator">›</span>
-                <span class="current">الأنشطة والفعاليات</span>
-            </nav>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <h1 class="events-hero-title">الأنشطة والفعاليات</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center events-breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="home.html">
+                                    <i class="bi bi-house-fill me-1"></i>
+                                    الرئيسية
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">الأنشطة والفعاليات</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Filter Section -->
-    <section class="events-filter-section" data-animate="fade-in-up">
-        <div class="filter-wrapper">
-            <button class="filter-btn active" data-filter="all">
-                <i class="bi bi-grid-3x3-gap-fill"></i>
-                الكل
-            </button>
-            <button class="filter-btn" data-filter="conferences">
-                <i class="bi bi-mic-fill"></i>
-                مؤتمرات ومعارض
-            </button>
-            <button class="filter-btn" data-filter="workshops">
-                <i class="bi bi-laptop-fill"></i>
-                ورش عمل
-            </button>
-            <button class="filter-btn" data-filter="training">
-                <i class="bi bi-mortarboard-fill"></i>
-                دورات تدريبية
-            </button>
-            <button class="filter-btn" data-filter="community">
-                <i class="bi bi-people-fill"></i>
-                احتفالات مجتمعية
-            </button>
+    <section class="py-4 bg-light">
+        <div class="container">
+            <!-- Filter Tabs -->
+            <div class="row g-3 mb-4">
+                <div class="col-12">
+                    <ul class="nav nav-pills justify-content-center flex-wrap gap-2" id="eventsTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link filter-pill active" data-filter="all">
+                                <i class="bi bi-grid-3x3-gap-fill me-1"></i>
+                                الكل
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link filter-pill" data-filter="conferences">
+                                <i class="bi bi-mic-fill me-1"></i>
+                                مؤتمرات ومعارض
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link filter-pill" data-filter="workshops">
+                                <i class="bi bi-laptop-fill me-1"></i>
+                                ورش عمل
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link filter-pill" data-filter="training">
+                                <i class="bi bi-mortarboard-fill me-1"></i>
+                                دورات تدريبية
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link filter-pill" data-filter="community">
+                                <i class="bi bi-people-fill me-1"></i>
+                                احتفالات مجتمعية
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Sub Filters Row -->
+            <div class="row g-2 justify-content-center">
+                <div class="col-auto">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-broadcast me-1"></i>
+                            نوع الحضور
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-type="all">الكل</a></li>
+                            <li><a class="dropdown-item" href="#" data-type="onsite">
+                                <i class="bi bi-building me-2 text-primary"></i>حضوري
+                            </a></li>
+                            <li><a class="dropdown-item" href="#" data-type="online">
+                                <i class="bi bi-wifi me-2 text-success"></i>أونلاين
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-hourglass-split me-1"></i>
+                            حالة الفعالية
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-status="all">الكل</a></li>
+                            <li><a class="dropdown-item" href="#" data-status="upcoming">
+                                <span class="badge bg-info me-2">قريباً</span>
+                            </a></li>
+                            <li><a class="dropdown-item" href="#" data-status="ongoing">
+                                <span class="badge bg-success me-2">جارية الآن</span>
+                            </a></li>
+                            <li><a class="dropdown-item" href="#" data-status="ended">
+                                <span class="badge bg-secondary me-2">انتهت</span>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-pencil-square me-1"></i>
+                            حالة التسجيل
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-reg="all">الكل</a></li>
+                            <li><a class="dropdown-item" href="#" data-reg="open">
+                                <span class="badge bg-success me-2">متاح للتسجيل</span>
+                            </a></li>
+                            <li><a class="dropdown-item" href="#" data-reg="closed">
+                                <span class="badge bg-danger me-2">انتهاء التسجيل</span>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Events Grid Section -->
-    <section class="events-grid-section">
-        <div class="events-grid">
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4" id="eventsGrid">
+                
+                <!-- Event Card 1 - حضوري / قريباً / متاح للتسجيل -->
+                <div class="col-lg-4 col-md-6" data-category="conferences" data-type="onsite" data-status="upcoming" data-reg="open">
+                    <div class="card event-card h-100">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" class="card-img-top event-img" alt="تدشين منصة ويبيان">
+                            
+                            <!-- Badges Container -->
+                            <div class="event-badges">
+                                <span class="badge event-type-badge onsite">
+                                    <i class="bi bi-building me-1"></i>حضوري
+                                </span>
+                                <span class="badge event-status-badge upcoming">قريباً</span>
+                            </div>
+                            
+                            <!-- Date Badge -->
+                            <div class="event-date-badge">
+                                <span class="day">29</span>
+                                <span class="month">أغسطس</span>
+                            </div>
+                            
+                            <!-- Overlay -->
+                            <div class="event-overlay">
+                                <a href="event-details.html" class="btn btn-light btn-sm">
+                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <span class="badge bg-primary-subtle text-primary mb-2">مؤتمرات ومعارض</span>
+                            <h5 class="card-title">
+                                <a href="event-details.html" class="text-decoration-none text-dark">تدشين منصة ويبيان</a>
+                            </h5>
+                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                                <span><i class="bi bi-clock-fill me-1"></i>09:00 صباحاً</span>
+                                <span><i class="bi bi-geo-alt-fill me-1"></i>الرياض</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="attendees-info">
+                                    <span class="badge bg-success-subtle text-success">
+                                        <i class="bi bi-check-circle-fill me-1"></i>متاح للتسجيل
+                                    </span>
+                                </div>
+                                <a href="event-details.html" class="btn btn-primary btn-sm">
+                                    <i class="bi bi-person-plus-fill me-1"></i>سجل الآن
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 - حضوري / قريباً / متاح للتسجيل -->
+                <div class="col-lg-4 col-md-6" data-category="community" data-type="onsite" data-status="upcoming" data-reg="open">
+                    <div class="card event-card h-100">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80" class="card-img-top event-img" alt="حفل تشجيع الأولاد الأيتام">
+                            
+                            <div class="event-badges">
+                                <span class="badge event-type-badge onsite">
+                                    <i class="bi bi-building me-1"></i>حضوري
+                                </span>
+                                <span class="badge event-status-badge upcoming">قريباً</span>
+                            </div>
+                            
+                            <div class="event-date-badge">
+                                <span class="day">15</span>
+                                <span class="month">سبتمبر</span>
+                            </div>
+                            
+                            <div class="event-overlay">
+                                <a href="event-details.html" class="btn btn-light btn-sm">
+                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <span class="badge bg-warning-subtle text-warning mb-2">احتفالات مجتمعية</span>
+                            <h5 class="card-title">
+                                <a href="event-details.html" class="text-decoration-none text-dark">حفل تشجيع الأولاد الأيتام</a>
+                            </h5>
+                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                                <span><i class="bi bi-clock-fill me-1"></i>04:00 عصراً</span>
+                                <span><i class="bi bi-geo-alt-fill me-1"></i>جدة</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="attendees-info">
+                                    <span class="badge bg-success-subtle text-success">
+                                        <i class="bi bi-check-circle-fill me-1"></i>متاح للتسجيل
+                                    </span>
+                                </div>
+                                <a href="event-details.html" class="btn btn-primary btn-sm">
+                                    <i class="bi bi-person-plus-fill me-1"></i>سجل الآن
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 - أونلاين / جاري الآن / متاح للتسجيل -->
+                <div class="col-lg-4 col-md-6" data-category="workshops" data-type="online" data-status="ongoing" data-reg="open">
+                    <div class="card event-card h-100">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" class="card-img-top event-img" alt="ورشة بناء القدرات">
+                            
+                            <div class="event-badges">
+                                <span class="badge event-type-badge online">
+                                    <i class="bi bi-wifi me-1"></i>أونلاين
+                                </span>
+                                <span class="badge event-status-badge ongoing">
+                                    <span class="live-dot"></span>جاري الآن
+                                </span>
+                            </div>
+                            
+                            <div class="event-date-badge">
+                                <span class="day">22</span>
+                                <span class="month">ديسمبر</span>
+                            </div>
+                            
+                            <div class="event-overlay">
+                                <a href="event-details.html" class="btn btn-light btn-sm">
+                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <span class="badge bg-info-subtle text-info mb-2">ورش عمل</span>
+                            <h5 class="card-title">
+                                <a href="event-details.html" class="text-decoration-none text-dark">ورشة بناء القدرات المؤسسية</a>
+                            </h5>
+                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                                <span><i class="bi bi-clock-fill me-1"></i>10:00 صباحاً</span>
+                                <span><i class="bi bi-globe me-1"></i>عبر الإنترنت</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="attendees-info">
+                                    <span class="badge bg-success-subtle text-success">
+                                        <i class="bi bi-check-circle-fill me-1"></i>متاح للتسجيل
+                                    </span>
+                                </div>
+                                <a href="event-details.html" class="btn btn-success btn-sm">
+                                    <i class="bi bi-camera-video-fill me-1"></i>انضم الآن
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 4 - حضوري / قريباً / متاح للتسجيل -->
+                <div class="col-lg-4 col-md-6" data-category="training" data-type="onsite" data-status="upcoming" data-reg="open">
+                    <div class="card event-card h-100">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80" class="card-img-top event-img" alt="دورة القيادة الإبداعية">
+                            
+                            <div class="event-badges">
+                                <span class="badge event-type-badge onsite">
+                                    <i class="bi bi-building me-1"></i>حضوري
+                                </span>
+                                <span class="badge event-status-badge upcoming">قريباً</span>
+                            </div>
+                            
+                            <div class="event-date-badge">
+                                <span class="day">05</span>
+                                <span class="month">يناير</span>
+                            </div>
+                            
+                            <div class="event-overlay">
+                                <a href="event-details.html" class="btn btn-light btn-sm">
+                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <span class="badge bg-success-subtle text-success mb-2">دورات تدريبية</span>
+                            <h5 class="card-title">
+                                <a href="event-details.html" class="text-decoration-none text-dark">دورة القيادة الإبداعية للشباب</a>
+                            </h5>
+                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                                <span><i class="bi bi-clock-fill me-1"></i>05:00 مساءً</span>
+                                <span><i class="bi bi-geo-alt-fill me-1"></i>الدمام</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="attendees-info">
+                                    <span class="badge bg-success-subtle text-success">
+                                        <i class="bi bi-check-circle-fill me-1"></i>متاح للتسجيل
+                                    </span>
+                                </div>
+                                <a href="event-details.html" class="btn btn-primary btn-sm">
+                                    <i class="bi bi-person-plus-fill me-1"></i>سجل الآن
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 5 - حضوري / انتهت / انتهاء التسجيل -->
+                <div class="col-lg-4 col-md-6" data-category="conferences" data-type="onsite" data-status="ended" data-reg="closed">
+                    <div class="card event-card h-100 event-ended">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80" class="card-img-top event-img" alt="ملتقى الجمعيات الشبابية">
+                            
+                            <div class="event-badges">
+                                <span class="badge event-type-badge onsite">
+                                    <i class="bi bi-building me-1"></i>حضوري
+                                </span>
+                                <span class="badge event-status-badge ended">انتهت</span>
+                            </div>
+                            
+                            <div class="event-date-badge">
+                                <span class="day">10</span>
+                                <span class="month">نوفمبر</span>
+                            </div>
+                            
+                            <div class="event-overlay">
+                                <a href="event-details.html" class="btn btn-light btn-sm">
+                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <span class="badge bg-primary-subtle text-primary mb-2">مؤتمرات ومعارض</span>
+                            <h5 class="card-title">
+                                <a href="event-details.html" class="text-decoration-none text-dark">الملتقى السنوي للجمعيات الشبابية</a>
+                            </h5>
+                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                                <span><i class="bi bi-clock-fill me-1"></i>08:00 صباحاً</span>
+                                <span><i class="bi bi-geo-alt-fill me-1"></i>الرياض</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="attendees-info">
+                                    <span class="badge bg-danger-subtle text-danger">
+                                        <i class="bi bi-x-circle-fill me-1"></i>انتهاء التسجيل
+                                    </span>
+                                </div>
+                                <button class="btn btn-secondary btn-sm" disabled>
+                                    <i class="bi bi-check-circle-fill me-1"></i>انتهت
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 6 - أونلاين / قريباً / متاح للتسجيل -->
+                <div class="col-lg-4 col-md-6" data-category="workshops" data-type="online" data-status="upcoming" data-reg="open">
+                    <div class="card event-card h-100">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80" class="card-img-top event-img" alt="ورشة التخطيط الاستراتيجي">
+                            
+                            <div class="event-badges">
+                                <span class="badge event-type-badge online">
+                                    <i class="bi bi-wifi me-1"></i>أونلاين
+                                </span>
+                                <span class="badge event-status-badge upcoming">قريباً</span>
+                            </div>
+                            
+                            <div class="event-date-badge">
+                                <span class="day">18</span>
+                                <span class="month">يناير</span>
+                            </div>
+                            
+                            <div class="event-overlay">
+                                <a href="event-details.html" class="btn btn-light btn-sm">
+                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <span class="badge bg-info-subtle text-info mb-2">ورش عمل</span>
+                            <h5 class="card-title">
+                                <a href="event-details.html" class="text-decoration-none text-dark">ورشة التخطيط الاستراتيجي للمنظمات</a>
+                            </h5>
+                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                                <span><i class="bi bi-clock-fill me-1"></i>02:00 ظهراً</span>
+                                <span><i class="bi bi-globe me-1"></i>عبر الإنترنت</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="attendees-info">
+                                    <span class="badge bg-success-subtle text-success">
+                                        <i class="bi bi-check-circle-fill me-1"></i>متاح للتسجيل
+                                    </span>
+                                </div>
+                                <a href="event-details.html" class="btn btn-primary btn-sm">
+                                    <i class="bi bi-person-plus-fill me-1"></i>سجل الآن
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 7 - حضوري / قريباً / انتهاء التسجيل -->
+                <div class="col-lg-4 col-md-6" data-category="training" data-type="onsite" data-status="upcoming" data-reg="closed">
+                    <div class="card event-card h-100">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" class="card-img-top event-img" alt="دورة إدارة المشاريع">
+                            
+                            <div class="event-badges">
+                                <span class="badge event-type-badge onsite">
+                                    <i class="bi bi-building me-1"></i>حضوري
+                                </span>
+                                <span class="badge event-status-badge upcoming">قريباً</span>
+                            </div>
+                            
+                            <div class="event-date-badge">
+                                <span class="day">25</span>
+                                <span class="month">يناير</span>
+                            </div>
+                            
+                            <div class="event-overlay">
+                                <a href="event-details.html" class="btn btn-light btn-sm">
+                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <span class="badge bg-success-subtle text-success mb-2">دورات تدريبية</span>
+                            <h5 class="card-title">
+                                <a href="event-details.html" class="text-decoration-none text-dark">دورة إدارة المشاريع الاحترافية</a>
+                            </h5>
+                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                                <span><i class="bi bi-clock-fill me-1"></i>09:00 صباحاً</span>
+                                <span><i class="bi bi-geo-alt-fill me-1"></i>الرياض</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="attendees-info">
+                                    <span class="badge bg-danger-subtle text-danger">
+                                        <i class="bi bi-x-circle-fill me-1"></i>انتهاء التسجيل
+                                    </span>
+                                </div>
+                                <button class="btn btn-outline-secondary btn-sm" disabled>
+                                    <i class="bi bi-lock-fill me-1"></i>اكتمال العدد
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 8 - أونلاين / جاري الآن / متاح للتسجيل -->
+                <div class="col-lg-4 col-md-6" data-category="conferences" data-type="online" data-status="ongoing" data-reg="open">
+                    <div class="card event-card h-100">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&q=80" class="card-img-top event-img" alt="مؤتمر الابتكار الاجتماعي">
+                            
+                            <div class="event-badges">
+                                <span class="badge event-type-badge online">
+                                    <i class="bi bi-wifi me-1"></i>أونلاين
+                                </span>
+                                <span class="badge event-status-badge ongoing">
+                                    <span class="live-dot"></span>جاري الآن
+                                </span>
+                            </div>
+                            
+                            <div class="event-date-badge">
+                                <span class="day">22</span>
+                                <span class="month">ديسمبر</span>
+                            </div>
+                            
+                            <div class="event-overlay">
+                                <a href="event-details.html" class="btn btn-light btn-sm">
+                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <span class="badge bg-primary-subtle text-primary mb-2">مؤتمرات ومعارض</span>
+                            <h5 class="card-title">
+                                <a href="event-details.html" class="text-decoration-none text-dark">مؤتمر الابتكار الاجتماعي</a>
+                            </h5>
+                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                                <span><i class="bi bi-clock-fill me-1"></i>11:00 صباحاً</span>
+                                <span><i class="bi bi-globe me-1"></i>عبر الإنترنت</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="attendees-info">
+                                    <span class="badge bg-success-subtle text-success">
+                                        <i class="bi bi-check-circle-fill me-1"></i>متاح للتسجيل
+                                    </span>
+                                </div>
+                                <a href="event-details.html" class="btn btn-success btn-sm">
+                                    <i class="bi bi-camera-video-fill me-1"></i>انضم الآن
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 9 - حضوري / انتهت / انتهاء التسجيل -->
+                <div class="col-lg-4 col-md-6" data-category="community" data-type="onsite" data-status="ended" data-reg="closed">
+                    <div class="card event-card h-100 event-ended">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1529543544277-750e7e7d9b3d?w=800&q=80" class="card-img-top event-img" alt="احتفال اليوم الوطني">
+                            
+                            <div class="event-badges">
+                                <span class="badge event-type-badge onsite">
+                                    <i class="bi bi-building me-1"></i>حضوري
+                                </span>
+                                <span class="badge event-status-badge ended">انتهت</span>
+                            </div>
+                            
+                            <div class="event-date-badge">
+                                <span class="day">23</span>
+                                <span class="month">سبتمبر</span>
+                            </div>
+                            
+                            <div class="event-overlay">
+                                <a href="event-details.html" class="btn btn-light btn-sm">
+                                    <i class="bi bi-eye-fill me-1"></i>عرض التفاصيل
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <span class="badge bg-warning-subtle text-warning mb-2">احتفالات مجتمعية</span>
+                            <h5 class="card-title">
+                                <a href="event-details.html" class="text-decoration-none text-dark">احتفال اليوم الوطني السعودي</a>
+                            </h5>
+                            <div class="event-meta d-flex flex-wrap gap-3 text-muted small">
+                                <span><i class="bi bi-clock-fill me-1"></i>06:00 مساءً</span>
+                                <span><i class="bi bi-geo-alt-fill me-1"></i>الرياض</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer bg-transparent border-top-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="attendees-info">
+                                    <span class="badge bg-danger-subtle text-danger">
+                                        <i class="bi bi-x-circle-fill me-1"></i>انتهاء التسجيل
+                                    </span>
+                                </div>
+                                <button class="btn btn-secondary btn-sm" disabled>
+                                    <i class="bi bi-check-circle-fill me-1"></i>انتهت
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
             
-            <!-- Event Card 1 -->
-            <article class="event-card" data-animate="zoom-in" data-delay="100" data-category="conferences">
-                <div class="event-card-image">
-                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="تدشين منصة ويبيان">
-                    <div class="event-status upcoming">قريباً</div>
-                    <div class="event-date-badge">
-                        <span class="day">29</span>
-                        <span class="month">أغسطس</span>
-                    </div>
-                    <div class="event-card-overlay">
-                        <a href="event-details.html" class="btn-view">
-                            <i class="bi bi-eye-fill"></i>
-                            عرض التفاصيل
+            <!-- Pagination -->
+            <nav class="mt-5" aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">
+                            <i class="bi bi-chevron-right"></i>
                         </a>
-                    </div>
-                </div>
-                <div class="event-card-body">
-                    <span class="event-category">مؤتمرات ومعارض</span>
-                    <h3 class="event-card-title">
-                        <a href="event-details.html">تدشين منصة ويبيان</a>
-                    </h3>
-                    <div class="event-card-meta">
-                        <div class="event-meta-item">
-                            <i class="bi bi-clock-fill"></i>
-                            <span>09:00 صباحاً</span>
-                        </div>
-                        <div class="event-meta-item">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            <span>الرياض</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="event-card-footer">
-                    <div class="event-attendees">
-                        <div class="attendee-avatars">
-                            <img src="https://ui-avatars.com/api/?name=أحمد&background=0d4a6f&color=fff&size=40" alt="مشارك">
-                            <img src="https://ui-avatars.com/api/?name=محمد&background=1a8a8a&color=fff&size=40" alt="مشارك">
-                            <img src="https://ui-avatars.com/api/?name=خالد&background=28a745&color=fff&size=40" alt="مشارك">
-                        </div>
-                        <span class="attendee-count">+52</span>
-                    </div>
-                    <a href="event-details.html" class="btn-register">
-                        <i class="bi bi-person-plus-fill"></i>
-                        سجل الآن
-                    </a>
-                </div>
-            </article>
-
-            <!-- Event Card 2 -->
-            <article class="event-card" data-animate="zoom-in" data-delay="200" data-category="community">
-                <div class="event-card-image">
-                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80" alt="حفل تشجيع الأولاد الأيتام">
-                    <div class="event-status upcoming">قريباً</div>
-                    <div class="event-date-badge">
-                        <span class="day">15</span>
-                        <span class="month">سبتمبر</span>
-                    </div>
-                    <div class="event-card-overlay">
-                        <a href="event-details.html" class="btn-view">
-                            <i class="bi bi-eye-fill"></i>
-                            عرض التفاصيل
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">
+                            <i class="bi bi-chevron-left"></i>
                         </a>
-                    </div>
-                </div>
-                <div class="event-card-body">
-                    <span class="event-category">احتفالات مجتمعية</span>
-                    <h3 class="event-card-title">
-                        <a href="event-details.html">حفل تشجيع الأولاد الأيتام</a>
-                    </h3>
-                    <div class="event-card-meta">
-                        <div class="event-meta-item">
-                            <i class="bi bi-clock-fill"></i>
-                            <span>04:00 عصراً</span>
-                        </div>
-                        <div class="event-meta-item">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            <span>جدة</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="event-card-footer">
-                    <div class="event-attendees">
-                        <div class="attendee-avatars">
-                            <img src="https://ui-avatars.com/api/?name=سارة&background=e74c3c&color=fff&size=40" alt="مشارك">
-                            <img src="https://ui-avatars.com/api/?name=نورة&background=9b59b6&color=fff&size=40" alt="مشارك">
-                            <img src="https://ui-avatars.com/api/?name=فاطمة&background=f39c12&color=fff&size=40" alt="مشارك">
-                        </div>
-                        <span class="attendee-count">+120</span>
-                    </div>
-                    <a href="event-details.html" class="btn-register">
-                        <i class="bi bi-person-plus-fill"></i>
-                        سجل الآن
-                    </a>
-                </div>
-            </article>
-
-            <!-- Event Card 3 -->
-            <article class="event-card" data-animate="zoom-in" data-delay="300" data-category="workshops">
-                <div class="event-card-image">
-                    <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="ورشة بناء القدرات">
-                    <div class="event-status ongoing">جاري الآن</div>
-                    <div class="event-date-badge">
-                        <span class="day">22</span>
-                        <span class="month">ديسمبر</span>
-                    </div>
-                    <div class="event-card-overlay">
-                        <a href="event-details.html" class="btn-view">
-                            <i class="bi bi-eye-fill"></i>
-                            عرض التفاصيل
-                        </a>
-                    </div>
-                </div>
-                <div class="event-card-body">
-                    <span class="event-category">ورش عمل</span>
-                    <h3 class="event-card-title">
-                        <a href="event-details.html">ورشة بناء القدرات المؤسسية</a>
-                    </h3>
-                    <div class="event-card-meta">
-                        <div class="event-meta-item">
-                            <i class="bi bi-clock-fill"></i>
-                            <span>10:00 صباحاً</span>
-                        </div>
-                        <div class="event-meta-item">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            <span>أونلاين</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="event-card-footer">
-                    <div class="event-attendees">
-                        <div class="attendee-avatars">
-                            <img src="https://ui-avatars.com/api/?name=علي&background=3498db&color=fff&size=40" alt="مشارك">
-                            <img src="https://ui-avatars.com/api/?name=عمر&background=2ecc71&color=fff&size=40" alt="مشارك">
-                        </div>
-                        <span class="attendee-count">+38</span>
-                    </div>
-                    <a href="event-details.html" class="btn-register">
-                        <i class="bi bi-person-plus-fill"></i>
-                        سجل الآن
-                    </a>
-                </div>
-            </article>
-
-            <!-- Event Card 4 -->
-            <article class="event-card" data-animate="zoom-in" data-delay="400" data-category="training">
-                <div class="event-card-image">
-                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80" alt="دورة القيادة الإبداعية">
-                    <div class="event-status upcoming">قريباً</div>
-                    <div class="event-date-badge">
-                        <span class="day">05</span>
-                        <span class="month">يناير</span>
-                    </div>
-                    <div class="event-card-overlay">
-                        <a href="event-details.html" class="btn-view">
-                            <i class="bi bi-eye-fill"></i>
-                            عرض التفاصيل
-                        </a>
-                    </div>
-                </div>
-                <div class="event-card-body">
-                    <span class="event-category">دورات تدريبية</span>
-                    <h3 class="event-card-title">
-                        <a href="event-details.html">دورة القيادة الإبداعية للشباب</a>
-                    </h3>
-                    <div class="event-card-meta">
-                        <div class="event-meta-item">
-                            <i class="bi bi-clock-fill"></i>
-                            <span>05:00 مساءً</span>
-                        </div>
-                        <div class="event-meta-item">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            <span>الدمام</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="event-card-footer">
-                    <div class="event-attendees">
-                        <div class="attendee-avatars">
-                            <img src="https://ui-avatars.com/api/?name=يوسف&background=e67e22&color=fff&size=40" alt="مشارك">
-                            <img src="https://ui-avatars.com/api/?name=حسن&background=1abc9c&color=fff&size=40" alt="مشارك">
-                            <img src="https://ui-avatars.com/api/?name=إبراهيم&background=34495e&color=fff&size=40" alt="مشارك">
-                        </div>
-                        <span class="attendee-count">+75</span>
-                    </div>
-                    <a href="event-details.html" class="btn-register">
-                        <i class="bi bi-person-plus-fill"></i>
-                        سجل الآن
-                    </a>
-                </div>
-            </article>
-
-            <!-- Event Card 5 -->
-            <article class="event-card" data-animate="zoom-in" data-delay="500" data-category="conferences">
-                <div class="event-card-image">
-                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80" alt="ملتقى الجمعيات الشبابية">
-                    <div class="event-status ended">انتهت</div>
-                    <div class="event-date-badge">
-                        <span class="day">10</span>
-                        <span class="month">نوفمبر</span>
-                    </div>
-                    <div class="event-card-overlay">
-                        <a href="event-details.html" class="btn-view">
-                            <i class="bi bi-eye-fill"></i>
-                            عرض التفاصيل
-                        </a>
-                    </div>
-                </div>
-                <div class="event-card-body">
-                    <span class="event-category">مؤتمرات ومعارض</span>
-                    <h3 class="event-card-title">
-                        <a href="event-details.html">الملتقى السنوي للجمعيات الشبابية</a>
-                    </h3>
-                    <div class="event-card-meta">
-                        <div class="event-meta-item">
-                            <i class="bi bi-clock-fill"></i>
-                            <span>08:00 صباحاً</span>
-                        </div>
-                        <div class="event-meta-item">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            <span>الرياض</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="event-card-footer">
-                    <div class="event-attendees">
-                        <div class="attendee-avatars">
-                            <img src="https://ui-avatars.com/api/?name=ناصر&background=8e44ad&color=fff&size=40" alt="مشارك">
-                            <img src="https://ui-avatars.com/api/?name=سعد&background=c0392b&color=fff&size=40" alt="مشارك">
-                            <img src="https://ui-avatars.com/api/?name=فيصل&background=16a085&color=fff&size=40" alt="مشارك">
-                        </div>
-                        <span class="attendee-count">+200</span>
-                    </div>
-                    <a href="event-details.html" class="btn-register" style="background: #888; pointer-events: none;">
-                        <i class="bi bi-check-circle-fill"></i>
-                        انتهت الفعالية
-                    </a>
-                </div>
-            </article>
-
-            <!-- Event Card 6 -->
-            <article class="event-card" data-animate="zoom-in" data-delay="600" data-category="workshops">
-                <div class="event-card-image">
-                    <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80" alt="ورشة التخطيط الاستراتيجي">
-                    <div class="event-status upcoming">قريباً</div>
-                    <div class="event-date-badge">
-                        <span class="day">18</span>
-                        <span class="month">يناير</span>
-                    </div>
-                    <div class="event-card-overlay">
-                        <a href="event-details.html" class="btn-view">
-                            <i class="bi bi-eye-fill"></i>
-                            عرض التفاصيل
-                        </a>
-                    </div>
-                </div>
-                <div class="event-card-body">
-                    <span class="event-category">ورش عمل</span>
-                    <h3 class="event-card-title">
-                        <a href="event-details.html">ورشة التخطيط الاستراتيجي للمنظمات</a>
-                    </h3>
-                    <div class="event-card-meta">
-                        <div class="event-meta-item">
-                            <i class="bi bi-clock-fill"></i>
-                            <span>02:00 ظهراً</span>
-                        </div>
-                        <div class="event-meta-item">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            <span>مكة المكرمة</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="event-card-footer">
-                    <div class="event-attendees">
-                        <div class="attendee-avatars">
-                            <img src="https://ui-avatars.com/api/?name=عبدالله&background=2980b9&color=fff&size=40" alt="مشارك">
-                            <img src="https://ui-avatars.com/api/?name=عبدالرحمن&background=27ae60&color=fff&size=40" alt="مشارك">
-                        </div>
-                        <span class="attendee-count">+45</span>
-                    </div>
-                    <a href="event-details.html" class="btn-register">
-                        <i class="bi bi-person-plus-fill"></i>
-                        سجل الآن
-                    </a>
-                </div>
-            </article>
-
+                    </li>
+                </ul>
+            </nav>
         </div>
-
-        <!-- Pagination -->
-        <nav class="events-pagination" data-animate="fade-in-up" data-delay="700">
-            <button class="pagination-btn nav-btn">
-                <i class="bi bi-chevron-right"></i>
-                السابق
-            </button>
-            <button class="pagination-btn active">1</button>
-            <button class="pagination-btn">2</button>
-            <button class="pagination-btn">3</button>
-            <button class="pagination-btn nav-btn">
-                التالي
-                <i class="bi bi-chevron-left"></i>
-            </button>
-        </nav>
     </section>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Custom Scripts -->
     <script>
-        // Scroll Animations
-        function initScrollAnimations() {
-            const animatedElements = document.querySelectorAll('[data-animate]');
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterPills = document.querySelectorAll('.filter-pill');
+            const eventCards = document.querySelectorAll('#eventsGrid > div');
             
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px 0px -100px 0px',
-                threshold: 0.1
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const el = entry.target;
-                        const animation = el.dataset.animate;
-                        const delay = el.dataset.delay || 0;
-                        
-                        setTimeout(() => {
-                            el.classList.add('animated', animation);
-                        }, delay);
-                        
-                        observer.unobserve(el);
-                    }
-                });
-            }, observerOptions);
-            
-            animatedElements.forEach(el => {
-                observer.observe(el);
-            });
-        }
-        
-        // Filter Events
-        function initFilterEvents() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const eventCards = document.querySelectorAll('.event-card');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // Add active class to clicked button
-                    btn.classList.add('active');
+            // Category filter
+            filterPills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    filterPills.forEach(p => p.classList.remove('active'));
+                    this.classList.add('active');
                     
-                    const filter = btn.dataset.filter;
+                    const filter = this.dataset.filter;
                     
                     eventCards.forEach(card => {
                         if (filter === 'all' || card.dataset.category === filter) {
-                            card.style.display = 'block';
-                            card.style.animation = 'fadeIn 0.5s ease forwards';
+                            card.style.display = '';
+                            card.classList.add('animate__animated', 'animate__fadeIn');
                         } else {
                             card.style.display = 'none';
                         }
                     });
                 });
             });
-        }
-        
-        // Initialize on DOM ready
-        document.addEventListener('DOMContentLoaded', () => {
-            initScrollAnimations();
-            initFilterEvents();
+            
+            // Dropdown filters
+            document.querySelectorAll('.dropdown-item[data-type]').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const type = this.dataset.type;
+                    eventCards.forEach(card => {
+                        if (type === 'all' || card.dataset.type === type) {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            document.querySelectorAll('.dropdown-item[data-status]').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const status = this.dataset.status;
+                    eventCards.forEach(card => {
+                        if (status === 'all' || card.dataset.status === status) {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            document.querySelectorAll('.dropdown-item[data-reg]').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const reg = this.dataset.reg;
+                    eventCards.forEach(card => {
+                        if (reg === 'all' || card.dataset.reg === reg) {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
         });
-        
-        // Fade In Animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
