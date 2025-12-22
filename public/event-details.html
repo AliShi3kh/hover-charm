@@ -38,215 +38,287 @@
         
         <!-- Countdown Timer -->
         <div class="countdown-container">
-            <div class="countdown-item">
-                <span class="countdown-number" id="countdown-days">15</span>
-                <span class="countdown-label">يوم</span>
-            </div>
-            <div class="countdown-item">
-                <span class="countdown-number" id="countdown-hours">08</span>
-                <span class="countdown-label">ساعة</span>
-            </div>
-            <div class="countdown-item">
-                <span class="countdown-number" id="countdown-minutes">45</span>
-                <span class="countdown-label">دقيقة</span>
-            </div>
-            <div class="countdown-item">
-                <span class="countdown-number" id="countdown-seconds">30</span>
-                <span class="countdown-label">ثانية</span>
+            <div class="row g-3 justify-content-center">
+                <div class="col-auto">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-days">15</span>
+                        <span class="countdown-label">يوم</span>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-hours">08</span>
+                        <span class="countdown-label">ساعة</span>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-minutes">45</span>
+                        <span class="countdown-label">دقيقة</span>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-seconds">30</span>
+                        <span class="countdown-label">ثانية</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Event Info Section -->
-    <section class="event-info-section">
-        <div class="event-info-card">
-            <!-- Event Title -->
-            <div class="event-title-section">
-                <h1 class="event-main-title">تدشين منصة ويبيان</h1>
-                <p class="event-subtitle">المعرض التعريفي لمنصة ويبيان - فرصة للتعرف على أحدث الحلول التقنية للقطاع غير الربحي</p>
-            </div>
-            
-            <!-- Event Meta Info -->
-            <div class="event-meta-row">
-                <div class="event-meta-item">
-                    <div class="event-meta-icon category">
-                        <i class="bi bi-grid-3x3-gap-fill"></i>
-                    </div>
-                    <div class="event-meta-text">
-                        <span class="event-meta-label">التصنيف</span>
-                        <span class="event-meta-value">مؤتمرات ومعارض</span>
+    <!-- Event Main Content Section -->
+    <section class="event-main-section">
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="row g-4">
+                <!-- Right Side - Action Buttons & Quick Info -->
+                <div class="col-lg-4 col-md-5 order-md-1 order-2">
+                    <div class="event-actions-card">
+                        <!-- Event Title for Mobile -->
+                        <div class="event-mobile-title d-md-none">
+                            <h1>تدشين منصة ويبيان</h1>
+                            <p>المعرض التعريفي لمنصة ويبيان</p>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="actions-wrapper">
+                            <a href="#" class="btn-event-primary w-100">
+                                <i class="bi bi-person-plus-fill"></i>
+                                انضم للفعالية
+                            </a>
+                            <a href="#" class="btn-event-secondary w-100">
+                                <i class="bi bi-file-earmark-pdf-fill"></i>
+                                الدليل التعريفي
+                            </a>
+                        </div>
+                        
+                        <!-- Quick Info -->
+                        <div class="quick-info-wrapper">
+                            <h4 class="quick-info-title">
+                                <i class="bi bi-info-circle-fill me-2"></i>
+                                معلومات سريعة
+                            </h4>
+                            <ul class="quick-info-list">
+                                <li>
+                                    <div class="quick-info-icon category">
+                                        <i class="bi bi-grid-3x3-gap-fill"></i>
+                                    </div>
+                                    <div class="quick-info-text">
+                                        <span class="label">التصنيف</span>
+                                        <span class="value">مؤتمرات ومعارض</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="quick-info-icon date">
+                                        <i class="bi bi-calendar-event-fill"></i>
+                                    </div>
+                                    <div class="quick-info-text">
+                                        <span class="label">التاريخ</span>
+                                        <span class="value">29 أغسطس 2025</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="quick-info-icon time">
+                                        <i class="bi bi-clock-fill"></i>
+                                    </div>
+                                    <div class="quick-info-text">
+                                        <span class="label">الوقت</span>
+                                        <span class="value">09:00 صباحاً</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="quick-info-icon type">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                    </div>
+                                    <div class="quick-info-text">
+                                        <span class="label">نوع الحضور</span>
+                                        <span class="value">حضوري</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="quick-info-icon status">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                    </div>
+                                    <div class="quick-info-text">
+                                        <span class="label">الحالة</span>
+                                        <span class="value">قريباً</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- QR Code -->
+                        <div class="qr-wrapper">
+                            <h4 class="qr-title">
+                                <i class="bi bi-qr-code-scan me-2"></i>
+                                التسجيل السريع
+                            </h4>
+                            <div class="qr-code-box">
+                                <svg viewBox="0 0 200 200" width="140" height="140" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="200" height="200" fill="white"/>
+                                    <g fill="#0d4a6f">
+                                        <rect x="10" y="10" width="50" height="50"/>
+                                        <rect x="140" y="10" width="50" height="50"/>
+                                        <rect x="10" y="140" width="50" height="50"/>
+                                        <rect x="17" y="17" width="36" height="36" fill="white"/>
+                                        <rect x="147" y="17" width="36" height="36" fill="white"/>
+                                        <rect x="17" y="147" width="36" height="36" fill="white"/>
+                                        <rect x="24" y="24" width="22" height="22"/>
+                                        <rect x="154" y="24" width="22" height="22"/>
+                                        <rect x="24" y="154" width="22" height="22"/>
+                                        <rect x="70" y="10" width="10" height="10"/>
+                                        <rect x="90" y="10" width="10" height="10"/>
+                                        <rect x="110" y="10" width="10" height="10"/>
+                                        <rect x="70" y="30" width="10" height="10"/>
+                                        <rect x="100" y="30" width="10" height="10"/>
+                                        <rect x="120" y="30" width="10" height="10"/>
+                                        <rect x="80" y="50" width="10" height="10"/>
+                                        <rect x="110" y="50" width="10" height="10"/>
+                                    </g>
+                                </svg>
+                            </div>
+                            <p class="qr-hint">امسح الرمز للتسجيل</p>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="event-meta-item">
-                    <div class="event-meta-icon date">
-                        <i class="bi bi-calendar-event-fill"></i>
-                    </div>
-                    <div class="event-meta-text">
-                        <span class="event-meta-label">التاريخ</span>
-                        <span class="event-meta-value">29 أغسطس 2025</span>
+                <!-- Left Side - Event Details -->
+                <div class="col-lg-8 col-md-7 order-md-2 order-1">
+                    <div class="event-details-card">
+                        <!-- Event Title for Desktop -->
+                        <div class="event-header d-none d-md-block">
+                            <div class="event-category-badge">
+                                <i class="bi bi-star-fill me-1"></i>
+                                فعالية مميزة
+                            </div>
+                            <h1 class="event-main-title">تدشين منصة ويبيان</h1>
+                            <p class="event-subtitle">المعرض التعريفي لمنصة ويبيان - فرصة للتعرف على أحدث الحلول التقنية للقطاع غير الربحي</p>
+                        </div>
+                        
+                        <!-- Event Description -->
+                        <div class="event-description">
+                            <h3 class="section-heading">
+                                <span class="heading-icon">
+                                    <i class="bi bi-file-text-fill"></i>
+                                </span>
+                                وصف الفعالية
+                            </h3>
+                            <div class="description-content">
+                                <p>
+                                    برعاية معالي رئيس مجلس إدارة المركز الوطني لتنمية القطاع غير الربحي <strong>المهندس أحمد بن سليمان الراجحي</strong> وزير الموارد البشرية والتنمية الإجتماعية يقيم مجلس الجمعيات الأهلية الحفل الختامي لـ:
+                                </p>
+                                
+                                <div class="highlight-box">
+                                    <div class="highlight-icon">
+                                        <i class="bi bi-award-fill"></i>
+                                    </div>
+                                    <p><strong>حاضنة جدارة للأعمال الاجتماعية لعام 2024م</strong></p>
+                                </div>
+                                
+                                <p>
+                                    ولإيمانكم جزء من القطاع غير الربحي وتعزيز دوره ونموه في خدمة المجتمع، يسرنا دعوتكم لحضور الحفل الختامي لأعمال النسخة الأولى.
+                                </p>
+                                
+                                <p class="welcome-text">
+                                    <span class="welcome-icon"><i class="bi bi-hand-thumbs-up-fill"></i></span>
+                                    <strong>مرحباً بكم</strong> في هذا الحدث المميز الذي يجمع نخبة من قادة القطاع غير الربحي والمهتمين بتطوير العمل الخيري والتطوعي في المملكة العربية السعودية.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Event Highlights -->
+                        <div class="event-highlights">
+                            <div class="row g-3">
+                                <div class="col-sm-6 col-lg-4">
+                                    <div class="highlight-card">
+                                        <div class="highlight-card-icon">
+                                            <i class="bi bi-people-fill"></i>
+                                        </div>
+                                        <h5>+500</h5>
+                                        <p>مشارك متوقع</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-4">
+                                    <div class="highlight-card">
+                                        <div class="highlight-card-icon">
+                                            <i class="bi bi-mic-fill"></i>
+                                        </div>
+                                        <h5>12</h5>
+                                        <p>متحدث</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-4">
+                                    <div class="highlight-card">
+                                        <div class="highlight-card-icon">
+                                            <i class="bi bi-clock-history"></i>
+                                        </div>
+                                        <h5>8</h5>
+                                        <p>ساعات تفاعلية</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="event-meta-item">
-                    <div class="event-meta-icon type">
-                        <i class="bi bi-geo-alt-fill"></i>
-                    </div>
-                    <div class="event-meta-text">
-                        <span class="event-meta-label">نوع الحضور</span>
-                        <span class="event-meta-value">عبر الإنترنت (أون لاين)</span>
-                    </div>
-                </div>
-                
-                <div class="event-meta-item">
-                    <div class="event-meta-icon status">
-                        <i class="bi bi-check-circle-fill"></i>
-                    </div>
-                    <div class="event-meta-text">
-                        <span class="event-meta-label">الحالة</span>
-                        <span class="event-meta-value">قريباً</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Action Buttons -->
-            <div class="event-actions">
-                <a href="#" class="btn-event-primary">
-                    <i class="bi bi-person-plus-fill"></i>
-                    انضم للفعالية
-                </a>
-                <a href="#" class="btn-event-secondary">
-                    <i class="bi bi-file-earmark-pdf-fill"></i>
-                    الدليل التعريفي للفعالية
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- Event Description Section -->
-    <section class="event-description-section">
-        <div class="container-fluid p-0">
-            <h2 class="section-title">
-                <i class="bi bi-info-circle-fill me-2"></i>
-                وصف الفعالية
+    <!-- Location Section -->
+    <section class="location-section">
+        <div class="container-fluid px-4 px-lg-5">
+            <h2 class="main-section-title">
+                <span class="title-icon"><i class="bi bi-geo-alt-fill"></i></span>
+                موقع الفعالية
             </h2>
             
-            <div class="description-card">
-                <p class="description-text">
-                    برعاية معالي رئيس مجلس إدارة المركز الوطني لتنمية القطاع غير الربحي <strong>المهندس أحمد بن سليمان الراجحي</strong> وزير الموارد البشرية والتنمية الإجتماعية يقيم مجلس الجمعيات الأهلية الحفل الختامي لـ:
-                </p>
-                
-                <div class="description-highlight">
-                    <p><strong>حاضنة جدارة للأعمال الاجتماعية لعام 2024م</strong></p>
-                </div>
-                
-                <p class="description-text">
-                    ولإيمانكم جزء من القطاع غير الربحي وتعزيز دوره ونموه في خدمة المجتمع، يسرنا دعوتكم لحضور الحفل الختامي لأعمال النسخة الأولى.
-                </p>
-                
-                <p class="description-text" style="margin-top: 25px;">
-                    <strong style="color: var(--event-secondary);">مرحباً بكم</strong> في هذا الحدث المميز الذي يجمع نخبة من قادة القطاع غير الربحي والمهتمين بتطوير العمل الخيري والتطوعي في المملكة العربية السعودية.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location & QR Code Section -->
-    <section class="location-section">
-        <div class="container-fluid p-0">
-            <div class="location-qr-grid">
-                <!-- Map Card -->
-                <div class="map-card">
-                    <div class="map-header">
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <h3>مكان الفعالية</h3>
-                    </div>
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.674593955811!2d46.67520841499876!3d24.713552484127604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20International%20Convention%20%26%20Exhibition%20Center!5e0!3m2!1sen!2ssa!4v1640000000000!5m2!1sen!2ssa"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                    <div class="map-address">
-                        <i class="bi bi-pin-map-fill"></i>
-                        <p>مركز الرياض الدولي للمؤتمرات والمعارض - طريق الملك عبدالله، الرياض</p>
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="map-card">
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.674593955811!2d46.67520841499876!3d24.713552484127604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20International%20Convention%20%26%20Exhibition%20Center!5e0!3m2!1sen!2ssa!4v1640000000000!5m2!1sen!2ssa"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- QR Code Card -->
-                <div class="qr-card">
-                    <h3 class="qr-title">
-                        <i class="bi bi-qr-code-scan me-2"></i>
-                        رمز التسجيل السريع
-                    </h3>
-                    <div class="qr-code-wrapper">
-                        <!-- QR Code placeholder - can be replaced with actual QR -->
-                        <svg viewBox="0 0 200 200" width="180" height="180" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="200" height="200" fill="white"/>
-                            <!-- QR Code Pattern -->
-                            <g fill="#0d4a6f">
-                                <!-- Position Detection Patterns -->
-                                <rect x="10" y="10" width="50" height="50"/>
-                                <rect x="140" y="10" width="50" height="50"/>
-                                <rect x="10" y="140" width="50" height="50"/>
-                                <rect x="17" y="17" width="36" height="36" fill="white"/>
-                                <rect x="147" y="17" width="36" height="36" fill="white"/>
-                                <rect x="17" y="147" width="36" height="36" fill="white"/>
-                                <rect x="24" y="24" width="22" height="22"/>
-                                <rect x="154" y="24" width="22" height="22"/>
-                                <rect x="24" y="154" width="22" height="22"/>
-                                <!-- Data modules -->
-                                <rect x="70" y="10" width="10" height="10"/>
-                                <rect x="90" y="10" width="10" height="10"/>
-                                <rect x="110" y="10" width="10" height="10"/>
-                                <rect x="70" y="30" width="10" height="10"/>
-                                <rect x="100" y="30" width="10" height="10"/>
-                                <rect x="120" y="30" width="10" height="10"/>
-                                <rect x="80" y="50" width="10" height="10"/>
-                                <rect x="110" y="50" width="10" height="10"/>
-                                <rect x="10" y="70" width="10" height="10"/>
-                                <rect x="30" y="70" width="10" height="10"/>
-                                <rect x="50" y="70" width="10" height="10"/>
-                                <rect x="70" y="70" width="10" height="10"/>
-                                <rect x="90" y="70" width="10" height="10"/>
-                                <rect x="120" y="70" width="10" height="10"/>
-                                <rect x="150" y="70" width="10" height="10"/>
-                                <rect x="180" y="70" width="10" height="10"/>
-                                <rect x="20" y="90" width="10" height="10"/>
-                                <rect x="50" y="90" width="10" height="10"/>
-                                <rect x="80" y="90" width="10" height="10"/>
-                                <rect x="100" y="90" width="10" height="10"/>
-                                <rect x="130" y="90" width="10" height="10"/>
-                                <rect x="160" y="90" width="10" height="10"/>
-                                <rect x="10" y="110" width="10" height="10"/>
-                                <rect x="40" y="110" width="10" height="10"/>
-                                <rect x="70" y="110" width="10" height="10"/>
-                                <rect x="90" y="110" width="10" height="10"/>
-                                <rect x="110" y="110" width="10" height="10"/>
-                                <rect x="140" y="110" width="10" height="10"/>
-                                <rect x="170" y="110" width="10" height="10"/>
-                                <rect x="70" y="130" width="10" height="10"/>
-                                <rect x="100" y="130" width="10" height="10"/>
-                                <rect x="130" y="130" width="10" height="10"/>
-                                <rect x="70" y="150" width="10" height="10"/>
-                                <rect x="90" y="150" width="10" height="10"/>
-                                <rect x="120" y="150" width="10" height="10"/>
-                                <rect x="150" y="150" width="10" height="10"/>
-                                <rect x="170" y="150" width="10" height="10"/>
-                                <rect x="70" y="170" width="10" height="10"/>
-                                <rect x="100" y="170" width="10" height="10"/>
-                                <rect x="140" y="170" width="10" height="10"/>
-                                <rect x="160" y="170" width="10" height="10"/>
-                                <rect x="180" y="170" width="10" height="10"/>
-                            </g>
-                        </svg>
+                <div class="col-lg-4">
+                    <div class="location-info-card">
+                        <div class="location-detail">
+                            <div class="location-detail-icon">
+                                <i class="bi bi-building"></i>
+                            </div>
+                            <div class="location-detail-text">
+                                <span class="label">المكان</span>
+                                <span class="value">مركز الرياض الدولي للمؤتمرات</span>
+                            </div>
+                        </div>
+                        <div class="location-detail">
+                            <div class="location-detail-icon">
+                                <i class="bi bi-pin-map-fill"></i>
+                            </div>
+                            <div class="location-detail-text">
+                                <span class="label">العنوان</span>
+                                <span class="value">طريق الملك عبدالله، الرياض</span>
+                            </div>
+                        </div>
+                        <div class="location-detail">
+                            <div class="location-detail-icon">
+                                <i class="bi bi-door-open-fill"></i>
+                            </div>
+                            <div class="location-detail-text">
+                                <span class="label">القاعة</span>
+                                <span class="value">القاعة الرئيسية A</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-directions">
+                            <i class="bi bi-compass-fill me-2"></i>
+                            احصل على الاتجاهات
+                        </a>
                     </div>
-                    <p class="qr-instruction">
-                        <i class="bi bi-phone me-1"></i>
-                        امسح الرمز للتسجيل السريع في الفعالية
-                    </p>
                 </div>
             </div>
         </div>
@@ -254,47 +326,59 @@
 
     <!-- Event Gallery Section -->
     <section class="gallery-section">
-        <div class="container-fluid p-0">
-            <h2 class="section-title">
-                <i class="bi bi-images me-2"></i>
+        <div class="container-fluid px-4 px-lg-5">
+            <h2 class="main-section-title">
+                <span class="title-icon"><i class="bi bi-images"></i></span>
                 صور من الفعالية
             </h2>
             
-            <div class="gallery-grid">
-                <div class="gallery-item featured" onclick="openLightbox(this)">
-                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="صورة 1">
-                    <div class="gallery-overlay">
-                        <i class="bi bi-zoom-in"></i>
+            <div class="row g-3">
+                <div class="col-lg-6 col-md-6">
+                    <div class="gallery-item featured" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="صورة 1">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&q=80" alt="صورة 2">
-                    <div class="gallery-overlay">
-                        <i class="bi bi-zoom-in"></i>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&q=80" alt="صورة 2">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&q=80" alt="صورة 3">
-                    <div class="gallery-overlay">
-                        <i class="bi bi-zoom-in"></i>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&q=80" alt="صورة 3">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&q=80" alt="صورة 4">
-                    <div class="gallery-overlay">
-                        <i class="bi bi-zoom-in"></i>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&q=80" alt="صورة 4">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80" alt="صورة 5">
-                    <div class="gallery-overlay">
-                        <i class="bi bi-zoom-in"></i>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80" alt="صورة 5">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&q=80" alt="صورة 6">
-                    <div class="gallery-overlay">
-                        <i class="bi bi-zoom-in"></i>
+                <div class="col-lg-6 col-md-12">
+                    <div class="gallery-item wide" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80" alt="صورة 6">
+                        <div class="gallery-overlay">
+                            <i class="bi bi-zoom-in"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -318,7 +402,6 @@
     <script>
         // Countdown Timer
         function updateCountdown() {
-            // Set the target date (29 August 2025)
             const targetDate = new Date('2025-08-29T09:00:00').getTime();
             const now = new Date().getTime();
             const difference = targetDate - now;
@@ -333,80 +416,45 @@
                 updateNumber('countdown-hours', hours);
                 updateNumber('countdown-minutes', minutes);
                 updateNumber('countdown-seconds', seconds);
-            } else {
-                // Event has started
-                document.getElementById('countdown-days').textContent = '0';
-                document.getElementById('countdown-hours').textContent = '0';
-                document.getElementById('countdown-minutes').textContent = '0';
-                document.getElementById('countdown-seconds').textContent = '0';
             }
         }
         
         function updateNumber(id, value) {
             const element = document.getElementById(id);
             const formattedValue = value.toString().padStart(2, '0');
-            
             if (element.textContent !== formattedValue) {
-                element.classList.add('flip-animation');
+                element.style.transform = 'scale(1.2)';
                 element.textContent = formattedValue;
-                
                 setTimeout(() => {
-                    element.classList.remove('flip-animation');
-                }, 600);
+                    element.style.transform = 'scale(1)';
+                }, 150);
             }
         }
         
-        // Update countdown every second
         setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initial call
+        updateCountdown();
         
         // Lightbox Functions
         function openLightbox(element) {
+            const img = element.querySelector('img');
             const lightbox = document.getElementById('galleryLightbox');
-            const lightboxImage = document.getElementById('lightboxImage');
-            const imgSrc = element.querySelector('img').src;
+            const lightboxImg = document.getElementById('lightboxImage');
             
-            lightboxImage.src = imgSrc.replace('w=600', 'w=1200').replace('w=800', 'w=1200');
+            lightboxImg.src = img.src;
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
         
         function closeLightbox(event) {
-            if (event.target.closest('.lightbox-content') && !event.target.closest('.lightbox-close')) {
-                return;
-            }
-            
             const lightbox = document.getElementById('galleryLightbox');
             lightbox.classList.remove('active');
             document.body.style.overflow = '';
         }
         
-        // Close lightbox with Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
-                closeLightbox(e);
+                closeLightbox();
             }
-        });
-        
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-up');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-        
-        // Observe sections
-        document.querySelectorAll('.description-card, .map-card, .qr-card, .gallery-item').forEach(el => {
-            el.style.opacity = '0';
-            observer.observe(el);
         });
     </script>
 </body>
