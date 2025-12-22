@@ -38,20 +38,16 @@
             
             <!-- Hero Content with Logo on Left -->
             <div class="hero-content">
-                <!-- Project Logo -->
+            <!-- Project Logo -->
                 <div class="hero-logo-wrapper">
                     <div class="hero-logo-card">
                         <img src="images/project-logo-csy.svg" alt="شعار مشروع سهل">
                     </div>
-                    <p class="logo-label">شعار المشروع</p>
                 </div>
 
-                <!-- Hero Text -->
-                <div class="hero-text">
-                    <h1>
-                        مشروع
-                        <span>سهل</span>
-                    </h1>
+            <!-- Hero Text -->
+            <div class="hero-text">
+                <h1>مشروع <span>سهل</span></h1>
                     <p class="hero-description">
                         منصة شبابية تهدف إلى تسهيل وتمكين رواد المبادرات الاجتماعية من تحويل أفكارهم إلى كيانات ذات أثر مستدام. يتم ذلك عبر رحلة دعم متكاملة تشمل التدريب، التوجيه، التصميم، والتطوير.
                     </p>
@@ -114,14 +110,14 @@
         </div>
     </div>
 
-    <!-- Details Section -->
+    <!-- Details Section - New Row Layout -->
     <section class="section">
         <div class="section-header">
             <span class="section-badge">
                 <i class="fas fa-info-circle"></i>
                 تعرف علينا
             </span>
-            <h2 class="section-title">تفاصيل <span>المشروع</span></h2>
+            <h2 class="section-title">عن <span>المشروع</span></h2>
             <div class="title-decoration">
                 <span class="decoration-line"></span>
                 <span class="decoration-diamond"></span>
@@ -129,26 +125,40 @@
             </div>
         </div>
 
-        <div class="details-content">
-            <p class="details-text">
-                يسعى مشروع سهل إلى تسهيل رحلة الشباب السعودي نحو تحقيق أفكارهم الإبداعية وتحويلها إلى مشاريع حقيقية ذات أثر مستدام. من خلال برامج تدريبية مكثفة ودعم متكامل، نعمل على بناء جيل من رواد الأعمال الاجتماعيين القادرين على إحداث فرق حقيقي في مجتمعاتهم.
-            </p>
-        </div>
-
-        <div class="vision-mission-grid">
-            <div class="vm-card vision">
-                <div class="vm-icon">
-                    <i class="fas fa-eye"></i>
+        <div class="details-row-layout">
+            <!-- Details Column - 6 cols -->
+            <div class="details-column">
+                <div class="details-card">
+                    <div class="details-card-header">
+                        <div class="details-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>تفاصيل المشروع</h3>
+                    </div>
+                    <p>يسعى مشروع سهل إلى تسهيل رحلة الشباب السعودي نحو تحقيق أفكارهم الإبداعية وتحويلها إلى مشاريع حقيقية ذات أثر مستدام. من خلال برامج تدريبية مكثفة ودعم متكامل، نعمل على بناء جيل من رواد الأعمال الاجتماعيين القادرين على إحداث فرق حقيقي في مجتمعاتهم.</p>
                 </div>
-                <h3>الرؤية</h3>
-                <p>أن نكون المنصة الرائدة في تمكين الشباب السعودي وتسهيل رحلتهم نحو ريادة الأعمال الاجتماعية، وبناء جيل قادر على صناعة التغيير الإيجابي في المجتمع.</p>
             </div>
-            <div class="vm-card mission">
-                <div class="vm-icon">
-                    <i class="fas fa-bullseye"></i>
+
+            <!-- Vision & Mission Column - 6 cols -->
+            <div class="vm-column">
+                <div class="vm-compact-card vision">
+                    <div class="vm-compact-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="vm-compact-content">
+                        <h4>الرؤية</h4>
+                        <p>أن نكون المنصة الرائدة في تمكين الشباب السعودي وتسهيل رحلتهم نحو ريادة الأعمال الاجتماعية، وبناء جيل قادر على صناعة التغيير الإيجابي.</p>
+                    </div>
                 </div>
-                <h3>الرسالة</h3>
-                <p>تسهيل وتمكين رواد المبادرات الاجتماعية من تحويل أفكارهم إلى كيانات ذات أثر مستدام عبر رحلة دعم متكاملة تشمل التدريب والتوجيه والتصميم والتطوير.</p>
+                <div class="vm-compact-card mission">
+                    <div class="vm-compact-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="vm-compact-content">
+                        <h4>الرسالة</h4>
+                        <p>تسهيل وتمكين رواد المبادرات الاجتماعية من تحويل أفكارهم إلى كيانات ذات أثر مستدام عبر رحلة دعم متكاملة.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -241,28 +251,28 @@
             <div class="outputs-track" id="outputsTrack">
                 <div class="output-card">
                     <div class="output-icon-wrapper">
-                        <img src="images/project-logo-csy.svg" alt="أيقونة">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h4>برنامج تدريبي متخصص لتصميم الأثر الاجتماعي</h4>
                     <p>إنشاء وتطبيق منهج تدريبي يركز على قياس الأثر</p>
                 </div>
                 <div class="output-card">
                     <div class="output-icon-wrapper">
-                        <img src="images/project-logo-csy.svg" alt="أيقونة">
+                        <i class="fas fa-chart-bar"></i>
                     </div>
                     <h4>تقرير سنوي لتوجهات المبادرات الشبابية</h4>
                     <p>إصدار تقرير شامل يحلل أهم التحديات والفرص والتوجهات الحديثة</p>
                 </div>
                 <div class="output-card">
                     <div class="output-icon-wrapper">
-                        <img src="images/project-logo-csy.svg" alt="أيقونة">
+                        <i class="fas fa-laptop-code"></i>
                     </div>
                     <h4>منصة رقمية لدعم رواد الأعمال</h4>
                     <p>إطلاق منصة متكاملة توفر الموارد والأدوات اللازمة</p>
                 </div>
                 <div class="output-card">
                     <div class="output-icon-wrapper">
-                        <img src="images/project-logo-csy.svg" alt="أيقونة">
+                        <i class="fas fa-bullhorn"></i>
                     </div>
                     <h4>حملة ترويجية رقمية لعرض مشاريع الخريجين</h4>
                     <p>تنفيذ حملة إعلامية عبر منصات التواصل لعرض قصص نجاح</p>
