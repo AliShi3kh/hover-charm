@@ -226,10 +226,10 @@ body {
   line-height: 1.2;
   margin-bottom: 20px;
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
 }
 
 .hero-text h1 span {
-  display: block;
   background: linear-gradient(90deg, var(--teal-light), var(--green-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -499,9 +499,204 @@ body {
 }
 
 /* ========================================
-   Details Section - Vision & Mission Enhanced
+   Details Section - Row Layout (6+6)
    ======================================== */
 
+.details-row-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.details-column {
+  display: flex;
+}
+
+.details-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-smooth);
+  border: 2px solid transparent;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-medium);
+  border-color: rgba(8, 145, 178, 0.2);
+}
+
+.details-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--bg-section);
+}
+
+.details-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--gradient-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
+}
+
+.details-card:hover .details-icon {
+  transform: scale(1.08) rotate(-5deg);
+}
+
+.details-icon i {
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.details-card-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+  transition: color 0.3s ease;
+}
+
+.details-card:hover .details-card-header h3 {
+  color: var(--teal-primary);
+}
+
+.details-card p {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.vm-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vm-compact-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-smooth);
+  border: 2px solid transparent;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.vm-compact-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.vm-compact-card.vision::before {
+  background: var(--gradient-teal);
+}
+
+.vm-compact-card.mission::before {
+  background: var(--gradient-green);
+}
+
+.vm-compact-card:hover::before {
+  width: 6px;
+}
+
+.vm-compact-card:hover {
+  transform: translateX(-8px);
+  box-shadow: var(--shadow-medium);
+}
+
+.vm-compact-card.vision:hover {
+  border-color: rgba(8, 145, 178, 0.2);
+}
+
+.vm-compact-card.mission:hover {
+  border-color: rgba(22, 163, 74, 0.2);
+}
+
+.vm-compact-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
+}
+
+.vm-compact-card:hover .vm-compact-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.vm-compact-card.vision .vm-compact-icon {
+  background: linear-gradient(135deg, rgba(8, 145, 178, 0.12), rgba(34, 211, 238, 0.12));
+}
+
+.vm-compact-card.mission .vm-compact-icon {
+  background: linear-gradient(135deg, rgba(22, 163, 74, 0.12), rgba(74, 222, 128, 0.12));
+}
+
+.vm-compact-icon i {
+  font-size: 1.4rem;
+}
+
+.vm-compact-card.vision .vm-compact-icon i {
+  color: var(--teal-primary);
+}
+
+.vm-compact-card.mission .vm-compact-icon i {
+  color: var(--green-primary);
+}
+
+.vm-compact-content {
+  flex: 1;
+}
+
+.vm-compact-content h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.vm-compact-card.vision:hover .vm-compact-content h4 {
+  color: var(--teal-primary);
+}
+
+.vm-compact-card.mission:hover .vm-compact-content h4 {
+  color: var(--green-primary);
+}
+
+.vm-compact-content p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* Keep old classes for backward compatibility */
 .details-content {
   max-width: 1000px;
   margin: 0 auto 60px;
@@ -804,20 +999,21 @@ body {
 }
 
 .output-icon-wrapper {
-  width: 110px;
-  height: 110px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   background: linear-gradient(135deg, rgba(8, 145, 178, 0.1), rgba(22, 163, 74, 0.1));
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 28px;
+  margin: 0 auto 24px;
   position: relative;
   transition: var(--transition-smooth);
 }
 
 .output-card:hover .output-icon-wrapper {
   transform: scale(1.08);
+  background: linear-gradient(135deg, rgba(8, 145, 178, 0.15), rgba(22, 163, 74, 0.15));
 }
 
 .output-icon-wrapper::before {
@@ -834,6 +1030,17 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.output-icon-wrapper i {
+  font-size: 2rem;
+  color: var(--teal-primary);
+  transition: var(--transition-smooth);
+}
+
+.output-card:hover .output-icon-wrapper i {
+  color: var(--green-primary);
+  transform: scale(1.1);
 }
 
 .output-icon-wrapper img {
@@ -1208,6 +1415,7 @@ body {
 
   .hero-text h1 {
     font-size: 2.6rem;
+    white-space: normal;
   }
 
   .hero-description {
@@ -1234,6 +1442,10 @@ body {
   .output-card {
     flex: 0 0 calc(33.333% - 20px);
   }
+
+  .details-row-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1247,6 +1459,7 @@ body {
 
   .hero-text h1 {
     font-size: 2rem;
+    white-space: normal;
   }
 
   .hero-description {
@@ -1304,6 +1517,20 @@ body {
 
   .details-text {
     padding: 30px;
+  }
+
+  .details-row-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .vm-compact-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .vm-compact-icon {
+    margin: 0 auto;
   }
 }
 
