@@ -851,6 +851,311 @@ body.mini-project-page {
 }
 
 /* ========================================
+   Statistics Section
+   ======================================== */
+.mp-stats-section {
+    background: var(--mp-gradient-main);
+    padding: 60px 0;
+    margin: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.mp-stats-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.mp-stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+}
+
+.mp-stats-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.mp-stats-title {
+    color: var(--mp-white);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.mp-stats-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.mp-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.mp-stat-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: var(--mp-radius-lg);
+    padding: 32px 24px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: var(--mp-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.mp-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.1) 100%);
+    opacity: 0;
+    transition: var(--mp-transition);
+}
+
+.mp-stat-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.mp-stat-card:hover::before {
+    opacity: 1;
+}
+
+.mp-stat-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: var(--mp-transition);
+}
+
+.mp-stat-card:hover .mp-stat-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.mp-stat-icon i {
+    font-size: 1.8rem;
+    color: var(--mp-white);
+}
+
+.mp-stat-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--mp-white);
+    line-height: 1;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.mp-stat-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Counter Animation */
+.mp-stat-number.counting {
+    animation: countPulse 0.3s ease;
+}
+
+@keyframes countPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* ========================================
+   Social Share Section
+   ======================================== */
+.mp-share-section {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 2px solid var(--mp-bg-section);
+}
+
+.mp-share-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--mp-text-dark);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mp-share-title i {
+    color: var(--mp-accent);
+}
+
+.mp-share-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.mp-share-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mp-white);
+    text-decoration: none;
+    transition: var(--mp-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.mp-share-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+
+.mp-share-btn:hover::before {
+    transform: scale(1);
+}
+
+.mp-share-btn:hover {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.mp-share-btn i {
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Social Media Colors */
+.mp-share-btn.twitter {
+    background: linear-gradient(135deg, #1DA1F2 0%, #0d8ed9 100%);
+}
+
+.mp-share-btn.facebook {
+    background: linear-gradient(135deg, #4267B2 0%, #3b5998 100%);
+}
+
+.mp-share-btn.whatsapp {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+}
+
+.mp-share-btn.linkedin {
+    background: linear-gradient(135deg, #0077B5 0%, #005885 100%);
+}
+
+.mp-share-btn.telegram {
+    background: linear-gradient(135deg, #0088CC 0%, #006699 100%);
+}
+
+.mp-share-btn.copy {
+    background: var(--mp-gradient-accent);
+}
+
+/* Copy Tooltip */
+.mp-share-btn.copy .tooltip-text {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--mp-text-dark);
+    color: var(--mp-white);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--mp-transition);
+    margin-bottom: 8px;
+}
+
+.mp-share-btn.copy .tooltip-text::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--mp-text-dark);
+}
+
+.mp-share-btn.copy:hover .tooltip-text,
+.mp-share-btn.copy.copied .tooltip-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mp-share-btn.copy.copied {
+    background: linear-gradient(135deg, #4db88a 0%, #3da878 100%);
+}
+
+/* ========================================
+   Responsive Statistics
+   ======================================== */
+@media (max-width: 992px) {
+    .mp-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .mp-stats-section {
+        padding: 40px 0;
+    }
+    
+    .mp-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .mp-stat-card {
+        padding: 24px 20px;
+    }
+    
+    .mp-stat-number {
+        font-size: 2.2rem;
+    }
+    
+    .mp-stat-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .mp-stat-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .mp-share-buttons {
+        justify-content: center;
+    }
+}
+
+/* ========================================
    Animations
    ======================================== */
 @keyframes fadeInUp {
@@ -875,6 +1180,23 @@ body.mini-project-page {
     }
 }
 
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .mp-animate-up {
     animation: fadeInUp 0.6s ease forwards;
 }
@@ -883,7 +1205,13 @@ body.mini-project-page {
     animation: fadeInRight 0.6s ease forwards;
 }
 
+.mp-animate-bounce {
+    animation: bounceIn 0.6s ease forwards;
+}
+
 .mp-delay-1 { animation-delay: 0.1s; }
 .mp-delay-2 { animation-delay: 0.2s; }
 .mp-delay-3 { animation-delay: 0.3s; }
 .mp-delay-4 { animation-delay: 0.4s; }
+.mp-delay-5 { animation-delay: 0.5s; }
+.mp-delay-6 { animation-delay: 0.6s; }
